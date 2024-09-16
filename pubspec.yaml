@@ -1,5 +1,5 @@
 name: mamang_app_flutter
-description: "A new Flutter project."
+description: "Mamang App Flutter project."
 publish_to: 'none'
 version: 0.1.0
 
@@ -7,8 +7,11 @@ environment:
   sdk: '>=3.4.4 <4.0.0'
 
 dependencies:
+  carousel_slider: ^5.0.0
+  change_case: ^2.1.0
   flutter:
     sdk: flutter
+  flutter_screenutil: ^5.9.3
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +20,17 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+  
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Nunito-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Nunito-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito-Bold.ttf
+          weight: 700
