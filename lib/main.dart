@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mamang_app_flutter/pages/sample_bottom_picker.dart';
 import 'package:mamang_app_flutter/pages/sample_button.dart';
+import 'package:mamang_app_flutter/pages/sample_forms.dart';
 import 'package:mamang_app_flutter/pages/sample_shadow.dart';
 import 'package:mamang_app_flutter/ui/theme_palette.dart';
 
@@ -15,20 +17,13 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: "Mamang App",
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       theme: ThemeData(
         fontFamily: 'Nunito',
         primaryColor: ThemePalette.primaryMain,
         primaryColorDark: ThemePalette.primaryDark,
         primaryColorLight: ThemePalette.primaryLight,
         brightness: Brightness.light,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20)
-            )
-          )
-        ),
         inputDecorationTheme: InputDecorationTheme(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))
         ),
@@ -56,6 +51,10 @@ class MainApp extends StatelessWidget {
         ),
       ),
       darkTheme: ThemeData(
+        fontFamily: 'Nunito',
+        primaryColor: ThemePalette.primaryMain,
+        primaryColorDark: ThemePalette.primaryDark,
+        primaryColorLight: ThemePalette.primaryLight,
         brightness: Brightness.dark,
         colorScheme: ColorScheme.dark(
           primary: ThemePalette.primaryMain,
@@ -81,7 +80,7 @@ class MainApp extends StatelessWidget {
         )
       ),
       home: const Scaffold(
-        body: SampleButton()
+        body: SafeArea(child: SampleForm())
       ),
     );
   }

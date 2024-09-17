@@ -26,6 +26,12 @@ class _SampleButtonState extends State<SampleButton> {
           child: const Text('Mamang', style: ThemeText.subtitle
         )),
         const SizedBox(height: 40),
+        FilledButton(
+          onPressed: () {},
+          style: ThemeButton.tertiary.merge(ThemeButton.btnSmall),
+          child: const Text('Button Mamang App', style: ThemeText.caption),
+        ),
+        const SizedBox(height: 40),
         const Divider(),
         Row(
           children: [

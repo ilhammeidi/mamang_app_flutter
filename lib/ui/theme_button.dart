@@ -11,7 +11,7 @@ class ThemeButton {
   // Filled Button
   static ButtonStyle primary = FilledButton.styleFrom(
     backgroundColor: ThemePalette.primaryMain,
-    foregroundColor: ThemePalette.primaryDark,
+    foregroundColor: Colors.white,
     shape: RoundedRectangleBorder(
       borderRadius: buttonRadius,
     ),
@@ -122,6 +122,7 @@ class ThemeButton {
     ),
   );
   static ButtonStyle btnSmall = TextButton.styleFrom(
-    minimumSize: const Size(100, 20),
+    minimumSize: const Size(75, 20),
+    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
   );
 }
