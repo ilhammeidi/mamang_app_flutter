@@ -32,6 +32,7 @@ class _BottomPickerRadioState extends State<BottomPickerRadio> {
 
   void _onChanged(String? newValue, BuildContext context) {
     setState(() {
+      print(newValue);
       _value = newValue;
     });
     Navigator.pop(context, newValue);

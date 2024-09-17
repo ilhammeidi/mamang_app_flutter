@@ -18,7 +18,7 @@ class _SampleFormState extends State<SampleForm> {
   final TextEditingController _dateToRef = TextEditingController();
 
   String? hobby;
-  final TextEditingController _chooseRef = TextEditingController(text: 'Music');
+  final TextEditingController _chooseRef = TextEditingController();
 
   List<ListItem> hobbyOptions = [
     ListItem(
@@ -44,10 +44,15 @@ class _SampleFormState extends State<SampleForm> {
       options: hobbyOptions,
       title: 'Choose Hobby',
       onSelected: (value) {
-        setState(() => hobby = value);
-        String result = hobbyOptions.firstWhere((e) => e.value == value).label;
-        _chooseRef.text = result;
+        if (value != null) {
+          String result = hobbyOptions.firstWhere((e) => e.value == value).label;
+          _chooseRef.text = result;
+        }
+        setState(() {
+          hobby = value;
+        });
       },
+      // onSelected: (value) => setState(() => hobby = value),
       initialValue: hobby,
     );
   }
@@ -132,7 +137,7 @@ class _SampleFormState extends State<SampleForm> {
               onTap: () {
                 openPicker(context);
               },
-              suffixIcon: Icons.access_time_filled_outlined,
+              suffixIcon: Icons.arrow_drop_down,
             ),
             const SizedBox(height: 10),
             const TextField(
