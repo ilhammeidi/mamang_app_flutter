@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/models/list_item.dart';
-import 'package:mamang_app_flutter/utils/picker.dart';
+import 'package:mamang_app_flutter/ui/utils/picker.dart';
 
 class SampleBottomPicker extends StatefulWidget {
   const SampleBottomPicker({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/ui/theme_button.dart';
-import 'package:mamang_app_flutter/ui/theme_spacing.dart';
-import 'package:mamang_app_flutter/ui/theme_text.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 
 class SampleButton extends StatefulWidget {
   const SampleButton({super.key});

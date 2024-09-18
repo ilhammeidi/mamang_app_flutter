@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/ui/theme_shadow.dart';
-import 'package:mamang_app_flutter/ui/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 
 class SampleShadow extends StatelessWidget {
   const SampleShadow({super.key});
