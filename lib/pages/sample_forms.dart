@@ -16,6 +16,7 @@ class SampleForm extends StatefulWidget {
 class _SampleFormState extends State<SampleForm> {
   final TextEditingController _dateFromRef = TextEditingController(text: '1/1/2024');
   final TextEditingController _dateToRef = TextEditingController();
+  final TextEditingController _timePickerRef = TextEditingController();
 
   String? hobby;
   final TextEditingController _chooseRef = TextEditingController();
@@ -72,6 +73,19 @@ class _SampleFormState extends State<SampleForm> {
     }
   }
 
+  Future<void> _selectTime() async {
+    TimeOfDay? time = await showTimePicker(
+      context: context,
+      initialTime: const TimeOfDay(hour: 7, minute: 30),
+      orientation: Orientation.portrait,
+      initialEntryMode: TimePickerEntryMode.dial
+    );
+  
+    setState(() {
+      _timePickerRef.text = time!.format(context);
+    });
+  }
+
   Future _selectDate2(TextEditingController targetRef) async {
     DateTime? picked = await showDatePicker(
       context: context,
@@ -98,6 +112,16 @@ class _SampleFormState extends State<SampleForm> {
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [
+            const SizedBox(height: 40),
+            AppTextField(
+              controller: _timePickerRef,
+              readOnly: true,
+              prefixIcon: Icons.access_time,
+              label: 'Time from',
+              onChanged: (_) {},
+              onTap: _selectTime,
+            ),
+            const VSpace(),
             TextField(
               controller: _dateFromRef,
               readOnly: true,
