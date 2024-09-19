@@ -22,7 +22,7 @@ class _SampleButtonState extends State<SampleButton> {
       children: [
         FilledButton(
           onPressed: () {},
-          style: ThemeButton.btnBig.merge(ThemeButton.tonalSecondary),
+          style: ThemeButton.btnBig.merge(ThemeButton.tonalSecondary(context)),
           child: const Text('Mamang', style: ThemeText.subtitle
         )),
         const SizedBox(height: 40),
@@ -64,19 +64,19 @@ class _SampleButtonState extends State<SampleButton> {
                 const VSpaceShort(),
                 OutlinedButton(
                   onPressed: () {},
-                  style: ThemeButton.outlinedPrimary,
+                  style: ThemeButton.outlinedPrimary(context),
                   child: const Text('Button'),
                 ),
                 const VSpaceShort(),
                 OutlinedButton(
                   onPressed: () {},
-                  style: ThemeButton.outlinedSecondary,
+                  style: ThemeButton.outlinedSecondary(context),
                   child: const Text('Button'),
                 ),
                 const VSpaceShort(),
                 OutlinedButton(
                   onPressed: () {},
-                  style: ThemeButton.outlinedTertiary,
+                  style: ThemeButton.outlinedTertiary(context),
                   child: const Text('Button'),
                 )
               ])
@@ -87,19 +87,19 @@ class _SampleButtonState extends State<SampleButton> {
                 const VSpaceShort(),
                 FilledButton(
                   onPressed: () {},
-                  style: ThemeButton.tonalPrimary,
+                  style: ThemeButton.tonalPrimary(context),
                   child: const Text('Button'),
                 ),
                 const VSpaceShort(),
                 FilledButton(
                   onPressed: () {},
-                  style: ThemeButton.tonalSecondary,
+                  style: ThemeButton.tonalSecondary(context),
                   child: const Text('Button'),
                 ),
                 const VSpaceShort(),
                 FilledButton(
                   onPressed: () {},
-                  style: ThemeButton.tonalTertiary,
+                  style: ThemeButton.tonalTertiary(context),
                   child: const Text('Button'),
                 )
               ])
@@ -110,19 +110,19 @@ class _SampleButtonState extends State<SampleButton> {
                 const VSpaceShort(),
                 TextButton(
                   onPressed: () {},
-                  style: ThemeButton.textPrimary,
+                  style: ThemeButton.textPrimary(context),
                   child: const Text('Button'),
                 ),
                 const VSpaceShort(),
                 TextButton(
                   onPressed: () {},
-                  style: ThemeButton.textSecondary,
+                  style: ThemeButton.textSecondary(context),
                   child: const Text('Button'),
                 ),
                 const VSpaceShort(),
                 TextButton(
                   onPressed: () {},
-                  style: ThemeButton.textTertiary,
+                  style: ThemeButton.textTertiary(context),
                   child: const Text('Button'),
                 )
               ])

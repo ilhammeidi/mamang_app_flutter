@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
-import 'package:flutter/scheduler.dart';
-
-var brightness = SchedulerBinding.instance.platformDispatcher.platformBrightness;
 
 class ThemeButton {
   static BorderRadius buttonRadius = ThemeRadius.medium;
@@ -32,88 +29,102 @@ class ThemeButton {
   );
 
   // Outlined Button
-  static ButtonStyle outlinedPrimary = OutlinedButton.styleFrom(
-    side: BorderSide(
-      color: ThemePalette.primaryMain,
-    ),
-    foregroundColor: brightness == Brightness.dark
-      ? ThemePalette.primaryLight : ThemePalette.primaryDark,
-    shape: RoundedRectangleBorder(
-      borderRadius: buttonRadius,
-    ),
-  );
-  static ButtonStyle outlinedSecondary = OutlinedButton.styleFrom(
-    side: BorderSide(
-      color: ThemePalette.secondaryMain,
-    ),
-    foregroundColor: brightness == Brightness.dark
-      ? ThemePalette.secondaryLight : ThemePalette.secondaryDark,
-    shape: RoundedRectangleBorder(
-      borderRadius: buttonRadius,
-    ),
-  );
-  static ButtonStyle outlinedTertiary = OutlinedButton.styleFrom(
-    side: BorderSide(
-      color: ThemePalette.tertiaryMain,
-    ),
-    foregroundColor: brightness == Brightness.dark
-      ? ThemePalette.tertiaryLight : ThemePalette.tertiaryDark,
-    shape: RoundedRectangleBorder(
-      borderRadius: buttonRadius,
-    ),
-  );
+  static ButtonStyle outlinedPrimary(BuildContext context) {
+    return OutlinedButton.styleFrom(
+      side: BorderSide(
+        color: ThemePalette.primaryMain,
+      ),
+      foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
+  static ButtonStyle outlinedSecondary(BuildContext context) {
+    return OutlinedButton.styleFrom(
+      side: BorderSide(
+        color: ThemePalette.secondaryMain,
+      ),
+      foregroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
+  static ButtonStyle outlinedTertiary(BuildContext context) {
+    return OutlinedButton.styleFrom(
+      side: BorderSide(
+        color: ThemePalette.tertiaryMain
+      ),
+      foregroundColor: Theme.of(context).colorScheme.onTertiaryContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
 
   // Tonal Button
-  static ButtonStyle tonalPrimary = FilledButton.styleFrom(
-    backgroundColor: brightness == Brightness.dark
-      ? ThemePalette.primaryDark : ThemePalette.primaryLight,
-    foregroundColor: brightness == Brightness.dark
-      ? ThemePalette.primaryLight : ThemePalette.primaryDark,
-    shape: RoundedRectangleBorder(
-      borderRadius: buttonRadius,
-    ),
-  );
-  static ButtonStyle tonalSecondary = FilledButton.styleFrom(
-    backgroundColor: brightness == Brightness.dark
-      ? ThemePalette.secondaryDark : ThemePalette.secondaryLight,
-    foregroundColor: brightness == Brightness.dark
-      ? ThemePalette.secondaryLight : ThemePalette.secondaryDark,
-    shape: RoundedRectangleBorder(
-      borderRadius: buttonRadius,
-    ),
-  );
-  static ButtonStyle tonalTertiary = FilledButton.styleFrom(
-    backgroundColor: brightness == Brightness.dark
-      ? ThemePalette.tertiaryDark : ThemePalette.tertiaryLight,
-    foregroundColor: brightness == Brightness.dark
-      ? ThemePalette.tertiaryLight : ThemePalette.tertiaryDark,
-    shape: RoundedRectangleBorder(
-      borderRadius: buttonRadius,
-    ),
-  );
+  static ButtonStyle tonalPrimary(BuildContext context) {
+    return FilledButton.styleFrom(
+      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+      foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
 
-  // OutliTextned Button
-  static ButtonStyle textPrimary = TextButton.styleFrom(
-    foregroundColor: brightness == Brightness.dark
-      ? ThemePalette.primaryLight : ThemePalette.primaryDark,
-    shape: RoundedRectangleBorder(
-      borderRadius: buttonRadius,
-    ),
-  );
-  static ButtonStyle textSecondary = TextButton.styleFrom(
-    foregroundColor: brightness == Brightness.dark
-      ? ThemePalette.secondaryLight : ThemePalette.secondaryDark,
-    shape: RoundedRectangleBorder(
-      borderRadius: buttonRadius,
-    ),
-  );
-  static ButtonStyle textTertiary = TextButton.styleFrom(
-    foregroundColor: brightness == Brightness.dark
-      ? ThemePalette.tertiaryLight : ThemePalette.tertiaryDark,
-    shape: RoundedRectangleBorder(
-      borderRadius: buttonRadius,
-    ),
-  );
+  static ButtonStyle tonalSecondary(BuildContext context) {
+    return FilledButton.styleFrom(
+      backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+      foregroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
+  static ButtonStyle tonalTertiary(BuildContext context) {
+    return FilledButton.styleFrom(
+      backgroundColor: Theme.of(context).colorScheme.tertiaryContainer,
+      foregroundColor: Theme.of(context).colorScheme.onTertiaryContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
+  // Text Button
+  static ButtonStyle textPrimary(BuildContext context) {
+    return TextButton.styleFrom(
+      foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
+  static ButtonStyle textSecondary(BuildContext context) {
+    return TextButton.styleFrom(
+      foregroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
+  static ButtonStyle textTertiary(BuildContext context) {
+    return TextButton.styleFrom(
+      foregroundColor: Theme.of(context).colorScheme.onTertiaryContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
+  // Button Size
   static ButtonStyle btnBig = TextButton.styleFrom(
     minimumSize: const Size(200, 40),
     padding: const EdgeInsets.all(16),
