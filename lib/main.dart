@@ -95,9 +95,9 @@ class MainApp extends StatelessWidget {
             outline: Colors.grey[400]
           )
         ),
-        routeInformationParser: appRoutes.routeInformationParser,
-        routeInformationProvider: appRoutes.routeInformationProvider,
-        routerDelegate: appRoutes.routerDelegate,
+        routeInformationParser: AppRoutes.routes.routeInformationParser,
+        routeInformationProvider: AppRoutes.routes.routeInformationProvider,
+        routerDelegate: AppRoutes.routes.routerDelegate,
       ),
     );
   }

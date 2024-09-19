@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SampleDarkLight extends StatelessWidget {
@@ -23,6 +24,7 @@ class SampleDarkLight extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ElevatedButton(onPressed: () => context.pop(), child: const Text('go back')),
             Obx(() => Text('Click on switch to change to ${_isDarkTheme.value ? 'Dark' : 'Light'} theme')),
             ObxValue((data) => Switch(
               value: _isDarkTheme.value,
