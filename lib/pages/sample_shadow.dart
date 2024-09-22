@@ -14,7 +14,7 @@ class SampleShadow extends StatelessWidget {
           width: 300,
           height: 100,
           decoration: BoxDecoration(
-            color: Colors.blueGrey.shade900,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(20),
             boxShadow: [ThemeShade.shadeSoft(context)]
           )
@@ -24,7 +24,7 @@ class SampleShadow extends StatelessWidget {
           width: 300,
           height: 100,
           decoration: BoxDecoration(
-            color: Colors.blueGrey,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(20),
             boxShadow: [ThemeShade.shadeMedium(context)]
           )
@@ -34,7 +34,7 @@ class SampleShadow extends StatelessWidget {
           width: 300,
           height: 100,
           decoration: BoxDecoration(
-            color: Colors.blueGrey,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(20),
             boxShadow: [ThemeShade.shadeHard(context)]
           )

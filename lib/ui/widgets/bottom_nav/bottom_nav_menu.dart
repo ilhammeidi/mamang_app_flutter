@@ -9,8 +9,7 @@ class BottomNavMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String currentRoute = Get.currentRoute;
-    debugPrint(currentRoute);
-
+    
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
       clipBehavior: Clip.antiAlias,

@@ -8,7 +8,7 @@ class ThemePalette {
   static Color primaryDark = Colors.teal.shade900;
 
   // Secondary
-  static Color secondaryMain = Colors.lightBlue.shade400;
+  static Color secondaryMain = Colors.lightBlueAccent;
   static Color secondaryLight = Colors.lightBlue.shade100;
   static Color secondaryDark = Colors.lightBlue.shade900;
 
@@ -22,6 +22,19 @@ class ThemePalette {
   static Color paperDark = Colors.grey.shade900;
   static Color defaultLight = Colors.grey.shade200;
   static Color defaultDark = Colors.grey.shade800;
+
+  // Gradient
+  static LinearGradient gradientMixedMain = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.topRight,
+    colors: <Color>[ThemePalette.secondaryMain, ThemePalette.primaryMain]
+  );
+
+  static LinearGradient gradientMixedDark = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.topRight,
+    colors: <Color>[ThemePalette.secondaryDark, ThemePalette.primaryDark]
+  );
 }
 
 Color darken(Color color, [double amount = .1]) {
