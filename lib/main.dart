@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mamang_app_flutter/pages/app_routes.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -29,19 +30,24 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: GetMaterialApp(
-        title: "Mamang App",
-        debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.system,
-        theme: lightColorScheme,
-        darkTheme: darkColorScheme,
-        initialRoute: '/',
-        getPages: appRoutes,
-        // routeInformationParser: AppRoutes.routes.routeInformationParser,
-        // routeInformationProvider: AppRoutes.routes.routeInformationProvider,
-        // routerDelegate: AppRoutes.routes.routerDelegate,
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return GetMaterialApp(
+          title: "Mamang App",
+          debugShowCheckedModeBanner: false,
+          themeMode: ThemeMode.system,
+          theme: lightColorScheme,
+          darkTheme: darkColorScheme,
+          initialRoute: '/',
+          getPages: appRoutes,
+          // routeInformationParser: AppRoutes.routes.routeInformationParser,
+          // routeInformationProvider: AppRoutes.routes.routeInformationProvider,
+          // routerDelegate: AppRoutes.routes.routerDelegate,
+        );
+      }
     );
   }
 }

@@ -15,7 +15,7 @@ class PaperCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: coloured ? ThemePalette.primaryMain : Theme.of(context).colorScheme.surface,
         borderRadius: ThemeRadius.medium,
-        boxShadow: [ThemeShade.shadeMedium],
+        boxShadow: [ThemeShade.shadeMedium(context)],
       ),
       child: content
     );

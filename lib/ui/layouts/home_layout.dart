@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
+import 'package:mamang_app_flutter/ui/widgets/bottom_nav/bottom_nav_menu.dart';
 
 class HomeLayout extends StatelessWidget {
   const HomeLayout({super.key, required this.content});
@@ -9,29 +10,26 @@ class HomeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Theme.of(context).colorScheme.secondaryContainer,
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          const Text('Home Layout', style: ThemeText.title),
-          SizedBox(
-            height: 400,
-            child: content
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          maxWidth: 600,
+        ),
+        child: SafeArea(child: Scaffold(
+          body: content,
+          bottomNavigationBar: const BottomNavMenu(),
+          extendBody: true,
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              Get.toNamed('/explore');
+            },
+            backgroundColor: ThemePalette.primaryMain,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+            child: const Icon(Icons.search, color: Colors.white)
           ),
-          ElevatedButton(
-            onPressed: () => Get.toNamed('/'),
-            child: const Text('sample forms')
-          ),
-          ElevatedButton(
-            onPressed: () => Get.toNamed('/buttons'),
-            child: const Text('sample buttons')
-          ),
-          ElevatedButton(
-            onPressed: () => Get.toNamed('/dark-mode'),
-            child: const Text('sample derk light')
-          ),
-        ]),
-      )
+        )),
+      ),
     );
   }
 }

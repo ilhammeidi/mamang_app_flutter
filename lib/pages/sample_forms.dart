@@ -105,97 +105,100 @@ class _SampleFormState extends State<SampleForm> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      scrollDirection: Axis.vertical,
-      children: [
-        const VSpace(),
-        AppTextField(
-          controller: _timePickerRef,
-          readOnly: true,
-          prefixIcon: Icons.access_time,
-          label: 'Time from',
-          onChanged: (_) {},
-          onTap: _selectTime,
-        ),
-        const VSpace(),
-        TextField(
-          controller: _dateFromRef,
-          readOnly: true,
-          decoration: const InputDecoration(
-            labelText: 'Date From',
-            prefixIcon: Icon(Icons.date_range)
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListView(
+        scrollDirection: Axis.vertical,
+        children: [
+          const VSpace(),
+          AppTextField(
+            controller: _timePickerRef,
+            readOnly: true,
+            prefixIcon: Icons.access_time,
+            label: 'Time from',
+            onChanged: (_) {},
+            onTap: _selectTime,
           ),
-          onTap: () {
-            _selectDate2(_dateFromRef);
-          },
-        ),
-        const SizedBox(height: 10),
-        AppTextField(
-          controller: _dateToRef,
-          readOnly: true,
-          prefixIcon: Icons.date_range,
-          label: 'Date to',
-          onChanged: (_) {},
-          onTap: () {
-            _selectDate2(_dateToRef);
-          },
-        ),
-        const SizedBox(height: 10),
-        const TextField(
-          decoration: InputDecoration(
-            labelText: 'Macam Input',
-          ),
-          obscureText: true,
-          enableSuggestions: false,
-          autocorrect: false,
-        ),
-        const SizedBox(height: 10),
-        AppTextField(
-          controller: _chooseRef,
-          label: 'Choose hobby',
-          onChanged: (_) {},
-          onTap: () {
-            openPicker(context);
-          },
-          suffixIcon: Icons.arrow_drop_down,
-        ),
-        const SizedBox(height: 10),
-        const TextField(
-          decoration: InputDecoration(
-            alignLabelWithHint: true,
-            labelText: 'label',
-            prefixIcon: Icon(Icons.date_range),
-          ),
-          maxLines: 4,
-        ),
-        const VSpaceBig(),
-        SizedBox(
-          height: 50,
-          width: 200,
-          child: DropdownButton<String>(
-            value: dropdownValue,
-            icon: const Icon(Icons.arrow_downward),
-            elevation: 2,
-            style: const TextStyle(color: Colors.deepPurple),
-            onChanged: (value) {
-              setState(() {
-                dropdownValue = value!;
-              });
+          const VSpace(),
+          TextField(
+            controller: _dateFromRef,
+            readOnly: true,
+            decoration: const InputDecoration(
+              labelText: 'Date From',
+              prefixIcon: Icon(Icons.date_range)
+            ),
+            onTap: () {
+              _selectDate2(_dateFromRef);
             },
-            items: list.map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
           ),
-        ),
-        const VSpaceBig(),
-        CustomTextField(
-          style: const TextStyle(fontSize: 16.0),
-        ),
-        const VSpaceBig(),
-      ]
+          const SizedBox(height: 10),
+          AppTextField(
+            controller: _dateToRef,
+            readOnly: true,
+            prefixIcon: Icons.date_range,
+            label: 'Date to',
+            onChanged: (_) {},
+            onTap: () {
+              _selectDate2(_dateToRef);
+            },
+          ),
+          const SizedBox(height: 10),
+          const TextField(
+            decoration: InputDecoration(
+              labelText: 'Macam Input',
+            ),
+            obscureText: true,
+            enableSuggestions: false,
+            autocorrect: false,
+          ),
+          const SizedBox(height: 10),
+          AppTextField(
+            controller: _chooseRef,
+            label: 'Choose hobby',
+            onChanged: (_) {},
+            onTap: () {
+              openPicker(context);
+            },
+            suffixIcon: Icons.arrow_drop_down,
+          ),
+          const SizedBox(height: 10),
+          const TextField(
+            decoration: InputDecoration(
+              alignLabelWithHint: true,
+              labelText: 'label',
+              prefixIcon: Icon(Icons.date_range),
+            ),
+            maxLines: 4,
+          ),
+          const VSpaceBig(),
+          SizedBox(
+            height: 50,
+            width: 200,
+            child: DropdownButton<String>(
+              value: dropdownValue,
+              icon: const Icon(Icons.arrow_downward),
+              elevation: 2,
+              style: const TextStyle(color: Colors.deepPurple),
+              onChanged: (value) {
+                setState(() {
+                  dropdownValue = value!;
+                });
+              },
+              items: list.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+          ),
+          const VSpaceBig(),
+          CustomTextField(
+            style: const TextStyle(fontSize: 16.0),
+          ),
+          const VSpaceBig(),
+        ]
+      ),
     );
   }
 }

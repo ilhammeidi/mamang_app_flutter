@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
-import 'package:flutter/scheduler.dart';
-
-var brightness = SchedulerBinding.instance.platformDispatcher.platformBrightness;
 
 class ThemeText {
   static const TextStyle title = TextStyle(
@@ -41,16 +38,22 @@ class ThemeTextColor {
   static TextStyle tertiary = TextStyle(
     color: ThemePalette.tertiaryMain
   );
-  static TextStyle tonalPrimary = TextStyle(
-    color: brightness == Brightness.dark
-      ? ThemePalette.primaryLight : ThemePalette.primaryDark,
-  );
-  static TextStyle tonalSecondary = TextStyle(
-    color: brightness == Brightness.dark
-      ? ThemePalette.secondaryLight : ThemePalette.secondaryDark,
-  );
-  static TextStyle tonalTertiary = TextStyle(
-    color: brightness == Brightness.dark
-      ? ThemePalette.tertiaryLight : ThemePalette.tertiaryDark,
-  );
+  static TextStyle tonalPrimary(BuildContext context) {
+    return TextStyle(
+      color: MediaQuery.platformBrightnessOf(context) == Brightness.dark ?
+        ThemePalette.primaryLight : ThemePalette.primaryDark,
+    );
+  }
+  static TextStyle tonalSecondary(BuildContext context) {
+    return TextStyle(
+      color: MediaQuery.platformBrightnessOf(context) == Brightness.dark ?
+        ThemePalette.secondaryLight : ThemePalette.secondaryDark,
+    );
+  }
+  static TextStyle tonalTertiary(BuildContext context) {
+    return TextStyle(
+      color: MediaQuery.platformBrightnessOf(context) == Brightness.dark ?
+        ThemePalette.tertiaryLight : ThemePalette.tertiaryDark,
+    );
+  }
 }
