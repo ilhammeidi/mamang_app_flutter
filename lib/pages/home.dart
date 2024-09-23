@@ -5,7 +5,9 @@ import 'package:mamang_app_flutter/ui/widgets/home/categories_grid.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/header.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/premium_slider.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/search.dart';
+import 'package:mamang_app_flutter/ui/widgets/news/news_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/promo_list_double.dart';
+import 'package:mamang_app_flutter/ui/widgets/user/user_grid.dart';
 
 class HomeMain extends StatefulWidget {
   const HomeMain({super.key});
@@ -53,21 +55,31 @@ class _HomeMainState extends State<HomeMain> {
         ),
         child: CustomScrollView(
           controller: _scrollref,
-          slivers: <Widget>[
-            const SliverToBoxAdapter(child: SearchHome()),
-            const SliverToBoxAdapter(child: VSpace()),
-            const CategoriesGrid(),
-            const SliverToBoxAdapter(child: VSpaceBig()),
-            const SliverToBoxAdapter(child: PremiumSlider()),
-            const SliverToBoxAdapter(child: VSpaceBig()),
-            const SliverToBoxAdapter(child: PromoListDouble()),
-            const SliverToBoxAdapter(child: VSpaceBig()),
-            const SliverToBoxAdapter(child: EventList()),
-            SliverToBoxAdapter(child: Container(
-              height: 700,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-              ),
+          slivers: const <Widget>[
+            // Search and Banner
+            SliverToBoxAdapter(child: SearchHome()),
+            SliverToBoxAdapter(child: VSpace()),
+            // Categories
+            CategoriesGrid(),
+            SliverToBoxAdapter(child: VSpaceBig()),
+            // Slider Carousel
+            SliverToBoxAdapter(child: PremiumSlider()),
+            SliverToBoxAdapter(child: VSpaceBig()),
+            // Promotions
+            SliverToBoxAdapter(child: PromoListDouble()),
+            SliverToBoxAdapter(child: VSpaceBig()),
+            // Events
+            SliverToBoxAdapter(child: EventList()),
+            // News
+            SliverToBoxAdapter(child: NewsList()),
+            SliverToBoxAdapter(child: VSpaceBig()),
+            // Active Users
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              sliver: UserGrid(),
+            ),
+            SliverToBoxAdapter(child: SizedBox(
+              height: 120,
             )),
           ],
         ),
