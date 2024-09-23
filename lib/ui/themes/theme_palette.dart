@@ -9,12 +9,12 @@ class ThemePalette {
 
   // Secondary
   static Color secondaryMain = Colors.lightBlueAccent;
-  static Color secondaryLight = Colors.lightBlue.shade100;
+  static Color secondaryLight = Colors.lightBlue.shade50;
   static Color secondaryDark = Colors.lightBlue.shade900;
 
   // Tertiary
   static Color tertiaryMain = Colors.redAccent;
-  static Color tertiaryLight = Colors.red.shade100;
+  static Color tertiaryLight = Colors.red.shade50;
   static Color tertiaryDark = Colors.red.shade900;
 
   // Base

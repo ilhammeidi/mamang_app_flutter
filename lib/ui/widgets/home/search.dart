@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_data.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
@@ -15,8 +15,7 @@ class SearchHome extends StatelessWidget {
     final bool isDark = Get.isDarkMode;
   
     return Container(
-      height: 320,
-      padding: const EdgeInsets.only(top: 100),
+      height: 220.h,
       decoration: BoxDecoration(
         gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
       ),
@@ -29,13 +28,14 @@ class SearchHome extends StatelessWidget {
             child: ClipPath(
               clipper: RoundedClipPath(),
               child: Container(
-                height: 100,
+                height: 80,
                 width: MediaQuery.of(context).size.width,
                 color: Theme.of(context).colorScheme.surface,
               ),
             )
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               const HomeBanner(),
               Padding(
@@ -97,8 +97,8 @@ class RoundedClipPath extends CustomClipper<Path> {
   
     final path = Path();
     
-    path.lineTo(0, h - 50);
-    path.quadraticBezierTo(w * 0.5, 0, w, h - 50);
+    path.lineTo(0, h - 20);
+    path.quadraticBezierTo(w * 0.5, 0, w, h - 20);
     path.lineTo(w, h);
     path.lineTo(0, h);
     path.close();

@@ -11,6 +11,7 @@ class GeneralLayout extends StatelessWidget {
       body: ConstrainedBox(
         constraints: const BoxConstraints(
           maxWidth: 600,
+          minHeight: 900
         ),
         child: SafeArea(child: content),
       )
