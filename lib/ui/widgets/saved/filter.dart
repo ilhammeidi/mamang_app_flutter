@@ -9,20 +9,24 @@ import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 class Filter extends StatefulWidget {
   const Filter({
     super.key,
-    this.sortby = 'date',
-    this.category = 'food',
+    required this.sortby,
+    required this.category,
+    required this.onSortBy,
+    required this.onChangeCategory,
   });
 
   final String sortby;
   final String category;
+  final Function(String) onSortBy;
+  final Function(String) onChangeCategory;
 
   @override
   State<Filter> createState() => _FilterState();
 }
 
 class _FilterState extends State<Filter> {
-  String sortbyTemp = 'date';
-  String categoryTemp = 'All';
+  String sortbyTemp = '';
+  String categoryTemp = '';
 
   List<ListItem> sortOptions = [
     ListItem(
@@ -48,6 +52,10 @@ class _FilterState extends State<Filter> {
   ];
 
   List<ListItem> categoryOptions = [
+    ListItem(
+      value: 'all',
+      label: 'All',
+    ),
     ListItem(
       value: 'food',
       label: 'Food',
@@ -91,9 +99,10 @@ class _FilterState extends State<Filter> {
       context: context,
       options: sortOptions,
       title: 'Sort By',
+      initialValue: sortbyTemp,
       onSelected: (value) {
         if (value != null) {
-          String result = sortOptions.firstWhere((e) => e.value == value).label;
+          String result = sortOptions.firstWhere((e) => e.value == value).value;
           setState(() {
             sortbyTemp = result;
           });
@@ -107,15 +116,24 @@ class _FilterState extends State<Filter> {
       context: context,
       options: categoryOptions,
       title: 'Choose Category',
+      initialValue: categoryTemp,
       onSelected: (value) {
         if (value != null) {
-          String result = categoryOptions.firstWhere((e) => e.value == value).label;
+          String result = categoryOptions.firstWhere((e) => e.value == value).value;
           setState(() {
             categoryTemp = result;
+            widget.onChangeCategory(result);
           });
         }
       }
     );
+  }
+
+  @override
+  void initState() {
+    sortbyTemp = widget.sortby;
+    categoryTemp = widget.category;
+    super.initState();
   }
 
   @override

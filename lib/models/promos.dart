@@ -77,7 +77,7 @@ final List<Promotion> promoList = [
     type: 'red',
     xp: 568,
     level: 23,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 3,
@@ -172,7 +172,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 814,
     level: 61,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 8,
@@ -210,7 +210,7 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 670,
     level: 3,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 10,
@@ -286,7 +286,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 786,
     level: 92,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 14,
@@ -324,7 +324,7 @@ final List<Promotion> promoList = [
     type: 'red',
     xp: 24,
     level: 70,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 16,
@@ -362,7 +362,7 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 538,
     level: 22,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 18,
@@ -400,7 +400,7 @@ final List<Promotion> promoList = [
     type: 'red',
     xp: 401,
     level: 46,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 20,
@@ -419,7 +419,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 866,
     level: 65,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 21,
@@ -495,7 +495,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 960,
     level: 79,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 25,
@@ -552,7 +552,7 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 105,
     level: 16,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 28,
@@ -723,7 +723,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 115,
     level: 13,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 37,
@@ -742,7 +742,7 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 958,
     level: 67,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 38,
@@ -780,7 +780,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 54,
     level: 83,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 40,
@@ -932,7 +932,7 @@ final List<Promotion> promoList = [
     type: 'red',
     xp: 577,
     level: 19,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 48,
@@ -951,7 +951,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 253,
     level: 42,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 49,
@@ -970,7 +970,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 458,
     level: 87,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 50,
@@ -1046,7 +1046,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 565,
     level: 9,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 54,
@@ -1141,7 +1141,7 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 895,
     level: 3,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 59,
@@ -1179,7 +1179,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 866,
     level: 22,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 61,
@@ -1198,7 +1198,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 777,
     level: 47,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 62,
@@ -1217,7 +1217,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 229,
     level: 47,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 63,
@@ -1255,7 +1255,7 @@ final List<Promotion> promoList = [
     type: 'red',
     xp: 702,
     level: 93,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 65,
@@ -1274,7 +1274,7 @@ final List<Promotion> promoList = [
     type: 'red',
     xp: 228,
     level: 92,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 66,
@@ -1293,7 +1293,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 342,
     level: 20,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 67,
@@ -1312,7 +1312,7 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 985,
     level: 44,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 68,
@@ -1407,7 +1407,7 @@ final List<Promotion> promoList = [
     type: 'red',
     xp: 769,
     level: 79,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 73,
@@ -1521,7 +1521,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 371,
     level: 61,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 79,
@@ -1578,7 +1578,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 869,
     level: 11,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 82,
@@ -1692,7 +1692,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 237,
     level: 84,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 88,
@@ -1806,7 +1806,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 601,
     level: 14,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 94,
@@ -1825,7 +1825,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 153,
     level: 78,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 95,
@@ -1882,7 +1882,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 195,
     level: 12,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 98,
@@ -1939,6 +1939,6 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 219,
     level: 92,
-    saved: true
+    saved: false
   )
 ];
