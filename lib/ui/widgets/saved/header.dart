@@ -52,7 +52,7 @@ class SavedHeader extends StatelessWidget {
       ]),
       actions: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
+          padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
           child: SizedBox(
             width: 100,
             height: 30,
