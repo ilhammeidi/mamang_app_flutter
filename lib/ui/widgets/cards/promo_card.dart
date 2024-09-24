@@ -53,7 +53,7 @@ class PromoCard extends StatelessWidget {
         Icon(Icons.location_on_outlined, size: 18, color: greyText),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 2),
-          child: Text(distance.toString(), style: ThemeText.paragraph.copyWith(color: greyText)),
+          child: Text('$distance M', style: ThemeText.paragraph.copyWith(color: greyText)),
         ),
         const SizedBox(width: 16),
         Icon(Icons.check_circle_outline, size: 18, color: greyText),

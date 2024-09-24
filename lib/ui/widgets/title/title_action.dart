@@ -11,7 +11,7 @@ class TitleAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+    return Row(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       Text(title, style: ThemeText.title2),
       FilledButton(
         onPressed: () => onTap,

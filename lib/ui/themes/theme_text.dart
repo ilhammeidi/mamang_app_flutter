@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 
-final bool isDark = Get.isDarkMode;
 
 class ThemeText {
   static const TextStyle title = TextStyle(
@@ -38,6 +37,8 @@ class ThemeText {
 }
 
 class ThemeTextColor {
+  static final bool _isDark = Get.isDarkMode;
+
   static TextStyle primary = TextStyle(
     color: ThemePalette.primaryMain
   );
@@ -49,17 +50,17 @@ class ThemeTextColor {
   );
   static TextStyle tonalPrimary(BuildContext context) {
     return TextStyle(
-      color: isDark ? ThemePalette.primaryLight : ThemePalette.primaryDark,
+      color: _isDark ? ThemePalette.primaryLight : ThemePalette.primaryDark,
     );
   }
   static TextStyle tonalSecondary(BuildContext context) {
     return TextStyle(
-      color: isDark ? ThemePalette.secondaryLight : ThemePalette.secondaryDark,
+      color: _isDark ? ThemePalette.secondaryLight : ThemePalette.secondaryDark,
     );
   }
   static TextStyle tonalTertiary(BuildContext context) {
     return TextStyle(
-      color: isDark ? ThemePalette.tertiaryLight : ThemePalette.tertiaryDark,
+      color: _isDark ? ThemePalette.tertiaryLight : ThemePalette.tertiaryDark,
     );
   }
 }

@@ -21,7 +21,7 @@ class UserGrid extends StatelessWidget {
           mainAxisExtent: 60
         ),
         delegate: SliverChildBuilderDelegate(
-          childCount: userList.length,
+          childCount: 10,
           (BuildContext context, int index) {
             final item = userList[index];
             return ProfileCard(

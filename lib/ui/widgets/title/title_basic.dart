@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 
 class TitleBasic extends StatelessWidget {

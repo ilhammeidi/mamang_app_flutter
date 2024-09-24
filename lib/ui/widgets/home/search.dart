@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
+import 'package:mamang_app_flutter/ui/widgets/decorations/rounded.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
@@ -42,6 +43,7 @@ class SearchHome extends StatelessWidget {
                 padding: EdgeInsets.all(spacingUnit(1)),
                 child: Row(
                   children: [
+                    /// QR CODE SCANNER
                     InkWell(
                       onTap: () {},
                       child: Container(
@@ -57,6 +59,7 @@ class SearchHome extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: spacingUnit(1)),
+                    // SEARCH BUTTON LIKED TEXTFILED 
                     Expanded(
                       child: InkWell(
                         onTap: () {
@@ -86,28 +89,5 @@ class SearchHome extends StatelessWidget {
         ]
       )
     );
-  }
-}
-
-class RoundedClipPath extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    double w = size.width;
-    double h = size.height;
-  
-    final path = Path();
-    
-    path.lineTo(0, h - 20);
-    path.quadraticBezierTo(w * 0.5, 0, w, h - 20);
-    path.lineTo(w, h);
-    path.lineTo(0, h);
-    path.close();
-  
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
   }
 }

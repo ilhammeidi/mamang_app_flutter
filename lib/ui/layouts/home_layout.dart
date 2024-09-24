@@ -27,7 +27,7 @@ class HomeLayout extends StatelessWidget {
             },
             backgroundColor: Theme.of(context).colorScheme.surface,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-            child: Icon(Icons.search, color: ThemePalette.primaryMain)
+            child: Icon(Icons.search, size: 32, color: ThemePalette.primaryMain)
           ),
         )),
       ),

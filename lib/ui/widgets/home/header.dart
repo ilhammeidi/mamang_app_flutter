@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/dummy_api.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_data.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
@@ -11,6 +12,7 @@ class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key, this.isFixed = false});
 
   final bool isFixed;
+  static final bool _isDark = Get.isDarkMode;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class HomeHeader extends StatelessWidget {
       automaticallyImplyLeading: false,
       flexibleSpace: Container(
         decoration: BoxDecoration(
-          gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
+          gradient: _isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
         ),
       ),
       titleSpacing: spacingUnit(1),

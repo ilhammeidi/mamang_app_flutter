@@ -66,7 +66,7 @@ class BottomNavMenu extends StatelessWidget {
                     title: 'Profile',
                     icon: Icons.person_outline,
                     iconActive: Icons.person,
-                    isActive: currentRoute == '/profile',
+                    isActive: currentRoute == '/dark-mode',
                     onTap: () => Get.toNamed('/profile')
                   ),
                 ]

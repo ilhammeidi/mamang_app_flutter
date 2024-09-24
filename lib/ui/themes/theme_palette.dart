@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ThemePalette {
   // Primary
   static Color primaryMain = Colors.tealAccent.shade700;
