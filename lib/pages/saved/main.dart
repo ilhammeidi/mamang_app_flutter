@@ -35,8 +35,7 @@ class _SavedMainState extends State<SavedMain> {
       ),
       body: Column(children: [
         TabMenu(onSelect: _handleSelect, current: _current),
-        // Expanded(child: _content[_current]),
-        const Expanded(child: Puzzles()),
+        Expanded(child: _content[_current]),
       ]),
     );
   }

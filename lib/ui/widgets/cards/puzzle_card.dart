@@ -97,8 +97,6 @@ class PuzzleCard extends StatelessWidget {
         crossAxisCount: 3,
         crossAxisSpacing: 1,
         mainAxisSpacing: 1,
-        childAspectRatio: 1,
-        shrinkWrap: true,
         children: List.generate(9, (index) {
           int item = index + 1;
           return Container(

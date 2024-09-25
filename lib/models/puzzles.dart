@@ -53,7 +53,7 @@ final List<Puzzle> puzzleList = [
     name: 'Flash Sales',
     liked: false,
     time: '1 Day',
-    thumb: ImgApi.photo[115],
+    thumb: ImgApi.photo[49],
     image: ImgApi.photo[22],
     progress: '4789'
   ),

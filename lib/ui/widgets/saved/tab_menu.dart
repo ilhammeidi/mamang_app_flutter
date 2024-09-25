@@ -30,14 +30,18 @@ class TabMenu extends StatelessWidget {
             child: ClipPath(
               clipper: RoundedClipPath(),
               child: Container(
-                height: 60,
+                height: 70,
                 width: MediaQuery.of(context).size.width,
                 color: Theme.of(context).colorScheme.surface,
               ),
             )
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: spacingUnit(1), vertical: spacingUnit(1)),
+            margin: EdgeInsets.only(
+              bottom: spacingUnit(1),
+              left: spacingUnit(1),
+              right: spacingUnit(1),
+            ),
             padding: const EdgeInsets.all(4),
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(

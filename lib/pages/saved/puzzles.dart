@@ -8,34 +8,33 @@ class Puzzles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      padding: EdgeInsets.only(
-        top: spacingUnit(2),
-        left: spacingUnit(2),
-        right: spacingUnit(2),
-        bottom: 100
+    return Padding(
+      padding: EdgeInsets.all(spacingUnit(1)),
+      child: GridView.builder(
+        shrinkWrap: true,
+        primary: true,
+        itemCount: puzzleList.length,
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          mainAxisExtent: 320,
+          mainAxisSpacing: 16,
+          crossAxisSpacing: 16,
+        ),
+        itemBuilder: (context, index) {
+          Puzzle item = puzzleList[index]; 
+          return Column(
+            children: [
+              PuzzleCard(
+                thumb: item.thumb,
+                name: item.name,
+                progress: item.progress,
+                time: item.time,
+                liked: item.liked
+              ),
+            ],
+          );
+        }
       ),
-      itemCount: puzzleList.length,
-      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 200,
-        mainAxisExtent: 320,
-        mainAxisSpacing: 16,
-        crossAxisSpacing: 16,
-      ),
-      itemBuilder: (context, index) {
-        Puzzle item = puzzleList[index]; 
-        return Column(
-          children: [
-            PuzzleCard(
-              thumb: item.thumb,
-              name: item.name,
-              progress: item.progress,
-              time: item.time,
-              liked: item.liked
-            ),
-          ],
-        );
-      }
     );
   }
 }
