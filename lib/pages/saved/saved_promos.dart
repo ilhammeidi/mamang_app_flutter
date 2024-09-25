@@ -4,8 +4,6 @@ import 'package:mamang_app_flutter/controllers/saved_promo_controller.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/promo_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/saved/filter.dart';
-import 'dart:convert';
-import 'dart:developer' as developer;
 
 class SavedPromos extends StatelessWidget {
   SavedPromos({super.key});
@@ -16,14 +14,15 @@ class SavedPromos extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<SavedPromoController>(
       builder: (controller) {
-        print(controller.savedPromo);
         return Column(children: [
           const VSpaceShort(),
           Filter(
             category: controller.category.value,
             sortby: controller.sortby.value,
             onChangeCategory: controller.filterByCategory,
-            onSortBy: (_) {},
+            onSortByDate: controller.sortDate,
+            onSortByDistance: controller.sortDistance,
+            onSelectDistance: controller.filterByDistance,
           ),
           const VSpaceShort(),
           Expanded(

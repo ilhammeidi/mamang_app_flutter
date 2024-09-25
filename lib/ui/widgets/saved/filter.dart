@@ -11,14 +11,18 @@ class Filter extends StatefulWidget {
     super.key,
     required this.sortby,
     required this.category,
-    required this.onSortBy,
+    required this.onSortByDate,
+    required this.onSortByDistance,
     required this.onChangeCategory,
+    required this.onSelectDistance,
   });
 
   final String sortby;
   final String category;
-  final Function(String) onSortBy;
+  final Function(String) onSortByDate;
+  final Function(String) onSortByDistance;
   final Function(String) onChangeCategory;
+  final Function(int) onSelectDistance;
 
   @override
   State<Filter> createState() => _FilterState();
@@ -28,27 +32,30 @@ class _FilterState extends State<Filter> {
   String sortbyTemp = '';
   String categoryTemp = '';
 
+  String _tagFilter = '';
+  
+
   List<ListItem> sortOptions = [
     ListItem(
       value: 'date_newest',
-      label: 'Date Newest',
+      label: 'Newest',
       text: 'Sort by the latest released'
     ),
     ListItem(
       value: 'date_oldest',
-      label: 'Date Oldest',
+      label: 'Oldest',
       text: 'Sort by the oldest released'
     ),
     ListItem(
-      value: 'distance_longest',
-      label: 'Distance Longest',
-      text: 'Sort by the longest distance'
+      value: 'distance_shortest',
+      label: 'Closest',
+      text: 'Sort by the shorter distance'
     ),
     ListItem(
-      value: 'distance_shortest',
-      label: 'Distance Shortest',
-      text: 'Sort by the shorter distance'
-    )
+      value: 'distance_longest',
+      label: 'Longest',
+      text: 'Sort by the longest distance'
+    ),
   ];
 
   List<ListItem> categoryOptions = [
@@ -105,6 +112,22 @@ class _FilterState extends State<Filter> {
           String result = sortOptions.firstWhere((e) => e.value == value).value;
           setState(() {
             sortbyTemp = result;
+            switch(result) {
+              case 'date_newest':
+                widget.onSortByDate('desc');
+                break;
+              case 'date_oldest':
+                widget.onSortByDate('asc');
+                break;
+              case 'distance_shortest':
+                widget.onSortByDistance('asc');
+                break;
+              case 'distance_longest':
+                widget.onSortByDistance('desc');
+                break;
+              default:
+                break;
+            }
           });
         }
       }
@@ -129,6 +152,20 @@ class _FilterState extends State<Filter> {
     );
   }
 
+  void filterByDistance(int distance) {
+    if(_tagFilter == distance.toString()) {
+      widget.onSelectDistance(-1);
+      setState(() {
+        _tagFilter = '';
+      });
+    } else {
+      widget.onSelectDistance(distance);
+      setState(() {
+        _tagFilter = distance.toString();
+      });
+    }
+  }
+
   @override
   void initState() {
     sortbyTemp = widget.sortby;
@@ -139,6 +176,7 @@ class _FilterState extends State<Filter> {
   @override
   Widget build(BuildContext context) {
     ButtonStyle buttonStyle = ThemeButton.btnSmall.merge(ThemeButton.tonalSecondary(context));
+    ButtonStyle selectedStyle = ThemeButton.btnSmall.merge(ThemeButton.secondary);
     
     return SizedBox(
       width: double.infinity,
@@ -146,20 +184,6 @@ class _FilterState extends State<Filter> {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-          SizedBox(width: spacingUnit(1)),
-          FilledButton(
-            onPressed: () {
-              openSortPicker(context);
-            },
-            style: buttonStyle,
-            child: Row(children: [
-              const Icon(Icons.swap_vert, size: 16),
-              const SizedBox(width: 2),
-              Text('Sort By ${sortbyTemp.toCapitalCase()}', style: ThemeText.caption),
-              const SizedBox(width: 2),
-              const Icon(Icons.arrow_drop_down, size: 16),
-            ])
-          ),
           SizedBox(width: spacingUnit(1)),
           FilledButton(
             onPressed: () {
@@ -176,6 +200,20 @@ class _FilterState extends State<Filter> {
           ),
           SizedBox(width: spacingUnit(1)),
           FilledButton(
+            onPressed: () {
+              openSortPicker(context);
+            },
+            style: buttonStyle,
+            child: Row(children: [
+              const Icon(Icons.swap_vert, size: 16),
+              const SizedBox(width: 2),
+              Text('Sort By ${sortbyTemp.toCapitalCase()}', style: ThemeText.caption),
+              const SizedBox(width: 2),
+              const Icon(Icons.arrow_drop_down, size: 16),
+            ])
+          ),
+          SizedBox(width: spacingUnit(1)),
+          FilledButton(
             onPressed: () {},
             style: buttonStyle,
             child: const Row(children: [
@@ -186,18 +224,22 @@ class _FilterState extends State<Filter> {
           ),
           SizedBox(width: spacingUnit(1)),
           FilledButton(
-            onPressed: () {},
-            style: buttonStyle,
+            onPressed: () {
+              filterByDistance(50);
+            },
+            style: _tagFilter == '50' ? selectedStyle : buttonStyle,
             child: const Row(children: [
-              Text('100M', style: ThemeText.caption),
+              Text('50M', style: ThemeText.caption),
             ])
           ),
           SizedBox(width: spacingUnit(1)),
           FilledButton(
-            onPressed: () {},
-            style: buttonStyle,
+            onPressed: () {
+              filterByDistance(20);
+            },
+            style: _tagFilter == '20' ? selectedStyle : buttonStyle,
             child: const Row(children: [
-              Text('50M', style: ThemeText.caption),
+              Text('20M', style: ThemeText.caption),
             ])
           ),
           SizedBox(width: spacingUnit(1)),

@@ -36,20 +36,32 @@ class SavedPromoController extends GetxController {
     update();
   }
 
-  void sortDate(value, order) {
-    if (order == 'asc') {
-      savedPromo.sort((a, b) => a.date.compareTo(b.date));
+  void filterByDistance(int selectedDistance) {
+    if (selectedDistance > -1) {
+      var result = savedPromo
+        .where((item) => item.distance <= selectedDistance)
+        .toList();
+      filteredList.value = result;
     } else {
-      savedPromo.sort((b, a) => a.date.compareTo(b.date));
+      filteredList.value = rawData;
     }
     update();
   }
 
-  void sortDistance(val, order) {
+  void sortDate(order) {
     if (order == 'asc') {
-      savedPromo.sort((a, b) => a.distance.compareTo(b.distance));
+      filteredList.sort((a, b) => a.date.compareTo(b.date));
     } else {
-      savedPromo.sort((b, a) => a.distance.compareTo(b.distance));
+      filteredList.sort((b, a) => a.date.compareTo(b.date));
+    }
+    update();
+  }
+
+  void sortDistance(order) {
+    if (order == 'asc') {
+      filteredList.sort((a, b) => a.distance.compareTo(b.distance));
+    } else {
+      filteredList.sort((b, a) => a.distance.compareTo(b.distance));
     }
     update();
   }
