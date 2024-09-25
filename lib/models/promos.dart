@@ -18,6 +18,7 @@ class Promotion {
   final double xp;
   final int level;
   final bool saved;
+  final bool? liked;
 
   Promotion({
     required this.id,
@@ -37,6 +38,7 @@ class Promotion {
     required this.type,
     required this.xp,
     required this.level,
+    this.liked,
   });
 }
 
@@ -153,7 +155,8 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 948,
     level: 74,
-    saved: false
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 7,
@@ -229,7 +232,8 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 673,
     level: 58,
-    saved: false
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 11,
@@ -286,7 +290,8 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 786,
     level: 92,
-    saved: false
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 14,
@@ -381,7 +386,8 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 728,
     level: 80,
-    saved: false
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 19,
@@ -419,7 +425,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 866,
     level: 65,
-    saved: false
+    saved: true
   ),
   Promotion(
     id: 21,
@@ -438,7 +444,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 221,
     level: 19,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 22,
@@ -457,7 +463,8 @@ final List<Promotion> promoList = [
     type: 'red',
     xp: 468,
     level: 24,
-    saved: false
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 23,
@@ -495,7 +502,8 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 960,
     level: 79,
-    saved: false
+    saved: false,
+    liked: true
   ),
   Promotion(
     id: 25,
@@ -742,7 +750,8 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 958,
     level: 67,
-    saved: false
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 38,

@@ -20,6 +20,7 @@ final List<GetPage> appRoutes = [
     name: '/saved',
     page: () => const HomeLayout(content: SavedMain()),
     transition: Transition.fadeIn,
+    
   ),
   GetPage(
     name: '/explore',

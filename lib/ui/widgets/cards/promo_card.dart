@@ -1,5 +1,6 @@
 import 'package:change_case/change_case.dart';
 import 'package:flutter/material.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 
@@ -10,7 +11,8 @@ class PromoCard extends StatelessWidget {
     required this.id,
     required this.title,
     required this.distance,
-    required this.xp
+    required this.xp,
+    this.liked = false,
   });
 
   final String thumb;
@@ -18,21 +20,37 @@ class PromoCard extends StatelessWidget {
   final String title;
   final double distance;
   final double xp;
+  final bool liked;
 
   @override
   Widget build(BuildContext context) {
     Color greyText = Theme.of(context).colorScheme.onSurfaceVariant;
 
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      ClipRRect(
-        borderRadius: ThemeRadius.small,
-        child: Image.network(
-          thumb,
-          width: double.infinity,
-          height: 120,
-          fit: BoxFit.cover,
-        ),
+      /// THUMBNAIL
+      Stack(
+        children: [
+          ClipRRect(
+            borderRadius: ThemeRadius.small,
+            child: Image.network(
+              thumb,
+              width: double.infinity,
+              height: 120,
+              fit: BoxFit.cover,
+            ),
+          ),
+          liked ? Positioned(
+            top: 8,
+            right: 8,
+            child: CircleAvatar(
+              radius: 12,
+              backgroundColor: Theme.of(context).colorScheme.surface,
+              child: Icon(Icons.favorite, size: 16, color: ThemePalette.tertiaryMain),
+            ),
+          ) : Container(),
+        ]
       ),
+      /// ID
       Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
         child: Text(
@@ -40,6 +58,7 @@ class PromoCard extends StatelessWidget {
           style: ThemeText.caption.copyWith(color: greyText)
         ),
       ),
+      /// TITLE NAME
       SizedBox(
         height: 60,
         child: Text(
@@ -49,6 +68,7 @@ class PromoCard extends StatelessWidget {
           maxLines: 2,
         )
       ),
+      /// PROPERTIES
       Row(children: [
         Icon(Icons.location_on_outlined, size: 18, color: greyText),
         Padding(

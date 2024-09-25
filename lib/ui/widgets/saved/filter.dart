@@ -184,6 +184,7 @@ class _FilterState extends State<Filter> {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
+          /// FILTER BY CATEGORY
           SizedBox(width: spacingUnit(1)),
           FilledButton(
             onPressed: () {
@@ -198,6 +199,7 @@ class _FilterState extends State<Filter> {
               const Icon(Icons.arrow_drop_down, size: 16),
             ])
           ),
+          /// SORT BY DATA AND DISTANCE
           SizedBox(width: spacingUnit(1)),
           FilledButton(
             onPressed: () {
@@ -212,6 +214,7 @@ class _FilterState extends State<Filter> {
               const Icon(Icons.arrow_drop_down, size: 16),
             ])
           ),
+          /// TAG FILTERS
           SizedBox(width: spacingUnit(1)),
           FilledButton(
             onPressed: () {},

@@ -15,6 +15,7 @@ class PromoLandscapeCard extends StatelessWidget {
     required this.distance,
     required this.date,
     required this.desc,
+    this.liked = false,
   });
 
   final String thumb;
@@ -23,6 +24,7 @@ class PromoLandscapeCard extends StatelessWidget {
   final double distance;
   final String date;
   final String desc;
+  final bool liked;
 
   @override
   Widget build(BuildContext context) {
@@ -32,15 +34,29 @@ class PromoLandscapeCard extends StatelessWidget {
       height: 150,
       child: PaperCard(content: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
         /// THUMBNAIL
-        ClipRRect(
-          borderRadius: ThemeRadius.small,
-          child: Image.network(
-            thumb,
-            width: 150,
-            height: 150,
-            fit: BoxFit.cover,
-          ),
+        Stack(
+          children: [
+            ClipRRect(
+              borderRadius: ThemeRadius.small,
+              child: Image.network(
+                thumb,
+                width: 150,
+                height: 150,
+                fit: BoxFit.cover,
+              ),
+            ),
+            liked ? Positioned(
+              top: 8,
+              left: 8,
+              child: CircleAvatar(
+                radius: 12,
+                backgroundColor: Theme.of(context).colorScheme.surface,
+                child: Icon(Icons.favorite, size: 16, color: ThemePalette.tertiaryMain),
+              ),
+            ) : Container(),
+          ],
         ),
+        /// CARD INFORMATION
         Expanded(
           child: Padding(padding: EdgeInsets.only(left: spacingUnit(2), right: 4),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [

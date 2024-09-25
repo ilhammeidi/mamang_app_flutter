@@ -24,6 +24,7 @@ class PromoList extends StatelessWidget {
             desc: promo.desc,
             id: promo.id.toString(),
             distance: promo.distance,
+            liked: promo.liked ?? false
           ),
         );
       }
