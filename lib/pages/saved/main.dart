@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/pages/saved/saved_likes.dart';
+import 'package:mamang_app_flutter/pages/saved/likes.dart';
+import 'package:mamang_app_flutter/pages/saved/puzzles.dart';
 import 'package:mamang_app_flutter/pages/saved/saved_promos.dart';
 import 'package:mamang_app_flutter/ui/widgets/saved/header.dart';
 import 'package:mamang_app_flutter/ui/widgets/saved/tab_menu.dart';
@@ -22,7 +23,7 @@ class _SavedMainState extends State<SavedMain> {
   final List<Widget> _content = [
     SavedPromos(),
     SavedLikes(),
-    const Center(child: Text('Puzzles'))
+    const Puzzles()
   ];
 
   @override
@@ -34,7 +35,8 @@ class _SavedMainState extends State<SavedMain> {
       ),
       body: Column(children: [
         TabMenu(onSelect: _handleSelect, current: _current),
-        Expanded(child: _content[_current]),
+        // Expanded(child: _content[_current]),
+        const Expanded(child: Puzzles()),
       ]),
     );
   }
