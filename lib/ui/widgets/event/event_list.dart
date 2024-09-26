@@ -6,24 +6,22 @@ import 'package:mamang_app_flutter/ui/widgets/title/title_action.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 
 class EventList extends StatelessWidget {
-  const EventList({super.key});
+  const EventList({super.key, required this.items, required this.title, this.desc});
+
+  final List items;
+  final String title;
+  final String? desc;
+
   @override
   Widget build(BuildContext context) {
-    const double cardHeight = 300;
-    final List<Event> latestEvent = [
-      eventList[1],
-      eventList[2],
-      eventList[3],
-      eventList[4],
-      eventList[5],
-      eventList[6],
-    ];
-  
+    const double cardHeight = 280;
+    
     return Column(children: [
       Padding(
         padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
         child: TitleAction(
-          title: 'Latest Event',
+          title: title,
+          desc: desc,
           textAction: 'See All',
           onTap: () {
             Get.toNamed('/explore');
@@ -35,9 +33,9 @@ class EventList extends StatelessWidget {
         height: cardHeight,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: latestEvent.length,
+          itemCount: items.length,
           itemBuilder: ((context, index) {
-            Event item = latestEvent[index];
+            Event item = items[index];
             return Padding(
               padding: EdgeInsets.only(left: index == 0 ? 4 : 0),
               child: Column(children: [

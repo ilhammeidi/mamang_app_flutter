@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
-import 'package:mamang_app_flutter/ui/widgets/event/event_list.dart';
+import 'package:mamang_app_flutter/ui/widgets/home/latest_event.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/categories_grid.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/header.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/premium_slider.dart';
@@ -69,7 +69,7 @@ class _HomeMainState extends State<HomeMain> {
             SliverToBoxAdapter(child: PromoListDouble()),
             SliverToBoxAdapter(child: VSpaceBig()),
             // Events
-            SliverToBoxAdapter(child: EventList()),
+            SliverToBoxAdapter(child: LatestEvent()),
             // News
             SliverToBoxAdapter(child: NewsList()),
             SliverToBoxAdapter(child: VSpaceBig()),

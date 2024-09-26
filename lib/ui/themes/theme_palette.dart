@@ -8,7 +8,7 @@ class ThemePalette {
 
   // Secondary
   static Color secondaryMain = Colors.lightBlueAccent;
-  static Color secondaryLight = Colors.lightBlue.shade100;
+  static Color secondaryLight = Colors.lightBlue.shade50;
   static Color secondaryDark = Colors.lightBlue.shade900;
 
   // Tertiary
@@ -26,7 +26,7 @@ class ThemePalette {
   static LinearGradient gradientMixedLight = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.topRight,
-    colors: <Color>[ThemePalette.secondaryLight, ThemePalette.primaryLight]
+    colors: <Color>[ThemePalette.secondaryMain.withOpacity(0.15), ThemePalette.primaryLight]
   );
 
   static LinearGradient gradientMixedMain = LinearGradient(

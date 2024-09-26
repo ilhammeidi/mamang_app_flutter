@@ -1,6 +1,6 @@
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
-import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
+import 'package:mamang_app_flutter/pages/explore/main.dart';
 import 'package:mamang_app_flutter/pages/home.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
 import 'package:mamang_app_flutter/pages/sample_button.dart';
