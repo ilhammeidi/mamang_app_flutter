@@ -6,12 +6,31 @@ import 'package:mamang_app_flutter/ui/widgets/promo/promo_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/search_filter/filter.dart';
 import 'package:mamang_app_flutter/ui/widgets/search_filter/search_input_btn.dart';
 
-class PromoMain extends StatelessWidget {
-  PromoMain({super.key});
+class PromoMain extends StatefulWidget {
+  const PromoMain({super.key});
 
+  @override
+  State<PromoMain> createState() => _PromoMainState();
+}
+
+class _PromoMainState extends State<PromoMain> {
   final controller = Get.put(AllPromoController());
 
-  // final String filter = Get.arguments['filter'] ?? '';
+  // final String? filter = Get.arguments['filter'];
+  
+  @override
+  void initState() {
+    //if (filter != '')  {
+      // print(filter);
+      // fetchPromoByFilter();
+    //}
+    super.initState();
+  }
+
+  // Future<void> fetchPromoByFilter() async {
+  //   controller.filterByCategory(filter);
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -40,7 +40,7 @@ final List<GetPage> appRoutes = [
   ),
   GetPage(
     name: '/all-promo',
-    page: () => GeneralLayout(content: PromoMain()),
+    page: () => const GeneralLayout(content: PromoMain()),
   ),
   GetPage(
     name: '/forms',
