@@ -39,7 +39,7 @@ final List<GetPage> appRoutes = [
     transition: Transition.fadeIn,
   ),
   GetPage(
-    name: '/all-promo/:filter',
+    name: '/all-promo',
     page: () => GeneralLayout(content: PromoMain()),
   ),
   GetPage(
