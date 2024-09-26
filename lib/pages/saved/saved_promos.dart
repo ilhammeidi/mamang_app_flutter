@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:mamang_app_flutter/controllers/saved_promo_controller.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/promo_list.dart';
-import 'package:mamang_app_flutter/ui/widgets/saved/filter.dart';
+import 'package:mamang_app_flutter/ui/widgets/search_filter/filter.dart';
 
 class SavedPromos extends StatelessWidget {
   SavedPromos({super.key});

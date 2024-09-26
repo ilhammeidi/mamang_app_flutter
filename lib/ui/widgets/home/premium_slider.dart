@@ -44,7 +44,7 @@ class _PremiumSliderState extends State<PremiumSlider> {
           title: 'Recomended for you',
           textAction: 'See All',
           onTap: () {
-            Get.toNamed('/explore');
+            Get.toNamed('/all-promo');
           }
         ),
       ),

@@ -3,11 +3,13 @@ import 'package:mamang_app_flutter/pages/business/business_main.dart';
 import 'package:mamang_app_flutter/pages/explore/main.dart';
 import 'package:mamang_app_flutter/pages/home.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
+import 'package:mamang_app_flutter/pages/promo/main.dart';
 import 'package:mamang_app_flutter/pages/sample_button.dart';
 import 'package:mamang_app_flutter/pages/sample_dark_light.dart';
 import 'package:mamang_app_flutter/pages/sample_forms.dart';
 import 'package:mamang_app_flutter/pages/sample_shadow.dart';
 import 'package:mamang_app_flutter/pages/saved/main.dart';
+import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
 import 'package:mamang_app_flutter/ui/layouts/home_layout.dart';
 
 final List<GetPage> appRoutes = [
@@ -20,7 +22,6 @@ final List<GetPage> appRoutes = [
     name: '/saved',
     page: () => const HomeLayout(content: SavedMain()),
     transition: Transition.fadeIn,
-    
   ),
   GetPage(
     name: '/explore',
@@ -38,19 +39,20 @@ final List<GetPage> appRoutes = [
     transition: Transition.fadeIn,
   ),
   GetPage(
+    name: '/all-promo/:filter',
+    page: () => GeneralLayout(content: PromoMain()),
+  ),
+  GetPage(
     name: '/forms',
-    page: () => const HomeLayout(content: SampleForm()),
-    transition: Transition.fadeIn,
+    page: () => const GeneralLayout(content: SampleForm()),
   ),
   GetPage(
     name: '/buttons',
-    page: () => const HomeLayout(content: SampleButton()),
-    transition: Transition.fadeIn,
+    page: () => const GeneralLayout(content: SampleButton()),
   ),
   GetPage(
     name: '/shadow',
-    page: () => const HomeLayout(content: SampleShadow()),
-    transition: Transition.fadeIn,
+    page: () => const GeneralLayout(content: SampleShadow()),
   ),
   GetPage(
     name: '/dark-mode',

@@ -32,7 +32,9 @@ class TitleAction extends StatelessWidget {
       ),
       SizedBox(width: spacingUnit(2)),
       FilledButton(
-        onPressed: () => onTap,
+        onPressed: () => {
+          onTap()
+        },
         style: ThemeButton.btnSmall.merge(ThemeButton.tonalSecondary(context)),
         child: Text(textAction, style: const TextStyle(fontWeight: FontWeight.bold))
       )

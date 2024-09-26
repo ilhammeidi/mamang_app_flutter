@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
 
@@ -12,11 +10,9 @@ class MiniMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDark = Get.isDarkMode;
     
     return Container(
       decoration: BoxDecoration(
-        // color: darken(ThemePalette.primaryLight, 0.6),
         gradient: ThemePalette.gradientMixedMain
       ),
       child: Stack(
@@ -59,9 +55,9 @@ class MiniMap extends StatelessWidget {
                     /// INFO
                     const SizedBox(height: 4),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      Icon(Icons.location_on, size: 22, color: ThemePalette.tertiaryMain),
+                      Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
                       const SizedBox(width: 4),
-                      const Text('Search Promo Around You')
+                      const Text('Tap to search promo around you...', style: TextStyle(fontWeight: FontWeight.w500))
                     ]),
                   ])
                 ),

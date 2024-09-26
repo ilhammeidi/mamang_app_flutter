@@ -17,55 +17,62 @@ class BannerExplore extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedLight
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          /// TEXT TITLE
-          Padding(
-            padding: EdgeInsets.only(
-              top: spacingUnit(2),
-              left: spacingUnit(3),
-              right: spacingUnit(3)
-            ),
-            child: const Column(children: [
-              Text('Looking for Promo?', style: ThemeText.title, textAlign: TextAlign.center,),
-              SizedBox(height: 8),
-              Text(
-                'This is the right place to find your favourite promotions, deals, and events!',
-                style: ThemeText.subtitle2,
-                textAlign: TextAlign.center,
-              ),
-            ])
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/bg_banner.png'),
+            fit: BoxFit.fill,
           ),
-          /// BANNER WITH ILLUSTRATION
-          Stack(alignment: Alignment.topCenter,
-            children: [
-              Positioned(
-                bottom: 0,
-                left: 0,
-                child: ClipPath(
-                  clipper: RoundedClipPathTop(),
-                  child: Container(
-                    height: 100,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      gradient: ThemePalette.gradientMixedMain
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            /// TEXT TITLE
+            Padding(
+              padding: EdgeInsets.only(
+                left: spacingUnit(3),
+                right: spacingUnit(3)
+              ),
+              child: const Column(children: [
+                Text('Looking for Promo?', style: ThemeText.title, textAlign: TextAlign.center,),
+                SizedBox(height: 8),
+                Text(
+                  'This is the right place to find your favourite promotions, deals, and events!',
+                  style: ThemeText.subtitle2,
+                  textAlign: TextAlign.center,
+                ),
+              ])
+            ),
+            /// BANNER WITH ILLUSTRATION
+            Stack(alignment: Alignment.topCenter,
+              children: [
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  child: ClipPath(
+                    clipper: RoundedClipPathTop(),
+                    child: Container(
+                      height: 100,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        gradient: ThemePalette.gradientMixedMain
+                      ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 150,
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset('assets/images/explore.png',),
+                SizedBox(
+                  height: 150,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset('assets/images/explore.png',),
+                  ),
                 ),
-              ),
-            ],
-          )
-        ],
+              ],
+            )
+          ],
+        ),
       )
     );
   }

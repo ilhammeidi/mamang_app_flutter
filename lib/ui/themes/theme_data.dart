@@ -32,7 +32,7 @@ ThemeData lightColorScheme = ThemeData(
     error: Colors.red,
     onError: Colors.white,
     brightness: Brightness.light,
-    outline: Colors.grey[300],
+    outline: Colors.grey[400],
   ),
 );
 

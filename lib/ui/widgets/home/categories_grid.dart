@@ -32,7 +32,7 @@ class CategoriesGrid extends StatelessWidget {
           final item = categories[index];
           return InkWell(
             onTap: () {},
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(60),
             child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
               Stack(
                 alignment: Alignment.center,

@@ -51,8 +51,8 @@ class SearchExplore extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: spacingUnit(3), vertical: spacingUnit(2)),
               padding: EdgeInsets.all(spacingUnit(1)),
               decoration: BoxDecoration(
-                boxShadow: [ThemeShade.shadeSoft(context)],
-                color: Theme.of(context).colorScheme.surface,
+                boxShadow: gradientOpacity > 0 ? null : [ThemeShade.shadeSoft(context)],
+                color: gradientOpacity > 0 ? Theme.of(context).colorScheme.surfaceContainerLowest : Theme.of(context).colorScheme.surface,
                 borderRadius: ThemeRadius.small
               ),
               child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [

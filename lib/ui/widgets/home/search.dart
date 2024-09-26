@@ -7,6 +7,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/banner.dart';
+import 'package:mamang_app_flutter/ui/widgets/search_filter/search_input_btn.dart';
 
 class SearchHome extends StatelessWidget {
   const SearchHome({super.key});
@@ -62,26 +63,12 @@ class SearchHome extends StatelessWidget {
                     ),
                     SizedBox(width: spacingUnit(1)),
                     // SEARCH BUTTON LIKED TEXTFILED 
-                    Expanded(
-                      child: InkWell(
-                        onTap: () {
-                          Get.toNamed('/explore');
-                        },
-                        child: Container(
-                          height: 50,
-                          padding: EdgeInsets.all(spacingUnit(1)),
-                          decoration: BoxDecoration(
-                            boxShadow: [ThemeShade.shadeSoft(context)],
-                            color: Theme.of(context).colorScheme.surface,
-                            borderRadius: ThemeRadius.small
-                          ),
-                          child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                            const Icon(Icons.search),
-                            SizedBox(width: spacingUnit(1)),
-                            const Text('Search Promos and Events')
-                          ])
-                        ),
-                      ),
+                    const Expanded(
+                      child: SearchInputBtn(
+                        location: '/search-basic',
+                        title: 'Search Promo or Event',
+                        shadow: true
+                      )
                     ),
                   ],
                 ),
