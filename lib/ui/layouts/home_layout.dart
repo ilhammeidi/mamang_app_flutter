@@ -10,6 +10,8 @@ class HomeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String currentRoute = Get.currentRoute;
+  
     return Center(
       child: ConstrainedBox(
         constraints: const BoxConstraints(
@@ -25,9 +27,9 @@ class HomeLayout extends StatelessWidget {
             onPressed: () {
               Get.toNamed('/explore');
             },
-            backgroundColor: Theme.of(context).colorScheme.surface,
+            backgroundColor: currentRoute == '/explore' ? ThemePalette.primaryMain : Theme.of(context).colorScheme.surface,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-            child: Icon(Icons.search, size: 32, color: ThemePalette.primaryMain)
+            child: Icon(Icons.search, size: 32, color: currentRoute == '/explore' ? Colors.white : ThemePalette.primaryMain  )
           ),
         )),
       ),

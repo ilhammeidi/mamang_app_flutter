@@ -5,7 +5,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
-import 'package:mamang_app_flutter/ui/widgets/decorations/rounded.dart';
+import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
 
 class TabMenu extends StatelessWidget {
   const TabMenu({super.key, required this.onSelect, required this.current});
@@ -28,7 +28,7 @@ class TabMenu extends StatelessWidget {
             bottom: 0,
             left: 0,
             child: ClipPath(
-              clipper: RoundedClipPath(),
+              clipper: RoundedClipPathTop(),
               child: Container(
                 height: 70,
                 width: MediaQuery.of(context).size.width,

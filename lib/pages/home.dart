@@ -7,7 +7,7 @@ import 'package:mamang_app_flutter/ui/widgets/home/premium_slider.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/search.dart';
 import 'package:mamang_app_flutter/ui/widgets/news/news_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/promo_list_double.dart';
-import 'package:mamang_app_flutter/ui/widgets/user/user_grid.dart';
+import 'package:mamang_app_flutter/ui/widgets/home/user_grid.dart';
 
 class HomeMain extends StatefulWidget {
   const HomeMain({super.key});

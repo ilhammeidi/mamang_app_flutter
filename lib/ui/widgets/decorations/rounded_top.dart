@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class RoundedClipPath extends CustomClipper<Path> {
+class RoundedClipPathTop extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     double w = size.width;

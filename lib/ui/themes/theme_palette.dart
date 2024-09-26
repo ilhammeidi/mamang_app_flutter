@@ -8,7 +8,7 @@ class ThemePalette {
 
   // Secondary
   static Color secondaryMain = Colors.lightBlueAccent;
-  static Color secondaryLight = Colors.lightBlue.shade50;
+  static Color secondaryLight = Colors.lightBlue.shade100;
   static Color secondaryDark = Colors.lightBlue.shade900;
 
   // Tertiary
@@ -22,7 +22,13 @@ class ThemePalette {
   static Color defaultLight = Colors.grey.shade200;
   static Color defaultDark = Colors.grey.shade800;
 
-  // Gradient
+  // Gradient Mixed
+  static LinearGradient gradientMixedLight = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.topRight,
+    colors: <Color>[ThemePalette.secondaryLight, ThemePalette.primaryLight]
+  );
+
   static LinearGradient gradientMixedMain = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.topRight,
@@ -33,6 +39,32 @@ class ThemePalette {
     begin: Alignment.topLeft,
     end: Alignment.topRight,
     colors: <Color>[ThemePalette.secondaryDark, ThemePalette.primaryDark]
+  );
+
+  // Gradient Primary
+  static LinearGradient gradientPrimaryLight = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.topRight,
+    colors: <Color>[ThemePalette.primaryLight, ThemePalette.primaryMain]
+  );
+
+  static LinearGradient gradientPrimaryDark = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.topRight,
+    colors: <Color>[ThemePalette.primaryMain, ThemePalette.primaryDark]
+  );
+
+   // Gradient Secondary
+  static LinearGradient gradientSecondaryLight = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.topRight,
+    colors: <Color>[ThemePalette.secondaryLight, ThemePalette.secondaryMain]
+  );
+
+  static LinearGradient gradientSecondaryDark = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.topRight,
+    colors: <Color>[ThemePalette.secondaryMain, ThemePalette.secondaryDark]
   );
 }
 
