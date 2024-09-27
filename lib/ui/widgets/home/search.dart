@@ -15,16 +15,17 @@ class SearchHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isDark = Get.isDarkMode;
-  
+    final bool isTablet = MediaQuery.of(context).size.width >= 480;
+
     return Container(
-      height: 220.h,
+      height: isTablet ? 350.h : 220.h,
       decoration: BoxDecoration(
         gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
       ),
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          /// Decoration
+          /// DECORATION
           Positioned(
             bottom: 0,
             left: 0,
@@ -40,7 +41,7 @@ class SearchHome extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              /// Home Banner
+              /// HOME BANNER
               const HomeBanner(),
               Padding(
                 padding: EdgeInsets.all(spacingUnit(1)),

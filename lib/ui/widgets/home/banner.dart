@@ -10,6 +10,7 @@ class HomeBanner extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
       child: Row(children: [
+        /// TEXT
         Expanded(
           flex: 3,
           child: RichText(
@@ -29,6 +30,7 @@ class HomeBanner extends StatelessWidget {
             ])
           )
         ),
+        /// ILLUSTRATION
         Expanded(
           flex: 2,
           child: Image.asset('assets/images/search.png', width: 200,)

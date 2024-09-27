@@ -4,14 +4,15 @@ import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/promo_landscape_card.dart';
 
 class PromoList extends StatelessWidget {
-  const PromoList({super.key, required this.items});
+  const PromoList({super.key, required this.items, this.isHome = false});
 
   final List<Promotion> items;
+  final bool isHome;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: EdgeInsets.only(left: spacingUnit(1), right: spacingUnit(1), bottom: 100),
+      padding: EdgeInsets.only(left: spacingUnit(1), right: spacingUnit(1), bottom: isHome ? 100 : spacingUnit(1)),
       itemCount: items.length,
       itemBuilder: (BuildContext context, int index) {
         Promotion promo = items[index];

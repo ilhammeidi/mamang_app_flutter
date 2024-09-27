@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mamang_app_flutter/models/category.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 
@@ -8,17 +9,6 @@ class CategoriesGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Category> categories = [
-      Category(name: 'Culinaries', icon: Icons.restaurant, color: Colors.red),
-      Category(name: 'Services', icon: Icons.manage_accounts, color: Colors.teal),
-      Category(name: 'Automotives', icon: Icons.directions_car, color: Colors.indigo),
-      Category(name: 'Properties', icon: Icons.home, color: Colors.purple),
-      Category(name: 'Educations', icon: Icons.school, color: Colors.cyan),
-      Category(name: 'Sports', icon: Icons.sports_basketball, color: Colors.green),
-      Category(name: 'Holidays', icon: Icons.surfing, color: Colors.lightBlue),
-      Category(name: 'Souvenirs', icon: Icons.shopping_basket, color: Colors.brown),
-    ];
-
     return SliverGrid(
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 100,
@@ -27,11 +17,13 @@ class CategoriesGrid extends StatelessWidget {
         crossAxisSpacing: 8
       ),
       delegate: SliverChildBuilderDelegate(
-        childCount: categories.length,
+        childCount: categoryList.length,
         (BuildContext context, int index) {
-          final item = categories[index];
+          final item = categoryList[index];
           return InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.toNamed('/all-promo', arguments: item.id);
+            },
             borderRadius: BorderRadius.circular(60),
             child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
               Stack(

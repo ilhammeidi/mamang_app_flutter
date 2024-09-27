@@ -26,7 +26,7 @@ class SavedPromos extends StatelessWidget {
           ),
           const VSpaceShort(),
           Expanded(
-            child: PromoList(items: controller.filteredList),
+            child: PromoList(items: controller.filteredList, isHome: true),
           )
         ]);
       },

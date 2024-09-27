@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:mamang_app_flutter/models/promos.dart';
 
 class AllPromoController extends GetxController {
-  final rawData = promoList.sublist(5, 25);
+  final rawData = promoList;
 
   var allData = <Promotion>[].obs;
   var filteredList = <Promotion>[].obs;
@@ -28,7 +28,6 @@ class AllPromoController extends GetxController {
       var result = allData
         .where((item) => item.category.contains(selectedCategory))
         .toList();
-      
       filteredList.value = result;
     } else {
       filteredList.value = rawData;

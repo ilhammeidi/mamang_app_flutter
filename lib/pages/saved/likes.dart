@@ -14,7 +14,7 @@ class SavedLikes extends StatelessWidget {
     return Column(children: [
       const VSpaceShort(),
       Expanded(
-        child: PromoList(items: controller.likedPromo),
+        child: PromoList(items: controller.likedPromo, isHome: true,),
       )
     ]);
   }

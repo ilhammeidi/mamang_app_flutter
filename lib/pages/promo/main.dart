@@ -16,20 +16,19 @@ class PromoMain extends StatefulWidget {
 class _PromoMainState extends State<PromoMain> {
   final controller = Get.put(AllPromoController());
 
-  // final String? filter = Get.arguments['filter'];
+  final String filter = Get.arguments ?? '';
   
   @override
   void initState() {
-    //if (filter != '')  {
-      // print(filter);
-      // fetchPromoByFilter();
-    //}
+    if (filter != '')  {
+      fetchPromoByFilter(filter.toString());
+    }
     super.initState();
   }
 
-  // Future<void> fetchPromoByFilter() async {
-  //   controller.filterByCategory(filter);
-  // }
+  Future<void> fetchPromoByFilter(val) async {
+    controller.filterByCategory(val);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +49,15 @@ class _PromoMainState extends State<PromoMain> {
         title: const SearchInputBtn(
           location: '/search-basic',
           title: 'Search Promo',
-        )
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.toNamed('/');
+            },
+            icon: const Icon(Icons.home_outlined, size: 40)
+          ),
+        ],
       ),
       body: GetBuilder<AllPromoController>(
         builder: (controller) {
