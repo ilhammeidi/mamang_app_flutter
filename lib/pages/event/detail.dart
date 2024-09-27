@@ -60,7 +60,7 @@ class _EventDetailState extends State<EventDetail> {
   
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 80,
+        toolbarHeight: 60,
         forceMaterialTransparency: true,
         backgroundColor: Theme.of(context).colorScheme.surface,
         leadingWidth: 40,

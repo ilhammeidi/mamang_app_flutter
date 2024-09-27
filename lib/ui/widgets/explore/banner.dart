@@ -13,7 +13,7 @@ class BannerExplore extends StatelessWidget {
     final bool isDark = Get.isDarkMode;
 
     return Container(
-      height: 300,
+      height: 360,
       decoration: BoxDecoration(
         gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedLight
       ),
@@ -32,7 +32,8 @@ class BannerExplore extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(
                 left: spacingUnit(3),
-                right: spacingUnit(3)
+                right: spacingUnit(3),
+                bottom: spacingUnit(5),
               ),
               child: const Column(children: [
                 Text('Looking for Promo?', style: ThemeText.title, textAlign: TextAlign.center,),

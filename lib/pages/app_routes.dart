@@ -1,16 +1,16 @@
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
 import 'package:mamang_app_flutter/pages/event/detail.dart';
-import 'package:mamang_app_flutter/pages/event/main.dart';
-import 'package:mamang_app_flutter/pages/explore/main.dart';
+import 'package:mamang_app_flutter/pages/event/event_main.dart';
+import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
 import 'package:mamang_app_flutter/pages/home.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
-import 'package:mamang_app_flutter/pages/promo/main.dart';
+import 'package:mamang_app_flutter/pages/promo/promo_main.dart';
 import 'package:mamang_app_flutter/pages/sample_button.dart';
 import 'package:mamang_app_flutter/pages/sample_dark_light.dart';
 import 'package:mamang_app_flutter/pages/sample_forms.dart';
 import 'package:mamang_app_flutter/pages/sample_shadow.dart';
-import 'package:mamang_app_flutter/pages/saved/main.dart';
+import 'package:mamang_app_flutter/pages/saved/saved_main.dart';
 import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
 import 'package:mamang_app_flutter/ui/layouts/home_layout.dart';
 
