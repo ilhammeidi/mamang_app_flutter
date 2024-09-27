@@ -29,7 +29,7 @@ class PromoListSingle extends StatelessWidget {
           textAction: 'See All',
           desc: desc,
           onTap: () {
-            Get.toNamed('/all-promo', arguments: 'holiday');
+            Get.toNamed('/promos', arguments: 'holiday');
           }
         ),
       ),

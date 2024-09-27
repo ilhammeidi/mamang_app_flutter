@@ -22,7 +22,7 @@ class CategoriesGrid extends StatelessWidget {
           final item = categoryList[index];
           return InkWell(
             onTap: () {
-              Get.toNamed('/all-promo', arguments: item.id);
+              Get.toNamed('/promos', arguments: item.id);
             },
             borderRadius: BorderRadius.circular(60),
             child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [

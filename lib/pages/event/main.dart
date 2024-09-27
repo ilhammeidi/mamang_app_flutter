@@ -20,6 +20,7 @@ class _EventMainState extends State<EventMain> {
       _showSearch = !_showSearch;
     });
   }
+  
 
   @override
   Widget build(BuildContext context) {

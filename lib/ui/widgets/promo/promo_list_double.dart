@@ -36,7 +36,7 @@ class PromoListDouble extends StatelessWidget {
           title: 'Latest Promo',
           textAction: 'See All',
           onTap: () {
-            Get.toNamed('/all-promo', arguments: 'food');
+            Get.toNamed('/promos', arguments: 'food');
           }
         ),
       ),

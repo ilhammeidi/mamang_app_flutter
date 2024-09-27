@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mamang_app_flutter/models/events.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/event_card.dart';
@@ -24,6 +25,9 @@ class EventList extends StatelessWidget {
             liked: item.liked,
             point: item.point,
             time: item.date,
+            onTap: () {
+              Get.toNamed('/events/${item.id}');
+            },
           ),
         );
       },

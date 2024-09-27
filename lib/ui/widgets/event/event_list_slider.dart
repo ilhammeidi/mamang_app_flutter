@@ -24,7 +24,7 @@ class EventListSlider extends StatelessWidget {
           desc: desc,
           textAction: 'See All',
           onTap: () {
-            Get.toNamed('/all-event');
+            Get.toNamed('/events');
           }
         ),
       ),

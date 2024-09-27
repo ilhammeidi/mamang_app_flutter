@@ -16,7 +16,7 @@ class SearchInputBtn extends StatelessWidget {
   final String location;
   final String title;
   final bool shadow;
-  final Function? onCancel;
+  final Function()? onCancel;
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +41,7 @@ class SearchInputBtn extends StatelessWidget {
           SizedBox(width: spacingUnit(1)),
           Expanded(child: Text(title, style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant))),
           onCancel != null ? InkWell(
-            onTap: () {
-              onCancel!();
-            },
+            onTap: onCancel,
             child: const Icon(Icons.close_outlined)
           ) : Container(),
         ])

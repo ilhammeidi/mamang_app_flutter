@@ -1,11 +1,11 @@
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
+import 'package:mamang_app_flutter/pages/event/detail.dart';
 import 'package:mamang_app_flutter/pages/event/main.dart';
 import 'package:mamang_app_flutter/pages/explore/main.dart';
 import 'package:mamang_app_flutter/pages/home.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
 import 'package:mamang_app_flutter/pages/promo/main.dart';
-import 'package:mamang_app_flutter/pages/event/main.dart';
 import 'package:mamang_app_flutter/pages/sample_button.dart';
 import 'package:mamang_app_flutter/pages/sample_dark_light.dart';
 import 'package:mamang_app_flutter/pages/sample_forms.dart';
@@ -41,12 +41,16 @@ final List<GetPage> appRoutes = [
     transition: Transition.fadeIn,
   ),
   GetPage(
-    name: '/all-promo',
+    name: '/promos',
     page: () => const GeneralLayout(content: PromoMain()),
   ),
   GetPage(
-    name: '/all-event',
+    name: '/events',
     page: () => const GeneralLayout(content: EventMain()),
+  ),
+  GetPage(
+    name: '/events/:id',
+    page: () => const GeneralLayout(content: EventDetail()),
   ),
   GetPage(
     name: '/forms',
