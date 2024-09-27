@@ -33,6 +33,7 @@ class EventController extends GetxController {
       eventValue.date = result[0].date;
       eventValue.liked = result[0].liked;
       eventValue.point = result[0].point;
+      eventValue.category = result[0].category;
     });
   }
 }

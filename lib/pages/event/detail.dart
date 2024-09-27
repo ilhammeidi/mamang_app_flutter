@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mamang_app_flutter/controllers/all_promo_controller.dart';
 import 'package:mamang_app_flutter/controllers/event_controller.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
@@ -7,6 +8,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/event/event_desc.dart';
+import 'package:mamang_app_flutter/ui/widgets/promo/promo_list.dart';
 
 class EventDetail extends StatefulWidget {
   const EventDetail({
@@ -19,7 +21,11 @@ class EventDetail extends StatefulWidget {
 
 class _EventDetailState extends State<EventDetail> {
   final controller = Get.put(EventController());
+  final ScrollController _scrollref = ScrollController();
+
   String id = Get.parameters['id'] ?? '';
+
+  bool _isFixed = false;
 
   @override
   void initState() {
@@ -35,13 +41,23 @@ class _EventDetailState extends State<EventDetail> {
 
   @override
   void dispose() {
+    _scrollref.dispose();
     controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-
+    _scrollref.addListener(() {
+      setState(() {
+        if(_scrollref.offset > 100) {
+          _isFixed = true;
+        } else {
+          _isFixed = false;
+        }
+      });
+    });
+  
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
@@ -59,7 +75,15 @@ class _EventDetailState extends State<EventDetail> {
         ),
         centerTitle: false,
         /// TITLE
-        title: Obx(() => Text(controller.selectedEvent.value.title, overflow: TextOverflow.ellipsis,)),
+        title: Obx(() => AnimatedDefaultTextStyle(
+          duration: const Duration(milliseconds: 300),
+          style: TextStyle(color: Theme.of(context).colorScheme.onSurface.withOpacity(_isFixed ? 1 : 0)),
+          child: Text(
+            controller.selectedEvent.value.title,
+            overflow: TextOverflow.ellipsis,
+            style: ThemeText.subtitle2,
+          ),
+        )),
         actions: [
           // POINT
           Container(
@@ -91,23 +115,85 @@ class _EventDetailState extends State<EventDetail> {
           ),
         ],
       ),
-      body: ListView(children: [
-        GetBuilder<EventController>(
+      body: GetBuilder<EventController>(
+        builder: (controller) {
+          return ListView(
+            controller: _scrollref,
+            children: [
+              /// EVENT BANNER HERO AND DESCRIPTON
+              EventDesc(
+                title: controller.selectedEvent.value.title,
+                desc: controller.selectedEvent.value.desc,
+                thumb: controller.selectedEvent.value.thumb,
+                clue1: controller.selectedEvent.value.clue1,
+                clue2: controller.selectedEvent.value.clue2,
+                clue3: controller.selectedEvent.value.clue3,
+                date: controller.selectedEvent.value.date,
+                point: controller.selectedEvent.value.point,
+                liked: controller.selectedEvent.value.liked
+              ),
+              /// PROMO LIST OF THIS EVENT
+              const LineSpace(),
+              PromoWithEvent(filter: controller.selectedEvent.value.category)
+            ]
+          );
+        }
+      ),
+    );
+  }
+}
+
+class PromoWithEvent extends StatefulWidget {
+  const PromoWithEvent({super.key, required this.filter});
+
+  final String filter;
+
+  @override
+  State<PromoWithEvent> createState() => _PromoWithEventState();
+}
+
+class _PromoWithEventState extends State<PromoWithEvent> {
+  final controller = Get.put(AllPromoController());
+
+  @override
+  void initState() {
+    if (widget.filter != '')  {
+      fetchPromoByFilter(widget.filter);
+    }
+    super.initState();
+  }
+
+  Future<void> fetchPromoByFilter(val) async {
+    controller.filterByCategory(val);
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const VSpace(),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
+          child: Text(
+            'Explore the best ${controller.filteredList.length} ${widget.filter} promo!',
+            textAlign: TextAlign.start,
+            style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)
+          ),
+        ),
+        const VSpace(),
+        GetBuilder<AllPromoController>(
           builder: (controller) {
-            return EventDesc(
-              title: controller.selectedEvent.value.title,
-              desc: controller.selectedEvent.value.desc,
-              thumb: controller.selectedEvent.value.thumb,
-              clue1: controller.selectedEvent.value.clue1,
-              clue2: controller.selectedEvent.value.clue2,
-              clue3: controller.selectedEvent.value.clue3,
-              date: controller.selectedEvent.value.date,
-              point: controller.selectedEvent.value.point,
-              liked: controller.selectedEvent.value.liked
-            );
-          }
-        )
-      ])
+            return PromoList(items: controller.filteredList);
+          },
+        ),
+      ],
     );
   }
 }

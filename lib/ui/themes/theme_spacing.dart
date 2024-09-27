@@ -30,3 +30,21 @@ class VSpaceBig extends StatelessWidget {
     return SizedBox(height: spacingUnit(6));
   }
 }
+
+class LineSpace extends StatelessWidget {
+  const LineSpace({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: spacingUnit(3)),
+      child: Divider(
+        color: Theme.of(context).colorScheme.outline.withOpacity(0.25),
+        thickness: 8,
+        indent: 0,
+        endIndent: 0,
+        height: 8,
+      ),
+    );
+  }
+}

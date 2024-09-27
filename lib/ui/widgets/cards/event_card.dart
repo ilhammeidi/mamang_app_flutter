@@ -29,13 +29,15 @@ class EventCard extends StatelessWidget {
       onTap: onTap,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Stack(alignment: Alignment.topRight, children: [
-          ClipRRect(
-            borderRadius: ThemeRadius.small,
-            child: Image.network(
-              thumb,
+          Hero(
+            tag: thumb,
+            child: Container(
               width: double.infinity,
               height: 150,
-              fit: BoxFit.cover
+              decoration: BoxDecoration(
+                borderRadius: ThemeRadius.small,
+                image: DecorationImage(image: NetworkImage(thumb), fit: BoxFit.cover)
+              )
             )
           ),
           liked ? Positioned(

@@ -36,12 +36,18 @@ class EventDesc extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: spacingUnit(2)),
           child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
             /// EVENT TITLE
-            Expanded(child: Text(title, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold))),
+            Expanded(child: Text(
+              title,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold))
+            ),
             SizedBox(width: spacingUnit(1)),
             /// TIME REMAINING
             Container(
               width: 120,
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              padding: EdgeInsets.all(spacingUnit(1)),
+              margin: EdgeInsets.only(bottom: spacingUnit(1)),
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.secondaryContainer,
                 borderRadius: ThemeRadius.medium
@@ -75,7 +81,7 @@ class EventDesc extends StatelessWidget {
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(desc, style: ThemeText.subtitle2),
             SizedBox(height: spacingUnit(1)),
-            Text('Clue', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+            Text('Challenge Clue:', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
             SizedBox(height: spacingUnit(1)),
             Text('- Location: $clue1', style: ThemeText.paragraph),
             SizedBox(height: spacingUnit(1)),

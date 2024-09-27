@@ -21,7 +21,6 @@ class _EventMainState extends State<EventMain> {
     });
   }
   
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

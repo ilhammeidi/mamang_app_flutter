@@ -9,6 +9,7 @@ class Event {
   String clue2;
   String clue3;
   String date;
+  String category;
   int point;
   bool liked;
 
@@ -21,6 +22,7 @@ class Event {
     this.clue2 = '',
     this.clue3 = '',
     this.date = '', 
+    this.category = '',
     this.point = 0,
     this.liked = false
   });
@@ -36,6 +38,7 @@ final List<Event> eventList = [
     clue2: 'Not valid for birthday parties, group events or online ordering.',
     clue3: 'One large 1-topping pizza',
     date: '12 May 2024',
+    category: 'food',
     point: 200,
     liked: false
   ),
@@ -48,6 +51,7 @@ final List<Event> eventList = [
     clue2: 'Each voucher good for one lane',
     clue3: 'Gather friends or take a date to this upscale bowling alley',
     date: '11 Dec 2024',
+    category: 'services',
     point: 50,
     liked: true
   ),
@@ -60,6 +64,7 @@ final List<Event> eventList = [
     clue2: 'All Groupon reviews are from people',
     clue3: 'No booking required. Present Groupon on arrival.',
     date: '22 Nov 2024',
+    category: 'automotive',
     point: 200,
     liked: true
   ),
@@ -72,6 +77,7 @@ final List<Event> eventList = [
     clue2: 'Not valid for birthday parties, group events or online ordering.',
     clue3: 'One large 1-topping pizza',
     date: '12 May 2024',
+    category: 'property',
     point: 200,
     liked: false
   ),
@@ -84,6 +90,7 @@ final List<Event> eventList = [
     clue2: 'No booking required. Present Groupon on arrival.',
     clue3: 'Limit 1 per visit. Limit 1 per table.',
     date: '27 Sept 2024',
+    category: 'education',
     point: 100,
     liked: true
   ),
@@ -96,6 +103,7 @@ final List<Event> eventList = [
     clue2: 'Help them celebrate their achievements.',
     clue3: 'Reward your team with something special.',
     date: '31 Oct 2024',
+    category: 'sport',
     point: 500,
     liked: true
   ),
@@ -108,6 +116,7 @@ final List<Event> eventList = [
     clue2: 'The hotel offers an indoor and outdoor pool and an outdoor track.',
     clue3: 'Go on a shopping spree along the Magnificent Mile.',
     date: '2 Nov 2024',
+    category: 'holiday',
     point: 150,
     liked: true
   ),
@@ -120,6 +129,7 @@ final List<Event> eventList = [
     clue2: '40 pairs of dumbbells up to 90 pounds',
     clue3: 'All of the perks included in the Single Gym Access Option',
     date: '20 Dec 2024',
+    category: 'souvenir',
     point: 50,
     liked: false
   ),
@@ -132,6 +142,7 @@ final List<Event> eventList = [
     clue2: 'For most gas-fueled passenger cars and light-duty trucks',
     clue3: 'Formulated to protect engines with over 75,000 miles',
     date: '21 Dec 2024',
+    category: 'food',
     point: 100,
     liked: true
   ),
@@ -144,6 +155,7 @@ final List<Event> eventList = [
     clue2: 'Service dogs are allowed.',
     clue3: 'The museum is wheelchair and stroller accessible.',
     date: '21 Dec 2024',
+    category: 'services',
     point: 50,
     liked: false
   ),
@@ -156,6 +168,7 @@ final List<Event> eventList = [
     clue2: 'Not valid for birthday parties, group events or online ordering.',
     clue3: 'One large 1-topping pizza',
     date: '12 May 2024',
+    category: 'automotive',
     point: 200,
     liked: false
   ),
@@ -168,6 +181,7 @@ final List<Event> eventList = [
     clue2: 'Each voucher good for one lane',
     clue3: 'Gather friends or take a date to this upscale bowling alley',
     date: '11 Dec 2024',
+    category: 'property',
     point: 50,
     liked: true
   ),
@@ -180,6 +194,7 @@ final List<Event> eventList = [
     clue2: 'All Groupon reviews are from people',
     clue3: 'No booking required. Present Groupon on arrival.',
     date: '22 Nov 2024',
+    category: 'education',
     point: 200,
     liked: true
   ),
@@ -192,6 +207,7 @@ final List<Event> eventList = [
     clue2: 'Not valid for birthday parties, group events or online ordering.',
     clue3: 'One large 1-topping pizza',
     date: '12 May 2024',
+    category: 'sport',
     point: 200,
     liked: false
   ),
@@ -204,6 +220,7 @@ final List<Event> eventList = [
     clue2: 'No booking required. Present Groupon on arrival.',
     clue3: 'Limit 1 per visit. Limit 1 per table.',
     date: '27 Sept 2024',
+    category: 'holiday',
     point: 100,
     liked: true
   ),
@@ -216,6 +233,7 @@ final List<Event> eventList = [
     clue2: 'Help them celebrate their achievements.',
     clue3: 'Reward your team with something special.',
     date: '31 Oct 2024',
+    category: 'souvenir',
     point: 500,
     liked: true
   ),
@@ -228,6 +246,7 @@ final List<Event> eventList = [
     clue2: 'The hotel offers an indoor and outdoor pool and an outdoor track.',
     clue3: 'Go on a shopping spree along the Magnificent Mile.',
     date: '2 Nov 2024',
+    category: 'food',
     point: 150,
     liked: true
   ),
@@ -240,6 +259,7 @@ final List<Event> eventList = [
     clue2: '40 pairs of dumbbells up to 90 pounds',
     clue3: 'All of the perks included in the Single Gym Access Option',
     date: '20 Dec 2024',
+    category: 'services',
     point: 50,
     liked: false
   ),
@@ -252,6 +272,7 @@ final List<Event> eventList = [
     clue2: 'For most gas-fueled passenger cars and light-duty trucks',
     clue3: 'Formulated to protect engines with over 75,000 miles',
     date: '21 Dec 2024',
+    category: 'automotive',
     point: 100,
     liked: true
   ),
@@ -264,6 +285,7 @@ final List<Event> eventList = [
     clue2: 'Service dogs are allowed.',
     clue3: 'The museum is wheelchair and stroller accessible.',
     date: '21 Dec 2024',
+    category: 'property',
     point: 50,
     liked: false
   )

@@ -12,6 +12,8 @@ class PromoList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      shrinkWrap: true,
+      physics: const ClampingScrollPhysics(),
       padding: EdgeInsets.only(left: spacingUnit(1), right: spacingUnit(1), bottom: isHome ? 100 : spacingUnit(1)),
       itemCount: items.length,
       itemBuilder: (BuildContext context, int index) {
