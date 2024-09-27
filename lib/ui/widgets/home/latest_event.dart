@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/models/events.dart';
-import 'package:mamang_app_flutter/ui/widgets/event/event_list.dart';
+import 'package:mamang_app_flutter/ui/widgets/event/event_list_slider.dart';
 
 class LatestEvent extends StatelessWidget {
   const LatestEvent({super.key});
@@ -15,7 +15,7 @@ class LatestEvent extends StatelessWidget {
       eventList[6],
     ];
   
-    return EventList(
+    return EventListSlider(
       items: latestEvent,
       title: 'Latest Event'
     );

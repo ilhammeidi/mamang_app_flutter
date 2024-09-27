@@ -31,11 +31,18 @@ class _PromoMainState extends State<PromoMain> {
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
         forceMaterialTransparency: true,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         leadingWidth: 40,
         leading: Padding(
           padding: EdgeInsets.only(left: spacingUnit(1)),

@@ -9,12 +9,14 @@ class SearchInputBtn extends StatelessWidget {
     super.key,
     required this.location,
     required this.title,
+    this.onCancel,
     this.shadow = false,
   });
 
   final String location;
   final String title;
   final bool shadow;
+  final Function? onCancel;
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +36,16 @@ class SearchInputBtn extends StatelessWidget {
           color: Theme.of(context).colorScheme.surface,
           borderRadius: ThemeRadius.small
         ),
-        child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        child: Row(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.start, children: [
           const Icon(Icons.search),
           SizedBox(width: spacingUnit(1)),
-          Text(title, style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant))
+          Expanded(child: Text(title, style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant))),
+          onCancel != null ? InkWell(
+            onTap: () {
+              onCancel!();
+            },
+            child: const Icon(Icons.close_outlined)
+          ) : Container(),
         ])
       ),
     );

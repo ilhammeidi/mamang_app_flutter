@@ -68,7 +68,7 @@ class SearchHome extends StatelessWidget {
                       child: SearchInputBtn(
                         location: '/search-basic',
                         title: 'Search Promo or Event',
-                        shadow: true
+                        shadow: true,
                       )
                     ),
                   ],

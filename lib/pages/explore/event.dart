@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/models/events.dart';
-import 'package:mamang_app_flutter/ui/widgets/event/event_list.dart';
+import 'package:mamang_app_flutter/ui/widgets/event/event_list_slider.dart';
 
 class RecommendedEvent extends StatelessWidget {
   const RecommendedEvent({super.key});
@@ -16,7 +16,7 @@ class RecommendedEvent extends StatelessWidget {
       eventList[12],
     ];
   
-    return EventList(
+    return EventListSlider(
       items: events,
       title: 'Recomended Event',
       desc: 'Unlock Exclusive Content with Promotion!'
@@ -38,7 +38,7 @@ class TopEvent extends StatelessWidget {
       eventList[18],
     ];
   
-    return EventList(
+    return EventListSlider(
       items: events,
       title: 'Top Event',
       desc: 'Claim Your Offer Before It\'s Gone!'
