@@ -29,6 +29,7 @@ class EventCard extends StatelessWidget {
       onTap: onTap,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Stack(alignment: Alignment.topRight, children: [
+          /// HERO THUMB
           Hero(
             tag: thumb,
             child: Container(
@@ -50,6 +51,7 @@ class EventCard extends StatelessWidget {
             ),
           ) : Container(),
         ]),
+        /// EVENT PROPERTIES
         Padding(padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
           child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Container(
@@ -74,6 +76,7 @@ class EventCard extends StatelessWidget {
             ),
           ]),
         ),
+        /// EVENT TITLE
         SizedBox(
           height: 60,
           child: Text(

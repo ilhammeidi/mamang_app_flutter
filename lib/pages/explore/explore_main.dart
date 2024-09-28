@@ -20,15 +20,19 @@ class ExploreMain extends StatelessWidget {
           const SliverToBoxAdapter(child: Stack(
             alignment: Alignment.topCenter,
             children: [
+              /// BANNER ILLLUSTRATION
               BannerExplore(),
+              /// HEADER
               Positioned(
                 child: SizedBox(child: HeaderExplore())
               ),
             ],
           )),
+          /// MINI MAP
           const SliverToBoxAdapter(child: MiniMap()),
           SliverStickyHeader.builder(
             builder: (context, state) {
+              /// SEARCH
               return SearchExplore(gradientOpacity: state.isPinned ? 0 : 1);
             },
             sliver: SliverList(delegate: SliverChildListDelegate([

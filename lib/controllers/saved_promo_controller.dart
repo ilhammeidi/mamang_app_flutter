@@ -6,6 +6,7 @@ class SavedPromoController extends GetxController {
 
   var savedPromo = <Promotion>[].obs;
   var filteredList = <Promotion>[].obs;
+  var selectedPromo = Promotion().obs;
 
   var category = 'all'.obs;
   var sortby = 'date'.obs;
@@ -20,6 +21,30 @@ class SavedPromoController extends GetxController {
     savedPromo.addAll(rawData);
     filteredList.addAll(rawData);
     update();
+  }
+
+  void getPromo(id) {
+    var result = savedPromo.where((item) => item.id == id).toList();
+    selectedPromo.update((promoVal) {
+      promoVal!.id = result[0].id;
+      promoVal.userId = result[0].userId;
+      promoVal.name = result[0].name;
+      promoVal.thumb = result[0].thumb;
+      promoVal.category = result[0].category;
+      promoVal.desc = result[0].desc;
+      promoVal.distance = result[0].distance;
+      promoVal.price = result[0].price;
+      promoVal.location = result[0].location;
+      promoVal.date = result[0].date;
+      promoVal.verified = result[0].verified;
+      promoVal.published = result[0].published;
+      promoVal.stared = result[0].stared;
+      promoVal.saved = result[0].saved;
+      promoVal.type = result[0].type;
+      promoVal.xp = result[0].xp;
+      promoVal.level = result[0].level;
+      promoVal.liked = result[0].liked;
+    });
   }
 
   void filterByCategory(String selectedCategory) {

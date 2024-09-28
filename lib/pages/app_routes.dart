@@ -5,11 +5,13 @@ import 'package:mamang_app_flutter/pages/event/event_main.dart';
 import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
 import 'package:mamang_app_flutter/pages/home.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
+import 'package:mamang_app_flutter/pages/promo/detail.dart';
 import 'package:mamang_app_flutter/pages/promo/promo_main.dart';
 import 'package:mamang_app_flutter/pages/sample_button.dart';
 import 'package:mamang_app_flutter/pages/sample_dark_light.dart';
 import 'package:mamang_app_flutter/pages/sample_forms.dart';
 import 'package:mamang_app_flutter/pages/sample_shadow.dart';
+import 'package:mamang_app_flutter/pages/saved/saved_detail.dart';
 import 'package:mamang_app_flutter/pages/saved/saved_main.dart';
 import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
 import 'package:mamang_app_flutter/ui/layouts/home_layout.dart';
@@ -24,6 +26,10 @@ final List<GetPage> appRoutes = [
     name: '/saved',
     page: () => const HomeLayout(content: SavedMain()),
     transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: '/saved/:id',
+    page: () => const GeneralLayout(content: SavedDetail()),
   ),
   GetPage(
     name: '/explore',
@@ -43,6 +49,10 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/promos',
     page: () => const GeneralLayout(content: PromoMain()),
+  ),
+  GetPage(
+    name: '/promos/:id',
+    page: () => const GeneralLayout(content: PromoDetail()),
   ),
   GetPage(
     name: '/events',

@@ -1,43 +1,43 @@
 import 'package:mamang_app_flutter/models/img_api.dart';
 
 class Promotion {
-  final int id;
-  final int userId;
-  final String name;
-  final String thumb;
-  final String category;
-  final String desc;
-  final double distance;
-  final double price;
-  final String location;
-  final String date;
-  final bool verified;
-  final bool published;
-  final int stared;
-  final String type;
-  final double xp;
-  final int level;
-  final bool saved;
-  final bool? liked;
+  int id;
+  int userId;
+  String name;
+  String thumb;
+  String category;
+  String desc;
+  double distance;
+  double price;
+  String location;
+  String date;
+  bool verified;
+  bool published;
+  int stared;
+  String type;
+  double xp;
+  int level;
+  bool saved;
+  bool? liked;
 
   Promotion({
-    required this.id,
-    required this.userId,
-    required this.name,
-    required this.thumb,
-    required this.category,
-    required this.desc,
-    required this.distance,
-    required this.price,
-    required this.location,
-    required this.date,
-    required this.verified,
-    required this.published,
-    required this.stared,
-    required this.saved,
-    required this.type,
-    required this.xp,
-    required this.level,
+    this.id = 0,
+    this.userId = 0,
+    this.name = '',
+    this.thumb = '',
+    this.category = '',
+    this.desc = '',
+    this.distance = 0,
+    this.price = 0,
+    this.location = '',
+    this.date = '',
+    this.verified = false,
+    this.published = false,
+    this.stared = 0,
+    this.saved = false,
+    this.type = '',
+    this.xp = 0,
+    this.level = 0,
     this.liked,
   });
 }
