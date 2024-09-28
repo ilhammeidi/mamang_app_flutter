@@ -24,7 +24,7 @@ class SummaryInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Padding(
-        padding: EdgeInsets.all(spacingUnit(2)),
+        padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
         child: Row(children: [
           /// Thumbnail
           ClipRRect(

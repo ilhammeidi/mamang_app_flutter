@@ -26,9 +26,23 @@ class MapBanner extends StatelessWidget {
       ),
       Container(
         width: double.infinity,
-        padding: EdgeInsets.all(spacingUnit(1)),
+        padding: EdgeInsets.only(top: spacingUnit(1)),
         color: ThemePalette.secondaryLight,
-        child: Text('Touch the map to open Google Map', textAlign: TextAlign.center, style: TextStyle(color: ThemePalette.secondaryDark)),
+        child: Column(children: [
+          Text('Touch the map to open Google Map', textAlign: TextAlign.center, style: TextStyle(color: ThemePalette.secondaryDark)),
+          const SizedBox(height: 8),
+          Container(
+            height: 16,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.surface,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(16),
+                topRight: Radius.circular(16),
+              )
+            ),
+          )
+        ],)
       ),
     ]);
   }

@@ -23,7 +23,7 @@ class ScanQrStep extends StatelessWidget {
           child: Row(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [
             /// PROGRESS INDICATOR
             SizedBox(
-              width: 80,
+              width: 60,
               child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                 CircleAvatar(
                   radius: circleSize,
@@ -183,9 +183,17 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     return Column(children: [
       /// QUESTION
+      Container(
+        width: 40,
+        height: 8,
+        margin: EdgeInsets.all(spacingUnit(2)),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.outline.withOpacity(0.75),
+          borderRadius: ThemeRadius.medium,
+        ),
+      ),
       Padding(
         padding: EdgeInsets.only(
-          top: spacingUnit(3),
           bottom: spacingUnit(2),
         ),
         child: Text('Please answer this question', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),

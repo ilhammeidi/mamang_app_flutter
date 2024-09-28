@@ -108,6 +108,7 @@ class _SavedDetailState extends State<SavedDetail> {
                   );
                 }
               ),
+              const VSpaceShort(),
               const WorkingTime(),
               const ScanQrStep(),
               const VSpace(),

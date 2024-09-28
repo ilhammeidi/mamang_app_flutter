@@ -27,8 +27,8 @@ class PuzzleBanner extends StatelessWidget {
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.surface,
             borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
+              topLeft: Radius.circular(16),
+              topRight: Radius.circular(16),
             )
           ),
         )
