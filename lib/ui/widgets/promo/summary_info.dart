@@ -6,8 +6,8 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 
-class MapInfo extends StatelessWidget {
-  const MapInfo({
+class SummaryInfo extends StatelessWidget {
+  const SummaryInfo({
     super.key,
     required this.title,
     required this.category,
@@ -22,32 +22,11 @@ class MapInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.sizeOf(context).height;
-    var padding = MediaQuery.paddingOf(context);
-
-    double screenHeight = height - padding.top - padding.bottom;
-
     return Column(children: [
-      /// MAP BANNER
-      Container(
-        height: screenHeight / 4,
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/map_landscape.png'),
-            fit: BoxFit.cover
-          )
-        ),
-      ),
-      Container(
-        padding: EdgeInsets.all(spacingUnit(2)),
-        color: ThemePalette.secondaryLight,
-        child: Text('Touch the map to open Google Map', style: TextStyle(color: ThemePalette.secondaryDark)),
-      ),
-      /// INFORMATION
-      Container(
+      Padding(
         padding: EdgeInsets.all(spacingUnit(2)),
         child: Row(children: [
+          /// Thumbnail
           ClipRRect(
             borderRadius: ThemeRadius.small,
             child: Image.network(
@@ -58,6 +37,7 @@ class MapInfo extends StatelessWidget {
             ),
           ),
           SizedBox(width: spacingUnit(2)),
+          /// PROPERTIES
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,11 +50,17 @@ class MapInfo extends StatelessWidget {
                   maxLines: 2,
                 ),
                 const SizedBox(height: 4),
-                Text(category, style: ThemeText.caption),
-                const SizedBox(height: 4),
+                Text('Category: ${category.toCapitalCase()}', style: ThemeText.caption),
+                SizedBox(height: spacingUnit(2)),
+                Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
+                  const SizedBox(width: 4),
+                  Text(location, overflow: TextOverflow.ellipsis,)
+                ]),
+                SizedBox(height: spacingUnit(2)),
                 FilledButton(
                   onPressed: () {},
-                  style: ThemeButton.btnSmall.merge(ThemeButton.tonalPrimary(context)),
+                  style: ThemeButton.tonalPrimary(context),
                   child: const Text('See Promo Detail'),
                 )
               ],
@@ -82,15 +68,6 @@ class MapInfo extends StatelessWidget {
           )
         ]),
       ),
-      /// ADDRESS
-      Padding(
-        padding: EdgeInsets.all(spacingUnit(2)),
-        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-          Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
-          const SizedBox(width: 4),
-          Text(location)
-        ]),
-      )
     ]);
   }
 }

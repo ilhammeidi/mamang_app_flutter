@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
@@ -14,107 +15,114 @@ class ScanQrStep extends StatelessWidget {
     double circleSize = 15;
     double iconSize = circleSize * 2 - 2;
 
-    return PaperCard(
-      content: Padding(
-        padding: EdgeInsets.symmetric(vertical: spacingUnit(1), horizontal: spacingUnit(1)),
-        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-          /// PROGRESS INDICATOR
-          SizedBox(
-            width: 80,
-            child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              CircleAvatar(
-                radius: circleSize,
-                backgroundColor: Colors.green.shade200,
-                child: Icon(Icons.check_circle_rounded, color: Colors.green, size: iconSize),
-              ),
-              _lineVertical(300, context),
-              CircleAvatar(
-                radius: circleSize,
-                backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
-                child: Icon(
-                  Icons.sports_esports_outlined,
-                  color: Theme.of(context).colorScheme.onSecondary,
-                  size: iconSize
+    return Padding(
+      padding: EdgeInsets.all(spacingUnit(1)),
+      child: PaperCard(
+        content: Padding(
+          padding: EdgeInsets.symmetric(vertical: spacingUnit(1), horizontal: spacingUnit(1)),
+          child: Row(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [
+            /// PROGRESS INDICATOR
+            SizedBox(
+              width: 80,
+              child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                CircleAvatar(
+                  radius: circleSize,
+                  backgroundColor: Colors.green.shade200,
+                  child: Icon(Icons.check_circle_rounded, color: Colors.green, size: iconSize),
                 ),
-              ),
-              _lineVertical(50, context),
-              CircleAvatar(
-                radius: circleSize,
-                backgroundColor: Theme.of(context).colorScheme.tertiaryContainer,
-                child: Icon(
-                  Icons.extension_outlined,
-                  color: Theme.of(context).colorScheme.onTertiary,
-                  size: iconSize
-                ),
-              ),
-            ]),
-          ),
-          /// PROGRESS CONTENTS
-          Expanded(child: ListView(
-            shrinkWrap: true,
-            physics: const ClampingScrollPhysics(),
-            children: [
-              /// SCAN QR
-              _progressContent(
-                'Scan QR Promo',
-                'Show this QR Code to merchant to get puzzle fragment',
-                SizedBox(
-                  width: 300,
-                  height: 300,
-                  child: Image.asset('assets/images/qrcode.webp', fit: BoxFit.contain)
-                ),
-                context
-              ),
-              /// CHALLENGE QUESTION
-              SizedBox(height: spacingUnit(2)),
-              _progressContent(
-                'Quest Challenge',
-                'After you scan the QR Promo, finish the challenge to get puzzle fragment',
-                GestureDetector(
-                  onTap: () {
-                    showModalBottomSheet(
-                      context: context,
-                      isScrollControlled: true,
-                      builder: (BuildContext context) {
-                        return const Quiz();
-                      }
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(spacingUnit(2)),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.secondaryContainer,
-                      borderRadius: ThemeRadius.small,
-                    ),
-                    child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                      Text(
-                        'Start Challenge',
-                        style: ThemeText.title2.copyWith(color: Theme.of(context).colorScheme.onSecondaryContainer)
-                      ),
-                      const Icon(Icons.arrow_forward_ios, size: 18,)
-                    ]),
+                _lineVertical(305, context),
+                CircleAvatar(
+                  radius: circleSize,
+                  backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+                  child: Icon(
+                    Icons.sports_esports_outlined,
+                    color: Theme.of(context).colorScheme.onSecondaryContainer,
+                    size: iconSize
                   ),
                 ),
-                context
-              ),
-              /// PUZZLE FRAGMENT
-              SizedBox(height: spacingUnit(2)),
-              _progressContent(
-                'Fragment Puzzle',
-                'After you finish the challenge above, the puzzle fragment will be revealed and you worth to collect it',
-                Container(
-                  color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  width: 100,
-                  height: 100,
-                  alignment: Alignment.center,
-                  child: Text('?', style: TextStyle(fontSize: 80, color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                _lineVertical(115, context),
+                CircleAvatar(
+                  radius: circleSize,
+                  backgroundColor: Theme.of(context).colorScheme.tertiaryContainer,
+                  child: Icon(
+                    Icons.extension_outlined,
+                    color: Theme.of(context).colorScheme.onTertiaryContainer,
+                    size: iconSize
+                  ),
                 ),
-                context
-              ),
-            ],
-          ))
-        ]),
-      )
+              ]),
+            ),
+            /// PROGRESS CONTENTS
+            Expanded(child: ListView(
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              children: [
+                /// SCAN QR
+                _progressContent(
+                  'Scan QR Promo',
+                  'Show this QR Code to merchant to get puzzle fragment',
+                  SizedBox(
+                    width: 250,
+                    height: 250,
+                    child: Image.asset('assets/images/qrcode.webp', fit: BoxFit.contain)
+                  ),
+                  context
+                ),
+                /// CHALLENGE QUESTION
+                SizedBox(height: spacingUnit(2)),
+                _progressContent(
+                  'Quest Challenge',
+                  'After you scan the QR Promo, finish the challenge to get puzzle fragment',
+                  GestureDetector(
+                    onTap: () {
+                      showModalBottomSheet<dynamic>(
+                        context: context,
+                        isScrollControlled: true,
+                        builder: (BuildContext context) {
+                          return const Wrap(
+                            children: [
+                              Quiz(),
+                            ]
+                          );
+                        }
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(spacingUnit(1)),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.secondaryContainer,
+                        borderRadius: ThemeRadius.small,
+                      ),
+                      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                        Text(
+                          'Start Challenge',
+                          style: ThemeText.subtitle.copyWith(color: Theme.of(context).colorScheme.onSecondaryContainer)
+                        ),
+                        const Icon(Icons.arrow_forward_ios, size: 18,)
+                      ]),
+                    ),
+                  ),
+                  context
+                ),
+                /// PUZZLE FRAGMENT
+                SizedBox(height: spacingUnit(2)),
+                _progressContent(
+                  'Fragment Puzzle',
+                  'After you finish the challenge above, the puzzle fragment will be revealed and you worth to collect it',
+                  Container(
+                    color: Theme.of(context).colorScheme.outline.withOpacity(0.5),
+                    width: 100,
+                    height: 100,
+                    alignment: Alignment.center,
+                    child: Text('?', style: TextStyle(fontSize: 80, color: ThemePalette.primaryMain)),
+                  ),
+                  context
+                ),
+              ],
+            ))
+          ]),
+        )
+      ),
     );
   }
 
@@ -122,12 +130,12 @@ class ScanQrStep extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: spacingUnit(2)),
       child: SizedBox(
-        width: 4,
+        width: 6,
         height: height,
         child: DecoratedBox(
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.outline,
-            borderRadius: const BorderRadius.all(Radius.circular(2))
+            borderRadius: const BorderRadius.all(Radius.circular(6))
           ),
         ),
       ),
@@ -135,7 +143,7 @@ class ScanQrStep extends StatelessWidget {
   }
 
   Widget _progressContent(String title, String desc, Widget content, context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.start, children: [
       Text(title, textAlign: TextAlign.start, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
       SizedBox(height: spacingUnit(1)),
       Text(desc, textAlign: TextAlign.start),
@@ -156,15 +164,15 @@ class _QuizState extends State<Quiz> {
 
   List<Map<String, dynamic>> answerList = [
     {
-      'option': 'a',
+      'option': 'A',
       'answer': 'Mars',
     },
     {
-      'option': 'b',
+      'option': 'B',
       'answer': 'Venus',
     },
     {
-      'option': 'c',
+      'option': 'C',
       'answer': 'Jupiter',
     }
   ];
@@ -180,17 +188,19 @@ class _QuizState extends State<Quiz> {
           top: spacingUnit(3),
           bottom: spacingUnit(2),
         ),
-        child: Text('Please answer thi question', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+        child: Text('Please answer this question', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
       ),
       Padding(
         padding: EdgeInsets.only(
           bottom: spacingUnit(2),
         ),
-        child: const Text('Which planet is known as the Red Planet?'),
+        child: const Text('Which planet is known as the Red Planet?', textAlign: TextAlign.center, style: ThemeText.subtitle,),
       ),
       /// ANSWERS
-      Expanded(
+      SizedBox(
+        height: 200,
         child: ListView.builder(
+          padding: EdgeInsets.all(spacingUnit(2)),
           itemCount: answerList.length,
           itemBuilder: ((context, index) {
             Map item = answerList[index];
@@ -201,19 +211,26 @@ class _QuizState extends State<Quiz> {
                 });
               },
               child: Container(
-                padding: EdgeInsets.all(spacingUnit(1)),
                 margin: EdgeInsets.only(bottom: spacingUnit(1)),
                 decoration: BoxDecoration(
                   color: index == _choosenAnswer ? ThemePalette.secondaryMain : Colors.transparent,
+                  borderRadius: ThemeRadius.big,
                   border: Border.all(
                     width: 1,
                     color: Theme.of(context).colorScheme.outline
                   )
                 ),
                 child: ListTile(
-                  leading: Text('${item['option']}.', style: const TextStyle(color: Colors.white)),
+                  minTileHeight: 24,
+                  leading: Text(
+                    '${item['option']}.',
+                    style: TextStyle(color: index == _choosenAnswer ? Colors.white : Theme.of(context).colorScheme.onSurface)
+                  ),
                   minLeadingWidth: 16,
-                  title: Text(item['answer'], style: const TextStyle(color: Colors.white)),
+                  title: Text(
+                    item['answer'],
+                    style: TextStyle(color: index == _choosenAnswer ? Colors.white : Theme.of(context).colorScheme.onSurface)
+                  ),
                 ),
               ),
             );
@@ -224,15 +241,21 @@ class _QuizState extends State<Quiz> {
       Padding(padding: EdgeInsets.all(spacingUnit(2)),
         child: Row(children: [
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.back();
+            },
             style: ThemeButton.outlinedSecondary(context),
             child: const Text('Answer Later'),
           ),
-          const SizedBox(width: 4),
-          FilledButton(
-            onPressed: () {},
-            style: ThemeButton.primary,
-            child: const Text('Confirm My Answer'),
+          SizedBox(width: spacingUnit(1)),
+          Expanded(
+            child: FilledButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              style: ThemeButton.primary,
+              child: const Text('Confirm My Answer'),
+            ),
           )
         ]),
       )

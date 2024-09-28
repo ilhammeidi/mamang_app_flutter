@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
@@ -15,46 +16,61 @@ class WorkingTime extends StatefulWidget {
 class _WorkingTimeState extends State<WorkingTime> {
   bool _isShow = false;
 
+  void _toggleShow(isExpanded) {
+    setState(() {
+      _isShow = isExpanded;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return PaperCard(
-      content: Padding(
-        padding: EdgeInsets.all(spacingUnit(1)),
-        child: ExpansionPanelList(
-          expansionCallback: (int index, bool isExpanded) {
-            setState(() {
-              _isShow = isExpanded;
-            });
-          },
-          children: [
-            ExpansionPanel(
-              headerBuilder: (BuildContext context, bool isExpanded){
-                return ListTile(
-                  title: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: Colors.green.shade200,
-                      borderRadius: const BorderRadius.all(Radius.circular(2)),
+    return Padding(
+      padding: EdgeInsets.all(spacingUnit(1)),
+      child: PaperCard(
+        content: ClipRRect(
+          borderRadius: ThemeRadius.small,
+          child: ExpansionPanelList(
+            expansionCallback: (int index, bool isExpanded) {
+              _toggleShow(isExpanded);
+            },
+            elevation: 0,
+            children: [
+              ExpansionPanel(
+                isExpanded: _isShow,
+                headerBuilder: (BuildContext context, bool isExpanded){
+                  return GestureDetector(
+                    onTap: () {
+                      _toggleShow(!_isShow);
+                    },
+                    child: Container(
+                      color: Colors.transparent,
+                      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                        SizedBox(width: spacingUnit(1)),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: Colors.green.shade50,
+                            borderRadius: ThemeRadius.small,
+                          ),
+                          child: Row(children: [
+                            const Icon(Icons.access_time_outlined, size: 12, color: Colors.green),
+                            const SizedBox(width: 2),
+                            Text('OPEN', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: Colors.green)),
+                          ])
+                        ),
+                        const Spacer(),
+                        const Text('Close at 9:00 PM'),
+                      ]),
                     ),
-                    child: Row(children: [
-                      Icon(Icons.access_time_outlined, size: 12, color: Colors.green.shade600),
-                      const SizedBox(width: 2),
-                      Text('OPEN', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold)),
-                    ])
-                  ),
-                  trailing: Row(children: [
-                    const Text('Close at 9:00 PM'),
-                    const SizedBox(width: 2),
-                    _isShow ? const Icon(Icons.arrow_drop_down, size: 16) : const Icon(Icons.arrow_drop_up, size: 16)  
-                  ])
-                );
-              },
-              body: Padding(
-                padding: EdgeInsets.all(spacingUnit(1)),
-                child: const TimeList(),
-              ),
-            )
-          ],
+                  );
+                },
+                body: Padding(
+                  padding: EdgeInsets.all(spacingUnit(1)),
+                  child: const TimeList(),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -97,13 +113,15 @@ class TimeList extends StatelessWidget {
       },
     ];
     return ListView.builder(
+      shrinkWrap: true,
+      physics: const ClampingScrollPhysics(),
       itemCount: dayList.length,
       itemBuilder: ((context, index) {
         Map item = dayList[index];
         return Column(
           children: [
             ListTile(
-              leading: Text(item['day']),
+              leading: Text(item['day'], style: ThemeText.paragraph),
               minLeadingWidth: 100,
               title: item['time'] != 'Closed' ? Row(children: [
                 Icon(Icons.access_time_outlined, size: 12, color: Theme.of(context).colorScheme.onSurfaceVariant,),

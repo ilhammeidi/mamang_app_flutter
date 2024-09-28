@@ -4,8 +4,10 @@ import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/controllers/saved_promo_controller.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
-import 'package:mamang_app_flutter/ui/widgets/promo/map_info.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/widgets/promo/map_banner.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/scan_qr_step.dart';
+import 'package:mamang_app_flutter/ui/widgets/promo/summary_info.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/working_time.dart';
 
 class SavedDetail extends StatefulWidget {
@@ -40,7 +42,6 @@ class _SavedDetailState extends State<SavedDetail> {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle iconBtn = IconButton.styleFrom(
-      padding: const EdgeInsets.all(0),
       backgroundColor: Theme.of(context).colorScheme.surface,
       shadowColor: Colors.grey.withOpacity(0.5),
       elevation: 3
@@ -49,50 +50,67 @@ class _SavedDetailState extends State<SavedDetail> {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(
-            child: GetBuilder<SavedPromoController>(
-              builder: (controller) {
-                var item = controller.selectedPromo.value;
-                return MapInfo(
-                  title: item.name,
-                  category: item.category,
-                  location: item.location,
-                  thumb: item.thumb
-                );
-              }
-            ),
-          ),
+          /// MAP BANNER
+          SliverToBoxAdapter(child: Stack(
+            children: [
+              const MapBanner(),
+              Positioned(
+                top: spacingUnit(1),
+                left: spacingUnit(1),
+                child: IconButton(
+                  onPressed: () {
+                    Get.offAndToNamed('/saved');
+                  },
+                  style: iconBtn,
+                  icon: const Icon(Icons.arrow_back_ios_new, size: 22),
+                )
+              )
+            ],
+          )),
           SliverStickyHeader.builder(
             builder: (context, state) {
-              /// STICKY SCROLL
+              /// STICKY HEADER SCROLL
               return Container(
                 padding: EdgeInsets.all(spacingUnit(1)),
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.surface,
                 ),
-                child: Row(children: [
+                child: state.isPinned ? Row(children: [
                   IconButton(
                     onPressed: () {
-                      Get.back();
+                      Get.offAndToNamed('/saved');
                     },
-                    style: iconBtn,
                     icon: const Icon(Icons.arrow_back_ios, size: 22),
                   ),
                   SizedBox(width: spacingUnit(1)),
-                  Obx(() => Text(controller.selectedPromo.value.name.toCapitalCase(), textAlign: TextAlign.start)),
-                ],),
+                  Expanded(
+                    child: Obx(() => Text(
+                      controller.selectedPromo.value.name.toCapitalCase(),
+                      style: ThemeText.subtitle,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.start)
+                    ),
+                  ),
+                ]) : Container(),
               );
             },
+            /// THE REST INFORMATIONS AND DETAILS
             sliver: SliverList(delegate: SliverChildListDelegate([
-              // const VSpace(),
-              // const WorkingTime(),
-              // const VSpace(),
-              // const ScanQrStep(),
-              // const VSpace(),
-              Container(
-                height: 1300,
-                color: Colors.blue,
-              )
+              GetBuilder<SavedPromoController>(
+                builder: (controller) {
+                  var item = controller.selectedPromo.value;
+                  /// SUMMARY INFO
+                  return SummaryInfo(
+                    title: item.name,
+                    category: item.category,
+                    location: item.location,
+                    thumb: item.thumb
+                  );
+                }
+              ),
+              const WorkingTime(),
+              const ScanQrStep(),
+              const VSpace(),
             ])),
           )
         ],
