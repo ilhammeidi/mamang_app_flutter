@@ -8,12 +8,14 @@ class GeneralLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ConstrainedBox(
-        constraints: const BoxConstraints(
-          maxWidth: 600,
-          minHeight: 900
+      body: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            maxWidth: 600,
+            minHeight: 900
+          ),
+          child: SafeArea(child: content),
         ),
-        child: SafeArea(child: content),
       )
     );
   }

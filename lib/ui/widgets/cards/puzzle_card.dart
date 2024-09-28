@@ -12,7 +12,8 @@ class PuzzleCard extends StatelessWidget {
     required this.name,
     required this.progress,
     required this.time,
-    required this.liked
+    required this.liked,
+    this.onTap,
   });
 
   final String thumb;
@@ -20,73 +21,77 @@ class PuzzleCard extends StatelessWidget {
   final String progress;
   final String time;
   final bool liked;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
 
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      /// Thumbnail
-      Stack(alignment: Alignment.center, children: [
-        ClipRRect(
-          borderRadius: ThemeRadius.medium,
-          child: Image.network(
-            thumb,
-            width: 200,
-            height: 200,
-            fit: BoxFit.cover,
-            color: Colors.black.withOpacity(0.5),
-            colorBlendMode: BlendMode.darken,
+    return InkWell(
+      onTap: onTap,
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        /// Thumbnail
+        Stack(alignment: Alignment.center, children: [
+          ClipRRect(
+            borderRadius: ThemeRadius.medium,
+            child: Image.network(
+              thumb,
+              width: 200,
+              height: 200,
+              fit: BoxFit.cover,
+              color: Colors.black.withOpacity(0.5),
+              colorBlendMode: BlendMode.darken,
+            ),
           ),
-        ),
-        _puzzle(progress),
-        Positioned(
-          top: 8,
-          child: Container(
-            width: 40,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surface,
-              borderRadius: ThemeRadius.big,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4.0),
-              child: Text('${progress.length}/9'),
-            ),
+          _puzzle(progress),
+          Positioned(
+            top: 8,
+            child: Container(
+              width: 40,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                borderRadius: ThemeRadius.big,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                child: Text('${progress.length}/9'),
+              ),
+            )
           )
+        ]),
+        /// Properties
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            DecoratedBox(
+              decoration: BoxDecoration(
+                color: ThemePalette.secondaryMain,
+                borderRadius: ThemeRadius.medium,
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 4, horizontal: spacingUnit(1)),
+                child: Text(time, style: const TextStyle(color: Colors.white)),
+              ),
+            ),
+            Container(
+              width: 26,
+              height: 26,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                shape: BoxShape.circle,
+                boxShadow: [ThemeShade.shadeSoft(context)]
+              ),
+              child: Icon(Icons.favorite, size: 16, color: ThemePalette.tertiaryMain),
+            ),
+          ])
+        ),
+        /// Title
+        Padding(
+          padding: EdgeInsets.only(bottom: spacingUnit(2)),
+          child: Text(name, style: ThemeText.subtitle, overflow: TextOverflow.ellipsis, maxLines: 2,),
         )
       ]),
-      /// Properties
-      Padding(
-        padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
-        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          DecoratedBox(
-            decoration: BoxDecoration(
-              color: ThemePalette.secondaryMain,
-              borderRadius: ThemeRadius.medium,
-            ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 4, horizontal: spacingUnit(1)),
-              child: Text(time, style: const TextStyle(color: Colors.white)),
-            ),
-          ),
-          Container(
-            width: 26,
-            height: 26,
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surface,
-              shape: BoxShape.circle,
-              boxShadow: [ThemeShade.shadeSoft(context)]
-            ),
-            child: Icon(Icons.favorite, size: 16, color: ThemePalette.tertiaryMain),
-          ),
-        ])
-      ),
-      /// Title
-      Padding(
-        padding: EdgeInsets.only(bottom: spacingUnit(2)),
-        child: Text(name, style: ThemeText.subtitle, overflow: TextOverflow.ellipsis, maxLines: 2,),
-      )
-    ]);
+    );
   }
 
   Widget _puzzle(String progress) {

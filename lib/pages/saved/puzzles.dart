@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mamang_app_flutter/models/puzzles.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/puzzle_card.dart';
@@ -29,7 +30,10 @@ class Puzzles extends StatelessWidget {
                 name: item.name,
                 progress: item.progress,
                 time: item.time,
-                liked: item.liked
+                liked: item.liked,
+                onTap: () {
+                  Get.toNamed('/puzzle/$index');
+                }
               ),
             ],
           );

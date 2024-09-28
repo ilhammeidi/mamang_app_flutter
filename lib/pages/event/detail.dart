@@ -178,7 +178,6 @@ class _PromoWithEventState extends State<PromoWithEvent> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const VSpace(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
           child: Text(

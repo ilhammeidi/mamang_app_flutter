@@ -11,6 +11,7 @@ import 'package:mamang_app_flutter/pages/sample_button.dart';
 import 'package:mamang_app_flutter/pages/sample_dark_light.dart';
 import 'package:mamang_app_flutter/pages/sample_forms.dart';
 import 'package:mamang_app_flutter/pages/sample_shadow.dart';
+import 'package:mamang_app_flutter/pages/saved/puzzle_detail.dart';
 import 'package:mamang_app_flutter/pages/saved/saved_detail.dart';
 import 'package:mamang_app_flutter/pages/saved/saved_main.dart';
 import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
@@ -30,6 +31,10 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/saved/:id',
     page: () => const GeneralLayout(content: SavedDetail()),
+  ),
+  GetPage(
+    name: '/puzzle/:id',
+    page: () => GeneralLayout(content: PuzzleDetail()),
   ),
   GetPage(
     name: '/explore',

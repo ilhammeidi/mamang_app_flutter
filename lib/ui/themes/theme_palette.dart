@@ -32,7 +32,7 @@ class ThemePalette {
   static LinearGradient gradientMixedMain = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.topRight,
-    colors: <Color>[ThemePalette.secondaryMain, lighten(ThemePalette.primaryMain, 0.15)]
+    colors: <Color>[ThemePalette.secondaryMain, lighten(ThemePalette.primaryMain, 0.1)]
   );
 
   static LinearGradient gradientMixedDark = LinearGradient(

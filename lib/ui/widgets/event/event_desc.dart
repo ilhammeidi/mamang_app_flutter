@@ -52,7 +52,7 @@ class EventDesc extends StatelessWidget {
                 color: Theme.of(context).colorScheme.secondaryContainer,
                 borderRadius: ThemeRadius.medium
               ),
-              child: Row(children: [
+              child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 const Icon(Icons.access_time_outlined, size: 12),
                 const SizedBox(width: 2),
                 Text(date, style: ThemeText.caption),
