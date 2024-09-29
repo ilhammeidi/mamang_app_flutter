@@ -66,7 +66,7 @@ class SearchHome extends StatelessWidget {
                     // SEARCH BUTTON LIKED TEXTFILED 
                     const Expanded(
                       child: SearchInputBtn(
-                        location: '/search-basic',
+                        location: '/search-list',
                         title: 'Search Promo or Event',
                         shadow: true,
                       )

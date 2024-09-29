@@ -54,7 +54,7 @@ class _PromoMainState extends State<PromoMain> {
           ),
         ),
         title: const SearchInputBtn(
-          location: '/search-basic',
+          location: '/search-list',
           title: 'Search Promo',
         ),
         actions: [

@@ -42,7 +42,7 @@ class _EventMainState extends State<EventMain> {
         /// TITLE AND SEARCH
         title: _showSearch ?
           SearchInputBtn(
-            location: '/search-basic',
+            location: '/search-list',
             title: 'Search Event',
             onCancel: () {
               handleToggleSearch();
