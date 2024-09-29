@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
-import 'package:mamang_app_flutter/ui/widgets/search_filter/filter_map.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/widgets/search_filter/search_filter_map.dart';
 import 'package:mamang_app_flutter/ui/widgets/search_filter/search_result_bottomshet.dart';
 
 class SearchMap extends StatelessWidget {
@@ -29,11 +30,11 @@ class SearchMap extends StatelessWidget {
             ),
             /// Buttons
             Positioned(
-              right: 8,
-              top: 200,
+              right: 18,
+              bottom: height / 3 + 80,
               child: SizedBox(
-                width: 60,
-                height: 60,
+                width: 40,
+                height: 40,
                 child: IconButton(
                   onPressed: () {},
                   style: IconButton.styleFrom(
@@ -42,12 +43,30 @@ class SearchMap extends StatelessWidget {
                     elevation: 5,
                     shadowColor: Colors.black
                   ),
-                  icon: const Icon(Icons.location_searching)
+                  icon: const Icon(Icons.location_searching, size: 22)
+                ),
+              ),
+            ),
+            Positioned(
+              right: 8,
+              bottom: height / 3,
+              child: SizedBox(
+                width: 60,
+                height: 60,
+                child: FloatingActionButton(
+                  onPressed: () {},
+                  backgroundColor: ThemePalette.primaryMain,
+                  foregroundColor: Colors.white,
+                  elevation: 5,
+                  child: const Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
+                    Icon(Icons.directions_run, size: 20),
+                    Text('START', style: ThemeText.caption,)
+                  ],)
                 ),
               ),
             ),
             /// SEARCH AND FILTERS
-            const FilterMap(),
+            const SearchFilterMap(),
             /// BOTTOMSHEET SEARCH RESULT LIST
             const SearchResultBottomshet()
           ]);

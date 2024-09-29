@@ -5,7 +5,7 @@ import 'package:mamang_app_flutter/models/promos.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/event/event_list_slider.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/promo_list_single.dart';
-import 'package:mamang_app_flutter/ui/widgets/search_filter/search_category.dart';
+import 'package:mamang_app_flutter/ui/widgets/search_filter/select_category_grid.dart';
 import 'package:mamang_app_flutter/ui/widgets/search_filter/search_input.dart';
 import 'package:mamang_app_flutter/ui/widgets/search_filter/search_tags.dart';
 
@@ -53,7 +53,7 @@ class SearchList extends StatelessWidget {
         const VSpace(),
         const TagTrending(),
         const VSpace(),
-        const SearchCategory(),
+        const SelectCategoryGrid(),
         const VSpace(),
         PromoListSingle(items: promoData, title: "Recommended Promo"),
         const VSpace(),

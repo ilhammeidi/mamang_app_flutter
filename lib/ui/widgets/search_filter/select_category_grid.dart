@@ -4,8 +4,8 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 
-class SearchCategory extends StatelessWidget {
-  const SearchCategory({super.key});
+class SelectCategoryGrid extends StatelessWidget {
+  const SelectCategoryGrid({super.key});
 
   @override
   Widget build(BuildContext context) {

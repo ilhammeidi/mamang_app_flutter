@@ -12,7 +12,7 @@ class BottomDraggableSheet extends StatefulWidget {
 }
 
 class _BottomDraggableSheetState extends State<BottomDraggableSheet> {
-  double _sheetPosition = 0.5;
+  double _sheetPosition = 0.3;
   final double _dragSensitivity = 600;
 
   @override
