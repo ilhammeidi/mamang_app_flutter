@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -38,7 +39,9 @@ class MiniMap extends StatelessWidget {
               right: spacingUnit(3),
             ),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Get.toNamed('/search-map');
+              },
               child: PaperCard(
                 content: Padding(padding: EdgeInsets.all(spacingUnit(1)),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [

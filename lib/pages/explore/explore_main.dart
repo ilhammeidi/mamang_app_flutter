@@ -35,6 +35,7 @@ class ExploreMain extends StatelessWidget {
               /// SEARCH
               return SearchExplore(gradientOpacity: state.isPinned ? 0 : 1);
             },
+            /// PROMO AND EVENT LIST
             sliver: SliverList(delegate: SliverChildListDelegate([
               const VSpace(),
               const RecommendedPromo(),

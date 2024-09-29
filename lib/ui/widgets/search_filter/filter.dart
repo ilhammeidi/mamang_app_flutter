@@ -231,9 +231,7 @@ class _FilterState extends State<Filter> {
               filterByDistance(50);
             },
             style: _tagFilter == '50' ? selectedStyle : buttonStyle,
-            child: const Row(children: [
-              Text('50M', style: ThemeText.caption),
-            ])
+            child: const Text('50M', style: ThemeText.caption)
           ),
           SizedBox(width: spacingUnit(1)),
           FilledButton(
@@ -241,33 +239,25 @@ class _FilterState extends State<Filter> {
               filterByDistance(20);
             },
             style: _tagFilter == '20' ? selectedStyle : buttonStyle,
-            child: const Row(children: [
-              Text('20M', style: ThemeText.caption),
-            ])
+            child: const Text('20M', style: ThemeText.caption)
           ),
           SizedBox(width: spacingUnit(1)),
           FilledButton(
             onPressed: () {},
             style: buttonStyle,
-            child: const Row(children: [
-              Text('Yesterday', style: ThemeText.caption),
-            ])
+            child: const Text('Yesterday', style: ThemeText.caption)
           ),
           SizedBox(width: spacingUnit(1)),
           FilledButton(
             onPressed: () {},
             style: buttonStyle,
-            child: const Row(children: [
-              Text('This Week', style: ThemeText.caption),
-            ])
+            child: const Text('This Week', style: ThemeText.caption)
           ),
           SizedBox(width: spacingUnit(1)),
           FilledButton(
             onPressed: () {},
             style: buttonStyle,
-            child: const Row(children: [
-              Text('Last Week', style: ThemeText.caption),
-            ])
+            child: const Text('Last Week', style: ThemeText.caption)
           ),
         ]
       ),

@@ -30,18 +30,14 @@ class HeaderExplore extends StatelessWidget {
             width: 150,
             padding: const EdgeInsets.all(4),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surface,
+              color: Colors.amber.shade300,
               borderRadius: ThemeRadius.medium,
               boxShadow: [ThemeShade.shadeSoft(context)],
-              border: Border.all(
-                color: Colors.amber,
-                width: 1
-              )
             ),
             child: Row(children: [
               Image.asset('assets/images/gift.png', height: 20),
               const SizedBox(width: 2,),
-              const Text('Claim Your Gift Today', style: TextStyle(color: Colors.orangeAccent, fontWeight: FontWeight.bold, fontSize: 11),)
+              const Text('Claim Your Gift Today', style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 11),)
             ],),
           ),
           /// ACTIONS HEADER BUTTON
