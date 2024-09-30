@@ -44,7 +44,7 @@ class SearchExplore extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Get.toNamed('/explore');
+              Get.toNamed('/search-list');
             },
             child: Container(
               height: 50,

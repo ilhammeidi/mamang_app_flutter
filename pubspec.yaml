@@ -9,6 +9,7 @@ environment:
 dependencies:
   carousel_slider: ^5.0.0
   change_case: ^2.1.0
+  fl_chart: ^0.69.0
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.3

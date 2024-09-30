@@ -60,7 +60,14 @@ class MiniMap extends StatelessWidget {
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
                       const SizedBox(width: 4),
-                      const Text('Tap to search promo around you...', style: TextStyle(fontWeight: FontWeight.w500))
+                      const Expanded(
+                        child: Text(
+                          'Jl. Bengawan No.34, Cihapit, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40114',
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          style: TextStyle(fontWeight: FontWeight.w500)
+                        ),
+                      )
                     ]),
                   ])
                 ),

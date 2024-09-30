@@ -34,12 +34,6 @@ class _SavedDetailState extends State<SavedDetail> {
   }
 
   @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     final ButtonStyle iconBtn = IconButton.styleFrom(
       backgroundColor: Theme.of(context).colorScheme.surface,
