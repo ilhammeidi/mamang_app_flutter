@@ -29,7 +29,6 @@ class _HomeMainState extends State<HomeMain> {
 
   @override
   Widget build(BuildContext context) {
-
     _scrollref.addListener(() {
       setState(() {
         if(_scrollref.offset > 200) {

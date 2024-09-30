@@ -26,7 +26,7 @@ class BusinessCard extends StatelessWidget {
   final bool verified;
   final int stared;
   final String type;
-  final double level;
+  final int level;
   
   @override
   Widget build(BuildContext context) {
