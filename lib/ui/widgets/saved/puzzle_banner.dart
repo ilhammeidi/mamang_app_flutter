@@ -52,9 +52,7 @@ class PuzzleBanner extends StatelessWidget {
             shadowColor: Colors.grey.withOpacity(0.5),
             elevation: 3
           ),
-          onPressed: () {
-            Get.back();
-          }, 
+          onPressed: () {}, 
           icon: Icon(Icons.favorite, color: ThemePalette.tertiaryMain)
         )
       )

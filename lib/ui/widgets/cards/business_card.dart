@@ -6,6 +6,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/box_color.dart';
 
 class BusinessCard extends StatelessWidget {
   const BusinessCard({
@@ -33,19 +34,6 @@ class BusinessCard extends StatelessWidget {
   Widget build(BuildContext context) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
-    Color colorType(type) {
-      switch(type) {
-        case 'purple':
-          return Colors.purpleAccent;
-        case 'blue':
-          return Colors.lightBlueAccent;
-        case 'green':
-          return Colors.lightGreen;
-        default:
-          return Colors.grey;
-      }
-    }
-
     return DecoratedBox(
       decoration: BoxDecoration(
         boxShadow: [ThemeShade.shadeSoft(context)],
@@ -59,7 +47,6 @@ class BusinessCard extends StatelessWidget {
           right: spacingUnit(1),
         ),
         decoration: BoxDecoration(
-          // color: colorType(type).withOpacity(0.25),
           border: Border.all(
             color: colorType(type),
             width: 1,
