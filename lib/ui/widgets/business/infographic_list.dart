@@ -1,64 +1,81 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/stats_card.dart';
 
 class InfographicList extends StatelessWidget {
-  const InfographicList({super.key});
+  const InfographicList({super.key, required this.height});
+
+  final double height;
 
   @override
   Widget build(BuildContext context) {
-    TextStyle whiteText = const TextStyle(color: Colors.white);
-
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
+    
+    const double cardWidth = 300;
+    
     return SizedBox(
-      height: 300,
+      height: height,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-          SizedBox(
-            width: 280,
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: spacingUnit(1), vertical: spacingUnit(1)),
+            width: cardWidth,
             child: StatsCard(
-              color: ThemePalette.primaryMain,
+              background: colorScheme.primaryContainer,
+              foreground: colorScheme.onPrimaryContainer,
               bigText: 'Medium',
               title: 'Profile Strength',
               infoGraphic: SizedBox(
-                height: 100,
-                width: 100,
+                width: 120,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
-                    CircularProgressIndicator(
-                      value: 0.7,
-                      strokeWidth: 10.0,
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
+                    SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: CircularProgressIndicator(
+                        value: 0.7,
+                        strokeWidth: 15.0,
+                        backgroundColor: ThemePalette.primaryMain.withOpacity(0.5),
+                        valueColor: AlwaysStoppedAnimation<Color>(ThemePalette.primaryMain),
+                      ),
                     ),
-                    Text('70%', style: whiteText.merge(ThemeText.subtitle))
+                    Text('70%', style: ThemeText.subtitle.copyWith(color: colorScheme.onPrimaryContainer))
                   ],
                 )
               ),
             ),
           ),
-          SizedBox(
-            width: 280,
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: spacingUnit(1), vertical: spacingUnit(1)),
+            width: cardWidth,
             child: StatsCard(
-              color: ThemePalette.secondaryMain,
+              background: colorScheme.secondaryContainer,
+              foreground: colorScheme.onSecondaryContainer,
               bigText: '112',
-              title: 'Engengagement',
-              infoGraphic: const AspectRatio(
-                aspectRatio: 1.6,
-                child: SimpleBarChart(),
+              title: 'Engagement',
+              infoGraphic: SizedBox(
+                width: 160,
+                child: AspectRatio(
+                  aspectRatio: 2,
+                  child: SimpleBarChart(color: ThemePalette.secondaryMain,),
+                ),
               )
             ),
           ),
-          SizedBox(
-            width: 280,
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: spacingUnit(1), vertical: spacingUnit(1)),
+            width: cardWidth,
             child: StatsCard(
-              color: ThemePalette.tertiaryMain,
+              background: colorScheme.tertiaryContainer,
+              foreground: colorScheme.onTertiaryContainer,
               bigText: '12',
-              title: 'Campaigns',
-              infoGraphic: const Icon(Icons.campaign, color: Colors.white, size: 56)
+              title: 'Total Campaigns',
+              infoGraphic: Icon(Icons.campaign, color: ThemePalette.tertiaryMain, size: 120)
             ),
           )
         ],
@@ -68,80 +85,86 @@ class InfographicList extends StatelessWidget {
 }
 
 class SimpleBarChart extends StatelessWidget {
-  const SimpleBarChart({super.key});
+  const SimpleBarChart({super.key, required this.color});
+
+  final Color color;
+
+  BarChartGroupData generateGroupData(int x, int y) {
+    return BarChartGroupData(
+      x: x,
+      barRods: [
+        BarChartRodData(
+          toY: y.toDouble(),
+          color: color,
+          width: 10,
+        ),
+      ],
+      showingTooltipIndicators: [0],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return BarChart(
       BarChartData(
         titlesData: const FlTitlesData(
-          show: false,
+          show: true,
+          topTitles: AxisTitles(
+            sideTitles: SideTitles(showTitles: false),
+          ),
+          rightTitles: AxisTitles(
+            sideTitles: SideTitles(showTitles: false),
+          ),
+          leftTitles: AxisTitles(
+            sideTitles: SideTitles(showTitles: false),
+          ),
+          bottomTitles: AxisTitles(
+            axisNameWidget: Text(
+              'Last 7 days',
+              style: TextStyle(
+                fontSize: 10,
+                color: Colors.grey
+              ),
+            ),
+          ),
+        ),
+        gridData: const FlGridData(
+          show: false, // Hide grid lines
+        ),
+        borderData: FlBorderData(
+          show: false, // Hide border
         ),
         barGroups: [
-          BarChartGroupData(
-            x: 0,
-            barRods: [
-              BarChartRodData(
-                toY: 8,
-                color: Colors.white,
-              ),
-            ],
-          ),
-          BarChartGroupData(
-            x: 1,
-            barRods: [
-              BarChartRodData(
-                toY: 5,
-                color: Colors.white,
-              ),
-            ],
-          ),
-          BarChartGroupData(
-            x: 2,
-            barRods: [
-              BarChartRodData(
-                toY: 12,
-                color: Colors.white,
-              ),
-            ],
-          ),
-          BarChartGroupData(
-            x: 3,
-            barRods: [
-              BarChartRodData(
-                toY: 12,
-                color: Colors.white,
-              ),
-            ],
-          ),
-          BarChartGroupData(
-            x: 4,
-            barRods: [
-              BarChartRodData(
-                toY: 5,
-                color: Colors.white,
-              ),
-            ],
-          ),
-          BarChartGroupData(
-            x: 5,
-            barRods: [
-              BarChartRodData(
-                toY: 12,
-                color: Colors.white,
-              ),
-            ],
-          ),
-          BarChartGroupData(
-            x: 5,
-            barRods: [
-              BarChartRodData(
-                toY: 12,
-                color: Colors.white,
-              ),
-            ],
-          ),
+          generateGroupData(1, 10),
+          generateGroupData(2, 8),
+          generateGroupData(3, 4),
+          generateGroupData(4, 4),
+          generateGroupData(5, 2),
+          generateGroupData(6, 6),
+          generateGroupData(7, 1),
         ],
+        barTouchData: BarTouchData(
+          enabled: false,
+          touchTooltipData: BarTouchTooltipData(
+            tooltipMargin: 0,
+            tooltipPadding: const EdgeInsets.all(0),
+            getTooltipColor: (touchedSpot) => Colors.transparent, 
+            getTooltipItem: (
+              BarChartGroupData group,
+              int groupIndex,
+              BarChartRodData rod,
+              int rodIndex,
+            ) {
+              return BarTooltipItem(
+                rod.toY.round().toString(),
+                TextStyle(
+                  color: color,
+                  fontSize: 11
+                ),
+              );
+            },
+          )
+        ),
       ),
     );
   }

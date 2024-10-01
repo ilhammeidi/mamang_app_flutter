@@ -20,6 +20,7 @@ class SearchInputBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
     return InkWell(
       onTap: () {
         Get.toNamed(location);
@@ -29,17 +30,13 @@ class SearchInputBtn extends StatelessWidget {
         padding: EdgeInsets.all(spacingUnit(1)),
         decoration: BoxDecoration(
           boxShadow: shadow ? [ThemeShade.shadeSoft(context)] : null,
-          border: !shadow ? Border.all(
-            color: Theme.of(context).colorScheme.outline,
-            width: 1
-          ) : null,
-          color: Theme.of(context).colorScheme.surface,
+          color: shadow ? colorScheme.surface : colorScheme.outline.withOpacity(0.5),
           borderRadius: ThemeRadius.small
         ),
         child: Row(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.start, children: [
           const Icon(Icons.search),
           SizedBox(width: spacingUnit(1)),
-          Expanded(child: Text(title, style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant))),
+          Expanded(child: Text(title, style: TextStyle(color: colorScheme.onSurfaceVariant))),
           onCancel != null ? InkWell(
             onTap: onCancel,
             child: const Icon(Icons.close_outlined)

@@ -70,6 +70,7 @@ class _HomeMainState extends State<HomeMain> {
             // Events
             SliverToBoxAdapter(child: LatestEvent()),
             // News
+            SliverToBoxAdapter(child: VSpace()),
             SliverToBoxAdapter(child: NewsList()),
             SliverToBoxAdapter(child: VSpaceBig()),
             // Active Users

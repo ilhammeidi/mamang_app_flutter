@@ -23,7 +23,7 @@ class SearchExplore extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          /// Decoration
+          /// DECORATION
           Positioned(
             bottom: 0,
             left: 0,

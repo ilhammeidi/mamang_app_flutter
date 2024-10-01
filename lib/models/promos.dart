@@ -314,7 +314,7 @@ final List<Promotion> promoList = [
   ),
   Promotion(
     id: 15,
-    userId: 1,
+    userId: 7,
     name: 'orchestrate one-to-one e-services',
     thumb: ImgApi.photo[22],
     category: 'services',
@@ -333,7 +333,7 @@ final List<Promotion> promoList = [
   ),
   Promotion(
     id: 16,
-    userId: 7,
+    userId: 1,
     name: 'architect frictionless e-commerce',
     thumb: ImgApi.photo[72],
     category: 'holiday',

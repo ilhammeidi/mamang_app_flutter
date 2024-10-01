@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
+import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
@@ -27,26 +28,31 @@ class BusinessHeader extends StatelessWidget {
       titleSpacing: spacingUnit(1),
       title: Row(children: [
         CircleAvatar(
-          radius: 24.r,
+          radius: 15.r,
           backgroundColor: colorScheme.surface,
-          child: Icon(Icons.location_on, color: ThemePalette.tertiaryMain, size: 16),
+          child: CircleAvatar(
+            radius: 14.r,
+            backgroundImage: NetworkImage(ImgApi.photo[59]),
+          )
         ),
         SizedBox(width: spacingUnit(1)),
-        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('Indisains Software House', overflow: TextOverflow.ellipsis, style: ThemeText.title2.copyWith(color: Colors.white)),
-          Text('Jl. Raya Sanggingan Banjar Lungsiakan, Kedewatan, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571', overflow: TextOverflow.ellipsis, style: ThemeText.caption.copyWith(color: Colors.white)),
-        ])
+        Expanded(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('Indisains Software House', overflow: TextOverflow.ellipsis, style: ThemeText.subtitle.copyWith(color: Colors.white)),
+            Text('Jl. Raya Sanggingan Banjar Lungsiakan, Kedewatan, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571', overflow: TextOverflow.ellipsis, style: ThemeText.caption.copyWith(color: Colors.white)),
+          ]),
+        )
       ]),
       /// ACTION BUTTONS
       actions: [
+        const SizedBox(width: 1),
         IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.help, size: 24, color: Colors.white)
+          icon: const Icon(Icons.help_outline_outlined, size: 36, color: Colors.white)
         ),
-        const SizedBox(width: 2),
         IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.add_circle_outline, size: 24, color: Colors.white)
+          icon: const Icon(Icons.add_circle_outline, size: 36, color: Colors.white)
         ),
       ],
       /// BOTTOM ROUNDED DECORATION

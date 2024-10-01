@@ -6,7 +6,6 @@ import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 class CategoriesGrid extends StatelessWidget {
   const CategoriesGrid({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return SliverGrid(
