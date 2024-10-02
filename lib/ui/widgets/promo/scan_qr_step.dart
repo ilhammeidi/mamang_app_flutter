@@ -6,6 +6,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
+import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/grabber_icon.dart';
 
 class ScanQrStep extends StatelessWidget {
   const ScanQrStep({super.key});
@@ -183,15 +184,7 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     return Column(children: [
       /// QUESTION
-      Container(
-        width: 40,
-        height: 8,
-        margin: EdgeInsets.all(spacingUnit(2)),
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.outline.withOpacity(0.75),
-          borderRadius: ThemeRadius.medium,
-        ),
-      ),
+      const GrabberIcon(),
       Padding(
         padding: EdgeInsets.only(
           bottom: spacingUnit(2),
