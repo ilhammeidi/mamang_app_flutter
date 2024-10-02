@@ -26,6 +26,7 @@ class SavedHeader extends StatelessWidget {
         ),
       ),
       title: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        /// USER COUN
         CircleAvatar(
           radius: 12.r,
           backgroundColor: Theme.of(context).colorScheme.surface,
@@ -38,6 +39,8 @@ class SavedHeader extends StatelessWidget {
           Text('200', style: ThemeText.subtitle.copyWith(color: Colors.white)),
         ]),
         SizedBox(width: spacingUnit(3)),
+
+        /// USER POINT
         CircleAvatar(
           radius: 12.r,
           backgroundColor: Theme.of(context).colorScheme.surface,

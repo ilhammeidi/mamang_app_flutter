@@ -129,9 +129,7 @@ class TimeList extends StatelessWidget {
                 Text(item['time'])
               ]) : Text(item['time'], style: const TextStyle(color: Colors.red))
             ),
-            index < dayList.length ?
-              Divider(color: Theme.of(context).colorScheme.outline, height: 1, thickness: 1)
-              : Container()
+            index < dayList.length ? const LineList() : Container()
           ],
         );
       }),

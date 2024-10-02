@@ -48,3 +48,16 @@ class LineSpace extends StatelessWidget {
     );
   }
 }
+
+class LineList extends StatelessWidget {
+  const LineList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Divider(
+      color: Theme.of(context).colorScheme.outline, 
+      height: 1,
+      thickness: 1
+    );
+  }
+}

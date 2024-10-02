@@ -40,6 +40,7 @@ class HomeHeader extends StatelessWidget {
       ),
       titleSpacing: spacingUnit(1),
       title: Row(children: [
+        /// AVATAR AND USER PROFILE
         CircleAvatar(
           radius: 24.r,
           backgroundImage: NetworkImage(userDummy.avatar),
@@ -61,6 +62,8 @@ class HomeHeader extends StatelessWidget {
           )
         ])
       ]),
+
+      /// ACTION BUTTONS
       actions: [
         IconButton(
           onPressed: () {},
