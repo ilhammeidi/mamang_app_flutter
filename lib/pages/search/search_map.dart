@@ -68,7 +68,7 @@ class SearchMap extends StatelessWidget {
             /// SEARCH AND FILTERS
             const SearchFilterMap(),
             /// BOTTOMSHEET SEARCH RESULT LIST
-            const SearchResultBottomshet()
+            const SearchResultBottomsheet()
           ]);
         }
       )

@@ -4,8 +4,8 @@ import 'package:mamang_app_flutter/pages/explore/promo.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/utils/bottom_draggable_sheet.dart';
 
-class SearchResultBottomshet extends StatelessWidget {
-  const SearchResultBottomshet({super.key});
+class SearchResultBottomsheet extends StatelessWidget {
+  const SearchResultBottomsheet({super.key});
 
   @override
   Widget build(BuildContext context) {

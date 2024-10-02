@@ -6,6 +6,7 @@ import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
+import 'package:mamang_app_flutter/ui/widgets/promo/parallax_cover.dart';
 
 class PromoDetail extends StatefulWidget {
   const PromoDetail({super.key});
@@ -85,40 +86,7 @@ class _PromoDetailState extends State<PromoDetail> {
             automaticallyImplyLeading: false,
             backgroundColor: colorType(type),
             /// IMAGE COVER
-            // flexibleSpace: FlexibleSpaceBar(
-            //   background: Image.network(
-            //     controller.selectedPromo.value.thumb,
-            //     fit: BoxFit.cover,
-            //   ),
-            // ),
-            flexibleSpace: Stack(
-              fit: StackFit.expand,
-              children: [
-                Image.network(
-                  controller.selectedPromo.value.thumb,
-                  fit: BoxFit.cover
-                ),
-                Positioned(
-                  top: 0,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 100,
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Colors.black.withOpacity(1),
-                          Colors.black.withOpacity(0.5),
-                          Colors.black.withOpacity(0),
-                        ],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter
-                      ),
-                    ),
-                  ) 
-                )
-              ]
-            ),
+            flexibleSpace: ParallaxCover(thumb: controller.selectedPromo.value.thumb),
             /// ROUNDED BOTTOM DECORATION
             bottom: PreferredSize(
               preferredSize: const Size.fromHeight(20),
