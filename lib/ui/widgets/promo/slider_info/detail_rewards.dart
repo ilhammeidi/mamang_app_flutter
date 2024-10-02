@@ -3,8 +3,8 @@ import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/grabber_icon.dart';
 
-class DetailChained extends StatelessWidget {
-  const DetailChained({super.key});
+class DetailRewards extends StatelessWidget {
+  const DetailRewards({super.key});
 
   @override
   Widget build(BuildContext context) {
