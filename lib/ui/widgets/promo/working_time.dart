@@ -25,12 +25,12 @@ class _WorkingTimeState extends State<WorkingTime> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(spacingUnit(1)),
+      padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
       child: PaperCard(
         content: ClipRRect(
           borderRadius: ThemeRadius.small,
           child: ExpansionPanelList(
-            expansionCallback: (int index, bool isExpanded) {
+             expansionCallback: (int index, bool isExpanded) {
               _toggleShow(isExpanded);
             },
             elevation: 0,
@@ -119,6 +119,7 @@ class TimeList extends StatelessWidget {
       itemBuilder: ((context, index) {
         Map item = dayList[index];
         return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             ListTile(
               leading: Text(item['day'], style: ThemeText.paragraph),
@@ -129,7 +130,7 @@ class TimeList extends StatelessWidget {
                 Text(item['time'])
               ]) : Text(item['time'], style: const TextStyle(color: Colors.red))
             ),
-            index < dayList.length ? const LineList() : Container()
+            index < dayList.length - 1 ? const LineList() : Container(),
           ],
         );
       }),

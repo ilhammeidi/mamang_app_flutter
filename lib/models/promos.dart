@@ -276,7 +276,7 @@ final List<Promotion> promoList = [
   Promotion(
     id: 13,
     userId: 8,
-    name: 'engineer sexy platforms',
+    name: 'engineering advenced platforms',
     thumb: ImgApi.photo[53],
     category: 'education',
     desc: 'Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.',
@@ -1307,7 +1307,7 @@ final List<Promotion> promoList = [
   Promotion(
     id: 67,
     userId: 5,
-    name: 'grow sexy ROI',
+    name: 'grow significant ROI',
     thumb: ImgApi.photo[39],
     category: 'automotive',
     desc: 'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
@@ -1915,7 +1915,7 @@ final List<Promotion> promoList = [
   Promotion(
     id: 99,
     userId: 5,
-    name: 'seize sexy e-services',
+    name: 'seize absolute e-services',
     thumb: ImgApi.photo[99],
     category: '29',
     desc: 'Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.',

@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/controllers/all_promo_controller.dart';
-import 'package:mamang_app_flutter/models/category.dart';
 import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/models/promos.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
+import 'package:mamang_app_flutter/ui/widgets/decorations/fadded_bottom_header.dart';
+import 'package:mamang_app_flutter/ui/widgets/promo/bottom_action_save_promo.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/coloured_box_detail.dart';
+import 'package:mamang_app_flutter/ui/widgets/promo/description_detail.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/parallax_cover.dart';
+import 'package:mamang_app_flutter/ui/widgets/promo/promo_list_single.dart';
+import 'package:mamang_app_flutter/ui/widgets/promo/working_time.dart';
 
 class PromoDetail extends StatefulWidget {
   const PromoDetail({super.key});
@@ -43,9 +49,20 @@ class _PromoDetailState extends State<PromoDetail> {
   @override
   Widget build(BuildContext context) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
-    // String category = controller.selectedPromo.value.category;
-    // var getCategory = categoryList.firstWhere((item) => item.id == category);
     var type = controller.selectedPromo.value.type;
+
+    final List<Promotion> relatedPromo = [
+      promoList[1],
+      promoList[22],
+      promoList[44],
+      promoList[66],
+      promoList[77],
+      promoList[88],
+      promoList[99],
+      promoList[3],
+      promoList[33],
+      promoList[59],
+    ];
     
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -78,6 +95,7 @@ class _PromoDetailState extends State<PromoDetail> {
           )
         ],
       ),
+      bottomNavigationBar: const BottomActionSavePromo(),
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
@@ -91,6 +109,7 @@ class _PromoDetailState extends State<PromoDetail> {
             backgroundColor: colorType(type),
             /// IMAGE COVER
             flexibleSpace: ParallaxCover(thumb: controller.selectedPromo.value.thumb),
+
             /// ROUNDED BOTTOM DECORATION
             bottom: PreferredSize(
               preferredSize: const Size.fromHeight(20),
@@ -131,39 +150,51 @@ class _PromoDetailState extends State<PromoDetail> {
                   );
                 }
               ),
+              const VSpaceShort(),
+              const WorkingTime(),
+              GetBuilder<AllPromoController>(
+                builder: (controller) {
+                  Promotion item = controller.selectedPromo.value;
+                  return DescriptionDetail(
+                    id: item.id,
+                    desc: item.desc,
+                    type: item.type,
+                    category: item.category,
+                    rating: item.stared
+                  );
+                }
+              ),
               const VSpace(),
-              
-              Container(
-                height: 1300,
-                color: Colors.white,
-                child: Obx(() => controller.isNotFound.value ? const Text('Not Found') : const Text('Found')),
-              )
+
+              /// SPONSORED PROMO
+              Padding(padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
+                child: Stack(children: [
+                  ClipRRect(
+                    borderRadius: ThemeRadius.medium,
+                    child: Image.network(ImgApi.photo[72], width: double.infinity, fit: BoxFit.contain)
+                  ),
+                  Positioned(
+                    top: spacingUnit(1),
+                    right: spacingUnit(1),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: colorScheme.primaryContainer,
+                        borderRadius: ThemeRadius.medium
+                      ),
+                      child: Text('Sponsored', style: ThemeText.caption.copyWith(color: colorScheme.onPrimaryContainer)),
+                    ),
+                  ),
+                ]),
+              ),
+              const VSpaceBig(),
+
+              /// RELATED PROMO
+              PromoListSingle(items: relatedPromo, title: "Related Promo"),
+              const VSpace()
             ]))
           ),
         ],
-      ),
-    );
-  }
-}
-
-
-class FadedBottomHeader extends StatelessWidget {
-  const FadedBottomHeader({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    ColorScheme colorScheme = Theme.of(context).colorScheme;
-
-    return Container(
-      height: 20,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: <Color>[colorScheme.surface, colorScheme.surface.withOpacity(0.5), colorScheme.surface.withOpacity(0)],
-          stops: const [0.25, 0.5, 1.3],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        )
       ),
     );
   }

@@ -5,6 +5,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
+import 'package:mamang_app_flutter/ui/widgets/title/title_basic.dart';
 
 class DescriptionDetail extends StatelessWidget {
   const DescriptionDetail({
@@ -24,64 +25,72 @@ class DescriptionDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double iconSize = 56;
+    const double iconSize = 32;
     Category categoryItem = categoryList.firstWhere((item) => item.id == category);
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
-      child: ListView(children: [
+      child: ListView(shrinkWrap: true, physics: const ClampingScrollPhysics(), children: [
         /// DESCRIPTION
-        Text('Description', textAlign: TextAlign.start, style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
-        const SizedBox(height: 4),
+        const TitleBasic(title: 'Promo Description'),
+        const VSpaceShort(),
         Text(desc, textAlign: TextAlign.start,),
-        const VSpace(),
+        SizedBox(height: spacingUnit(2)),
+        Text('ID: #123456$id', textAlign: TextAlign.start),
+        const SizedBox(height: 4),
+        Text('Type: ${type.toUpperCase()}', textAlign: TextAlign.start),
+        const SizedBox(height: 4),
+        Text('Category: ${category.toUpperCase()}', textAlign: TextAlign.start),
+        const LineSpace(),
 
         /// GRID PROPERTIES INFO
         GridView.count(
           shrinkWrap: true,
           physics: const ClampingScrollPhysics(),
           primary: false,
-          padding: EdgeInsets.all(spacingUnit(2)),
+          padding: EdgeInsets.all(spacingUnit(1)),
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           crossAxisCount: 3,
           children: <Widget>[
             const Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Icon(Icons.star_outline, size: iconSize, color: Colors.orangeAccent),
+              Icon(Icons.star, size: iconSize, color: Colors.orangeAccent),
               SizedBox(height: 4),
-              Text('RATING 4.5/5', style: ThemeText.subtitle)
+              Text('RATING 4.5/5', style: ThemeText.caption)
             ]),
             const Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Icon(Icons.favorite_border, size: iconSize, color: Colors.redAccent),
+              Icon(Icons.favorite, size: iconSize, color: Colors.redAccent),
               SizedBox(height: 4),
-              Text('LIKED: 22', style: ThemeText.subtitle)
+              Text('LIKED: 22', style: ThemeText.caption)
             ]),
             const Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Icon(Icons.bookmark_outline, size: iconSize, color: Colors.green),
+              Icon(Icons.bookmark, size: iconSize, color: Colors.green),
               SizedBox(height: 4),
-              Text('SAVED: 7', style: ThemeText.subtitle)
+              Text('SAVED: 7', style: ThemeText.caption)
             ]),
             const Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
               Icon(Icons.remove_red_eye, size: iconSize, color: Colors.grey),
               SizedBox(height: 4),
-              Text('VIEWS: 700', style: ThemeText.subtitle)
+              Text('VIEWS: 700', style: ThemeText.caption)
             ]),
             Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
               Icon(Icons.all_inbox_outlined, size: iconSize, color: colorType(type)),
               const SizedBox(height: 4),
-              Text('TYPE: $type', style: ThemeText.subtitle)
+              Text(type.toUpperCase(), style: ThemeText.caption)
             ]),
             Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
               Icon(categoryItem.icon, size: iconSize, color: categoryItem.color),
               const SizedBox(height: 4),
-              Text('CATEGORY: $category', style: ThemeText.subtitle)
+              Text(category.toUpperCase(), style: ThemeText.caption)
             ]),
           ]
         ),
-        const VSpace(),
+        const LineSpace(),
       
         /// VERIFIED PROPERTIES
+        const TitleBasic(title: 'Verified Info', desc: "The information to help you trust this promo."),
+        const VSpaceShort(),
         Container(
           padding: EdgeInsets.all(spacingUnit(1)),
           decoration: BoxDecoration(
