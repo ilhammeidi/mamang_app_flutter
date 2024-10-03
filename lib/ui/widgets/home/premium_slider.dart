@@ -28,16 +28,27 @@ class _PremiumSliderState extends State<PremiumSlider> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> imageSliders = imgList.map((item) => ClipRRect(
-      borderRadius: const BorderRadius.all(Radius.circular(12.0)),
-      child: Stack(
-        children: <Widget>[
-          Image.network(item, fit: BoxFit.cover, width: 1000),
-        ],
-      )
-    )).toList();
+    List<Widget> imageSliders = imgList.asMap().entries.map((entry) {
+      String item = entry.value;
+      int index = entry.key + 1;
+
+      return GestureDetector(
+        onTap: () {
+          Get.toNamed('/promos/$index');
+        },
+        child: ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(12.0)),
+          child: Stack(
+            children: <Widget>[
+              Image.network(item, fit: BoxFit.cover, width: 1000),
+            ],
+          )
+        ),
+      );
+    }).toList();
   
     return Column(children: [
+      /// TITLE
       Padding(
         padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
         child: TitleAction(
@@ -49,6 +60,8 @@ class _PremiumSliderState extends State<PremiumSlider> {
         ),
       ),
       const VSpaceShort(),
+      
+      /// CAROUSEL SLIDER IMAGES
       SizedBox(
         height: 160,
         child: CarouselSlider(
@@ -71,6 +84,8 @@ class _PremiumSliderState extends State<PremiumSlider> {
           )
         )
       ),
+
+      /// SLIDER PAGINATION
       const VSpaceShort(),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,

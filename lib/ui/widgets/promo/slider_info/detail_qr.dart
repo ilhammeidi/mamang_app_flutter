@@ -17,7 +17,7 @@ class DetailQr extends StatelessWidget {
         const VSpace(),
       
         /// TITLE
-        const Text('Exchange Content', style: ThemeText.subtitle2),
+        Text('Exchange Content', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
         const VSpaceShort(),
       
         /// QR CODE

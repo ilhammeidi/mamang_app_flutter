@@ -30,11 +30,11 @@ class _PromoMainState extends State<PromoMain> {
     controller.filterByCategory(val);
   }
 
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   controller.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {

@@ -40,11 +40,11 @@ class _PromoDetailState extends State<PromoDetail> {
     controller.getPromo(promoId);
   }
 
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   controller.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -131,6 +131,7 @@ class _PromoDetailState extends State<PromoDetail> {
               return const FadedBottomHeader();
             },
             sliver: SliverList(delegate: SliverChildListDelegate([
+              /// BOX COLOURED
               GetBuilder<AllPromoController>(
                 builder: (controller) {
                   Promotion item = controller.selectedPromo.value;
@@ -151,7 +152,12 @@ class _PromoDetailState extends State<PromoDetail> {
                 }
               ),
               const VSpaceShort(),
+
+              /// WORKING TIME
               const WorkingTime(),
+              const VSpace(),
+
+              /// DESCRIPTION
               GetBuilder<AllPromoController>(
                 builder: (controller) {
                   Promotion item = controller.selectedPromo.value;
@@ -179,10 +185,10 @@ class _PromoDetailState extends State<PromoDetail> {
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
-                        color: colorScheme.primaryContainer,
+                        color: Colors.black,
                         borderRadius: ThemeRadius.medium
                       ),
-                      child: Text('Sponsored', style: ThemeText.caption.copyWith(color: colorScheme.onPrimaryContainer)),
+                      child: Text('Sponsored', style: ThemeText.caption.copyWith(color: Colors.white)),
                     ),
                   ),
                 ]),

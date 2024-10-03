@@ -33,6 +33,7 @@ class BusinessCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
+    var getCategory = categoryList.firstWhere((item) => item.id == category);
 
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -60,6 +61,7 @@ class BusinessCard extends StatelessWidget {
               borderRadius: ThemeRadius.medium,
               child: Image.network(thumb, width: double.infinity, height: 120, fit: BoxFit.cover),
             ),
+
             /// STAR
             Positioned(
               top: spacingUnit(1),
@@ -78,6 +80,7 @@ class BusinessCard extends StatelessWidget {
               )
             )
           ]),
+
           /// PROPERTIES
           Padding(
             padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
@@ -99,9 +102,14 @@ class BusinessCard extends StatelessWidget {
               ) : Container()
             ]),
           ),
+
           /// TITLE AND CATEGORY
           Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            _iconCategory(context, category),
+            CircleAvatar(
+              radius: 15,
+              backgroundColor: lighten(colorType(type), 0.4),
+              child: Icon(getCategory.icon, size: 20, color: colorType(type)),
+            ),
             const SizedBox(width: 4),
             Expanded(
               child: Text(
@@ -112,6 +120,7 @@ class BusinessCard extends StatelessWidget {
               )
             )
           ]),
+
           /// PROGRESS LEVEL
           Padding(padding: EdgeInsets.symmetric(vertical: spacingUnit(2)),
             child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -130,15 +139,6 @@ class BusinessCard extends StatelessWidget {
           )
         ]),
       ),
-    );
-  }
-
-  Widget _iconCategory(BuildContext context, String category) {
-    var getCategory = categoryList.firstWhere((item) => item.id == category);
-    return CircleAvatar(
-      radius: 15,
-      backgroundColor: lighten(getCategory.color, 0.5),
-      child: Icon(getCategory.icon, size: 20, color: getCategory.color),
     );
   }
 }

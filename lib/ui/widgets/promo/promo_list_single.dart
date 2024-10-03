@@ -46,12 +46,17 @@ class PromoListSingle extends StatelessWidget {
               child: SizedBox(width: 200, height: cardHeight,
                 child: Padding(
                   padding: const EdgeInsets.all(8),
-                  child: PromoCard(
-                    thumb: item.thumb,
-                    id: item.id.toString(),
-                    title: item.name,
-                    distance: item.distance,
-                    xp: item.xp,
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.toNamed('/promos/${item.id}');
+                    },
+                    child: PromoCard(
+                      thumb: item.thumb,
+                      id: item.id.toString(),
+                      title: item.name,
+                      distance: item.distance,
+                      xp: item.xp,
+                    ),
                   ),
                 )
               ),

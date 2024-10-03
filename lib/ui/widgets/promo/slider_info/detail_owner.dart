@@ -3,7 +3,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
-import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/grabber_icon.dart';
 
 class DetailOwner extends StatelessWidget {
   const DetailOwner({super.key, required this.avatar, required this.name});

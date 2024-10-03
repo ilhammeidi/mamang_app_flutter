@@ -18,7 +18,7 @@ class BottomActionSavePromo extends StatelessWidget {
           width: 120,
           child: OutlinedButton(
             onPressed: () {},
-            style: ThemeButton.btnBig.merge(ThemeButton.outlinedSecondary(context)),
+            style: ThemeButton.btnBig.merge(ThemeButton.outlinedPrimary(context)),
             child: const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Icon(Icons.stars, size: 16, color: Colors.amberAccent),
               SizedBox(width: 2),

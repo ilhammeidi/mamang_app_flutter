@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/promos.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/promo_landscape_card.dart';
@@ -20,14 +21,19 @@ class PromoList extends StatelessWidget {
         Promotion promo = items[index];
         return Padding(
           padding: EdgeInsets.only(bottom: spacingUnit(2)),
-          child: PromoLandscapeCard(
-            thumb: promo.thumb,
-            title: promo.name,
-            date: promo.date,
-            desc: promo.desc,
-            id: promo.id.toString(),
-            distance: promo.distance,
-            liked: promo.liked ?? false
+          child: GestureDetector(
+            onTap: () {
+              Get.toNamed('/promos/${promo.id}');
+            },
+            child: PromoLandscapeCard(
+              thumb: promo.thumb,
+              title: promo.name,
+              date: promo.date,
+              desc: promo.desc,
+              id: promo.id.toString(),
+              distance: promo.distance,
+              liked: promo.liked ?? false
+            ),
           ),
         );
       }

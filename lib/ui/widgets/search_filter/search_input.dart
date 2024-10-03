@@ -26,6 +26,7 @@ class _SearchInputState extends State<SearchInput> {
         controller: _textRef,
         decoration: InputDecoration(
           border: InputBorder.none,
+          enabledBorder: InputBorder.none,
           hintText: 'Search promo, event, or anything',
           suffixIcon: _textRef.text.isNotEmpty ? IconButton(
             onPressed: () {

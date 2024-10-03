@@ -12,8 +12,10 @@ class DetailRewards extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
       const GrabberIcon(),
       const VSpace(),
-      Text('Rewards', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
+      Text('REWARDS', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
       const VSpaceShort(),
+
+      /// REWARD ITEMS
       SizedBox(
         height: 400,
         child: GridView.count(
