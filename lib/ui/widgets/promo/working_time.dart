@@ -115,6 +115,7 @@ class TimeList extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       physics: const ClampingScrollPhysics(),
+      padding: const EdgeInsets.all(0.0),
       itemCount: dayList.length,
       itemBuilder: ((context, index) {
         Map item = dayList[index];

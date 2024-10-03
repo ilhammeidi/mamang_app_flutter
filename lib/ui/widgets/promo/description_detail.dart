@@ -25,7 +25,7 @@ class DescriptionDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double iconSize = 32;
+    const double iconSize = 48;
     Category categoryItem = categoryList.firstWhere((item) => item.id == category);
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
@@ -54,34 +54,39 @@ class DescriptionDetail extends StatelessWidget {
           mainAxisSpacing: 10,
           crossAxisCount: 3,
           children: <Widget>[
-            const Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Icon(Icons.star, size: iconSize, color: Colors.orangeAccent),
-              SizedBox(height: 4),
-              Text('RATING 4.5/5', style: ThemeText.caption)
+            Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+              const Icon(Icons.star, size: iconSize, color: Colors.orangeAccent),
+              const SizedBox(height: 8),
+              RichText(
+                text: const TextSpan(text: 'RATING: ', style: ThemeText.caption, children: [
+                  TextSpan(text: '4.5', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
+                  TextSpan(text: '/5'),
+                ])
+              ),
             ]),
-            const Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            const Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
               Icon(Icons.favorite, size: iconSize, color: Colors.redAccent),
-              SizedBox(height: 4),
+              SizedBox(height: 8),
               Text('LIKED: 22', style: ThemeText.caption)
             ]),
-            const Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            const Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
               Icon(Icons.bookmark, size: iconSize, color: Colors.green),
-              SizedBox(height: 4),
+              SizedBox(height: 8),
               Text('SAVED: 7', style: ThemeText.caption)
             ]),
-            const Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            const Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
               Icon(Icons.remove_red_eye, size: iconSize, color: Colors.grey),
-              SizedBox(height: 4),
+              SizedBox(height: 8),
               Text('VIEWS: 700', style: ThemeText.caption)
             ]),
-            Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
               Icon(Icons.all_inbox_outlined, size: iconSize, color: colorType(type)),
-              const SizedBox(height: 4),
+              const SizedBox(height: 8),
               Text(type.toUpperCase(), style: ThemeText.caption)
             ]),
-            Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
               Icon(categoryItem.icon, size: iconSize, color: categoryItem.color),
-              const SizedBox(height: 4),
+              const SizedBox(height: 8),
               Text(category.toUpperCase(), style: ThemeText.caption)
             ]),
           ]

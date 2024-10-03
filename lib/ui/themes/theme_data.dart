@@ -33,6 +33,7 @@ ThemeData lightColorScheme = ThemeData(
     onError: Colors.white,
     brightness: Brightness.light,
     outline: Colors.grey[300],
+    outlineVariant: Colors.grey[400],
   ),
 );
 
@@ -62,6 +63,7 @@ ThemeData darkColorScheme = ThemeData(
     error: Colors.red,
     onError: Colors.white,
     brightness: Brightness.dark,
-    outline: Colors.grey[400]
+    outline: Colors.grey[400],
+    outlineVariant: Colors.grey[500],
   )
 );

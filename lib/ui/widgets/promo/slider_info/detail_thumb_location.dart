@@ -37,8 +37,9 @@ class DetailThumbLocation extends StatelessWidget {
           ),
           const VSpace(),
 
+          /// DESCRIPTION
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.5,
+            height: MediaQuery.of(context).size.height * 0.55,
             child: ListView(children: [
               /// TEXT TITLE DESCRIPTION
               Text(title.toCapitalCase(), textAlign: TextAlign.start, style: ThemeText.title.copyWith(fontWeight: FontWeight.bold)),
@@ -67,7 +68,6 @@ class DetailThumbLocation extends StatelessWidget {
               ),
             ]),
           ),
-          const VSpace(),
         ])
       ]),
     );

@@ -34,17 +34,19 @@ class _PromoSettingsState extends State<PromoSettings> {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return ListView(
+      shrinkWrap: true,
+      physics: const ClampingScrollPhysics(),
       padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
       children: [
         /// AUTO SAVE SWITCHER
         AppInputBox(
           content: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
             const Expanded(
-              child: Text('Auto Save')
+              child: Text('Auto Save',)
             ),
             Switch(
               value: _autoSave,
-              activeColor: ThemePalette.primaryLight,
+              activeColor: ThemePalette.primaryMain,
               onChanged: (bool value) {
                 setState(() {
                   _autoSave = value;
@@ -67,17 +69,16 @@ class _PromoSettingsState extends State<PromoSettings> {
               controller: linkInputRef,
               label: 'Link',
               onChanged: (_) {},
-              suffix: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.check_circle_outline, size: 22, color: ThemePalette.primaryMain),
-              ),
             ),
           ),
-          const SizedBox(width: 2),
-          FilledButton(
-            onPressed: () {},
-            style: ThemeButton.tonalPrimary(context),
-            child: const Icon(Icons.check)
+          const SizedBox(width: 4),
+          SizedBox(
+            height: 50,
+            child: FilledButton(
+              onPressed: () {},
+              style: ThemeButton.tonalPrimary(context),
+              child: const Icon(Icons.check)
+            ),
           )
         ]),
         Row(
@@ -103,13 +104,13 @@ class _PromoSettingsState extends State<PromoSettings> {
 
         /// WARNING
         Container(
-          padding: EdgeInsets.all(spacingUnit(2)),
+          padding: EdgeInsets.all(spacingUnit(1)),
           decoration: BoxDecoration(
             color: Colors.amber.shade200,
             borderRadius: ThemeRadius.small,
           ),
           child: const Text(
-            'Please do not put the link that containing ilegal things like porn, violent, or any other inappropriate',
+            'Please do not put the link that containing ilegal contents like porn, violent, or any other inappropriate',
             textAlign: TextAlign.start,
           ),
         ),
@@ -119,11 +120,13 @@ class _PromoSettingsState extends State<PromoSettings> {
         TitleActionSetting(
           title: 'Open Hours',
           textAction: 'SETTING',
-          onTap: () {}
+          onTap: () {
+            
+          }
         ),
         const VSpaceShort(),
         const TimeList(),
-        const VSpace(),
+        const VSpaceBig(),
 
         /// PROPERTY SETTINGS
         TitleActionSetting(
@@ -134,34 +137,38 @@ class _PromoSettingsState extends State<PromoSettings> {
         const VSpaceShort(),
         AppInputBox(content: ListView(
           shrinkWrap: true,
+          padding: const EdgeInsets.all(0.0),
           physics: const ClampingScrollPhysics(),
           children: <Widget>[
             ListTile(
-              leading: Icon(Icons.bookmark, color: colorScheme.primaryContainer),
+              leading: Icon(Icons.bookmark, color: colorScheme.onPrimaryContainer),
               title: const Text('Available Saves: 20'),
               subtitle: const Text('ToTal saves today: 5/20', style: ThemeText.caption),
+              contentPadding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
             ),
             const LineList(),
             ListTile(
-              leading: Icon(Icons.access_time_filled, color: colorScheme.primaryContainer),
+              leading: Icon(Icons.access_time_filled, color: colorScheme.onPrimaryContainer),
               title: const Text('Expired Date: 08/12/2024 @ 20:00'),
               subtitle: const Text('3 months 2 days left', style: ThemeText.caption),
+              contentPadding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
             ),
           ],
         )),
-        const VSpace(),
+        const VSpaceBig(),
 
         /// VALIDATOR SETTINGS
         TitleActionSetting(
-          title: 'Properties',
+          title: 'Validator',
           textAction: 'SETTING',
           onTap: () {}
         ),
         const VSpaceShort(),
         AppInputBox(
           content: ListTile(
-            leading: Icon(Icons.group, color: colorScheme.primaryContainer),
+            leading: Icon(Icons.group, color: colorScheme.onPrimaryContainer),
             title: const Text('No Validator Yet'),
+            contentPadding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
             trailing: FilledButton(
               onPressed: () {},
               style: ThemeButton.primary,

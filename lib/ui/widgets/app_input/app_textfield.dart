@@ -56,13 +56,13 @@ class _AppTextFieldState extends State<AppTextField> {
         borderRadius: ThemeRadius.small,
         border: Border.all(
           width: 1,
-          color: boxFocus ? ThemePalette.primaryMain : Theme.of(context).colorScheme.outline
+          color: boxFocus ? ThemePalette.primaryMain : Theme.of(context).colorScheme.outlineVariant
         )
       ),
       child: Padding(
         padding: EdgeInsets.only(
-          top: spacingUnit(1),
-          bottom: spacingUnit(1),
+          top: 4,
+          bottom: 4,
           left: widget.prefixIcon != null ? 0 : spacingUnit(2),
           right: widget.suffix != null ? 0 : spacingUnit(2)
         ),

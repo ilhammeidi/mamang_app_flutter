@@ -92,15 +92,20 @@ class _BusinessMainState extends State<BusinessMain> {
                 ),
                 itemBuilder: (context, index) {
                   Promotion item = controller.myBusiness[index];
-                  return BusinessCard(
-                    id: item.id,
-                    name: item.name,
-                    thumb: item.thumb,
-                    category: item.category,
-                    verified: item.verified,
-                    stared: item.stared,
-                    type: item.type,
-                    level: item.level
+                  return GestureDetector(
+                    onTap: () {
+                      Get.toNamed('/business/${item.id}');
+                    },
+                    child: BusinessCard(
+                      id: item.id,
+                      name: item.name,
+                      thumb: item.thumb,
+                      category: item.category,
+                      verified: item.verified,
+                      stared: item.stared,
+                      type: item.type,
+                      level: item.level
+                    ),
                   );
                 }
               );

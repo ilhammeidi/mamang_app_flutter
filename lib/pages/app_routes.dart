@@ -1,5 +1,6 @@
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
+import 'package:mamang_app_flutter/pages/business/detail.dart';
 import 'package:mamang_app_flutter/pages/event/detail.dart';
 import 'package:mamang_app_flutter/pages/event/event_main.dart';
 import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
@@ -78,6 +79,11 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/business',
     page: () => const HomeLayout(content: BusinessMain()),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: '/business/:id',
+    page: () => const GeneralLayout(content: BusinessDetail()),
     transition: Transition.fadeIn,
   ),
   /// PROFILE AND SETTINGS

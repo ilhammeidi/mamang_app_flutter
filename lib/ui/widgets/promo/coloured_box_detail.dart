@@ -8,7 +8,7 @@ import 'package:mamang_app_flutter/ui/utils/box_color.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/slider_info_list.dart';
 
-class ColouredBoxDetail extends StatelessWidget {
+class ColouredBoxDetail extends StatefulWidget {
   const ColouredBoxDetail({
     super.key, 
     required this.type,
@@ -39,13 +39,20 @@ class ColouredBoxDetail extends StatelessWidget {
   final int userId;
 
   @override
+  State<ColouredBoxDetail> createState() => _ColouredBoxDetailState();
+}
+
+class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
+  bool? isActive;
+  
+  @override
   Widget build(BuildContext context) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: <Color>[colorType(type), colorScheme.surface.withOpacity(0.35)],
+          colors: <Color>[colorType(widget.type), colorScheme.surface.withOpacity(0.35)],
           stops: const [0.25, 1],
           begin: Alignment.bottomCenter,
           end: Alignment.topCenter,
@@ -72,9 +79,9 @@ class ColouredBoxDetail extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  Text(title.toCapitalCase(), textAlign: TextAlign.center, style: ThemeText.title2),
+                  Text(widget.title.toCapitalCase(), textAlign: TextAlign.center, style: ThemeText.title2),
                   SizedBox(height: spacingUnit(1)),
-                  Text(desc, textAlign: TextAlign.center),
+                  Text(widget.desc, textAlign: TextAlign.center),
                 ]),
               ),
 
@@ -98,16 +105,21 @@ class ColouredBoxDetail extends StatelessWidget {
                     )
                   ]),
                   Column(children: [
-                    Text('Status: ${published ? 'Active' : 'Non-Active'}', style: ThemeText.caption),
+                    widget.owned ? Text('Status: ${isActive != null && isActive == true ? 'Active' : 'Non-Active'}', style: ThemeText.caption)
+                    : Text('Status: ${widget.published ? 'Active' : 'Non-Active'}', style: ThemeText.caption),
                     SizedBox(
                       width: 50,
                       height: 30,
                       child: FittedBox(
                         fit: BoxFit.fill,
                         child: Switch(
-                          value: published,
+                          value: isActive ?? widget.published,
                           activeColor: ThemePalette.primaryMain,
-                          onChanged: (_) {},
+                          onChanged: widget.owned ? (bool value) {
+                            setState(() {
+                              isActive = value;
+                            });
+                          } : null,
                         )
                       ),
                     )
@@ -116,7 +128,7 @@ class ColouredBoxDetail extends StatelessWidget {
               ),
             
             /// STATS INFO
-            owned ? Padding(
+            widget.owned ? Padding(
               padding: EdgeInsets.all(spacingUnit(3)),
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -127,7 +139,7 @@ class ColouredBoxDetail extends StatelessWidget {
                 Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                   const Text('Exp.Poin', style: ThemeText.caption),
                   const SizedBox(height: 4),
-                  Text(xp.toString(), style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold, color: ThemePalette.secondaryMain))
+                  Text(widget.xp.toString(), style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold, color: ThemePalette.secondaryMain))
                 ]),
                 Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                   const Text('Save Total', style: ThemeText.caption),
@@ -142,12 +154,12 @@ class ColouredBoxDetail extends StatelessWidget {
               ]),
             ) : Container(),
             SliderInfoList(
-              thumb: thumb,
-              name: title,
-              desc: desc,
-              distance: distance,
-              location: location,
-              userId: userId
+              thumb: widget.thumb,
+              name: widget.title,
+              desc: widget.desc,
+              distance: widget.distance,
+              location: widget.location,
+              userId: widget.userId
             )
           ]),
         ],),
