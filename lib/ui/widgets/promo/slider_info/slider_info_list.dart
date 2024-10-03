@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/models/users.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
@@ -34,7 +36,7 @@ class SliderInfoList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 140,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
@@ -51,7 +53,7 @@ class SliderInfoList extends StatelessWidget {
   /// INFO LOCATION CARD
   Widget _infoLocation(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
+      margin: EdgeInsets.all(spacingUnit(1)),
       width: cardWidth,
       child: GestureDetector(
         onTap: () {
@@ -82,11 +84,11 @@ class SliderInfoList extends StatelessWidget {
               ),
               SizedBox(width: spacingUnit(1)),
               Expanded(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
                   Row(mainAxisAlignment: MainAxisAlignment.start, children:[
                     Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
                     const SizedBox(width: 4),
-                    Text('Promo Location', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))
+                    Text('Location', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))
                   ]),
                   const SizedBox(height: 4),
                   Text('Distance: $distance - $location', textAlign: TextAlign.start,)
@@ -101,43 +103,47 @@ class SliderInfoList extends StatelessWidget {
 
   /// INFO PROMOTOR USER
   Widget _infoPromotor(BuildContext context) {
-    final double height = MediaQuery.of(context).size.height;
     User promotor = userList.firstWhere((item) => item.id == userId);
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
+      margin: EdgeInsets.all(spacingUnit(1)),
       width: cardWidth,
       child: GestureDetector(
         onTap: () {
           showModalBottomSheet(
             context: context,
-            elevation: 0,
-            barrierColor: Colors.black.withAlpha(1),
             backgroundColor: Colors.transparent,
-            builder: (context) => SizedBox(
-              height: height * 0.75,
-              child: DetailOwner(avatar: promotor.avatar, name: promotor.name)
-            ),
+            isScrollControlled: true,
+            builder: (context) {
+              return Wrap(
+                children: [
+                  DetailOwner(avatar: promotor.avatar, name: promotor.name)
+                ]
+              );
+            },
           );
         },
         child: PaperCard(
           content: Padding(padding: EdgeInsets.all(spacingUnit(1)),
             child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
               CircleAvatar(
-                radius: 20,
+                radius: 40,
                 backgroundImage: NetworkImage(promotor.avatar),
               ),
-              SizedBox(width: spacingUnit(1)),
+              SizedBox(width: spacingUnit(2)),
               Expanded(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
                   Text(promotor.name, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onPrimaryContainer)),
                   const SizedBox(height: 2),
-                  Text('Business Owner', style: ThemeText.caption.copyWith(color: Theme.of(context).colorScheme.outline)),
+                  Text('Business Owner', style: ThemeText.caption.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                   const SizedBox(height: 4),
                   const Row(children: [
-                    Icon(Icons.message, color: Colors.green, size: 16),
+                    FaIcon(FontAwesomeIcons.whatsapp, color: Colors.lightGreen, size: 16),
+                    SizedBox(width: 20),
                     Icon(Icons.qr_code, size: 16),
+                    SizedBox(width: 20),
                     Icon(Icons.supervisor_account_sharp, size: 16),
+                    SizedBox(width: 20),
                     Icon(Icons.copy, size: 16),
                   ])
                 ])
@@ -152,7 +158,7 @@ class SliderInfoList extends StatelessWidget {
   /// INFO QR CODE 
   Widget _infoQrCode(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
+      margin: EdgeInsets.all(spacingUnit(1)),
       width: cardWidth,
       child: GestureDetector(
         onTap: () {
@@ -172,14 +178,14 @@ class SliderInfoList extends StatelessWidget {
           content: Padding(padding: EdgeInsets.all(spacingUnit(1)),
             child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
               ClipRRect(
-                child: Image.asset('assets/images/qrcode.webp', width: 100, height: 100, fit: BoxFit.fill)
+                child: Image.asset('assets/images/qrcode.webp', width: 80, fit: BoxFit.fill)
               ),
               SizedBox(width: spacingUnit(1)),
               Expanded(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('Exchange Content', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text('Exchange', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
                   const SizedBox(height: 4),
-                  const Text('Scan the QR Code to your friends who want trade the content.', textAlign: TextAlign.start,),
+                  const Text('Scan the QR Code to your friends who want trade the content.', style: ThemeText.caption, textAlign: TextAlign.start,),
                 ])
               )
             ]),
@@ -192,7 +198,7 @@ class SliderInfoList extends StatelessWidget {
   /// INFO REWARD
   Widget _infoReward(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
+      margin: EdgeInsets.all(spacingUnit(1)),
       width: cardWidth,
       child: GestureDetector(
         onTap: () {
@@ -211,13 +217,13 @@ class SliderInfoList extends StatelessWidget {
         child: PaperCard(
           content: Padding(padding: EdgeInsets.all(spacingUnit(1)),
             child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Image.asset('assets/images/gift.png', width: 100, height: 100, fit: BoxFit.fill),
+              Image.asset('assets/images/gift.png', height: 100, fit: BoxFit.fill),
               SizedBox(width: spacingUnit(1)),
               Expanded(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('Reward Info', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text('Reward Info', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
                   const SizedBox(height: 4),
-                  const Text('Claim your rewards in this promotion before it expired', textAlign: TextAlign.start,),
+                  const Text('Claim your rewards before it expired', style: ThemeText.caption, textAlign: TextAlign.start,),
                 ])
               )
             ]),
@@ -230,7 +236,7 @@ class SliderInfoList extends StatelessWidget {
   /// INFO SPONSOR
   Widget _infoCoporateAds(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
+      margin: EdgeInsets.all(spacingUnit(1)),
       width: cardWidth,
       child: GestureDetector(
         onTap: () {
@@ -241,7 +247,7 @@ class SliderInfoList extends StatelessWidget {
               return Wrap(
                 children: [
                   DetailSponsor(
-                    thumb: thumb,
+                    thumb: ImgApi.photo[72],
                     distance: distance,
                     location: location,
                     title: name,
@@ -258,10 +264,10 @@ class SliderInfoList extends StatelessWidget {
               Icon(Icons.business_rounded, color: ThemePalette.primaryMain, size: 100),
               SizedBox(width: spacingUnit(1)),
               Expanded(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('Sponsor Ads', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text('Sponsor Ads', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
                   const SizedBox(height: 4),
-                  const Text('Sponsor ads will be attached in this promo', textAlign: TextAlign.start,),
+                  const Text('Sponsor ads will be attached in this promo', style: ThemeText.caption, textAlign: TextAlign.start,),
                 ])
               )
             ]),

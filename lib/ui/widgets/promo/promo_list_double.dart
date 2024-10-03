@@ -55,24 +55,34 @@ class PromoListDouble extends StatelessWidget {
                 SizedBox(width: 200, height: cardHeight,
                   child: Padding(
                     padding: const EdgeInsets.all(8),
-                    child: PromoCard(
-                      thumb: itemOdd.thumb,
-                      id: itemOdd.id.toString(),
-                      title: itemOdd.name,
-                      distance: itemOdd.distance,
-                      xp: itemOdd.xp,
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.toNamed('/promos/${itemOdd.id}');
+                      },
+                      child: PromoCard(
+                        thumb: itemOdd.thumb,
+                        id: itemOdd.id.toString(),
+                        title: itemOdd.name,
+                        distance: itemOdd.distance,
+                        xp: itemOdd.xp,
+                      ),
                     ),
                   )
                 ),
                 SizedBox(width: 200, height: cardHeight,
                   child: Padding(
                     padding: const EdgeInsets.all(8),
-                    child: PromoCard(
-                      thumb: itemEven.thumb,
-                      id: itemEven.id.toString(),
-                      title: itemEven.name,
-                      distance: itemEven.distance,
-                      xp: itemEven.xp,
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.toNamed('/promos/${itemEven.id}');
+                      },
+                      child: PromoCard(
+                        thumb: itemEven.thumb,
+                        id: itemEven.id.toString(),
+                        title: itemEven.name,
+                        distance: itemEven.distance,
+                        xp: itemEven.xp,
+                      ),
                     ),
                   )
                 )

@@ -1,3 +1,4 @@
+import 'package:change_case/change_case.dart';
 import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
@@ -23,41 +24,52 @@ class DetailThumbLocation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      const GrabberIcon(),
-      const VSpace(),
-      
-      /// THUMBNAIL
-      ClipRRect(
-        borderRadius: ThemeRadius.medium,
-        child: Image.network(thumb, width: double.infinity, fit: BoxFit.contain)
-      ),
-      const VSpace(),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
+      child: Column(children: [
+        const GrabberIcon(),
+        const VSpaceShort(),
+        Column(children: [
+          /// THUMBNAIL
+          ClipRRect(
+            borderRadius: ThemeRadius.medium,
+            child: Image.network(thumb, width: double.infinity, fit: BoxFit.contain)
+          ),
+          const VSpace(),
 
-      /// TEXT TITLE DESCRIPTION
-      Text(title, textAlign: TextAlign.start, style: ThemeText.title.copyWith(fontWeight: FontWeight.bold)),
-      SizedBox(height: spacingUnit(1)),
-      Text(desc, textAlign: TextAlign.start, style: ThemeText.subtitle),
-      const VSpace(),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.5,
+            child: ListView(children: [
+              /// TEXT TITLE DESCRIPTION
+              Text(title.toCapitalCase(), textAlign: TextAlign.start, style: ThemeText.title.copyWith(fontWeight: FontWeight.bold)),
+              SizedBox(height: spacingUnit(1)),
+              Text(desc, textAlign: TextAlign.start, style: ThemeText.subtitle),
+              const VSpace(),
 
-      /// LOCATION INFO
-      Row(mainAxisAlignment: MainAxisAlignment.start, children:[
-        Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
-        const SizedBox(width: 4),
-        Text('Promo Location', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))
+              /// LOCATION INFO
+              Row(mainAxisAlignment: MainAxisAlignment.start, children:[
+                Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
+                const SizedBox(width: 4),
+                Text('Promo Location', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))
+              ]),
+              const SizedBox(height: 4),
+              Text('Distance: $distance - $location', textAlign: TextAlign.start),
+              const VSpace(),
+            
+              /// QR CODE
+              Center(child: Text('QR Code Promo', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))),
+              Center(
+                child: SizedBox(
+                  width: 250,
+                  height: 250,
+                  child: Image.asset('assets/images/qrcode.webp', fit: BoxFit.contain)
+                ),
+              ),
+            ]),
+          ),
+          const VSpace(),
+        ])
       ]),
-      const SizedBox(height: 4),
-      Text('Distance: $distance - $location', textAlign: TextAlign.start),
-      const VSpace(),
-
-      /// QR CODE
-      const Text('QR Code Promo', style: ThemeText.subtitle2),
-      const VSpaceShort(),
-      SizedBox(
-        width: 250,
-        height: 250,
-        child: Image.asset('assets/images/qrcode.webp', fit: BoxFit.contain)
-      ),
-    ]);
+    );
   }
 }
