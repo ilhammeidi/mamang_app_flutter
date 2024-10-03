@@ -54,7 +54,7 @@ class DetailThumbLocation extends StatelessWidget {
                 Text('Promo Location', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))
               ]),
               const SizedBox(height: 4),
-              Text('Distance: $distance - $location', textAlign: TextAlign.start),
+              Text('Distance: $distance m - $location', textAlign: TextAlign.start),
               const VSpace(),
             
               /// QR CODE

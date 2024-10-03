@@ -10,7 +10,10 @@ ThemeData lightColorScheme = ThemeData(
   primaryColorLight: ThemePalette.primaryLight,
   brightness: Brightness.light,
   inputDecorationTheme: InputDecorationTheme(
-    border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8),
+      borderSide: BorderSide(color: Colors.grey[400]!),
+    ),
   ),
   colorScheme: ColorScheme.light(
     primary: ThemePalette.primaryMain,
@@ -43,6 +46,15 @@ ThemeData darkColorScheme = ThemeData(
   primaryColorDark: ThemePalette.primaryDark,
   primaryColorLight: ThemePalette.primaryLight,
   brightness: Brightness.dark,
+  inputDecorationTheme: InputDecorationTheme(
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8),
+      borderSide: BorderSide(color: Colors.grey[700]!)
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: Colors.grey[500]!),
+    ),
+  ),
   colorScheme: ColorScheme.dark(
     primary: ThemePalette.primaryMain,
     onPrimary: Colors.white,

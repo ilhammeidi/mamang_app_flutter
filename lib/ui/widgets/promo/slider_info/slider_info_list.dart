@@ -88,10 +88,10 @@ class SliderInfoList extends StatelessWidget {
                   Row(mainAxisAlignment: MainAxisAlignment.start, children:[
                     Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
                     const SizedBox(width: 4),
-                    Text('Location', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))
+                    Text('Location', overflow: TextOverflow.ellipsis, maxLines: 3, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))
                   ]),
                   const SizedBox(height: 4),
-                  Text('Distance: $distance - $location', textAlign: TextAlign.start,)
+                  Text('Distance: $distance m - $location', textAlign: TextAlign.start,)
                 ])
               )
             ]),
