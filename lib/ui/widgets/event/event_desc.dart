@@ -43,23 +43,25 @@ class EventDesc extends StatelessWidget {
               style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold))
             ),
             SizedBox(width: spacingUnit(1)),
+
             /// TIME REMAINING
             Container(
               width: 120,
               padding: EdgeInsets.all(spacingUnit(1)),
               margin: EdgeInsets.only(bottom: spacingUnit(1)),
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondaryContainer,
+                color: Colors.black,
                 borderRadius: ThemeRadius.medium
               ),
               child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                const Icon(Icons.access_time_outlined, size: 12),
+                const Icon(Icons.access_time_outlined, size: 15, color: Colors.white),
                 const SizedBox(width: 2),
-                Text(date, style: ThemeText.caption),
+                Text(date, style: ThemeText.caption.copyWith(color: Colors.white)),
               ],)
             ),
           ]),
         ),
+
         /// THUMBNAIL HERO
         Hero(
           tag: thumb,
@@ -75,6 +77,7 @@ class EventDesc extends StatelessWidget {
             ),
           )
         ),
+
         /// DESCRIPTION AND CLUES
         Container(
           padding: EdgeInsets.symmetric(vertical: spacingUnit(2)),

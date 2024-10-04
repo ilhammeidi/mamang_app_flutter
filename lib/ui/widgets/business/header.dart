@@ -17,7 +17,7 @@ class BusinessHeader extends StatelessWidget {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return AppBar(
-      toolbarHeight: 100,
+      toolbarHeight: 80,
       automaticallyImplyLeading: false,
       /// GRADIENT BG
       flexibleSpace: Container(

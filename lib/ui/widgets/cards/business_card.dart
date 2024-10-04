@@ -134,7 +134,7 @@ class BusinessCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 2),
-              Text('Exp $level', style: ThemeText.caption.copyWith(color: colorScheme.outlineVariant.withOpacity(0.5)),)
+              Text('Exp $level', style: ThemeText.caption.copyWith(color: colorScheme.outlineVariant))
             ]),
           )
         ]),
