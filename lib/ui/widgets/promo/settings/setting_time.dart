@@ -71,6 +71,7 @@ class _SettingTimeState extends State<SettingTime> {
               onPressed: () {
                 Get.back();
               },
+              style: ThemeButton.btnBig,
               child: const Text('Discard'),
             ),
           ),
@@ -81,7 +82,7 @@ class _SettingTimeState extends State<SettingTime> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              style: ThemeButton.primary,
+              style: ThemeButton.btnBig.merge(ThemeButton.primary),
               child: const Text('Update'),
             ),
           )

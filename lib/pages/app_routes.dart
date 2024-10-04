@@ -1,5 +1,6 @@
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
+import 'package:mamang_app_flutter/pages/business/create_new.dart';
 import 'package:mamang_app_flutter/pages/business/detail.dart';
 import 'package:mamang_app_flutter/pages/event/detail.dart';
 import 'package:mamang_app_flutter/pages/event/event_main.dart';
@@ -27,6 +28,8 @@ final List<GetPage> appRoutes = [
     page: () => const HomeLayout(content: HomeMain()),
     transition: Transition.fadeIn,
   ),
+
+  /// SEARCH
   GetPage(
     name: '/search-list',
     page: () => const GeneralLayout(content: SearchList()),
@@ -37,6 +40,7 @@ final List<GetPage> appRoutes = [
     page: () => const GeneralLayout(content: SearchMap()),
     transition: Transition.downToUp,
   ),
+
   /// SAVED
   GetPage(
     name: '/saved',
@@ -51,13 +55,13 @@ final List<GetPage> appRoutes = [
     name: '/puzzle/:id',
     page: () => GeneralLayout(content: PuzzleDetail()),
   ),
-  /// EXPLORE
+
+  /// EXPLORE PROMOS AND EVENTS
   GetPage(
     name: '/explore',
     page: () => const HomeLayout(content: ExploreMain()),
     transition: Transition.fadeIn,
   ),
-  /// PROMOS
   GetPage(
     name: '/promos',
     page: () => const GeneralLayout(content: PromoMain()),
@@ -75,6 +79,7 @@ final List<GetPage> appRoutes = [
     name: '/events/:id',
     page: () => const GeneralLayout(content: EventDetail()),
   ),
+  
   /// BUSINESS
   GetPage(
     name: '/business',
@@ -84,8 +89,12 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/business/:id',
     page: () => const GeneralLayout(content: BusinessDetail()),
-    transition: Transition.fadeIn,
   ),
+  GetPage(
+    name: '/business-new',
+    page: () => const GeneralLayout(content: BusinessCreateNew()),
+  ),
+
   /// PROFILE AND SETTINGS
   GetPage(
     name: '/profile',

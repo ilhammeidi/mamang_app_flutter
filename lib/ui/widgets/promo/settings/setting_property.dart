@@ -85,6 +85,7 @@ class _SettingPropertyState extends State<SettingProperty> {
               onPressed: () {
                 Get.back();
               },
+              style: ThemeButton.btnBig,
               child: const Text('Discard'),
             ),
           ),
@@ -95,7 +96,7 @@ class _SettingPropertyState extends State<SettingProperty> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              style: ThemeButton.primary,
+              style: ThemeButton.btnBig.merge(ThemeButton.primary),
               child: const Text('Update'),
             ),
           )
