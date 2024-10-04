@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 
 class SearchInput extends StatefulWidget {
   const SearchInput({super.key});

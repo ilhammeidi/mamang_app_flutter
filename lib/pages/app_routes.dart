@@ -2,6 +2,8 @@ import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
 import 'package:mamang_app_flutter/pages/business/create_new.dart';
 import 'package:mamang_app_flutter/pages/business/detail.dart';
+import 'package:mamang_app_flutter/pages/business/form.dart';
+import 'package:mamang_app_flutter/pages/business/payment.dart';
 import 'package:mamang_app_flutter/pages/event/detail.dart';
 import 'package:mamang_app_flutter/pages/event/event_main.dart';
 import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
@@ -93,6 +95,14 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/business-new',
     page: () => const GeneralLayout(content: BusinessCreateNew()),
+  ),
+  GetPage(
+    name: '/business-new/payment',
+    page: () => const GeneralLayout(content: BusinessPayment()),
+  ),
+  GetPage(
+    name: '/business-new/form',
+    page: () => const GeneralLayout(content: BusinessForm()),
   ),
 
   /// PROFILE AND SETTINGS

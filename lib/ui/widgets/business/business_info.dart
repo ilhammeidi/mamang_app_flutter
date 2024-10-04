@@ -88,7 +88,7 @@ class BusinessInfo extends StatelessWidget {
           flex: 1,
           child: FilledButton(
             onPressed: () {
-              Navigator.pop(context);
+              Get.toNamed('/business-new/payment');
             },
             style: ThemeButton.btnBig.merge(ThemeButton.primary),
             child: const Text('Continue'),

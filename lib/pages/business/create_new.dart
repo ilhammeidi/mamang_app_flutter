@@ -6,10 +6,16 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
 import 'package:mamang_app_flutter/ui/widgets/business/business_icon.dart';
+import 'package:mamang_app_flutter/ui/widgets/business/business_info.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/pricing_card.dart';
 
 class BusinessCreateNew extends StatelessWidget {
   const BusinessCreateNew({super.key});
+
+  final String descVip = 'By simply sharing a QR code or promotional link, other users can immediately claim the available promo. This makes it easy to spread offers quickly and efficiently.';
+  final String descPro = 'For business people, they can place their advertisements (cubes) in communities and in locations that suit their business targets.';
+  final String descBasic = 'Makes it easy for users to customize the appearance of the widget to match the style and theme of the community.';
+  final String descFree = 'Users can easily access special offers directly through their gadgets.';
 
   @override
   Widget build(BuildContext context) {
@@ -59,39 +65,111 @@ class BusinessCreateNew extends StatelessWidget {
           ),
 
           /// PACKAGE PRICING AND PLAN LIST
-          PricingCard(
-            mainIcon: const VipIcon(),
-            color: colorType('purple'),
-            title: 'VIP Business',
-            price: 20,
-            desc: 'By simply sharing a QR code or promotional link, other users can immediately claim the available promo. This makes it easy to spread offers quickly and efficiently.'
+          InkWell(
+            onTap: () {
+              showModalBottomSheet<dynamic>(
+                context: context,
+                isScrollControlled: true,
+                builder: (BuildContext context) {
+                  return Wrap(children: [
+                    BusinessInfo(
+                      icon: const VipIcon(),
+                      color: 'purple',
+                      name: 'VIP Package',
+                      desc: descVip,
+                    )
+                  ]);
+                }
+              );
+            },
+            child: PricingCard(
+              mainIcon: const VipIcon(),
+              color: colorType('purple'),
+              title: 'VIP Package',
+              price: 20,
+              desc: descVip
+            ),
           ),
           const VSpace(),
 
-          PricingCard(
-            mainIcon: const ProIcon(),
-            color: colorType('blue'),
-            title: 'Pro Business',
-            price: 10,
-            desc: 'For business people, they can place their advertisements (cubes) in communities and in locations that suit their business targets.'
+          InkWell(
+            onTap: () {
+              showModalBottomSheet<dynamic>(
+                context: context,
+                isScrollControlled: true,
+                builder: (BuildContext context) {
+                  return Wrap(children: [
+                    BusinessInfo(
+                      icon: const ProIcon(),
+                      color: 'blue',
+                      name: 'Pro Package',
+                      desc: descPro,
+                    )
+                  ]);
+                }
+              );
+            },
+            child: PricingCard(
+              mainIcon: const ProIcon(),
+              color: colorType('blue'),
+              title: 'Pro Package',
+              price: 10,
+              desc: descPro
+            ),
           ),
           const VSpace(),
 
-          PricingCard(
-            mainIcon: const BasicIcon(),
-            color: colorType('green'),
-            title: 'Basic Business',
-            price: 5,
-            desc: 'Makes it easy for users to customize the appearance of the widget to match the style and theme of the community.'
+          InkWell(
+            onTap: () {
+              showModalBottomSheet<dynamic>(
+                context: context,
+                isScrollControlled: true,
+                builder: (BuildContext context) {
+                  return Wrap(children: [
+                    BusinessInfo(
+                      icon: const BasicIcon(),
+                      color: 'green',
+                      name: 'Basic Package',
+                      desc: descBasic,
+                    )
+                  ]);
+                }
+              );
+            },
+            child: PricingCard(
+              mainIcon: const BasicIcon(),
+              color: colorType('green'),
+              title: 'Basic Business',
+              price: 5,
+              desc: descBasic,
+            ),
           ),
           const VSpace(),
 
-          PricingCard(
-            mainIcon: const FreeIcon(),
-            color: colorType('grey'),
-            title: 'FREE Business',
-            price: 0,
-            desc: 'Users can easily access special offers directly through their gadgets.'
+          InkWell(
+            onTap: () {
+              showModalBottomSheet<dynamic>(
+                context: context,
+                isScrollControlled: true,
+                builder: (BuildContext context) {
+                  return Wrap(children: [
+                    BusinessInfo(
+                      icon: const BasicIcon(),
+                      color: 'grey',
+                      name: 'FREE Package',
+                      desc: descFree,
+                    )
+                  ]);
+                }
+              );
+            },
+            child: PricingCard(
+              mainIcon: const FreeIcon(),
+              color: colorType('grey'),
+              title: 'FREE Business',
+              price: 0,
+              desc: descFree
+            ),
           ),
           const VSpace(),
         ]),
