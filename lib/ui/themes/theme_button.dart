@@ -28,6 +28,42 @@ class ThemeButton {
     ),
   );
 
+  static ButtonStyle white = FilledButton.styleFrom(
+    backgroundColor: Colors.white,
+    foregroundColor: Colors.black,
+    shape: RoundedRectangleBorder(
+      borderRadius: buttonRadius,
+    ),
+  );
+
+  static ButtonStyle black = FilledButton.styleFrom(
+    backgroundColor: Colors.black,
+    foregroundColor: Colors.white,
+    shape: RoundedRectangleBorder(
+      borderRadius: buttonRadius,
+    ),
+  );
+
+  static ButtonStyle invert(BuildContext context) {
+    return OutlinedButton.styleFrom(
+      backgroundColor: Theme.of(context).colorScheme.onSurface,
+      foregroundColor: Theme.of(context).colorScheme.surface,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
+  static ButtonStyle invert2(BuildContext context) {
+    return OutlinedButton.styleFrom(
+      backgroundColor: Theme.of(context).colorScheme.surface.withOpacity(0.75),
+      foregroundColor: Theme.of(context).colorScheme.onSurface.withOpacity(0.75),
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
   // Outlined Button
   static ButtonStyle outlinedPrimary(BuildContext context) {
     return OutlinedButton.styleFrom(
@@ -59,6 +95,30 @@ class ThemeButton {
         color: ThemePalette.tertiaryMain
       ),
       foregroundColor: Theme.of(context).colorScheme.onTertiaryContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
+  static ButtonStyle outlinedInvert(BuildContext context) {
+    return OutlinedButton.styleFrom(
+      side: BorderSide(
+        color: Theme.of(context).colorScheme.onSurface
+      ),
+      foregroundColor: Theme.of(context).colorScheme.onSurface,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
+  static ButtonStyle outlinedInvert2(BuildContext context) {
+    return OutlinedButton.styleFrom(
+      side: BorderSide(
+        color: Theme.of(context).colorScheme.surface
+      ),
+      foregroundColor: Theme.of(context).colorScheme.surface,
       shape: RoundedRectangleBorder(
         borderRadius: buttonRadius,
       ),
@@ -127,13 +187,13 @@ class ThemeButton {
   // Button Size
   static ButtonStyle btnBig = TextButton.styleFrom(
     minimumSize: const Size(200, 40),
-    padding: const EdgeInsets.all(16),
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(150),
     ),
   );
   static ButtonStyle btnSmall = TextButton.styleFrom(
-    minimumSize: const Size(75, 20),
-    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+    minimumSize: const Size(80, 40),
+    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
   );
 }

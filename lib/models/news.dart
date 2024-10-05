@@ -11,7 +11,7 @@ class News {
 final List<News> newsList = [
   News(
     title: 'Overstock Sales Calendar: When to Shop to Save the Most',
-    thumb: ImgApi.photo[45],
+    thumb: ImgApi.photo[52],
     date: '22 Mar 2024'
   ),
   News(
@@ -21,7 +21,7 @@ final List<News> newsList = [
   ),
   News(
     title: 'Macy\'s Cyber Monday Guide',
-    thumb: ImgApi.photo[22],
+    thumb: ImgApi.photo[58],
     date: '22 Mar 2024'
   ),
   News(
@@ -31,7 +31,7 @@ final List<News> newsList = [
   ),
   News(
     title: 'Lovehoney Returns & Discreet Shipping',
-    thumb: ImgApi.photo[2],
+    thumb: ImgApi.photo[6],
     date: '18 Mar 2024'
   )
 ];

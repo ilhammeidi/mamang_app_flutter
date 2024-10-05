@@ -1,42 +1,44 @@
 import 'package:mamang_app_flutter/models/img_api.dart';
 
 class Promotion {
-  final int id;
-  final int userId;
-  final String name;
-  final String thumb;
-  final String category;
-  final String desc;
-  final double distance;
-  final double price;
-  final String location;
-  final String date;
-  final bool verified;
-  final bool published;
-  final int stared;
-  final String type;
-  final double xp;
-  final int level;
-  final bool saved;
+  int id;
+  int userId;
+  String name;
+  String thumb;
+  String category;
+  String desc;
+  double distance;
+  double price;
+  String location;
+  String date;
+  bool verified;
+  bool published;
+  int stared;
+  String type;
+  double xp;
+  int level;
+  bool saved;
+  bool? liked;
 
   Promotion({
-    required this.id,
-    required this.userId,
-    required this.name,
-    required this.thumb,
-    required this.category,
-    required this.desc,
-    required this.distance,
-    required this.price,
-    required this.location,
-    required this.date,
-    required this.verified,
-    required this.published,
-    required this.stared,
-    required this.saved,
-    required this.type,
-    required this.xp,
-    required this.level,
+    this.id = 0,
+    this.userId = 0,
+    this.name = '',
+    this.thumb = '',
+    this.category = '',
+    this.desc = '',
+    this.distance = 0,
+    this.price = 0,
+    this.location = '',
+    this.date = '',
+    this.verified = false,
+    this.published = false,
+    this.stared = 0,
+    this.saved = false,
+    this.type = '',
+    this.xp = 0,
+    this.level = 0,
+    this.liked,
   });
 }
 
@@ -55,7 +57,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 34,
-    type: 'red',
+    type: 'purple',
     xp: 571,
     level: 76,
     saved: false
@@ -64,7 +66,7 @@ final List<Promotion> promoList = [
     id: 2,
     userId: 4,
     name: 'monetize B2B schemas',
-    thumb: ImgApi.photo[2],
+    thumb: ImgApi.photo[51],
     category: 'education',
     desc: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.',
     distance: 66,
@@ -74,16 +76,16 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 5,
-    type: 'red',
+    type: 'purple',
     xp: 568,
     level: 23,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 3,
     userId: 10,
     name: 'repurpose efficient action-items',
-    thumb: ImgApi.photo[3],
+    thumb: ImgApi.photo[31],
     category: 'automotive',
     desc: 'Pellentesque ultrices mattis odio. Donec vitae nisi.',
     distance: 9,
@@ -102,7 +104,7 @@ final List<Promotion> promoList = [
     id: 4,
     userId: 2,
     name: 'e-enable bricks-and-clicks platforms',
-    thumb: ImgApi.photo[4],
+    thumb: ImgApi.photo[71],
     category: 'holiday',
     desc: 'Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
     distance: 1,
@@ -121,7 +123,7 @@ final List<Promotion> promoList = [
     id: 5,
     userId: 8,
     name: 'engage integrated synergies',
-    thumb: ImgApi.photo[5],
+    thumb: ImgApi.photo[32],
     category: 'automotive',
     desc: 'Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.',
     distance: 58,
@@ -140,7 +142,7 @@ final List<Promotion> promoList = [
     id: 6,
     userId: 9,
     name: 'optimize robust markets',
-    thumb: ImgApi.photo[6],
+    thumb: ImgApi.photo[33],
     category: 'automotive',
     desc: 'Pellentesque eget nunc.',
     distance: 97,
@@ -153,13 +155,14 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 948,
     level: 74,
-    saved: false
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 7,
     userId: 5,
     name: 'exploit holistic channels',
-    thumb: ImgApi.photo[7],
+    thumb: ImgApi.photo[1],
     category: 'food',
     desc: 'In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.',
     distance: 94,
@@ -172,7 +175,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 814,
     level: 61,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 8,
@@ -197,7 +200,7 @@ final List<Promotion> promoList = [
     id: 9,
     userId: 9,
     name: 'engage mission-critical schemas',
-    thumb: ImgApi.photo[9],
+    thumb: ImgApi.photo[52],
     category: 'education',
     desc: 'Nam nulla.',
     distance: 9,
@@ -210,13 +213,13 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 670,
     level: 3,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 10,
     userId: 9,
     name: 'productize end-to-end markets',
-    thumb: ImgApi.photo[10],
+    thumb: ImgApi.photo[61],
     category: 'sport',
     desc: 'Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.',
     distance: 12,
@@ -229,13 +232,14 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 673,
     level: 58,
-    saved: false
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 11,
     userId: 5,
     name: 'iterate viral web-readiness',
-    thumb: ImgApi.photo[11],
+    thumb: ImgApi.photo[21],
     category: 'services',
     desc: 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.',
     distance: 80,
@@ -254,7 +258,7 @@ final List<Promotion> promoList = [
     id: 12,
     userId: 10,
     name: 'deliver sticky convergence',
-    thumb: ImgApi.photo[12],
+    thumb: ImgApi.photo[62],
     category: 'sport',
     desc: 'Pellentesque at nulla. Suspendisse potenti.',
     distance: 8,
@@ -272,8 +276,8 @@ final List<Promotion> promoList = [
   Promotion(
     id: 13,
     userId: 8,
-    name: 'engineer sexy platforms',
-    thumb: ImgApi.photo[13],
+    name: 'engineering advenced platforms',
+    thumb: ImgApi.photo[53],
     category: 'education',
     desc: 'Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.',
     distance: 82,
@@ -286,13 +290,14 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 786,
     level: 92,
-    saved: true
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 14,
     userId: 8,
     name: 'revolutionize web-enabled functionalities',
-    thumb: ImgApi.photo[14],
+    thumb: ImgApi.photo[91],
     category: 'souvenir',
     desc: 'In blandit ultrices enim.',
     distance: 85,
@@ -309,9 +314,9 @@ final List<Promotion> promoList = [
   ),
   Promotion(
     id: 15,
-    userId: 1,
+    userId: 7,
     name: 'orchestrate one-to-one e-services',
-    thumb: ImgApi.photo[15],
+    thumb: ImgApi.photo[22],
     category: 'services',
     desc: 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
     distance: 61,
@@ -321,16 +326,16 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 21,
-    type: 'red',
+    type: 'purple',
     xp: 24,
     level: 70,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 16,
-    userId: 7,
+    userId: 1,
     name: 'architect frictionless e-commerce',
-    thumb: ImgApi.photo[16],
+    thumb: ImgApi.photo[72],
     category: 'holiday',
     desc: 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.',
     distance: 71,
@@ -349,7 +354,7 @@ final List<Promotion> promoList = [
     id: 17,
     userId: 9,
     name: 'utilize robust experiences',
-    thumb: ImgApi.photo[17],
+    thumb: ImgApi.photo[63],
     category: 'sport',
     desc: 'In quis justo. Maecenas rhoncus aliquam lacus.',
     distance: 81,
@@ -362,13 +367,13 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 538,
     level: 22,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 18,
     userId: 2,
     name: 'enable integrated partnerships',
-    thumb: ImgApi.photo[18],
+    thumb: ImgApi.photo[23],
     category: 'services',
     desc: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.',
     distance: 13,
@@ -381,13 +386,14 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 728,
     level: 80,
-    saved: false
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 19,
     userId: 1,
     name: 'recontextualize one-to-one communities',
-    thumb: ImgApi.photo[19],
+    thumb: ImgApi.photo[44],
     category: 'property',
     desc: 'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.',
     distance: 28,
@@ -397,16 +403,16 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 27,
-    type: 'red',
+    type: 'purple',
     xp: 401,
     level: 46,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 20,
     userId: 10,
     name: 'monetize customized portals',
-    thumb: ImgApi.photo[20],
+    thumb: ImgApi.photo[41],
     category: 'property',
     desc: 'Nulla tempus.',
     distance: 18,
@@ -425,7 +431,7 @@ final List<Promotion> promoList = [
     id: 21,
     userId: 7,
     name: 'streamline real-time partnerships',
-    thumb: ImgApi.photo[21],
+    thumb: ImgApi.photo[24],
     category: 'services',
     desc: 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.',
     distance: 98,
@@ -438,13 +444,13 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 221,
     level: 19,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 22,
     userId: 4,
     name: 'envisioneer cross-media relationships',
-    thumb: ImgApi.photo[22],
+    thumb: ImgApi.photo[42],
     category: 'property',
     desc: 'Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.',
     distance: 15,
@@ -454,16 +460,17 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 23,
-    type: 'red',
+    type: 'purple',
     xp: 468,
     level: 24,
-    saved: false
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 23,
     userId: 9,
     name: 'evolve customized applications',
-    thumb: ImgApi.photo[23],
+    thumb: ImgApi.photo[92],
     category: 'souvenir',
     desc: 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.',
     distance: 69,
@@ -482,7 +489,7 @@ final List<Promotion> promoList = [
     id: 24,
     userId: 3,
     name: 'enhance killer e-services',
-    thumb: ImgApi.photo[24],
+    thumb: ImgApi.photo[43],
     category: 'property',
     desc: 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
     distance: 4,
@@ -495,13 +502,14 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 960,
     level: 79,
-    saved: true
+    saved: false,
+    liked: true
   ),
   Promotion(
     id: 25,
     userId: 2,
     name: 'revolutionize wireless partnerships',
-    thumb: ImgApi.photo[25],
+    thumb: ImgApi.photo[73],
     category: 'holiday',
     desc: 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.',
     distance: 4,
@@ -520,7 +528,7 @@ final List<Promotion> promoList = [
     id: 26,
     userId: 10,
     name: 'monetize integrated schemas',
-    thumb: ImgApi.photo[26],
+    thumb: ImgApi.photo[34],
     category: 'automotive',
     desc: 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo.',
     distance: 44,
@@ -539,7 +547,7 @@ final List<Promotion> promoList = [
     id: 27,
     userId: 8,
     name: 'engineer one-to-one ROI',
-    thumb: ImgApi.photo[27],
+    thumb: ImgApi.photo[64],
     category: 'sport',
     desc: 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.',
     distance: 69,
@@ -552,13 +560,13 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 105,
     level: 16,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 28,
     userId: 7,
     name: 'aggregate clicks-and-mortar relationships',
-    thumb: ImgApi.photo[28],
+    thumb: ImgApi.photo[2],
     category: 'food',
     desc: 'Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.',
     distance: 23,
@@ -577,7 +585,7 @@ final List<Promotion> promoList = [
     id: 29,
     userId: 5,
     name: 'exploit visionary systems',
-    thumb: ImgApi.photo[29],
+    thumb: ImgApi.photo[65],
     category: 'sport',
     desc: 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.',
     distance: 68,
@@ -596,7 +604,7 @@ final List<Promotion> promoList = [
     id: 30,
     userId: 4,
     name: 'brand synergistic channels',
-    thumb: ImgApi.photo[30],
+    thumb: ImgApi.photo[66],
     category: 'sport',
     desc: 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.',
     distance: 100,
@@ -615,7 +623,7 @@ final List<Promotion> promoList = [
     id: 31,
     userId: 1,
     name: 'reinvent interactive web services',
-    thumb: ImgApi.photo[31],
+    thumb: ImgApi.photo[67],
     category: 'sport',
     desc: 'Vivamus vel nulla eget eros elementum pellentesque.',
     distance: 27,
@@ -634,7 +642,7 @@ final List<Promotion> promoList = [
     id: 32,
     userId: 5,
     name: 'disintermediate seamless e-markets',
-    thumb: ImgApi.photo[32],
+    thumb: ImgApi.photo[54],
     category: 'education',
     desc: 'Nullam molestie nibh in lectus. Pellentesque at nulla.',
     distance: 98,
@@ -653,7 +661,7 @@ final List<Promotion> promoList = [
     id: 33,
     userId: 4,
     name: 'incentivize impactful solutions',
-    thumb: ImgApi.photo[33],
+    thumb: ImgApi.photo[55],
     category: 'education',
     desc: 'Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.',
     distance: 78,
@@ -672,7 +680,7 @@ final List<Promotion> promoList = [
     id: 34,
     userId: 6,
     name: 'streamline sticky mindshare',
-    thumb: ImgApi.photo[34],
+    thumb: ImgApi.photo[93],
     category: 'souvenir',
     desc: 'In hac habitasse platea dictumst.',
     distance: 60,
@@ -682,7 +690,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 96,
-    type: 'red',
+    type: 'purple',
     xp: 363,
     level: 90,
     saved: false
@@ -691,7 +699,7 @@ final List<Promotion> promoList = [
     id: 35,
     userId: 1,
     name: 'maximize interactive e-tailers',
-    thumb: ImgApi.photo[35],
+    thumb: ImgApi.photo[94],
     category: 'souvenir',
     desc: 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.',
     distance: 60,
@@ -710,7 +718,7 @@ final List<Promotion> promoList = [
     id: 36,
     userId: 4,
     name: 'embrace integrated web services',
-    thumb: ImgApi.photo[36],
+    thumb: ImgApi.photo[35],
     category: 'automotive',
     desc: 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat.',
     distance: 62,
@@ -723,13 +731,13 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 115,
     level: 13,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 37,
     userId: 9,
     name: 'exploit vertical systems',
-    thumb: ImgApi.photo[37],
+    thumb: ImgApi.photo[3],
     category: 'food',
     desc: 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.',
     distance: 24,
@@ -742,7 +750,8 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 958,
     level: 67,
-    saved: true
+    saved: false,
+    liked: true,
   ),
   Promotion(
     id: 38,
@@ -780,13 +789,13 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 54,
     level: 83,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 40,
     userId: 7,
     name: 'embrace cross-media architectures',
-    thumb: ImgApi.photo[40],
+    thumb: ImgApi.photo[4],
     category: 'food',
     desc: 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.',
     distance: 56,
@@ -805,7 +814,7 @@ final List<Promotion> promoList = [
     id: 41,
     userId: 1,
     name: 'implement viral interfaces',
-    thumb: ImgApi.photo[41],
+    thumb: ImgApi.photo[74],
     category: 'holiday',
     desc: 'Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.',
     distance: 86,
@@ -815,7 +824,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 24,
-    type: 'red',
+    type: 'purple',
     xp: 192,
     level: 4,
     saved: false
@@ -824,7 +833,7 @@ final List<Promotion> promoList = [
     id: 42,
     userId: 8,
     name: 'engineer killer platforms',
-    thumb: ImgApi.photo[42],
+    thumb: ImgApi.photo[56],
     category: 'education',
     desc: 'Morbi non quam nec dui luctus rutrum.',
     distance: 95,
@@ -843,7 +852,7 @@ final List<Promotion> promoList = [
     id: 43,
     userId: 2,
     name: 'enable leading-edge technologies',
-    thumb: ImgApi.photo[43],
+    thumb: ImgApi.photo[36],
     category: 'automotive',
     desc: 'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.',
     distance: 93,
@@ -862,7 +871,7 @@ final List<Promotion> promoList = [
     id: 44,
     userId: 8,
     name: 'deploy efficient methodologies',
-    thumb: ImgApi.photo[44],
+    thumb: ImgApi.photo[57],
     category: 'education',
     desc: 'Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.',
     distance: 6,
@@ -872,7 +881,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 53,
-    type: 'red',
+    type: 'purple',
     xp: 294,
     level: 3,
     saved: false
@@ -881,7 +890,7 @@ final List<Promotion> promoList = [
     id: 45,
     userId: 9,
     name: 'harness e-business ROI',
-    thumb: ImgApi.photo[45],
+    thumb: ImgApi.photo[25],
     category: 'services',
     desc: 'Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.',
     distance: 53,
@@ -900,7 +909,7 @@ final List<Promotion> promoList = [
     id: 46,
     userId: 8,
     name: 'benchmark turn-key synergies',
-    thumb: ImgApi.photo[46],
+    thumb: ImgApi.photo[37],
     category: 'automotive',
     desc: 'Maecenas tincidunt lacus at velit.',
     distance: 10,
@@ -929,16 +938,16 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 97,
-    type: 'red',
+    type: 'purple',
     xp: 577,
     level: 19,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 48,
     userId: 3,
     name: 'drive dot-com schemas',
-    thumb: ImgApi.photo[48],
+    thumb: ImgApi.photo[6],
     category: 'food',
     desc: 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',
     distance: 98,
@@ -951,13 +960,13 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 253,
     level: 42,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 49,
     userId: 10,
     name: 'seize intuitive convergence',
-    thumb: ImgApi.photo[49],
+    thumb: ImgApi.photo[95],
     category: 'souvenir',
     desc: 'Etiam justo. Etiam pretium iaculis justo.',
     distance: 72,
@@ -970,13 +979,13 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 458,
     level: 87,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 50,
     userId: 9,
     name: 'unleash seamless infomediaries',
-    thumb: ImgApi.photo[50],
+    thumb: ImgApi.photo[8],
     category: 'food',
     desc: 'Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.',
     distance: 34,
@@ -995,7 +1004,7 @@ final List<Promotion> promoList = [
     id: 51,
     userId: 6,
     name: 'deploy e-business web services',
-    thumb: ImgApi.photo[51],
+    thumb: ImgApi.photo[68],
     category: 'sport',
     desc: 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.',
     distance: 50,
@@ -1005,7 +1014,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 38,
-    type: 'red',
+    type: 'purple',
     xp: 353,
     level: 86,
     saved: true
@@ -1033,7 +1042,7 @@ final List<Promotion> promoList = [
     id: 53,
     userId: 3,
     name: 'benchmark wireless bandwidth',
-    thumb: ImgApi.photo[53],
+    thumb: ImgApi.photo[69],
     category: 'sport',
     desc: 'Duis at velit eu est congue elementum. In hac habitasse platea dictumst.',
     distance: 85,
@@ -1046,13 +1055,13 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 565,
     level: 9,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 54,
     userId: 10,
     name: 'strategize ubiquitous networks',
-    thumb: ImgApi.photo[54],
+    thumb: ImgApi.photo[45],
     category: 'property',
     desc: 'Vestibulum sed magna at nunc commodo placerat. Praesent blandit.',
     distance: 59,
@@ -1071,7 +1080,7 @@ final List<Promotion> promoList = [
     id: 55,
     userId: 10,
     name: 'benchmark holistic channels',
-    thumb: ImgApi.photo[55],
+    thumb: ImgApi.photo[75],
     category: 'holiday',
     desc: 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.',
     distance: 11,
@@ -1081,7 +1090,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 21,
-    type: 'red',
+    type: 'purple',
     xp: 577,
     level: 42,
     saved: false
@@ -1090,7 +1099,7 @@ final List<Promotion> promoList = [
     id: 56,
     userId: 7,
     name: 'orchestrate real-time architectures',
-    thumb: ImgApi.photo[56],
+    thumb: ImgApi.photo[58],
     category: 'education',
     desc: 'Pellentesque ultrices mattis odio. Donec vitae nisi.',
     distance: 98,
@@ -1109,7 +1118,7 @@ final List<Promotion> promoList = [
     id: 57,
     userId: 7,
     name: 'morph wireless schemas',
-    thumb: ImgApi.photo[57],
+    thumb: ImgApi.photo[38],
     category: 'automotive',
     desc: 'Praesent blandit. Nam nulla.',
     distance: 76,
@@ -1128,7 +1137,7 @@ final List<Promotion> promoList = [
     id: 58,
     userId: 6,
     name: 'iterate open-source architectures',
-    thumb: ImgApi.photo[58],
+    thumb: ImgApi.photo[76],
     category: 'holiday',
     desc: 'Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.',
     distance: 33,
@@ -1141,13 +1150,13 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 895,
     level: 3,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 59,
     userId: 4,
     name: 'maximize seamless bandwidth',
-    thumb: ImgApi.photo[59],
+    thumb: ImgApi.photo[26],
     category: 'services',
     desc: 'Aliquam non mauris.',
     distance: 100,
@@ -1166,7 +1175,7 @@ final List<Promotion> promoList = [
     id: 60,
     userId: 10,
     name: 'empower granular infomediaries',
-    thumb: ImgApi.photo[60],
+    thumb: ImgApi.photo[27],
     category: 'services',
     desc: 'Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.',
     distance: 84,
@@ -1179,13 +1188,13 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 866,
     level: 22,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 61,
     userId: 6,
     name: 'optimize plug-and-play applications',
-    thumb: ImgApi.photo[61],
+    thumb: ImgApi.photo[96],
     category: 'souvenir',
     desc: 'Nullam molestie nibh in lectus. Pellentesque at nulla.',
     distance: 61,
@@ -1198,13 +1207,13 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 777,
     level: 47,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 62,
     userId: 4,
     name: 'monetize viral interfaces',
-    thumb: ImgApi.photo[62],
+    thumb: ImgApi.photo[70],
     category: 'sport',
     desc: 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.',
     distance: 87,
@@ -1217,7 +1226,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 229,
     level: 47,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 63,
@@ -1242,7 +1251,7 @@ final List<Promotion> promoList = [
     id: 64,
     userId: 10,
     name: 'optimize real-time portals',
-    thumb: ImgApi.photo[64],
+    thumb: ImgApi.photo[97],
     category: 'souvenir',
     desc: 'Cras pellentesque volutpat dui.',
     distance: 85,
@@ -1252,16 +1261,16 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 65,
-    type: 'red',
+    type: 'purple',
     xp: 702,
     level: 93,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 65,
     userId: 9,
     name: 'streamline mission-critical applications',
-    thumb: ImgApi.photo[65],
+    thumb: ImgApi.photo[11],
     category: 'food',
     desc: 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.',
     distance: 35,
@@ -1271,16 +1280,16 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 60,
-    type: 'red',
+    type: 'purple',
     xp: 228,
     level: 92,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 66,
     userId: 10,
     name: 'expedite sticky networks',
-    thumb: ImgApi.photo[66],
+    thumb: ImgApi.photo[77],
     category: 'holiday',
     desc: 'Vivamus tortor.',
     distance: 94,
@@ -1293,13 +1302,13 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 342,
     level: 20,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 67,
     userId: 5,
-    name: 'grow sexy ROI',
-    thumb: ImgApi.photo[67],
+    name: 'grow significant ROI',
+    thumb: ImgApi.photo[39],
     category: 'automotive',
     desc: 'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
     distance: 85,
@@ -1312,13 +1321,13 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 985,
     level: 44,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 68,
     userId: 5,
     name: 'repurpose 24/365 technologies',
-    thumb: ImgApi.photo[68],
+    thumb: ImgApi.photo[40],
     category: 'services',
     desc: 'In sagittis dui vel nisl. Duis ac nibh.',
     distance: 83,
@@ -1337,7 +1346,7 @@ final List<Promotion> promoList = [
     id: 69,
     userId: 3,
     name: 'empower transparent convergence',
-    thumb: ImgApi.photo[69],
+    thumb: ImgApi.photo[35],
     category: 'automotive',
     desc: 'Quisque ut erat. Curabitur gravida nisi at nibh.',
     distance: 47,
@@ -1356,7 +1365,7 @@ final List<Promotion> promoList = [
     id: 70,
     userId: 6,
     name: 'benchmark innovative niches',
-    thumb: ImgApi.photo[70],
+    thumb: ImgApi.photo[29],
     category: 'services',
     desc: 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.',
     distance: 18,
@@ -1366,7 +1375,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 14,
-    type: 'red',
+    type: 'purple',
     xp: 311,
     level: 46,
     saved: false
@@ -1375,7 +1384,7 @@ final List<Promotion> promoList = [
     id: 71,
     userId: 7,
     name: 'revolutionize robust e-business',
-    thumb: ImgApi.photo[71],
+    thumb: ImgApi.photo[78],
     category: 'holiday',
     desc: 'Suspendisse ornare consequat lectus.',
     distance: 33,
@@ -1385,7 +1394,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 15,
-    type: 'red',
+    type: 'purple',
     xp: 221,
     level: 90,
     saved: true
@@ -1394,7 +1403,7 @@ final List<Promotion> promoList = [
     id: 72,
     userId: 2,
     name: 'seize clicks-and-mortar e-markets',
-    thumb: ImgApi.photo[72],
+    thumb: ImgApi.photo[79],
     category: 'holiday',
     desc: 'Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.',
     distance: 61,
@@ -1404,16 +1413,16 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 90,
-    type: 'red',
+    type: 'purple',
     xp: 769,
     level: 79,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 73,
     userId: 7,
     name: 'engage visionary e-commerce',
-    thumb: ImgApi.photo[73],
+    thumb: ImgApi.photo[12],
     category: 'food',
     desc: 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.',
     distance: 60,
@@ -1432,7 +1441,7 @@ final List<Promotion> promoList = [
     id: 74,
     userId: 5,
     name: 'morph extensible methodologies',
-    thumb: ImgApi.photo[74],
+    thumb: ImgApi.photo[59],
     category: 'education',
     desc: 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.',
     distance: 46,
@@ -1442,7 +1451,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 24,
-    type: 'red',
+    type: 'purple',
     xp: 392,
     level: 88,
     saved: true
@@ -1451,7 +1460,7 @@ final List<Promotion> promoList = [
     id: 75,
     userId: 3,
     name: 'synergize holistic architectures',
-    thumb: ImgApi.photo[75],
+    thumb: ImgApi.photo[30],
     category: 'services',
     desc: 'Nam tristique tortor eu pede.',
     distance: 93,
@@ -1470,7 +1479,7 @@ final List<Promotion> promoList = [
     id: 76,
     userId: 10,
     name: 'synergize interactive ROI',
-    thumb: ImgApi.photo[76],
+    thumb: ImgApi.photo[98],
     category: 'souvenir',
     desc: 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
     distance: 43,
@@ -1489,7 +1498,7 @@ final List<Promotion> promoList = [
     id: 77,
     userId: 6,
     name: 'unleash best-of-breed supply-chains',
-    thumb: ImgApi.photo[77],
+    thumb: ImgApi.photo[60],
     category: 'education',
     desc: 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.',
     distance: 92,
@@ -1508,7 +1517,7 @@ final List<Promotion> promoList = [
     id: 78,
     userId: 1,
     name: 'redefine open-source systems',
-    thumb: ImgApi.photo[78],
+    thumb: ImgApi.photo[80],
     category: 'holiday',
     desc: 'Duis at velit eu est congue elementum. In hac habitasse platea dictumst.',
     distance: 25,
@@ -1521,13 +1530,13 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 371,
     level: 61,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 79,
     userId: 6,
     name: 'orchestrate efficient synergies',
-    thumb: ImgApi.photo[79],
+    thumb: ImgApi.photo[36],
     category: 'automotive',
     desc: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
     distance: 57,
@@ -1546,7 +1555,7 @@ final List<Promotion> promoList = [
     id: 80,
     userId: 8,
     name: 'brand customized web-readiness',
-    thumb: ImgApi.photo[80],
+    thumb: ImgApi.photo[48],
     category: 'property',
     desc: 'Sed sagittis.',
     distance: 8,
@@ -1565,7 +1574,7 @@ final List<Promotion> promoList = [
     id: 81,
     userId: 1,
     name: 'incentivize best-of-breed functionalities',
-    thumb: ImgApi.photo[81],
+    thumb: ImgApi.photo[99],
     category: 'souvenir',
     desc: 'Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.',
     distance: 65,
@@ -1578,7 +1587,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 869,
     level: 11,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 82,
@@ -1603,7 +1612,7 @@ final List<Promotion> promoList = [
     id: 83,
     userId: 9,
     name: 'recontextualize compelling systems',
-    thumb: ImgApi.photo[83],
+    thumb: ImgApi.photo[37],
     category: 'automotive',
     desc: 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.',
     distance: 11,
@@ -1622,7 +1631,7 @@ final List<Promotion> promoList = [
     id: 84,
     userId: 7,
     name: 'empower frictionless paradigms',
-    thumb: ImgApi.photo[84],
+    thumb: ImgApi.photo[38],
     category: 'automotive',
     desc: 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.',
     distance: 32,
@@ -1641,7 +1650,7 @@ final List<Promotion> promoList = [
     id: 85,
     userId: 3,
     name: 'embrace clicks-and-mortar applications',
-    thumb: ImgApi.photo[85],
+    thumb: ImgApi.photo[31],
     category: 'services',
     desc: 'Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.',
     distance: 56,
@@ -1660,7 +1669,7 @@ final List<Promotion> promoList = [
     id: 86,
     userId: 8,
     name: 'grow distributed initiatives',
-    thumb: ImgApi.photo[86],
+    thumb: ImgApi.photo[14],
     category: 'food',
     desc: 'Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.',
     distance: 77,
@@ -1679,7 +1688,7 @@ final List<Promotion> promoList = [
     id: 87,
     userId: 8,
     name: 'empower value-added solutions',
-    thumb: ImgApi.photo[87],
+    thumb: ImgApi.photo[39],
     category: 'automotive',
     desc: 'Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.',
     distance: 84,
@@ -1692,7 +1701,7 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 237,
     level: 84,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 88,
@@ -1708,7 +1717,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 81,
-    type: 'red',
+    type: 'purple',
     xp: 616,
     level: 2,
     saved: false
@@ -1717,7 +1726,7 @@ final List<Promotion> promoList = [
     id: 89,
     userId: 9,
     name: 'revolutionize plug-and-play architectures',
-    thumb: ImgApi.photo[89],
+    thumb: ImgApi.photo[50],
     category: 'property',
     desc: 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.',
     distance: 23,
@@ -1755,7 +1764,7 @@ final List<Promotion> promoList = [
     id: 91,
     userId: 2,
     name: 'cultivate e-business web services',
-    thumb: ImgApi.photo[91],
+    thumb: ImgApi.photo[40],
     category: 'automotive',
     desc: 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.',
     distance: 9,
@@ -1765,7 +1774,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 8,
-    type: 'red',
+    type: 'purple',
     xp: 900,
     level: 41,
     saved: true
@@ -1774,7 +1783,7 @@ final List<Promotion> promoList = [
     id: 92,
     userId: 6,
     name: 'aggregate leading-edge convergence',
-    thumb: ImgApi.photo[92],
+    thumb: ImgApi.photo[15],
     category: 'food',
     desc: 'Duis at velit eu est congue elementum.',
     distance: 12,
@@ -1793,7 +1802,7 @@ final List<Promotion> promoList = [
     id: 93,
     userId: 8,
     name: 'empower next-generation e-commerce',
-    thumb: ImgApi.photo[93],
+    thumb: ImgApi.photo[17],
     category: 'food',
     desc: 'Ut tellus. Nulla ut erat id mauris vulputate elementum.',
     distance: 1,
@@ -1806,7 +1815,7 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 601,
     level: 14,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 94,
@@ -1825,13 +1834,13 @@ final List<Promotion> promoList = [
     type: 'blue',
     xp: 153,
     level: 78,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 95,
     userId: 2,
     name: 'engage customized users',
-    thumb: ImgApi.photo[95],
+    thumb: ImgApi.photo[32],
     category: 'automotive',
     desc: 'Etiam faucibus cursus urna.',
     distance: 24,
@@ -1850,7 +1859,7 @@ final List<Promotion> promoList = [
     id: 96,
     userId: 3,
     name: 'optimize 24/7 web-readiness',
-    thumb: ImgApi.photo[96],
+    thumb: ImgApi.photo[32],
     category: 'services',
     desc: 'Etiam pretium iaculis justo. In hac habitasse platea dictumst.',
     distance: 53,
@@ -1869,7 +1878,7 @@ final List<Promotion> promoList = [
     id: 97,
     userId: 10,
     name: 'whiteboard cross-platform e-markets',
-    thumb: ImgApi.photo[97],
+    thumb: ImgApi.photo[100],
     category: 'souvenir',
     desc: 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.',
     distance: 38,
@@ -1882,13 +1891,13 @@ final List<Promotion> promoList = [
     type: 'green',
     xp: 195,
     level: 12,
-    saved: true
+    saved: false
   ),
   Promotion(
     id: 98,
     userId: 3,
     name: 'aggregate real-time web-readiness',
-    thumb: ImgApi.photo[98],
+    thumb: ImgApi.photo[33],
     category: 'services',
     desc: 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.',
     distance: 23,
@@ -1906,9 +1915,9 @@ final List<Promotion> promoList = [
   Promotion(
     id: 99,
     userId: 5,
-    name: 'seize sexy e-services',
+    name: 'seize absolute e-services',
     thumb: ImgApi.photo[99],
-    category: 'food',
+    category: '29',
     desc: 'Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.',
     distance: 7,
     price: 55,
@@ -1939,6 +1948,6 @@ final List<Promotion> promoList = [
     type: 'grey',
     xp: 219,
     level: 92,
-    saved: true
+    saved: false
   )
 ];

@@ -1,6 +1,7 @@
 class ImgApi {
   static List<String> photo = [
     // Food
+    '',
     'https://res.cloudinary.com/doosabwhn/image/upload/v1726757163/1_rthm2j.webp',
     'https://res.cloudinary.com/doosabwhn/image/upload/v1726757162/2_drwuma.webp',
     'https://res.cloudinary.com/doosabwhn/image/upload/v1726757162/3_oa2qcb.webp',
@@ -146,5 +147,14 @@ class ImgApi {
     'https://randomuser.me/api/portraits/men/34.jpg',
     'https://randomuser.me/api/portraits/men/15.jpg',
     'https://randomuser.me/api/portraits/men/4.jpg'
+  ];
+
+  static List<String> guideList = [
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s1_vyo5yc.webp',
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s2_chjh1a.webp',
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s3_aovg9l.webp',
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s4_kskxak.webp',
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s5_ienewn.webp',
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s6_losppk.webp'
   ];
 }

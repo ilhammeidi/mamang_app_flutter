@@ -159,7 +159,7 @@ class _SampleFormState extends State<SampleForm> {
             onTap: () {
               openPicker(context);
             },
-            suffixIcon: Icons.arrow_drop_down,
+            suffix: const Icon(Icons.arrow_drop_down),
           ),
           const SizedBox(height: 10),
           const TextField(

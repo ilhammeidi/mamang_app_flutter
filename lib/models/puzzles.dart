@@ -28,7 +28,7 @@ final List<Puzzle> puzzleList = [
     time: '2 Days',
     thumb: ImgApi.photo[105],
     image: ImgApi.photo[3],
-    progress: 'aci'
+    progress: '139'
   ),
   Puzzle(
     id: 2,
@@ -37,7 +37,7 @@ final List<Puzzle> puzzleList = [
     time: '01:12',
     thumb: ImgApi.photo[110],
     image: ImgApi.photo[5],
-    progress: 'abe'
+    progress: '125'
   ),
   Puzzle(
     id: 3,
@@ -46,16 +46,16 @@ final List<Puzzle> puzzleList = [
     time: '02:00',
     thumb: ImgApi.photo[120],
     image: ImgApi.photo[10],
-    progress: 'bdfhi'
+    progress: '24689',
   ),
   Puzzle(
     id: 4,
-    name: 'Flash Sales:',
+    name: 'Flash Sales',
     liked: false,
     time: '1 Day',
-    thumb: ImgApi.photo[115],
+    thumb: ImgApi.photo[49],
     image: ImgApi.photo[22],
-    progress: 'dghi'
+    progress: '4789'
   ),
   Puzzle(
     id: 5,
@@ -64,6 +64,6 @@ final List<Puzzle> puzzleList = [
     time: '01:22',
     thumb: ImgApi.photo[107],
     image: ImgApi.photo[54],
-    progress: 'bcf'
+    progress: '236'
   ),
 ];
