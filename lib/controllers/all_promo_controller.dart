@@ -54,7 +54,7 @@ class AllPromoController extends GetxController {
 
   }
 
-  void filterByCategory(String selectedCategory) {
+  void filterByCategory(String selectedCategory) async {
     category.value = selectedCategory;
     if (selectedCategory != 'all') {
       var result = allData

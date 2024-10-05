@@ -81,6 +81,10 @@ class _PromoDetailState extends State<PromoDetail> {
           style: const TextStyle(color: Colors.white)
         ),
         actions: [
+          IconButton(
+            onPressed: () {}, 
+            icon: const Icon(Icons.share, color: Colors.white)
+          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
             child: IconButton(

@@ -42,12 +42,17 @@ class EventListSlider extends StatelessWidget {
                 SizedBox(width: 300, height: cardHeight,
                   child: Padding(
                     padding: const EdgeInsets.all(8),
-                    child: EventCard(
-                      thumb: item.thumb,
-                      title: item.title,
-                      liked: item.liked,
-                      point: item.point,
-                      time: item.date,
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.toNamed('/events/${item.id}');
+                      },
+                      child: EventCard(
+                        thumb: item.thumb,
+                        title: item.title,
+                        liked: item.liked,
+                        point: item.point,
+                        time: item.date,
+                      ),
                     ),
                   )
                 ),

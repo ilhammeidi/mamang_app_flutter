@@ -9,10 +9,10 @@ class HeaderExplore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     final ButtonStyle iconBtn = IconButton.styleFrom(
       padding: const EdgeInsets.all(0),
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: colorScheme.surface,
       shadowColor: Colors.grey.withOpacity(0.5),
       elevation: 3
     );
@@ -30,7 +30,7 @@ class HeaderExplore extends StatelessWidget {
             width: 150,
             padding: const EdgeInsets.all(4),
             decoration: BoxDecoration(
-              color: Colors.amber.shade300,
+              color: colorScheme.surface,
               borderRadius: ThemeRadius.medium,
               boxShadow: [ThemeShade.shadeSoft(context)],
             ),
@@ -51,7 +51,7 @@ class HeaderExplore extends StatelessWidget {
                 icon: Badge.count(
                   backgroundColor: ThemePalette.tertiaryMain,
                   count: 10,
-                  child: Icon(Icons.notifications, size: 24, color: Theme.of(context).colorScheme.onSurface),
+                  child: Icon(Icons.notifications, size: 24, color: colorScheme.onSurface),
                 )
               ),
             ),
@@ -62,7 +62,7 @@ class HeaderExplore extends StatelessWidget {
               child: IconButton(
                 onPressed: () {},
                 style: iconBtn,
-                icon: Icon(Icons.help, size: 24, color: Theme.of(context).colorScheme.onSurface)
+                icon: Icon(Icons.help, size: 24, color: colorScheme.onSurface)
               ),
             )
           ])

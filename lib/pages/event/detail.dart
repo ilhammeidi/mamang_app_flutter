@@ -68,7 +68,7 @@ class _EventDetailState extends State<EventDetail> {
           padding: EdgeInsets.only(left: spacingUnit(1)),
           child: IconButton(
             onPressed: () {
-              Get.offAndToNamed('/events');
+              Get.back();
             },
             icon: const Icon(Icons.arrow_back_ios)
           ),

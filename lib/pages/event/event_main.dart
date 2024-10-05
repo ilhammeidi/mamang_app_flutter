@@ -60,7 +60,7 @@ class _EventMainState extends State<EventMain> {
           /// HOME BUTTON
           IconButton(
             onPressed: () {
-              Get.offAndToNamed('/');
+              Get.toNamed('/');
             },
             icon: const Icon(Icons.home_outlined, size: 40)
           ),

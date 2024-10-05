@@ -60,7 +60,7 @@ class BusinessInfo extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.play_arrow, size: 40, color: ThemePalette.primaryMain)
+                      icon: Icon(Icons.play_arrow, size: 80, color: ThemePalette.primaryMain)
                     )
                   ])
                   : Image.network(ImgApi.guideList[index], fit: BoxFit.cover),

@@ -91,7 +91,7 @@ class DescriptionDetail extends StatelessWidget {
               Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
                 Icon(categoryItem.icon, size: iconSize, color: categoryItem.color),
                 const SizedBox(height: 8),
-                Text(category.toUpperCase(), style: ThemeText.paragraph)
+                Text(category.toUpperCase(), style: ThemeText.paragraph, overflow: TextOverflow.ellipsis, maxLines: 1,)
               ]),
             ]
           ),

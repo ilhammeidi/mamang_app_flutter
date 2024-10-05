@@ -16,13 +16,11 @@ class PromoMain extends StatefulWidget {
 class _PromoMainState extends State<PromoMain> {
   final controller = Get.put(AllPromoController());
 
-  final String filter = Get.arguments ?? '';
+  final String filter = Get.arguments ?? 'all';
   
   @override
   void initState() {
-    if (filter != '')  {
-      fetchPromoByFilter(filter.toString());
-    }
+    fetchPromoByFilter(filter.toString());
     super.initState();
   }
 
