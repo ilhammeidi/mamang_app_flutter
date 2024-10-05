@@ -5,10 +5,10 @@ Color colorType(type) {
     case 'purple':
       return Colors.purpleAccent;
     case 'blue':
-      return Colors.lightBlueAccent;
+      return Colors.orangeAccent;
     case 'green':
-      return Colors.lightGreen;
+      return Colors.lightBlueAccent;
     default:
-      return Colors.grey;
+      return Colors.lightGreen;;
   }
 }

@@ -54,44 +54,44 @@ class DescriptionDetail extends StatelessWidget {
             physics: const ClampingScrollPhysics(),
             primary: false,
             padding: EdgeInsets.all(spacingUnit(1)),
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
+            crossAxisSpacing: 8,
+            mainAxisSpacing: 8,
             crossAxisCount: 3,
             children: <Widget>[
               Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                const Icon(Icons.star, size: iconSize, color: Colors.orangeAccent),
+                const Icon(Icons.star_outline, size: iconSize, color: Colors.orangeAccent),
                 const SizedBox(height: 8),
                 RichText(
-                  text: const TextSpan(text: 'RATING: ', style: ThemeText.caption, children: [
+                  text: const TextSpan(text: '', style: ThemeText.paragraph, children: [
                     TextSpan(text: '4.5', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
                     TextSpan(text: '/5'),
                   ])
                 ),
               ]),
               const Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Icon(Icons.favorite, size: iconSize, color: Colors.redAccent),
+                Icon(Icons.favorite_outline, size: iconSize, color: Colors.redAccent),
                 SizedBox(height: 8),
-                Text('LIKED: 22', style: ThemeText.caption)
+                Text('LIKED: 22', style: ThemeText.paragraph)
               ]),
               const Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Icon(Icons.bookmark, size: iconSize, color: Colors.green),
+                Icon(Icons.bookmark_outline, size: iconSize, color: Colors.green),
                 SizedBox(height: 8),
-                Text('SAVED: 7', style: ThemeText.caption)
+                Text('SAVED: 7', style: ThemeText.paragraph)
               ]),
               const Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
                 Icon(Icons.remove_red_eye, size: iconSize, color: Colors.grey),
                 SizedBox(height: 8),
-                Text('VIEWS: 700', style: ThemeText.caption)
+                Text('VIEWS: 700', style: ThemeText.paragraph)
               ]),
               Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
                 Icon(Icons.all_inbox_outlined, size: iconSize, color: colorType(type)),
                 const SizedBox(height: 8),
-                Text(type.toUpperCase(), style: ThemeText.caption)
+                Text(type.toUpperCase(), style: ThemeText.paragraph)
               ]),
               Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
                 Icon(categoryItem.icon, size: iconSize, color: categoryItem.color),
                 const SizedBox(height: 8),
-                Text(category.toUpperCase(), style: ThemeText.caption)
+                Text(category.toUpperCase(), style: ThemeText.paragraph)
               ]),
             ]
           ),

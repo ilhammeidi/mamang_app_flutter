@@ -51,7 +51,9 @@ class BusinessHeader extends StatelessWidget {
           icon: const Icon(Icons.help_outline_outlined, size: 36, color: Colors.white)
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed('/business-new');
+          },
           icon: const Icon(Icons.add_circle_outline, size: 36, color: Colors.white)
         ),
       ],

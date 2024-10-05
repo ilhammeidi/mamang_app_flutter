@@ -28,43 +28,49 @@ class PricingCard extends StatelessWidget {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return PaperCard(
-      content: Row(children: [
-        /// ICON
-        Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          mainIcon,
-          const SizedBox(height: 4),
-          Text('Total: 1/99999', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: color)),
-        ]),
-        SizedBox(width: spacingUnit(1)),
-
-        /// DESCRIPTION
-        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Row(
-            children: [
-              Text(title, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
-              isRecomended ?
-                Container(
-                  padding: const EdgeInsets.all(2),
-                  decoration: BoxDecoration(
-                    borderRadius: ThemeRadius.medium,
-                    color: colorScheme.secondaryContainer,
-                  ),
-                  child: Text('POPULAR', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: colorScheme.onSecondaryContainer)),
-                ) : Container()
-            ],
+      content: Padding(
+        padding: EdgeInsets.all(spacingUnit(1)),
+        child: Row(children: [
+          /// ICON
+          Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            mainIcon,
+            const SizedBox(height: 8),
+            Text('Total: 1/999', style: ThemeText.caption.copyWith(color: color)),
+          ]),
+          SizedBox(width: spacingUnit(2)),
+        
+          /// DESCRIPTION
+          Expanded(
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(
+                children: [
+                  Text(title, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+                  isRecomended ?
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
+                      padding: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        borderRadius: ThemeRadius.medium,
+                        color: color,
+                      ),
+                      child: Text(' POPULAR ', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: colorScheme.surface)),
+                    ) : Container()
+                ],
+              ),
+              const SizedBox(height: 4),
+              Text(desc),
+            ]),
           ),
-          const SizedBox(height: 4),
-          Text(desc),
+          SizedBox(width: spacingUnit(2)),
+        
+          /// PRICE
+          Column(children: [
+            Text(price > 0 ? '\$ $price' : 'FREE', style: ThemeText.title),
+            const SizedBox(height: 4),
+            const Text('Monthly', style: ThemeText.caption)
+          ])
         ]),
-        SizedBox(width: spacingUnit(2)),
-
-        /// PRICE
-        Column(children: [
-          Text(price > 0 ? '\$ $price' : 'FREE', style: ThemeText.title),
-          const SizedBox(height: 4),
-          const Text('Monthly', style: ThemeText.caption)
-        ])
-      ])
+      )
     );
   }
 }

@@ -77,6 +77,7 @@ class _AppTextFieldState extends State<AppTextField> {
             border: InputBorder.none,
             enabledBorder: InputBorder.none,
             labelText: widget.label,
+            alignLabelWithHint: widget.maxLines != null ? true : false,
             hintText: widget.hint ?? widget.hint,
             prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
             suffixIcon: widget.suffix ?? widget.suffix

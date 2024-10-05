@@ -14,35 +14,36 @@ class BusinessIcon extends StatelessWidget {
       switch(type) {
         case 'vip':
           return LinearGradient(
-            colors: <Color>[Colors.purpleAccent.shade200, Colors.purpleAccent, Colors.purple.shade800],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
+            colors: <Color>[Colors.purpleAccent.shade100, Colors.purpleAccent, Colors.purpleAccent.shade700],
+            stops: const [0.25, 0.5, 1],
+            end: Alignment.bottomRight,
+            begin: Alignment.topLeft,
           );
         case 'pro':
           return LinearGradient(
-            colors: <Color>[Colors.lightBlueAccent.shade200, Colors.lightBlueAccent, Colors.lightBlue.shade800],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
+            colors: <Color>[Colors.amberAccent, Colors.orange.shade400, Colors.deepOrange],
+            end: Alignment.bottomRight,
+            begin: Alignment.topLeft,
           );
         case 'basic':
           return LinearGradient(
-            colors: <Color>[Colors.lightGreen.shade200, Colors.lightGreen, Colors.lightGreen.shade800],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
+            colors: <Color>[Colors.lightBlueAccent.shade100, Colors.lightBlueAccent, Colors.lightBlueAccent.shade700],
+            end: Alignment.bottomRight,
+            begin: Alignment.topLeft,
           );
         default:
           return LinearGradient(
-            colors: <Color>[Colors.grey.shade200, Colors.grey, Colors.grey.shade800],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
+            colors: <Color>[Colors.lightGreen.shade200, Colors.lightGreenAccent.shade700, Colors.lightGreen],
+            end: Alignment.bottomRight,
+            begin: Alignment.topLeft,
           );
       }
     }
 
     return Container(
-      width: 256,
-      height: 256,
-      padding: EdgeInsets.all(spacingUnit(2)),
+      padding: EdgeInsets.all(spacingUnit(1)),
+      width: 80, 
+      height: 80, 
       decoration: BoxDecoration(
         borderRadius: ThemeRadius.medium,
         gradient: bgColor(color)
@@ -57,12 +58,12 @@ class VipIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double iconSize = 16;
+    const double iconSize = 14;
     const double spacing = 4;
 
     return BusinessIcon(
       color: 'vip',
-      content: Column(children: [
+      content: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
         Row(children: [
           Expanded(
             flex: 1,
@@ -117,12 +118,12 @@ class ProIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double iconSize = 32;
+    const double iconSize = 30;
     const double spacing = 4;
 
     return BusinessIcon(
       color: 'pro',
-      content: Column(children: [
+      content: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
         Row(children: [
           Expanded(
             flex: 1,
@@ -154,7 +155,7 @@ class BasicIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double iconSize = 32;
+    const double iconSize = 30;
     const double spacing = 4;
 
     return BusinessIcon(
@@ -191,11 +192,11 @@ class FreeIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double iconSize = 32;
+    const double iconSize = 30;
     const double spacing = 4;
 
     return BusinessIcon(
-      color: 'basic',
+      color: 'free',
       content: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
         Icon(Icons.sell, size: iconSize, color: Colors.white.withOpacity(0.75)),
         const SizedBox(height: spacing),

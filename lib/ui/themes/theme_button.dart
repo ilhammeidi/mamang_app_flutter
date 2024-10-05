@@ -187,7 +187,7 @@ class ThemeButton {
   // Button Size
   static ButtonStyle btnBig = TextButton.styleFrom(
     minimumSize: const Size(200, 40),
-    padding: const EdgeInsets.all(16),
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(150),
     ),

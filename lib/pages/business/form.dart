@@ -114,7 +114,7 @@ class _BusinessFormState extends State<BusinessForm> {
               content: Row(children: [
                 widget.icon,
                 SizedBox(width: spacingUnit(2)),
-                Column(children: [
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   const Text('Promo ID', style: ThemeText.caption),
                   const SizedBox(height: 4),
                   Text('#123456', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
@@ -129,6 +129,7 @@ class _BusinessFormState extends State<BusinessForm> {
             const VSpaceShort(),
             Container(
               height: 200,
+              alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: ThemeRadius.medium,
                 color: colorscheme.outline.withOpacity(0.5),
@@ -138,10 +139,10 @@ class _BusinessFormState extends State<BusinessForm> {
                 ),
               ),
               child: Center(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  Icon(Icons.camera_alt_rounded, size: 36, color: colorscheme.outline),
+                child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                  Icon(Icons.camera_alt_rounded, size: 80, color: colorscheme.onSurfaceVariant),
                   const SizedBox(height: 4),
-                  Text('Upload Photo'.toUpperCase(), style: TextStyle(color: colorscheme.outline))
+                  Text('Upload Photo'.toUpperCase(), style: TextStyle(color: colorscheme.onSurfaceVariant))
                 ])
               )
             ),

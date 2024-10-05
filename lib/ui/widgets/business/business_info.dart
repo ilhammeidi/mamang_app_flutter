@@ -25,18 +25,21 @@ class BusinessInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-      /// ICON
-      icon,
-      Text('Total: 1/99999', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: colorType(color))),
-      const VSpaceShort(),
-
+      const VSpace(),
       /// TITLE
-      Text(name, style: ThemeText.title),
-      const VSpaceShort(),
+      Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        icon,
+        SizedBox(width: spacingUnit(2)),
+        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text(name, style: ThemeText.title),
+          Text('Total: 1/99999', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: colorType(color))),
+        ],)
+      ]),
+      const VSpace(),
 
       /// SLIDER GUIDE
       SizedBox(
-        height: 200,
+        height: 150,
         child: ListView.builder(
           itemCount: ImgApi.guideList.length,
           scrollDirection: Axis.horizontal,
@@ -49,6 +52,7 @@ class BusinessInfo extends StatelessWidget {
                   child: index == 0 ?
                   Stack(alignment: Alignment.center, children: [
                      Image.network(
+                      height: 150,
                       ImgApi.guideList[index],
                       fit: BoxFit.cover,
                       color: Colors.black.withOpacity(0.5),
@@ -69,34 +73,38 @@ class BusinessInfo extends StatelessWidget {
       const VSpaceShort(),
 
       /// DESCRIPTION
-      Text(desc, textAlign: TextAlign.start),
+      Padding(
+        padding: EdgeInsets.all(spacingUnit(2)),
+        child: Text(desc, textAlign: TextAlign.start),
+      ),
 
       /// ACTION BUTTONS
-      Row(children: [
-        Expanded(
-          flex: 1,
-          child: OutlinedButton(
-            onPressed: () {
-              Get.back();
-            },
-            style: ThemeButton.btnBig,
-            child: const Text('Choose Later'),
+      Padding(
+        padding: EdgeInsets.all(spacingUnit(2)),
+        child: Row(children: [
+          Expanded(
+            flex: 1,
+            child: OutlinedButton(
+              onPressed: () {
+                Get.back();
+              },
+              style: ThemeButton.btnBig,
+              child: const Text('Choose Later'),
+            ),
           ),
-        ),
-        SizedBox(width: spacingUnit(1)),
-        Expanded(
-          flex: 1,
-          child: FilledButton(
-            onPressed: () {
-              Get.toNamed('/business-new/payment');
-            },
-            style: ThemeButton.btnBig.merge(ThemeButton.primary),
-            child: const Text('Continue'),
-          ),
-        )
-      ]),
-      const VSpaceShort(),
-      
+          SizedBox(width: spacingUnit(1)),
+          Expanded(
+            flex: 1,
+            child: FilledButton(
+              onPressed: () {
+                Get.toNamed('/business-new/payment');
+              },
+              style: ThemeButton.btnBig.merge(ThemeButton.primary),
+              child: const Text('Continue'),
+            ),
+          )
+        ]),
+      ),
     ]);
   }
 }
