@@ -95,6 +95,7 @@ class _SavedDetailState extends State<SavedDetail> {
                   var item = controller.selectedPromo.value;
                   /// SUMMARY INFO
                   return SummaryInfo(
+                    id: item.id,
                     title: item.name,
                     category: item.category,
                     location: item.location,

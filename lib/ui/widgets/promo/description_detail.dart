@@ -54,15 +54,18 @@ class DescriptionDetail extends StatelessWidget {
             physics: const ClampingScrollPhysics(),
             primary: false,
             padding: EdgeInsets.all(spacingUnit(1)),
-            crossAxisSpacing: 8,
-            mainAxisSpacing: 8,
+            crossAxisSpacing: 2,
+            mainAxisSpacing: 2,
             crossAxisCount: 3,
             children: <Widget>[
               Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
                 const Icon(Icons.star_outline, size: iconSize, color: Colors.orangeAccent),
                 const SizedBox(height: 8),
                 RichText(
-                  text: const TextSpan(text: '', style: ThemeText.paragraph, children: [
+                  softWrap: true,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  text: TextSpan(text: '', style: TextStyle(color: colorScheme.onSurface ), children: const [
                     TextSpan(text: '4.5', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
                     TextSpan(text: '/5'),
                   ])

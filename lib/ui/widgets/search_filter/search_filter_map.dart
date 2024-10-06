@@ -72,6 +72,7 @@ class _SearchFilterMapState extends State<SearchFilterMap> {
           const Expanded(child: SearchInput())
         ])
       ),
+      
       /// TAG AND FILTER CATEGORIES
       SizedBox(
         height: 50,

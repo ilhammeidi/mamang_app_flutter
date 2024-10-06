@@ -14,7 +14,10 @@ class GeneralLayout extends StatelessWidget {
             maxWidth: 600,
             minHeight: 900
           ),
-          child: SafeArea(child: content),
+          child: SafeArea(
+            bottom: false,
+            child: content
+          ),
         ),
       )
     );

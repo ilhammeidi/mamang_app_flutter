@@ -45,7 +45,7 @@ class _BottomDraggableSheetState extends State<BottomDraggableSheet> {
                     }
                   });
                 },
-                isOnDesktopAndWeb: _isOnDesktopAndWeb,
+                isOnDesktopAndWeb: true,
               ),
               Flexible(
                 child: widget.content,
@@ -57,21 +57,21 @@ class _BottomDraggableSheetState extends State<BottomDraggableSheet> {
     );
   }
 
-  bool get _isOnDesktopAndWeb {
-    if (kIsWeb) {
-      return true;
-    }
-    switch (defaultTargetPlatform) {
-      case TargetPlatform.macOS:
-      case TargetPlatform.linux:
-      case TargetPlatform.windows:
-        return true;
-      case TargetPlatform.android:
-      case TargetPlatform.iOS:
-      case TargetPlatform.fuchsia:
-        return false;
-    }
-  }
+  // bool get _isOnDesktopAndWeb {
+  //   if (kIsWeb) {
+  //     return true;
+  //   }
+  //   switch (defaultTargetPlatform) {
+  //     case TargetPlatform.macOS:
+  //     case TargetPlatform.linux:
+  //     case TargetPlatform.windows:
+  //       return true;
+  //     case TargetPlatform.android:
+  //     case TargetPlatform.iOS:
+  //     case TargetPlatform.fuchsia:
+  //       return false;
+  //   }
+  // }
 }
 
 class Grabber extends StatelessWidget {

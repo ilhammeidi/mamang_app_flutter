@@ -1,5 +1,6 @@
 import 'package:change_case/change_case.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
@@ -9,12 +10,14 @@ import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 class SummaryInfo extends StatelessWidget {
   const SummaryInfo({
     super.key,
+    required this.id,
     required this.title,
     required this.category,
     required this.location,
     required this.thumb
   });
 
+  final int id;
   final String title;
   final String category;
   final String location;
@@ -59,7 +62,9 @@ class SummaryInfo extends StatelessWidget {
                 ]),
                 SizedBox(height: spacingUnit(2)),
                 FilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/promos/$id');
+                  },
                   style: ThemeButton.tonalPrimary(context),
                   child: const Text('See Promo Detail'),
                 )

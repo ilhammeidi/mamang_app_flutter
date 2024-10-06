@@ -26,7 +26,7 @@ class DetailRewards extends StatelessWidget {
           crossAxisCount: 3,
           children: List.generate(9, (index) {
             return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Image.network('assets/images/gift.png', height: 80),
+              Image.asset('assets/images/gift.png', height: 80, width: 80, fit: BoxFit.contain,),
               const SizedBox(height: 4),
               Text('#123456$index', style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.bold))
             ]);
