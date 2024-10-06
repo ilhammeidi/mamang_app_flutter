@@ -136,17 +136,17 @@ class ImgApi {
   ];
 
   static List<String> avatar = [
-    'https://randomuser.me/api/portraits/women/40.jpg',
-    'https://randomuser.me/api/portraits/women/91.jpg',
-    'https://randomuser.me/api/portraits/women/94.jpg',
-    'https://randomuser.me/api/portraits/women/76.jpg',
-    'https://randomuser.me/api/portraits/women/27.jpg',
-    'https://randomuser.me/api/portraits/women/21.jpg',
-    'https://randomuser.me/api/portraits/men/2.jpg',
-    'https://randomuser.me/api/portraits/men/61.jpg',
-    'https://randomuser.me/api/portraits/men/34.jpg',
-    'https://randomuser.me/api/portraits/men/15.jpg',
-    'https://randomuser.me/api/portraits/men/4.jpg'
+    'https://ik.imagekit.io/q5gfy1zcvl/avatars/94_fg9sT-Z9a.jpg?updatedAt=1728204755676',
+    'https://ik.imagekit.io/q5gfy1zcvl/avatars/21_01QhqTGC0g.jpg?updatedAt=1728204751939',
+    'https://ik.imagekit.io/q5gfy1zcvl/avatars/91_EzzYGBdooH.jpg?updatedAt=1728204751939',
+    'https://ik.imagekit.io/q5gfy1zcvl/avatars/27_nGivywsmLb.jpg?updatedAt=1728204752039',
+    'https://ik.imagekit.io/q5gfy1zcvl/avatars/76_563CNj4os.jpg?updatedAt=1728204751896',
+    'https://ik.imagekit.io/q5gfy1zcvl/avatars/40_Yatkxpy-j.jpg?updatedAt=1728204752037',
+    'https://ik.imagekit.io/q5gfy1zcvl/avatars/15_exCA6zwTLI.jpg?updatedAt=1728204751971',
+    'https://ik.imagekit.io/q5gfy1zcvl/avatars/4_wQHvlDy8X.jpg?updatedAt=1728204751935',
+    'https://ik.imagekit.io/q5gfy1zcvl/avatars/2_SKm5Uf1Eg.jpg?updatedAt=1728204751968',
+    'https://ik.imagekit.io/q5gfy1zcvl/avatars/34_EZrYDjNNtD.jpg?updatedAt=1728204751943',
+    'https://ik.imagekit.io/q5gfy1zcvl/avatars/61_1gEIMiRX5.jpg?updatedAt=1728204751769'
   ];
 
   static List<String> guideList = [

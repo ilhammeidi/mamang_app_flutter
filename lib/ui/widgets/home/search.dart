@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
@@ -18,7 +17,7 @@ class SearchHome extends StatelessWidget {
     final bool isTablet = MediaQuery.of(context).size.width >= 480;
 
     return Container(
-      height: isTablet ? 350.h : 220.h,
+      height: isTablet ? 350 : 300,
       decoration: BoxDecoration(
         gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
       ),
