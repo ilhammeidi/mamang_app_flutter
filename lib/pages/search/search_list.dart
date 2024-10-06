@@ -45,7 +45,7 @@ class SearchList extends StatelessWidget {
             Get.back();
           },
         ),
-        title: SearchInput()
+        title: const SearchInput()
       ),
       body: ListView(children: [
         const VSpace(),

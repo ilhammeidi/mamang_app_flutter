@@ -9,6 +9,6 @@ Color colorType(type) {
     case 'green':
       return Colors.lightBlueAccent;
     default:
-      return Colors.lightGreen;;
+      return Colors.lightGreen;
   }
 }

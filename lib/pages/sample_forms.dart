@@ -58,20 +58,20 @@ class _SampleFormState extends State<SampleForm> {
     );
   }
 
-  Future<void> _selectDate() async {
-    DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(2021),
-      lastDate: DateTime(2025),
-    );
+  // Future<void> _selectDate() async {
+  //   DateTime? picked = await showDatePicker(
+  //     context: context,
+  //     initialDate: DateTime.now(),
+  //     firstDate: DateTime(2021),
+  //     lastDate: DateTime(2025),
+  //   );
 
-    if (picked != null) {
-      setState(() {
-        _dateFromRef.text = picked.toString().split(" ")[0];
-      });
-    }
-  }
+  //   if (picked != null) {
+  //     setState(() {
+  //       _dateFromRef.text = picked.toString().split(" ")[0];
+  //     });
+  //   }
+  // }
 
   Future<void> _selectTime() async {
     TimeOfDay? time = await showTimePicker(
