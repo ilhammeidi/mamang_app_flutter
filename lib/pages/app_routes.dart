@@ -23,24 +23,25 @@ import 'package:mamang_app_flutter/pages/search/search_map.dart';
 import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
 import 'package:mamang_app_flutter/ui/layouts/home_layout.dart';
 
+const int pageTransitionDuration = 100;
+
 final List<GetPage> appRoutes = [
   /// HOME
   GetPage(
     name: '/',
     page: () => const HomeLayout(content: HomeMain()),
     transition: Transition.fadeIn,
+    transitionDuration: const Duration(microseconds: pageTransitionDuration)
   ),
 
   /// SEARCH
   GetPage(
     name: '/search-list',
     page: () => const GeneralLayout(content: SearchList()),
-    transition: Transition.downToUp,
   ),
   GetPage(
     name: '/search-map',
     page: () => const GeneralLayout(content: SearchMap()),
-    transition: Transition.downToUp,
   ),
 
   /// SAVED
@@ -48,6 +49,7 @@ final List<GetPage> appRoutes = [
     name: '/saved',
     page: () => const HomeLayout(content: SavedMain()),
     transition: Transition.fadeIn,
+    transitionDuration: const Duration(microseconds: pageTransitionDuration)
   ),
   GetPage(
     name: '/saved/:id',
@@ -63,6 +65,7 @@ final List<GetPage> appRoutes = [
     name: '/explore',
     page: () => const HomeLayout(content: ExploreMain()),
     transition: Transition.fadeIn,
+    transitionDuration: const Duration(microseconds: pageTransitionDuration)
   ),
   GetPage(
     name: '/promos',
@@ -87,6 +90,7 @@ final List<GetPage> appRoutes = [
     name: '/business',
     page: () => const HomeLayout(content: BusinessMain()),
     transition: Transition.fadeIn,
+    transitionDuration: const Duration(microseconds: pageTransitionDuration)
   ),
   GetPage(
     name: '/business/:id',
@@ -105,11 +109,12 @@ final List<GetPage> appRoutes = [
     page: () => const GeneralLayout(content: BusinessForm()),
   ),
 
-  /// PROFILE AND SETTINGS
+  /// PROFILE, SETTINGS, AND REST PAGES
   GetPage(
     name: '/profile',
     page: () => const HomeLayout(content: ProfileMain()),
     transition: Transition.fadeIn,
+    transitionDuration: const Duration(microseconds: pageTransitionDuration)
   ),
   GetPage(
     name: '/forms',
