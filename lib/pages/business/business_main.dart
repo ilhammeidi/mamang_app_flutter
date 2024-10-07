@@ -46,7 +46,7 @@ class _BusinessMainState extends State<BusinessMain> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(80),
+        preferredSize: const Size.fromHeight(100),
         child: BusinessHeader(isFixed: _isFixed),
       ),
       body: ListView(

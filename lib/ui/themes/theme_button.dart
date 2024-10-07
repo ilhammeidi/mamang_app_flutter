@@ -187,13 +187,14 @@ class ThemeButton {
   // Button Size
   static ButtonStyle btnBig = TextButton.styleFrom(
     minimumSize: const Size(200, 50),
-    padding: const EdgeInsets.all(16),
+    padding: const EdgeInsets.symmetric(horizontal: 16),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(150),
     ),
   );
+  
   static ButtonStyle btnSmall = TextButton.styleFrom(
-    minimumSize: const Size(80, 40),
+    minimumSize: const Size(80, 30),
     padding: const EdgeInsets.symmetric(horizontal: 8),
   );
 }

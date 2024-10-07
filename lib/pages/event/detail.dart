@@ -63,17 +63,14 @@ class _EventDetailState extends State<EventDetail> {
         toolbarHeight: 60,
         forceMaterialTransparency: true,
         backgroundColor: Theme.of(context).colorScheme.surface,
-        leadingWidth: 40,
-        leading: Padding(
-          padding: EdgeInsets.only(left: spacingUnit(1)),
-          child: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(Icons.arrow_back_ios)
-          ),
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: const Icon(Icons.arrow_back_ios_new)
         ),
         centerTitle: false,
+        titleSpacing: 0,
         /// TITLE
         title: Obx(() => AnimatedDefaultTextStyle(
           duration: const Duration(milliseconds: 300),

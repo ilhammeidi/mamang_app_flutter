@@ -37,6 +37,8 @@ class _SettingTimeState extends State<SettingTime> {
       padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
       child: Column(children: [
         const GrabberIcon(),
+        const VSpace(),
+
         Padding(
           padding: EdgeInsets.only(
             bottom: spacingUnit(2),
@@ -71,7 +73,6 @@ class _SettingTimeState extends State<SettingTime> {
               onPressed: () {
                 Get.back();
               },
-              style: ThemeButton.btnBig,
               child: const Text('Discard'),
             ),
           ),
@@ -82,12 +83,12 @@ class _SettingTimeState extends State<SettingTime> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              style: ThemeButton.btnBig.merge(ThemeButton.primary),
+              style: ThemeButton.primary,
               child: const Text('Update'),
             ),
           )
         ]),
-        const VSpaceShort(),
+        const VSpaceBig(),
       ]),
     );
   }

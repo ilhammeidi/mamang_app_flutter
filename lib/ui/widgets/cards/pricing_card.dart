@@ -66,7 +66,7 @@ class PricingCard extends StatelessWidget {
           Column(children: [
             Text(price > 0 ? '\$ $price' : 'FREE', style: ThemeText.title),
             const SizedBox(height: 4),
-            const Text('Monthly', style: ThemeText.caption)
+            Text(price > 0 ? 'Monthly' : 'Forever', style: ThemeText.caption)
           ])
         ]),
       )

@@ -105,74 +105,80 @@ class _BusinessFormState extends State<BusinessForm> {
         centerTitle: false,
         title: const Text('Create New Promo')
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(spacingUnit(2)),
-          child: Column(children: [
-            /// INFO
-            AppInputBox(
-              content: Row(children: [
-                widget.icon,
-                SizedBox(width: spacingUnit(2)),
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  const Text('Promo ID', style: ThemeText.caption),
-                  const SizedBox(height: 4),
-                  Text('#123456', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+      body: Padding(
+        padding: EdgeInsets.all(spacingUnit(2)),
+        child: Column(children: [
+          Expanded(
+            child: ListView(children: [
+              /// INFO
+              AppInputBox(
+                content: Row(children: [
+                  widget.icon,
+                  SizedBox(width: spacingUnit(2)),
+                  Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    const Text('Promo ID', style: ThemeText.caption),
+                    const SizedBox(height: 4),
+                    Text('#123456', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+                  ])
                 ])
-              ])
-            ),
-          
-            const VSpace(),
-            const TitleBasic(title: 'Promo Information'),
-
-            /// UPLOAD PHOTO
-            const VSpaceShort(),
-            Container(
-              height: 200,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: ThemeRadius.medium,
-                color: colorscheme.outline.withOpacity(0.5),
-                border: Border.all(
-                  width: 1,
-                  color: colorscheme.outline
-                ),
               ),
-              child: Center(
-                child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  Icon(Icons.camera_alt_rounded, size: 80, color: colorscheme.onSurfaceVariant),
-                  const SizedBox(height: 4),
-                  Text('Upload Photo'.toUpperCase(), style: TextStyle(color: colorscheme.onSurfaceVariant))
-                ])
-              )
-            ),
-            const VSpaceShort(),
+            
+              const VSpace(),
+              const TitleBasic(title: 'Promo Information'),
+          
+              /// UPLOAD PHOTO
+              const VSpaceShort(),
+              Container(
+                height: 200,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: ThemeRadius.medium,
+                  color: colorscheme.outline.withOpacity(0.5),
+                  border: Border.all(
+                    width: 1,
+                    color: colorscheme.outline
+                  ),
+                ),
+                child: Center(
+                  child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                    Icon(Icons.camera_alt_rounded, size: 80, color: colorscheme.onSurfaceVariant),
+                    const SizedBox(height: 4),
+                    Text('Upload Photo'.toUpperCase(), style: TextStyle(color: colorscheme.onSurfaceVariant))
+                  ])
+                )
+              ),
+              const VSpaceShort(),
+          
+              /// INPUT FORM
+              AppTextField(
+                controller: _chooseRef,
+                label: 'Choose Category',
+                onChanged: (_) {},
+                onTap: () {
+                  openPicker(context);
+                },
+                suffix: const Icon(Icons.arrow_drop_down),
+              ),
+              const VSpaceShort(),
+              AppTextField(label: 'Promo Title', onChanged: (_) {}),
+              const VSpaceShort(),
+              AppTextField(label: 'Promo Description', maxLines: 5, onChanged: (_) {}),
+              const VSpace(),
 
-            /// INPUT FORM
-            AppTextField(
-              controller: _chooseRef,
-              label: 'Choose Category',
-              onChanged: (_) {},
-              onTap: () {
-                openPicker(context);
-              },
-              suffix: const Icon(Icons.arrow_drop_down),
-            ),
-            const VSpaceShort(),
-            AppTextField(label: 'Promo Title', onChanged: (_) {}),
-            const VSpaceShort(),
-            AppTextField(label: 'Promo Description', maxLines: 5, onChanged: (_) {}),
-            const VSpace(),
-            SizedBox(
-              width: double.infinity,
+            ]),
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
               child: FilledButton(
                 onPressed: () {},
                 style: ThemeButton.btnBig.merge(ThemeButton.primary),
                 child: const Text('SUBMIT NEW PROMO'),
               ),
-            )
-          ]),
-        ),
+            ),
+          )
+        ]),
       )
     );
   }

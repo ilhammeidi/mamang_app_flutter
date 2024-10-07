@@ -53,19 +53,21 @@ class SavedHeader extends StatelessWidget {
           Text('10000', style: ThemeText.subtitle.copyWith(color: Colors.white)),
         ]),
       ]),
+
+      /// SCAN QR
       actions: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
           child: SizedBox(
-            width: 100,
+            width: 110,
             height: 30,
             child: FilledButton(
               onPressed: () {},
               style: ThemeButton.btnSmall.merge(ThemeButton.invert2(context)),
-              child: const Row(children: [
+              child: const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Icon(Icons.qr_code_scanner, size: 18),
                 SizedBox(width: 8),
-                Text('Scan QR')
+                Text('Scan QR', textAlign: TextAlign.center,)
               ])
             ),
           ),

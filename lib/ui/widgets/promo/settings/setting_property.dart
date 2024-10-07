@@ -40,6 +40,7 @@ class _SettingPropertyState extends State<SettingProperty> {
       padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
       child: Column(children: [
         const GrabberIcon(),
+        const VSpace(),
         /// Title
         Padding(
           padding: EdgeInsets.only(
@@ -85,7 +86,6 @@ class _SettingPropertyState extends State<SettingProperty> {
               onPressed: () {
                 Get.back();
               },
-              style: ThemeButton.btnBig,
               child: const Text('Discard'),
             ),
           ),
@@ -96,12 +96,12 @@ class _SettingPropertyState extends State<SettingProperty> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              style: ThemeButton.btnBig.merge(ThemeButton.primary),
+              style: ThemeButton.primary,
               child: const Text('Update'),
             ),
           )
         ]),
-        const VSpace()
+        const VSpaceBig()
       ]),
     );
   }

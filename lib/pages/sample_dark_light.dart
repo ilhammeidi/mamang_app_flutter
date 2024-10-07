@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SampleDarkLight extends StatelessWidget {
   SampleDarkLight({super.key}) {
@@ -10,19 +10,19 @@ class SampleDarkLight extends StatelessWidget {
 
   final RxBool _isDarkTheme = false.obs;
 
-  // final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   _getThemeStatus() async {
-    // var isDark = _prefs.then((SharedPreferences prefs) {
-    //   return prefs.getBool('isDarkTheme') ?? false;
-    // }).obs;
+    var isDark = _prefs.then((SharedPreferences prefs) {
+      return prefs.getBool('isDarkTheme') ?? false;
+    }).obs;
 
-    // _isDarkTheme.value = await isDark.value;
+    _isDarkTheme.value = await isDark.value;
   }
 
   _saveThemeStatus() async {
-    // SharedPreferences pref = await _prefs;
-    // pref.setBool('isDarkTheme', _isDarkTheme.value);
+    SharedPreferences pref = await _prefs;
+    pref.setBool('isDarkTheme', _isDarkTheme.value);
   }
 
   @override
