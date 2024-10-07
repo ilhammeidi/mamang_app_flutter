@@ -28,7 +28,8 @@ class SearchMap extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            /// Buttons
+
+            /// FLOATING BUTTONS
             Positioned(
               right: 18,
               bottom: height / 3 + 80,
@@ -65,8 +66,10 @@ class SearchMap extends StatelessWidget {
                 ),
               ),
             ),
+
             /// SEARCH AND FILTERS
             const SearchFilterMap(),
+            
             /// BOTTOMSHEET SEARCH RESULT LIST
             const SearchResultBottomsheet()
           ]);

@@ -62,7 +62,8 @@ class SearchHome extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: spacingUnit(1)),
-                    // SEARCH BUTTON LIKED TEXTFILED 
+
+                    /// SEARCH BUTTON LIKED TEXTFILED 
                     const Expanded(
                       child: SearchInputBtn(
                         location: '/search-list',

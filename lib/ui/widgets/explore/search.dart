@@ -42,6 +42,8 @@ class SearchExplore extends StatelessWidget {
               ),
             )
           ),
+
+          /// SEARCH BOX
           InkWell(
             onTap: () {
               Get.toNamed('/search-list');

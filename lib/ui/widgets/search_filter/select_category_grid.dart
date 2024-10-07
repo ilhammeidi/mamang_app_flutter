@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/category.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -28,7 +29,9 @@ class SelectCategoryGrid extends StatelessWidget {
         itemBuilder: (context, index) {
           Category item = categoryList[index];
           return InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.toNamed('/promos', arguments: item.id);
+            },
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: ThemeRadius.small,

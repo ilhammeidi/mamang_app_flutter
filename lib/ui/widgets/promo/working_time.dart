@@ -126,7 +126,7 @@ class TimeList extends StatelessWidget {
               leading: Text(item['day'], style: ThemeText.paragraph),
               minLeadingWidth: 100,
               title: item['time'] != 'Closed' ? Row(children: [
-                Icon(Icons.access_time_outlined, size: 12, color: Theme.of(context).colorScheme.onSurfaceVariant,),
+                Icon(Icons.access_time_outlined, size: 16, color: Theme.of(context).colorScheme.onSurfaceVariant,),
                 const SizedBox(width: 2),
                 Text(item['time'])
               ]) : Text(item['time'], style: const TextStyle(color: Colors.red))

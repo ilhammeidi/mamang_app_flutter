@@ -66,7 +66,7 @@ class BottomNavMenu extends StatelessWidget {
                     title: 'Profile',
                     icon: Icons.person_outline,
                     iconActive: Icons.person,
-                    isActive: currentRoute == '/dark-mode',
+                    isActive: currentRoute == '/profile',
                     onTap: () => Get.toNamed('/profile')
                   ),
                 ]
@@ -110,7 +110,7 @@ class MenuItem extends StatelessWidget {
             isActive ?
               Icon(iconActive, color: ThemePalette.primaryMain)
               : Icon(icon),
-            Text(title, style: TextStyle(color: isActive ? ThemePalette.primaryMain : Theme.of(context).colorScheme.onSurface))
+            Text(title, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(color: isActive ? ThemePalette.primaryMain : Theme.of(context).colorScheme.onSurface))
           ]),
         ),
       ),

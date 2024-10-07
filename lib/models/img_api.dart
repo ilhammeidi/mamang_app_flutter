@@ -150,11 +150,11 @@ class ImgApi {
   ];
 
   static List<String> guideList = [
-    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s1_vyo5yc.webp',
-    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s2_chjh1a.webp',
-    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s3_aovg9l.webp',
-    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s4_kskxak.webp',
-    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s5_ienewn.webp',
-    'https://res.cloudinary.com/doosabwhn/image/upload/v1728043382/s6_losppk.webp'
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728316739/s1_twzkex.webp',
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728316739/s2_snb5se.webp',
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728316738/s3_sh5nss.webp',
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728316738/s4_m5prti.webp',
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728316739/s5_is7cyi.webp',
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1728316739/s6_htvbie.webp'
   ];
 }

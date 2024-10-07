@@ -14,14 +14,20 @@ class ProfileMain extends StatelessWidget {
         slivers: [
           SliverPersistentHeader(
             delegate: ProfileBannerHeader(
-              minExtent: topPadding + 40,
-              maxExtent: screenHeight / 2
+              minExtent: topPadding + 140,
+              maxExtent: screenHeight / 3
             ),
             pinned: true,
           ),
           SliverToBoxAdapter(
             child: Container(
-              height: 1200,
+              height: 100,
+              color: Colors.white
+            )
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              height: 1000,
               color: Colors.orange
             )
           )

@@ -60,6 +60,7 @@ class _SearchFilterMapState extends State<SearchFilterMap> {
           borderRadius: ThemeRadius.small,
           boxShadow: [ThemeShade.shadeMedium(context)],
         ),
+        
         /// SEARCH INPUT FIELD
         child: Row(children: [
           IconButton(
@@ -68,7 +69,6 @@ class _SearchFilterMapState extends State<SearchFilterMap> {
             },
             icon: const Icon(Icons.arrow_back_ios_new)
           ),
-          SizedBox(width: spacingUnit(2)),
           const Expanded(child: SearchInput())
         ])
       ),

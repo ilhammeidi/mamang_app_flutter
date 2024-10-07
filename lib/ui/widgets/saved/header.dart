@@ -26,7 +26,7 @@ class SavedHeader extends StatelessWidget {
         ),
       ),
       title: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        /// USER COUN
+        /// USER POINTS
         CircleAvatar(
           radius: 12.r,
           backgroundColor: Theme.of(context).colorScheme.surface,
@@ -40,11 +40,11 @@ class SavedHeader extends StatelessWidget {
         ]),
         SizedBox(width: spacingUnit(3)),
 
-        /// USER POINT
+        /// USER COINS
         CircleAvatar(
           radius: 12.r,
           backgroundColor: Theme.of(context).colorScheme.surface,
-          child: const Icon(Icons.motion_photos_on, size: 24, color: Colors.amber)
+          child: const Icon(Icons.motion_photos_on, size: 24, color: Colors.orange)
         ),
         SizedBox(width: spacingUnit(1)),
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

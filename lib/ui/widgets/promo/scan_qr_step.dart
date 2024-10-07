@@ -188,20 +188,16 @@ class _QuizState extends State<Quiz> {
       const VSpace(),
       
       Padding(
-        padding: EdgeInsets.only(
-          bottom: spacingUnit(2),
-        ),
+        padding: EdgeInsets.all(spacingUnit(2)),
         child: Text('Please answer this question', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
       ),
       Padding(
-        padding: EdgeInsets.only(
-          bottom: spacingUnit(2),
-        ),
+        padding: EdgeInsets.all(spacingUnit(2)),
         child: const Text('Which planet is known as the Red Planet?', textAlign: TextAlign.center, style: ThemeText.subtitle,),
       ),
       /// ANSWERS
       SizedBox(
-        height: 200,
+        height: 180,
         child: ListView.builder(
           padding: EdgeInsets.all(spacingUnit(2)),
           itemCount: answerList.length,
@@ -261,7 +257,8 @@ class _QuizState extends State<Quiz> {
             ),
           )
         ]),
-      )
+      ),
+      const VSpaceBig()
     ]);
   }
 }

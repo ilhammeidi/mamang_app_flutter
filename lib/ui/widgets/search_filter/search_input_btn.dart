@@ -26,7 +26,7 @@ class SearchInputBtn extends StatelessWidget {
         Get.toNamed(location);
       },
       child: Container(
-        height: 40,
+        height: 50,
         padding: EdgeInsets.all(spacingUnit(1)),
         decoration: BoxDecoration(
           boxShadow: shadow ? [ThemeShade.shadeSoft(context)] : null,

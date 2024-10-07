@@ -1,5 +1,6 @@
 import 'package:change_case/change_case.dart';
 import 'package:flutter/material.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -39,36 +40,48 @@ class DetailThumbLocation extends StatelessWidget {
           const VSpace(),
 
           /// DESCRIPTION
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.55,
-            child: ListView(children: [
-              /// TEXT TITLE DESCRIPTION
-              Text(title.toCapitalCase(), textAlign: TextAlign.start, style: ThemeText.title.copyWith(fontWeight: FontWeight.bold)),
-              SizedBox(height: spacingUnit(1)),
-              Text(desc, textAlign: TextAlign.start, style: ThemeText.subtitle),
-              const VSpace(),
-
-              /// LOCATION INFO
-              Row(mainAxisAlignment: MainAxisAlignment.start, children:[
-                Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
-                const SizedBox(width: 4),
-                Text('Promo Location', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))
-              ]),
-              const SizedBox(height: 4),
-              Text('Distance: $distance m - $location', textAlign: TextAlign.start),
-              const VSpace(),
-            
-              /// QR CODE
-              Center(child: Text('QR Code Promo', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))),
-              Center(
-                child: SizedBox(
-                  width: 250,
-                  height: 250,
-                  child: Image.asset('assets/images/qrcode.webp', fit: BoxFit.contain)
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            /// LOCATION INFO
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    Row(mainAxisAlignment: MainAxisAlignment.start, children:[
+                      Icon(Icons.location_on, size: 22, color: ThemePalette.tertiaryMain),
+                      const SizedBox(width: 4),
+                      const Text('Promo Location', style: ThemeText.title2)
+                    ]),
+                    const SizedBox(height: 4),
+                    Text('Distance: $distance m - $location', style: ThemeText.subtitle, textAlign: TextAlign.start),
+                  ],
+                )
+              ),
+              SizedBox(width: spacingUnit(2)),
+              SizedBox(
+                width: 80,
+                height: 80,
+                child: OutlinedButton(
+                  onPressed: () {},
+                  style: ThemeButton.btnSmall.merge(ThemeButton.outlinedSecondary(context)),
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
+                    const Icon(Icons.directions, size: 48),
+                    Text('ROUTES', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold),)
+                  ],)
                 ),
               ),
             ]),
-          ),
+            const VSpaceBig(),
+          
+            /// QR CODE
+            Center(child: Text('QR Code Promo', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))),
+            Center(
+              child: SizedBox(
+                width: 250,
+                height: 250,
+                child: Image.asset('assets/images/qrcode.webp', fit: BoxFit.contain)
+              ),
+            ),
+          ]),
         ])
       ]),
     );

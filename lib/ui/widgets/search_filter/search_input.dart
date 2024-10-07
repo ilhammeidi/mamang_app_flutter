@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SearchInput extends StatefulWidget {
-  const SearchInput({super.key});
+  const SearchInput({super.key, this.autofocus = false});
+
+  final bool autofocus;
 
   @override
   State<SearchInput> createState() => _SearchInputState();
@@ -19,27 +21,34 @@ class _SearchInputState extends State<SearchInput> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 5),
-      child: TextField(
-        controller: _textRef,
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          enabledBorder: InputBorder.none,
-          hintText: 'Search promo, event, or anything',
-          suffixIcon: _textRef.text.isNotEmpty ? IconButton(
-            onPressed: () {
-              setState(() {
-                _textRef.clear();
-              });
-            },
-            icon: const Icon(Icons.close)
-          ) : null
+    return TextField(
+      autofocus: widget.autofocus,
+      controller: _textRef,
+      decoration: InputDecoration(
+        border: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.transparent, width: 0)
         ),
-        onChanged: (value) {
-          setState(() {});
-        },
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.transparent, width: 0)
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.transparent, width: 0)
+        ),
+        disabledBorder: InputBorder.none,
+        alignLabelWithHint: true,
+        hintText: 'Search promo, event, or anything',
+        suffixIcon: _textRef.text.isNotEmpty ? IconButton(
+          onPressed: () {
+            setState(() {
+              _textRef.clear();
+            });
+          },
+          icon: const Icon(Icons.close, size: 20,)
+        ) : const Icon(Icons.search, size: 20)
       ),
+      onChanged: (value) {
+        setState(() {});
+      },
     );
   }
 }

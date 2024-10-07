@@ -64,30 +64,26 @@ class _PromoSettingsState extends State<PromoSettings> {
         const VSpace(),
 
         /// LINK INPUT
-        Row(children: [
-          Expanded(
-            child: AppTextField(
-              controller: linkInputRef,
-              label: 'Link',
-              onChanged: (_) {},
+        Expanded(
+          child: AppTextField(
+            controller: linkInputRef,
+            label: 'Link',
+            onChanged: (_) {},
+            suffix: Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: FilledButton(
+                onPressed: () {},
+                style: ThemeButton.tonalPrimary(context),
+                child: const Icon(Icons.check)
+              ),
             ),
           ),
-          const SizedBox(width: 4),
-          SizedBox(
-            height: 50,
-            child: FilledButton(
-              onPressed: () {},
-              style: ThemeButton.tonalPrimary(context),
-              child: const Icon(Icons.check)
-            ),
-          )
-        ]),
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-              width: 30,
-              height: 30,
+              width: 20,
               child: Checkbox(
                 value: _isMirorLlink,
                 onChanged: (bool? value) {
@@ -113,6 +109,7 @@ class _PromoSettingsState extends State<PromoSettings> {
           child: const Text(
             'Please do not put the link that containing ilegal contents like porn, violent, or any other inappropriate',
             textAlign: TextAlign.start,
+            style: TextStyle(color: Colors.black),
           ),
         ),
         const VSpace(),
@@ -120,7 +117,7 @@ class _PromoSettingsState extends State<PromoSettings> {
         /// TIME SETTINGS
         TitleActionSetting(
           title: 'Open Hours',
-          textAction: 'SETTING',
+          textAction: 'SETTINGS',
           onTap: () {
             showModalBottomSheet(
               context: context,
@@ -142,7 +139,7 @@ class _PromoSettingsState extends State<PromoSettings> {
         /// PROPERTY SETTINGS
         TitleActionSetting(
           title: 'Properties',
-          textAction: 'SETTING',
+          textAction: 'SETTINGS',
           onTap: () {
             showModalBottomSheet<dynamic>(
               context: context,
@@ -164,7 +161,7 @@ class _PromoSettingsState extends State<PromoSettings> {
             ListTile(
               leading: Icon(Icons.bookmark, color: colorScheme.onPrimaryContainer),
               title: const Text('Available Saves: 20'),
-              subtitle: const Text('ToTal saves today: 5/20', style: ThemeText.caption),
+              subtitle: const Text('Total saves today: 5/20', style: ThemeText.caption),
               contentPadding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
             ),
             const LineList(),

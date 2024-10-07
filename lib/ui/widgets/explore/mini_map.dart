@@ -21,7 +21,7 @@ class MiniMap extends StatelessWidget {
         children: [
           /// DECORATION
           Positioned(
-            bottom: 0,
+            bottom: -2,
             left: 0,
             child: ClipPath(
               clipper: RoundedClipPathTop(),
@@ -37,6 +37,7 @@ class MiniMap extends StatelessWidget {
               top: spacingUnit(1),
               left: spacingUnit(3),
               right: spacingUnit(3),
+              bottom: spacingUnit(1)
             ),
             child: InkWell(
               onTap: () {

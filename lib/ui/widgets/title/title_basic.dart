@@ -23,3 +23,26 @@ class TitleBasic extends StatelessWidget {
     );
   }
 }
+
+class TitleBasicSmall extends StatelessWidget {
+  const TitleBasicSmall({
+    super.key,
+    required this.title,
+    this.desc
+  });
+
+  final String title;
+  final String? desc;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(title.toUpperCase(), style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
+        const SizedBox(height: 4),
+        desc != null ? Text(desc!, overflow: TextOverflow.ellipsis) : Container(),
+      ],
+    );
+  }
+}

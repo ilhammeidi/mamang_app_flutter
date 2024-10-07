@@ -45,18 +45,19 @@ class SearchList extends StatelessWidget {
             Get.back();
           },
         ),
-        title: const SearchInput()
+        titleSpacing: 0,
+        title: const SearchInput(autofocus: true)
       ),
       body: ListView(children: [
-        const VSpace(),
+        const VSpaceShort(),
         const TagHistory(),
-        const VSpace(),
+        const VSpaceBig(),
         const TagTrending(),
-        const VSpace(),
+        const VSpaceBig(),
         const SelectCategoryGrid(),
-        const VSpace(),
+        const VSpaceBig(),
         PromoListSingle(items: promoData, title: "Recommended Promo"),
-        const VSpace(),
+        const VSpaceBig(),
         EventListSlider(items: eventsData, title: "Recommended Event")
       ]),
     );

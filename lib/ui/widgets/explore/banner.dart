@@ -31,8 +31,8 @@ class BannerExplore extends StatelessWidget {
             /// TEXT TITLE
             Padding(
               padding: EdgeInsets.only(
-                left: spacingUnit(3),
-                right: spacingUnit(3),
+                left: spacingUnit(2),
+                right: spacingUnit(2),
                 bottom: spacingUnit(5),
               ),
               child: const Column(children: [

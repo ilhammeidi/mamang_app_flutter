@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/models/events.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/event/event_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/search_filter/search_input_btn.dart';
 
@@ -25,6 +26,7 @@ class _EventMainState extends State<EventMain> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 60,
         forceMaterialTransparency: true,
         backgroundColor: Theme.of(context).colorScheme.surface,
         titleSpacing: 0,
@@ -58,7 +60,13 @@ class _EventMainState extends State<EventMain> {
             onPressed: () {
               Get.toNamed('/');
             },
-            icon: const Icon(Icons.home_outlined, size: 40)
+            icon: const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.store_outlined, size: 24),
+                Text('Home', style: ThemeText.caption,)
+              ],
+            )
           ),
         ],
       ),

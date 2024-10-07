@@ -27,14 +27,14 @@ class HeaderExplore extends StatelessWidget {
         children: [
           /// GIFT BUTTON
           Container(
-            width: 150,
+            width: 160,
             padding: const EdgeInsets.all(4),
             decoration: BoxDecoration(
               color: colorScheme.surface,
               borderRadius: ThemeRadius.medium,
               boxShadow: [ThemeShade.shadeSoft(context)],
             ),
-            child: Row(children: [
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Image.asset('assets/images/gift.png', height: 20),
               const SizedBox(width: 2,),
               const Text('Claim Your Gift Today', style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 11),)

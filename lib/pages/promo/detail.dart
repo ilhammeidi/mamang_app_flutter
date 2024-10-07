@@ -85,18 +85,16 @@ class _PromoDetailState extends State<PromoDetail> {
             onPressed: () {}, 
             icon: const Icon(Icons.share, color: Colors.white)
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
-            child: IconButton(
-              style: IconButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.surface,
-                shadowColor: Colors.grey.withOpacity(0.5),
-                elevation: 3
-              ),
-              onPressed: () {}, 
-              icon: Icon(controller.selectedPromo.value.liked == true ? Icons.favorite : Icons.favorite_border_outlined, color: ThemePalette.tertiaryMain)
-            ),
-          )
+          IconButton(
+            onPressed: () {}, 
+            icon: controller.selectedPromo.value.liked == true ? 
+              Icon(Icons.favorite, color: ThemePalette.tertiaryMain)
+              : const Icon(Icons.favorite_border_outlined, color: Colors.white)
+          ),
+          IconButton(
+            onPressed: () {}, 
+            icon: const Icon(Icons.more_horiz_outlined, color: Colors.white)
+          ),
         ],
       ),
       bottomNavigationBar: const BottomActionSavePromo(),

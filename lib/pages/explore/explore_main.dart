@@ -39,15 +39,15 @@ class ExploreMain extends StatelessWidget {
             sliver: SliverList(delegate: SliverChildListDelegate([
               const VSpace(),
               const RecommendedPromo(),
-              const VSpace(),
+              const VSpaceBig(),
               const RecommendedEvent(),
               const VSpace(),
               const AdsFood(),
               const VSpaceBig(),
               const FlashSalePromo(),
-              const VSpace(),
+              const VSpaceBig(),
               const TopEvent(),
-              const VSpace(),
+              const VSpaceBig(),
               const AdsHoliday(),
               const SizedBox(height: 120,)
             ]))

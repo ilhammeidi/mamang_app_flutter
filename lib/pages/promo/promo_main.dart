@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/controllers/all_promo_controller.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/promo_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/search_filter/filter.dart';
 import 'package:mamang_app_flutter/ui/widgets/search_filter/search_input_btn.dart';
@@ -57,7 +58,13 @@ class _PromoMainState extends State<PromoMain> {
             onPressed: () {
               Get.offAndToNamed('/');
             },
-            icon: const Icon(Icons.home_outlined, size: 40)
+            icon: const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.store_outlined, size: 24),
+                Text('Home', style: ThemeText.caption,)
+              ],
+            )
           ),
         ],
       ),
