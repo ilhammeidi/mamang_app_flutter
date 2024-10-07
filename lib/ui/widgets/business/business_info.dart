@@ -80,7 +80,7 @@ class BusinessInfo extends StatelessWidget {
 
       /// ACTION BUTTONS
       Padding(
-        padding: EdgeInsets.all(spacingUnit(2)),
+        padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
         child: Row(children: [
           Expanded(
             flex: 1,
@@ -88,7 +88,6 @@ class BusinessInfo extends StatelessWidget {
               onPressed: () {
                 Get.back();
               },
-              style: ThemeButton.btnBig,
               child: const Text('Choose Later'),
             ),
           ),
@@ -99,12 +98,13 @@ class BusinessInfo extends StatelessWidget {
               onPressed: () {
                 Get.toNamed('/business-new/payment');
               },
-              style: ThemeButton.btnBig.merge(ThemeButton.primary),
+              style: ThemeButton.primary,
               child: const Text('Continue'),
             ),
-          )
+          ),
         ]),
       ),
+      const VSpaceBig()
     ]);
   }
 }

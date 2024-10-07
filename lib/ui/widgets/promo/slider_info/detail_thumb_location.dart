@@ -28,7 +28,8 @@ class DetailThumbLocation extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
       child: Column(children: [
         const GrabberIcon(),
-        const VSpaceShort(),
+        const VSpace(),
+        
         Column(children: [
           /// THUMBNAIL
           ClipRRect(

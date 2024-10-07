@@ -56,7 +56,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
             Get.back();
           }
         ),
-        leadingWidth: 30,
+        titleSpacing: 0,
         title: Text(
           '#123456${controller.selectedPromo.value.id.toString()}',
           style: const TextStyle(color: Colors.white)

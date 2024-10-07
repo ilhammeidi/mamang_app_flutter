@@ -26,7 +26,7 @@ class SearchInputBtn extends StatelessWidget {
         Get.toNamed(location);
       },
       child: Container(
-        height: 50,
+        height: 40,
         padding: EdgeInsets.all(spacingUnit(1)),
         decoration: BoxDecoration(
           boxShadow: shadow ? [ThemeShade.shadeSoft(context)] : null,
@@ -36,7 +36,7 @@ class SearchInputBtn extends StatelessWidget {
         child: Row(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.start, children: [
           const Icon(Icons.search),
           SizedBox(width: spacingUnit(1)),
-          Expanded(child: Text(title, style: TextStyle(color: colorScheme.onSurfaceVariant))),
+          Expanded(child: Text(title, style: TextStyle(fontSize: 16, color: colorScheme.onSurfaceVariant))),
           onCancel != null ? InkWell(
             onTap: onCancel,
             child: const Icon(Icons.close_outlined)

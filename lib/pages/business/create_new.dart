@@ -54,10 +54,10 @@ class BusinessCreateNew extends StatelessWidget {
               ),
               SizedBox(width: spacingUnit(2)),
               Expanded(
-                child: RichText(text: const TextSpan(
+                child: RichText(text: TextSpan(
                   text: 'Want to learn more how to use the business features? ',
-                  style: ThemeText.paragraph,
-                  children: [
+                  style: ThemeText.paragraph.copyWith(color: Theme.of(context).colorScheme.onSurface),
+                  children: const [
                     TextSpan(
                       text: 'Tap to watch the tutorial on YouTube',
                       style: TextStyle(fontWeight: FontWeight.bold)

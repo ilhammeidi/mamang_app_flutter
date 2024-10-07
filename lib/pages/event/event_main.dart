@@ -25,18 +25,14 @@ class _EventMainState extends State<EventMain> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 80,
         forceMaterialTransparency: true,
         backgroundColor: Theme.of(context).colorScheme.surface,
-        leadingWidth: 40,
-        leading: Padding(
-          padding: EdgeInsets.only(left: spacingUnit(1)),
-          child: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(Icons.arrow_back_ios)
-          ),
+        titleSpacing: 0,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: const Icon(Icons.arrow_back_ios_new)
         ),
         centerTitle: false,
         /// TITLE AND SEARCH

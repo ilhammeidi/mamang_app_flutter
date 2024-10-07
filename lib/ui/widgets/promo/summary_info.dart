@@ -40,6 +40,7 @@ class SummaryInfo extends StatelessWidget {
             ),
           ),
           SizedBox(width: spacingUnit(2)),
+
           /// PROPERTIES
           Expanded(
             child: Column(
@@ -60,12 +61,12 @@ class SummaryInfo extends StatelessWidget {
                   const SizedBox(width: 4),
                   Text(location, overflow: TextOverflow.ellipsis,)
                 ]),
-                SizedBox(height: spacingUnit(2)),
+                SizedBox(height: spacingUnit(1)),
                 FilledButton(
                   onPressed: () {
                     Get.toNamed('/promos/$id');
                   },
-                  style: ThemeButton.tonalPrimary(context),
+                  style: ThemeButton.btnSmall.merge(ThemeButton.tonalPrimary(context)),
                   child: const Text('See Promo Detail'),
                 )
               ],

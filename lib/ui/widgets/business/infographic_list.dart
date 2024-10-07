@@ -14,7 +14,7 @@ class InfographicList extends StatelessWidget {
   Widget build(BuildContext context) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
     
-    const double cardWidth = 300;
+    const double cardWidth = 320;
     
     return SizedBox(
       height: height,

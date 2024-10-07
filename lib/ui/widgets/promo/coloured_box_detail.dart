@@ -92,8 +92,9 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Column(children: [
                   const Text('Expired in:', style: ThemeText.caption),
+                  const SizedBox(height: 8),
                   Container(
-                    padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                    padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
                     decoration: BoxDecoration(
                       color: colorScheme.onSurface,
                       borderRadius: ThemeRadius.medium,
@@ -108,22 +109,15 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
                 Column(children: [
                   widget.owned ? Text('Status: ${isActive != null && isActive == true ? 'Active' : 'Non-Active'}', style: ThemeText.caption)
                   : Text('Status: ${widget.published ? 'Active' : 'Non-Active'}', style: ThemeText.caption),
-                  SizedBox(
-                    width: 50,
-                    height: 30,
-                    child: FittedBox(
-                      fit: BoxFit.fill,
-                      child: Switch(
-                        value: isActive ?? widget.published,
-                        activeColor: ThemePalette.primaryMain,
-                        inactiveThumbColor: ThemePalette.primaryMain,
-                        onChanged: widget.owned ? (bool value) {
-                          setState(() {
-                            isActive = value;
-                          });
-                        } : null,
-                      )
-                    ),
+                  Switch(
+                    value: isActive ?? widget.published,
+                    activeColor: ThemePalette.primaryMain,
+                    inactiveThumbColor: ThemePalette.primaryMain,
+                    onChanged: widget.owned ? (bool value) {
+                      setState(() {
+                        isActive = value;
+                      });
+                    } : null,
                   )
                 ])
               ]),

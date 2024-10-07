@@ -185,6 +185,8 @@ class _QuizState extends State<Quiz> {
     return Column(children: [
       /// QUESTION
       const GrabberIcon(),
+      const VSpace(),
+      
       Padding(
         padding: EdgeInsets.only(
           bottom: spacingUnit(2),

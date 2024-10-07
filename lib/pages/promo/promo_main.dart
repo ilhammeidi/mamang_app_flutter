@@ -41,15 +41,12 @@ class _PromoMainState extends State<PromoMain> {
         toolbarHeight: 80,
         forceMaterialTransparency: true,
         backgroundColor: Theme.of(context).colorScheme.surface,
-        leadingWidth: 40,
-        leading: Padding(
-          padding: EdgeInsets.only(left: spacingUnit(1)),
-          child: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(Icons.arrow_back_ios)
-          ),
+        titleSpacing: 0,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: const Icon(Icons.arrow_back_ios_new)
         ),
         title: const SearchInputBtn(
           location: '/search-list',
