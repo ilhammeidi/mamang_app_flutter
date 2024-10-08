@@ -12,21 +12,32 @@ void main() {
 }
 
 class MainApp extends StatelessWidget {
-  final RxBool _isDarkTheme = false.obs;
+  final RxString _themeMode = 'auto'.obs;
 
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   _getThemeStatus() async {
-    var isDark = _prefs.then((SharedPreferences prefs) {
-      return prefs.getBool('isDarkTheme') ?? false;
+    SharedPreferences pref = await _prefs;
+    var mode = _prefs.then((SharedPreferences prefs) {
+      return prefs.getString('appTheme') ?? 'auto';
     }).obs;
 
-    _isDarkTheme.value = await isDark.value;
-    Get.changeThemeMode(_isDarkTheme.value ? ThemeMode.dark : ThemeMode.light);
+    _themeMode.value = await mode.value;
+
+    switch(_themeMode.value) {
+      case 'dark':
+        Get.changeThemeMode(ThemeMode.dark);
+      break;
+      case 'light':
+        Get.changeThemeMode(ThemeMode.light);
+      break;
+      default:
+      break;
+    }
   }
 
   MainApp({super.key}) {
-    _getThemeStatus();
+   _getThemeStatus();
   }
 
   @override

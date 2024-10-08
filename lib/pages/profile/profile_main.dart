@@ -22,7 +22,7 @@ class ProfileMain extends StatelessWidget {
             ),
             pinned: true,
           ),
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: SettingList()
           ),
           SliverPadding(padding: EdgeInsets.only(bottom: spacingUnit(10)))
