@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/widgets/settings/setting_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/user/profile_banner_header.dart';
 
 class ProfileMain extends StatelessWidget {
@@ -10,6 +12,7 @@ class ProfileMain extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      extendBody: true,
       body: CustomScrollView(
         slivers: [
           SliverPersistentHeader(
@@ -19,18 +22,10 @@ class ProfileMain extends StatelessWidget {
             ),
             pinned: true,
           ),
-          SliverToBoxAdapter(
-            child: Container(
-              height: 100,
-              color: Colors.white
-            )
+          const SliverToBoxAdapter(
+            child: SettingList()
           ),
-          SliverToBoxAdapter(
-            child: Container(
-              height: 1000,
-              color: Colors.orange
-            )
-          )
+          SliverPadding(padding: EdgeInsets.only(bottom: spacingUnit(10)))
         ],
       )
     );

@@ -35,7 +35,7 @@ final List<Puzzle> puzzleList = [
     name: 'Leverage holidays and special occasions',
     liked: false,
     time: '01:12',
-    thumb: ImgApi.photo[110],
+    thumb: ImgApi.photo[6],
     image: ImgApi.photo[5],
     progress: '125'
   ),

@@ -35,10 +35,8 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
       fit: StackFit.expand,
       children: [
         /// BACKGROUND
-        Image.network(
-          'https://picsum.photos/800/600/?random=hotel_jkt',
-          color: ThemePalette.primaryMain,
-          colorBlendMode: BlendMode.darken,
+        Image.asset(
+          'assets/images/profile_banner.jpg',
           fit: BoxFit.cover
         ),
 
@@ -60,11 +58,10 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
         Positioned(
           top: spacingUnit(1),
           left: spacingUnit(2),
-          child: AnimatedCrossFade(
-            duration: const Duration(milliseconds: 500),
-            crossFadeState: showItem ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-            firstChild: Container(),
-            secondChild: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+          child: AnimatedOpacity(
+            opacity: showItem ? 0 : 1,
+            duration: const Duration(milliseconds: 300),
+            child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
               CircleAvatar(
                 radius: 15.r,
                 backgroundImage: NetworkImage(userDummy.avatar),
@@ -72,7 +69,7 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
               SizedBox(width: spacingUnit(1)),
               Text(userDummy.name, style: ThemeText.title2.copyWith(color: Colors.white)),
             ]),
-          )
+          ),
         ),
         Positioned(
           top: spacingUnit(1),

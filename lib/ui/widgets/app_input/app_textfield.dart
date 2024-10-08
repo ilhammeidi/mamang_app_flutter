@@ -15,6 +15,7 @@ class AppTextField extends StatefulWidget {
     this.prefixIcon,
     this.suffix,
     this.onTap,
+    this.obscureText = false
   });
 
   final String label;
@@ -26,6 +27,7 @@ class AppTextField extends StatefulWidget {
   final int? maxLines;
   final void Function()? onTap;
   final void Function(String) onChanged;
+  final bool obscureText;
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -73,6 +75,7 @@ class _AppTextFieldState extends State<AppTextField> {
           focusNode: focusNode,
           readOnly: widget.readOnly,
           maxLines: widget.maxLines,
+          obscureText: widget.obscureText,
           decoration: InputDecoration(
             border: InputBorder.none,
             enabledBorder: InputBorder.none,

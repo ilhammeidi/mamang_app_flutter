@@ -39,7 +39,7 @@ class TitleBasicSmall extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title.toUpperCase(), style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
+        Text(title.toUpperCase(), style: const TextStyle(fontWeight: FontWeight.bold)),
         const SizedBox(height: 4),
         desc != null ? Text(desc!, overflow: TextOverflow.ellipsis) : Container(),
       ],
