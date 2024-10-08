@@ -17,7 +17,6 @@ class MainApp extends StatelessWidget {
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   _getThemeStatus() async {
-    SharedPreferences pref = await _prefs;
     var mode = _prefs.then((SharedPreferences prefs) {
       return prefs.getString('appTheme') ?? 'auto';
     }).obs;

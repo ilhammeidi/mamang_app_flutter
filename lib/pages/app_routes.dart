@@ -1,4 +1,5 @@
 import 'package:get/route_manager.dart';
+import 'package:mamang_app_flutter/pages/auth/welcome.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
 import 'package:mamang_app_flutter/pages/business/create_new.dart';
 import 'package:mamang_app_flutter/pages/business/detail.dart';
@@ -28,6 +29,7 @@ import 'package:mamang_app_flutter/ui/layouts/home_layout.dart';
 const int pageTransitionDuration = 100;
 
 final List<GetPage> appRoutes = [
+
   /// HOME
   GetPage(
     name: '/',
@@ -36,6 +38,14 @@ final List<GetPage> appRoutes = [
     transitionDuration: const Duration(microseconds: pageTransitionDuration)
   ),
 
+  /// USER AUTH
+  GetPage(
+    name: '/welcome',
+    page: () => const GeneralLayout(content: Welcome()),
+    transition: Transition.fadeIn,
+    transitionDuration: const Duration(microseconds: pageTransitionDuration)
+  ),
+  
   /// SEARCH
   GetPage(
     name: '/search-list',
