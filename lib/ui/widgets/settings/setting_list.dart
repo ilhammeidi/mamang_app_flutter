@@ -3,6 +3,7 @@ import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/app_input/app_input_box.dart';
+import 'package:mamang_app_flutter/ui/widgets/settings/account_info.dart';
 import 'package:mamang_app_flutter/ui/widgets/title/title_basic.dart';
 
 enum UiMode { auto, dark, light }
@@ -16,7 +17,7 @@ class SettingList extends StatefulWidget {
 
 class _SettingListState extends State<SettingList> {
   UiMode _mode = UiMode.auto;
-  void setMode(UiMode? val) {
+  void _setMode(UiMode? val) {
     setState(() {
       _mode = val!;
     });
@@ -36,30 +37,39 @@ class _SettingListState extends State<SettingList> {
             ListTile(
               leading: const Icon(Icons.brightness_6_outlined),
               title: const Text('Auto'),
+              onTap: () {
+                _setMode(UiMode.auto);
+              },
               trailing: Radio<UiMode>(
                 value: UiMode.auto,
                 groupValue: _mode,
-                onChanged: setMode,
+                onChanged: _setMode,
               ),
             ),
             const LineList(),
             ListTile(
               leading: const Icon(Icons.dark_mode),
               title: const Text('Dark Mode'),
+              onTap: () {
+                _setMode(UiMode.dark);
+              },
               trailing: Radio<UiMode>(
                 value: UiMode.dark,
                 groupValue: _mode,
-                onChanged: setMode,
+                onChanged: _setMode,
               ),
             ),
             const LineList(),
             ListTile(
               leading: const Icon(Icons.light_mode),
               title: const Text('Light Mode'),
+              onTap: () {
+                _setMode(UiMode.light);
+              },
               trailing: Radio<UiMode>(
                 value: UiMode.light,
                 groupValue: _mode,
-                onChanged: setMode,
+                onChanged: _setMode,
               ),
             ),
           ])
@@ -68,27 +78,40 @@ class _SettingListState extends State<SettingList> {
 
         /// ACCOUNT SETTING
         const TitleBasicSmall(title: 'Help and Account'),
-        const AppInputBox(content:
+        AppInputBox(content:
           Column(children: [
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Account Information'),
-              trailing: Icon(Icons.arrow_forward_ios),
+              leading: const Icon(Icons.person),
+              title: const Text('Account Information'),
+              trailing: const Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  builder: (BuildContext context) {
+                    return const Wrap(
+                      children: [
+                        AccountInfo()
+                      ],
+                    );
+                  }
+                );
+              },
             ),
-            LineList(),
-            ListTile(
+            const LineList(),
+            const ListTile(
               leading: Icon(Icons.help_outline),
               title: Text('Help Center'),
               trailing: Icon(Icons.arrow_forward_ios),
             ),
-            LineList(),
-            ListTile(
+            const LineList(),
+            const ListTile(
               leading: Icon(Icons.call),
               title: Text('Contact Admin'),
               trailing: Icon(Icons.arrow_forward_ios),
             ),
-            LineList(),
-            ListTile(
+            const LineList(),
+            const ListTile(
               leading: Icon(Icons.insert_drive_file_outlined),
               title: Text('Terms and Privacy'),
               trailing: Icon(Icons.arrow_forward_ios),

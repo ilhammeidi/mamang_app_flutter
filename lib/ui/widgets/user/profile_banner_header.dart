@@ -113,6 +113,7 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
                 duration: const Duration(milliseconds: 300),
                 child: AnimatedScale(
                   scale: showItem ? 1 : 0,
+                  curve: Curves.easeOutBack,
                   duration: const Duration(milliseconds: 300),
                   child: Stack(
                     alignment: Alignment.bottomRight,

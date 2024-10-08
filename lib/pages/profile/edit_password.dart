@@ -4,17 +4,17 @@ import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/app_input/app_textfield.dart';
 
-class EditProfile extends StatefulWidget {
-  const EditProfile({super.key});
+class EditPassword extends StatefulWidget {
+  const EditPassword({super.key});
 
   @override
-  State<EditProfile> createState() => _EditProfileState();
+  State<EditPassword> createState() => _EditPasswordState();
 }
 
-class _EditProfileState extends State<EditProfile> {
-  bool _showCurrentPassword = false;
-  bool _showNewPassword = false;
-  bool _showRepeatPassword = false;
+class _EditPasswordState extends State<EditPassword> {
+  bool _hideCurrentPassword = true;
+  bool _hideNewPassword = true;
+  bool _hideRepeatPassword = true;
   
   @override
   Widget build(BuildContext context) {
@@ -35,50 +35,54 @@ class _EditProfileState extends State<EditProfile> {
           child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             AppTextField(
               label: 'Current Password',
-              obscureText: _showCurrentPassword,
+              obscureText: _hideCurrentPassword,
               suffix: IconButton(
                 onPressed: () {
                   setState(() {
-                    _showCurrentPassword = !_showCurrentPassword;
+                    _hideCurrentPassword = !_hideCurrentPassword;
                   });
                 },
-                icon: _showCurrentPassword == true ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility)
+                icon: _hideCurrentPassword == true ? const Icon(Icons.visibility) : const Icon(Icons.visibility_off)
               ),
               onChanged: (_) {}
             ),
             const VSpace(),
             AppTextField(
               label: 'New Password',
-              obscureText: _showNewPassword,
+              obscureText: _hideNewPassword,
               suffix: IconButton(
                 onPressed: () {
                   setState(() {
-                    _showNewPassword = !_showNewPassword;
+                    _hideNewPassword = !_hideNewPassword;
                   });
                 },
-                icon: _showNewPassword == true ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility)
+                icon: _hideNewPassword == true ? const Icon(Icons.visibility) : const Icon(Icons.visibility_off)
               ),
               onChanged: (_) {}
             ),
             const VSpace(),
             AppTextField(
               label: 'Repeat Password',
-              obscureText: _showRepeatPassword,
+              obscureText: _hideRepeatPassword,
               suffix: IconButton(
                 onPressed: () {
                   setState(() {
-                    _showRepeatPassword = !_showRepeatPassword;
+                    _hideRepeatPassword = !_hideRepeatPassword;
                   });
                 },
-                icon: _showRepeatPassword == true ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility)
+                icon: _hideRepeatPassword == true ? const Icon(Icons.visibility) : const Icon(Icons.visibility_off)
               ),
               onChanged: (_) {}
             ),
             const VSpace(),
-            FilledButton(
-              onPressed: () {},
-              style: ThemeButton.primary,
-              child: const Text('Update')
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 40,
+              child: FilledButton(
+                onPressed: () {},
+                style: ThemeButton.primary,
+                child: const Text('Update')
+              ),
             )
           ]),
         ),

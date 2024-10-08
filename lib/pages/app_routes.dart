@@ -8,6 +8,8 @@ import 'package:mamang_app_flutter/pages/event/detail.dart';
 import 'package:mamang_app_flutter/pages/event/event_main.dart';
 import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
 import 'package:mamang_app_flutter/pages/home.dart';
+import 'package:mamang_app_flutter/pages/profile/edit_password.dart';
+import 'package:mamang_app_flutter/pages/profile/edit_profile.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
 import 'package:mamang_app_flutter/pages/promo/detail.dart';
 import 'package:mamang_app_flutter/pages/promo/promo_main.dart';
@@ -115,6 +117,14 @@ final List<GetPage> appRoutes = [
     page: () => const HomeLayout(content: ProfileMain()),
     transition: Transition.fadeIn,
     transitionDuration: const Duration(microseconds: pageTransitionDuration)
+  ),
+  GetPage(
+    name: '/change-profile',
+    page: () => const GeneralLayout(content: EditProfile()),
+  ),
+  GetPage(
+    name: '/change-password',
+    page: () => const GeneralLayout(content: EditPassword()),
   ),
   GetPage(
     name: '/forms',

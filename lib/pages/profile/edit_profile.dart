@@ -29,13 +29,13 @@ class EditProfile extends StatelessWidget {
               alignment: Alignment.bottomRight,
               children: [
                 CircleAvatar(
+                  radius: 50,
+                  backgroundImage: NetworkImage(userDummy.avatar),
+                ),
+                CircleAvatar(
                   radius: 10,
                   backgroundColor: ThemePalette.primaryMain,
                   child: const Icon(Icons.edit, size: 12, color: Colors.white),
-                ),
-                CircleAvatar(
-                  radius: 20,
-                  backgroundImage: NetworkImage(userDummy.avatar),
                 ),
               ],
             ),
@@ -44,10 +44,14 @@ class EditProfile extends StatelessWidget {
             const VSpace(),
             AppTextField(label: '+621234567890', onChanged: (_) {}),
             const VSpace(),
-            FilledButton(
-              onPressed: () {},
-              style: ThemeButton.primary,
-              child: const Text('Update')
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 40,
+              child: FilledButton(
+                onPressed: () {},
+                style: ThemeButton.primary,
+                child: const Text('Update')
+              ),
             )
           ]),
         ),

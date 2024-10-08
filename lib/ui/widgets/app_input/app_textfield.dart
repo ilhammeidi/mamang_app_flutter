@@ -10,12 +10,12 @@ class AppTextField extends StatefulWidget {
     required this.onChanged,
     this.hint,
     this.readOnly = false,
-    this.maxLines,
+    this.maxLines = 1,
     this.controller,
     this.prefixIcon,
     this.suffix,
     this.onTap,
-    this.obscureText = false
+    this.obscureText = false,
   });
 
   final String label;
@@ -24,7 +24,7 @@ class AppTextField extends StatefulWidget {
   final TextEditingController? controller;
   final IconData? prefixIcon;
   final Widget? suffix;
-  final int? maxLines;
+  final int maxLines;
   final void Function()? onTap;
   final void Function(String) onChanged;
   final bool obscureText;
@@ -75,12 +75,12 @@ class _AppTextFieldState extends State<AppTextField> {
           focusNode: focusNode,
           readOnly: widget.readOnly,
           maxLines: widget.maxLines,
-          obscureText: widget.obscureText,
+          obscureText: widget.maxLines == 1 ? widget.obscureText : false,
           decoration: InputDecoration(
             border: InputBorder.none,
             enabledBorder: InputBorder.none,
             labelText: widget.label,
-            alignLabelWithHint: widget.maxLines != null ? true : false,
+            alignLabelWithHint: widget.maxLines != 1 ? true : false,
             hintText: widget.hint ?? widget.hint,
             prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
             suffixIcon: widget.suffix ?? widget.suffix
