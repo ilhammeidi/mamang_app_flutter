@@ -49,7 +49,7 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
             child: Container(
               height: 80,
               width: MediaQuery.of(context).size.width,
-              color: Theme.of(context).colorScheme.surface,
+              color: Theme.of(context).colorScheme.surfaceContainerLowest,
             ),
           )
         ),

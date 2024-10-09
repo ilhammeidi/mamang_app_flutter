@@ -7,7 +7,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MainApp());
 }
 

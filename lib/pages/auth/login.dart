@@ -33,9 +33,9 @@ class Login extends StatelessWidget {
           },
             child: const Row(
               children: [
-                Text('REGISTER', style: TextStyle(color: Colors.white)),
+                Text('REGISTER', style: TextStyle(color: Colors.black)),
                 SizedBox(width: 4),
-                Icon(Icons.arrow_forward, color: Colors.white)
+                Icon(Icons.arrow_forward, color: Colors.black)
               ],
             )
           )

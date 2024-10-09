@@ -70,12 +70,12 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
               child: Container(
                 height: 80,
                 width: MediaQuery.of(context).size.width,
-                color: Theme.of(context).colorScheme.surface,
+                color: Theme.of(context).colorScheme.surfaceContainerLowest,
               ),
             )
           ),
           Column(children: [
-              /// TITLE AND SHOR DESCRIPTION
+            /// TITLE AND SHOR DESCRIPTION
             Padding(
               padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
               child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -183,6 +183,8 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
                 ])
               ]),
             ) : Container(),
+
+            /// SLIDER INFO LIST
             SliderInfoList(
               thumb: widget.thumb,
               name: widget.title,

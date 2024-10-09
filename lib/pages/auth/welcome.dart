@@ -27,16 +27,16 @@ class Welcome extends StatelessWidget {
             color: Colors.black.withOpacity(0.05),
             image: const DecorationImage(image: AssetImage('assets/images/welcome_bg.png'), fit: BoxFit.cover )
           ),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
           
             /// IMAGE ILLUSTRATION
             Padding(
               padding: EdgeInsets.only(bottom: spacingUnit(3)),
-              child: Image.asset('assets/images/puzzle.png', height: 200),
+              child: Center(child: Image.asset('assets/images/puzzle.png', height: 200)),
             ),
           
             /// TEXT
-            Text('Welcome to Mamang App', style: TextStyle(fontSize: 48.sp, color: Colors.white, fontWeight: FontWeight.bold)),
+            Text('Welcome to Mamang App', style: TextStyle(fontSize: 42.sp, color: Colors.white, fontWeight: FontWeight.bold)),
             const VSpaceShort(),
             Text('Your trusted local marketplace and advertising platforms.', style: ThemeText.title2.copyWith(color: Colors.white, fontWeight: FontWeight.normal)),
             const VSpaceBig(),

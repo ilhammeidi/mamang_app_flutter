@@ -33,9 +33,9 @@ class Register extends StatelessWidget {
           },
             child: const Row(
               children: [
-                Text('LOGIN', style: TextStyle(color: Colors.white)),
+                Text('LOGIN', style: TextStyle(color: Colors.black)),
                 SizedBox(width: 4),
-                Icon(Icons.arrow_forward, color: Colors.white)
+                Icon(Icons.arrow_forward, color: Colors.black)
               ],
             )
           )

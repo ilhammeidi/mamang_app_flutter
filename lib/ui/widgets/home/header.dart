@@ -12,10 +12,11 @@ class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key, this.isFixed = false});
 
   final bool isFixed;
-  static final bool _isDark = Get.isDarkMode;
 
   @override
   Widget build(BuildContext context) {
+    final bool isDark = Get.isDarkMode;
+
     return AppBar(
       toolbarHeight: 100,
       bottom: PreferredSize(
@@ -35,7 +36,7 @@ class HomeHeader extends StatelessWidget {
       automaticallyImplyLeading: false,
       flexibleSpace: Container(
         decoration: BoxDecoration(
-          gradient: _isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
+          gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
         ),
       ),
       titleSpacing: spacingUnit(1),
