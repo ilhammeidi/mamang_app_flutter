@@ -23,6 +23,7 @@ import 'package:mamang_app_flutter/pages/sample_shadow.dart';
 import 'package:mamang_app_flutter/pages/saved/puzzle_detail.dart';
 import 'package:mamang_app_flutter/pages/saved/saved_detail.dart';
 import 'package:mamang_app_flutter/pages/saved/saved_main.dart';
+import 'package:mamang_app_flutter/pages/saved/saved_voucher.dart';
 import 'package:mamang_app_flutter/pages/search/search_list.dart';
 import 'package:mamang_app_flutter/pages/search/search_map.dart';
 import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
@@ -80,6 +81,10 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/puzzle/:id',
     page: () => GeneralLayout(content: PuzzleDetail()),
+  ),
+  GetPage(
+    name: '/voucher',
+    page: () => const GeneralLayout(content: SavedVoucher()),
   ),
 
   /// EXPLORE PROMOS AND EVENTS

@@ -52,9 +52,9 @@ class TabMenu extends StatelessWidget {
             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Expanded(flex: 1, child: _buttonTab(current == 0, 'Promos', () => onSelect(0), context)),
               const SizedBox(width: 2),
-              Expanded(flex: 1, child: _buttonTab(current == 1, 'Liked', () => onSelect(1), context)),
+              Expanded(flex: 1, child: _buttonTab(current == 2, 'Vouchers', () => onSelect(2), context)),
               const SizedBox(width: 2),
-              Expanded(flex: 1, child: _buttonTab(current == 2, 'Puzzles', () => onSelect(2), context)),
+              Expanded(flex: 1, child: _buttonTab(current == 1, 'Liked', () => onSelect(1), context)),
             ]),
           )
         ],
@@ -74,7 +74,7 @@ class TabMenu extends StatelessWidget {
           borderRadius: ThemeRadius.big
         )
       ),
-      child: Text(text, style: ThemeText.subtitle),
+      child: Text(text),
     );
   }
 }

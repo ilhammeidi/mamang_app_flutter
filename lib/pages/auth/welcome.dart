@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -35,7 +36,7 @@ class Welcome extends StatelessWidget {
             ),
           
             /// TEXT
-            const Text('Welcome to Mamang App', style: TextStyle(fontSize: 48, color: Colors.white, fontWeight: FontWeight.bold)),
+            Text('Welcome to Mamang App', style: TextStyle(fontSize: 48.sp, color: Colors.white, fontWeight: FontWeight.bold)),
             const VSpaceShort(),
             Text('Your trusted local marketplace and advertising platforms.', style: ThemeText.title2.copyWith(color: Colors.white, fontWeight: FontWeight.normal)),
             const VSpaceBig(),

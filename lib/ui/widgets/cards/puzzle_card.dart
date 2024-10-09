@@ -29,7 +29,7 @@ class PuzzleCard extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        /// Thumbnail
+        /// THUMBNAIL
         Stack(alignment: Alignment.center, children: [
           ClipRRect(
             borderRadius: ThemeRadius.medium,
@@ -42,7 +42,13 @@ class PuzzleCard extends StatelessWidget {
               colorBlendMode: BlendMode.darken,
             ),
           ),
-          _puzzle(progress),
+
+          /// PROGRESS PUZZLE
+          progress.length < 9 ?
+            _puzzle(progress)
+            : Icon(Icons.check_box, color: ThemePalette.primaryLight, size: 50,),
+
+          /// TOP PROPERTIES
           Positioned(
             top: 8,
             child: Container(
@@ -59,7 +65,8 @@ class PuzzleCard extends StatelessWidget {
             )
           )
         ]),
-        /// Properties
+
+        /// BOTTOM PROPERTIES
         Padding(
           padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
           child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [

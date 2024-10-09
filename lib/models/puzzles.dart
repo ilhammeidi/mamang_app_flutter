@@ -28,7 +28,7 @@ final List<Puzzle> puzzleList = [
     time: '2 Days',
     thumb: ImgApi.photo[105],
     image: ImgApi.photo[3],
-    progress: '139'
+    progress: '123456789'
   ),
   Puzzle(
     id: 2,
@@ -37,7 +37,7 @@ final List<Puzzle> puzzleList = [
     time: '01:12',
     thumb: ImgApi.photo[6],
     image: ImgApi.photo[5],
-    progress: '125'
+    progress: '123456789'
   ),
   Puzzle(
     id: 3,
@@ -55,7 +55,7 @@ final List<Puzzle> puzzleList = [
     time: '2 Day',
     thumb: ImgApi.photo[67],
     image: ImgApi.photo[69],
-    progress: '4789'
+    progress: '123456789'
   ),
   Puzzle(
     id: 5,

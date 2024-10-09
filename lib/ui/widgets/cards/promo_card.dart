@@ -50,6 +50,7 @@ class PromoCard extends StatelessWidget {
           ) : Container(),
         ]
       ),
+      
       /// ID
       Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
@@ -58,6 +59,7 @@ class PromoCard extends StatelessWidget {
           style: ThemeText.caption.copyWith(color: greyText)
         ),
       ),
+
       /// TITLE NAME
       SizedBox(
         height: 60,
@@ -68,6 +70,7 @@ class PromoCard extends StatelessWidget {
           maxLines: 2,
         )
       ),
+
       /// PROPERTIES
       Row(children: [
         Icon(Icons.location_on_outlined, size: 16, color: greyText),
