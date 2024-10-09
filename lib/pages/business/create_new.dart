@@ -56,7 +56,7 @@ class BusinessCreateNew extends StatelessWidget {
               Expanded(
                 child: RichText(text: TextSpan(
                   text: 'Want to learn more how to use the business features? ',
-                  style: ThemeText.paragraph.copyWith(color: Theme.of(context).colorScheme.onSurface),
+                  style: ThemeText.paragraph.copyWith(color: Colors.black),
                   children: const [
                     TextSpan(
                       text: 'Tap to watch the tutorial on YouTube',

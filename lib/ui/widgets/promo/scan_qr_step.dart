@@ -65,7 +65,7 @@ class ScanQrStep extends StatelessWidget {
                   SizedBox(
                     width: 250,
                     height: 250,
-                    child: Image.asset('assets/images/qrcode.webp', fit: BoxFit.contain)
+                    child: Image.asset('assets/images/qrcode.jpg', fit: BoxFit.contain)
                   ),
                   context
                 ),

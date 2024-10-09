@@ -178,7 +178,7 @@ class SliderInfoList extends StatelessWidget {
           content: Padding(padding: EdgeInsets.all(spacingUnit(1)),
             child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
               ClipRRect(
-                child: Image.asset('assets/images/qrcode.webp', width: 80, fit: BoxFit.fill)
+                child: Image.asset('assets/images/qrcode.jpg', width: 80, fit: BoxFit.fill)
               ),
               SizedBox(width: spacingUnit(1)),
               Expanded(

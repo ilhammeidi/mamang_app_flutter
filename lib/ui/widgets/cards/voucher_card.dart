@@ -35,7 +35,7 @@ class VoucherCard extends StatelessWidget {
               ),
             ),
             child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              const Text('Promo Code:', style: ThemeText.subtitle),
+              Text('Promo Code:', style: ThemeText.subtitle.copyWith(color: Colors.black)),
               Container(
                 padding: EdgeInsets.symmetric(vertical: spacingUnit(1), horizontal: spacingUnit(2)),
                 decoration: BoxDecoration(
@@ -47,7 +47,7 @@ class VoucherCard extends StatelessWidget {
               SizedBox(
                 width: 230,
                 height: 230,
-                child: Image.asset('assets/images/qrcode.webp', fit: BoxFit.contain)
+                child: Image.asset('assets/images/qrcode.jpg', fit: BoxFit.contain)
               ),
             ])
           ),
@@ -91,15 +91,20 @@ class VoucherCard extends StatelessWidget {
 
                     /// TEXT CONTENT
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      Text('Baby Sushi Special Discount 20%', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
+                      Text('Baby Sushi Special Discount 20%', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold, color: Colors.black)),
                       const SizedBox(height: 4),
                       Row(mainAxisAlignment: MainAxisAlignment.start, children:[
                         Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
                         const SizedBox(width: 4),
-                        const Text('21 Arkansas Alley')
+                        const Text('21 Arkansas Alley', style: TextStyle(color: Colors.black),)
                       ]),
                       const SizedBox(height: 16),
-                      const Text('Suspendisse potenti. Cras in vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', maxLines: 3, overflow: TextOverflow.clip,),
+                      const Text(
+                        'Suspendisse potenti. Cras in vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+                        style: TextStyle(color: Colors.black),
+                        maxLines: 3,
+                        overflow: TextOverflow.clip,
+                      ),
                     ],)
                   ),
                 ),

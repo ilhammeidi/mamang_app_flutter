@@ -64,7 +64,7 @@ class BusinessHeader extends StatelessWidget {
           duration: const Duration(milliseconds: 200),
           height: 20,
           decoration: BoxDecoration(
-            color: colorScheme.surface.withOpacity(isFixed ? 1 : 0),
+            color: colorScheme.surfaceContainerLowest.withOpacity(isFixed ? 1 : 0),
             borderRadius: BorderRadius.only(
               topLeft: isFixed ? const Radius.circular(20) : const Radius.circular(0),
               topRight: isFixed ? const Radius.circular(20) : const Radius.circular(0)

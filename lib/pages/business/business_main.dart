@@ -68,7 +68,7 @@ class _BusinessMainState extends State<BusinessMain> {
                     child: Container(
                       height: 80,
                       width: MediaQuery.of(context).size.width,
-                      color: Theme.of(context).colorScheme.surface,
+                      color: Theme.of(context).colorScheme.surfaceContainerLowest,
                     ),
                   )
                 ),

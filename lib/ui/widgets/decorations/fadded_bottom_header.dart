@@ -12,7 +12,7 @@ class FadedBottomHeader extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: <Color>[colorScheme.surface, colorScheme.surface.withOpacity(0.5), colorScheme.surface.withOpacity(0)],
+          colors: <Color>[colorScheme.surfaceContainerLowest, colorScheme.surfaceContainerLowest.withOpacity(0.5), colorScheme.surfaceContainerLowest.withOpacity(0)],
           stops: const [0.25, 0.5, 1.3],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,

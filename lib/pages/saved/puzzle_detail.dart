@@ -32,7 +32,7 @@ class PuzzleDetail extends StatelessWidget {
           width: double.infinity,
           child: FilledButton(
             onPressed: () {},
-            style: ThemeButton.btnBig.merge(ThemeButton.primary),
+            style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
             child: const Text('Redeem Point', style: ThemeText.subtitle,)
           ),
         )

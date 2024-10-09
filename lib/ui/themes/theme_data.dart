@@ -30,7 +30,7 @@ ThemeData lightColorScheme = ThemeData(
     onTertiaryContainer: ThemePalette.tertiaryDark,
     surface: ThemePalette.paperLight,
     onSurface: Colors.black,
-    surfaceContainerLowest: ThemePalette.defaultLight,
+    surfaceContainerLowest: ThemePalette.paperLight,
     onSurfaceVariant: Colors.grey[600],
     error: Colors.red,
     onError: Colors.white,
@@ -75,7 +75,7 @@ ThemeData darkColorScheme = ThemeData(
     error: Colors.red,
     onError: Colors.white,
     brightness: Brightness.dark,
-    outline: Colors.grey[400],
+    outline: Colors.grey[700],
     outlineVariant: Colors.grey[500],
   )
 );

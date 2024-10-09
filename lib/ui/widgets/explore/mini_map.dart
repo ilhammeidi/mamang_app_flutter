@@ -11,10 +11,11 @@ class MiniMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDark = Get.isDarkMode;
     
     return Container(
       decoration: BoxDecoration(
-        gradient: ThemePalette.gradientMixedMain
+        gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
       ),
       child: Stack(
         alignment: Alignment.bottomCenter,
@@ -28,7 +29,7 @@ class MiniMap extends StatelessWidget {
               child: Container(
                 height: 100,
                 width: MediaQuery.of(context).size.width,
-                color: Theme.of(context).colorScheme.surface,
+                color: Theme.of(context).colorScheme.surfaceContainerLowest,
               ),
             ),
           ),

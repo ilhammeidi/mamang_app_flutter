@@ -31,7 +31,7 @@ class TabMenu extends StatelessWidget {
               child: Container(
                 height: 70,
                 width: MediaQuery.of(context).size.width,
-                color: Theme.of(context).colorScheme.surface,
+                color: Theme.of(context).colorScheme.surfaceContainerLowest,
               ),
             )
           ),

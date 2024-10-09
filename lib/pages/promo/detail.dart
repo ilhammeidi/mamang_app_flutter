@@ -119,7 +119,7 @@ class _PromoDetailState extends State<PromoDetail> {
                 width: double.infinity,
                 height: 20,
                 decoration: BoxDecoration(
-                  color: colorScheme.surface,
+                  color: colorScheme.surfaceContainerLowest,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),
                     topRight: Radius.circular(16),

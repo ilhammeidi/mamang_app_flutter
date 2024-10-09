@@ -35,13 +35,17 @@ class DownloadMobileApp extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: ThemeRadius.small,
                 color: Colors.black,
+                border: Border.all(
+                  width: 1,
+                  color: Colors.white.withOpacity(0.5)
+                )
               ),
               child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                const FaIcon(FontAwesomeIcons.apple, color: Colors.white, size: 40),
+                const FaIcon(FontAwesomeIcons.apple, color: Colors.white, size: 32),
                 const SizedBox(width: 16),
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text('Download', style: ThemeText.caption.copyWith(color: Colors.white)),
-                  Text('iOS App', style: ThemeText.subtitle.copyWith(color: Colors.white))
+                  Text('iOS App', maxLines: 1, overflow: TextOverflow.clip, style: ThemeText.subtitle.copyWith(color: Colors.white))
                 ])
               ]),
             ),
@@ -60,14 +64,18 @@ class DownloadMobileApp extends StatelessWidget {
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
                 borderRadius: ThemeRadius.small,
-                color: Colors.black
+                color: Colors.black,
+                border: Border.all(
+                  width: 1,
+                  color: Colors.white.withOpacity(0.5)
+                )
               ),
               child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                const FaIcon(FontAwesomeIcons.android, color: Colors.green, size: 40),
+                const FaIcon(FontAwesomeIcons.android, color: Colors.green, size: 32),
                 const SizedBox(width: 16),
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text('Download', style: ThemeText.caption.copyWith(color: Colors.white)),
-                  Text('Android App', style: ThemeText.subtitle.copyWith(color: Colors.white))
+                  Text('Android', maxLines: 1, overflow: TextOverflow.clip, style: ThemeText.subtitle.copyWith(color: Colors.white))
                 ])
               ]),
             ),

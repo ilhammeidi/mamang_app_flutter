@@ -30,14 +30,14 @@ class SearchExplore extends StatelessWidget {
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 200),
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surface.withOpacity(gradientOpacity),
+                color: Theme.of(context).colorScheme.surfaceContainerLowest.withOpacity(gradientOpacity),
               ),
               child: ClipPath(
                 clipper: RoundedClipPathTop(),
                 child: Container(
                   height: 80,
                   width: MediaQuery.of(context).size.width,
-                  color: Theme.of(context).colorScheme.surface,
+                  color: Theme.of(context).colorScheme.surfaceContainerLowest,
                 ),
               ),
             )
@@ -54,7 +54,7 @@ class SearchExplore extends StatelessWidget {
               padding: EdgeInsets.all(spacingUnit(1)),
               decoration: BoxDecoration(
                 boxShadow: gradientOpacity > 0 ? null : [ThemeShade.shadeSoft(context)],
-                color: gradientOpacity > 0 ? Theme.of(context).colorScheme.surfaceContainerLowest : Theme.of(context).colorScheme.surface,
+                color: gradientOpacity > 0 ? Theme.of(context).colorScheme.surface : Theme.of(context).colorScheme.surface,
                 borderRadius: ThemeRadius.small
               ),
               child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [

@@ -8,15 +8,15 @@ class RecommendedPromo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Promotion> promoData = [
-      promoList[4],
-      promoList[19],
-      promoList[31],
-      promoList[41],
+      promoList[71],
+      promoList[6],
+      promoList[34],
+      promoList[88],
       promoList[55],
       promoList[12],
       promoList[44],
-      promoList[67],
       promoList[69],
+      promoList[90],
       promoList[80],
     ];
 

@@ -15,7 +15,12 @@ class BannerExplore extends StatelessWidget {
     return Container(
       height: 360,
       decoration: BoxDecoration(
-        gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedLight
+        gradient: isDark ?
+          LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.topRight,
+            colors: <Color>[ThemePalette.paperDark, ThemePalette.secondaryDark]
+          ) : ThemePalette.gradientMixedLight
       ),
       child: Container(
         decoration: const BoxDecoration(
@@ -57,7 +62,7 @@ class BannerExplore extends StatelessWidget {
                       height: 100,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                        gradient: ThemePalette.gradientMixedMain
+                        gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
                       ),
                     ),
                   ),

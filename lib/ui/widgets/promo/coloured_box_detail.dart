@@ -52,14 +52,14 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: <Color>[colorType(widget.type), colorScheme.surface.withOpacity(0.25)],
+          colors: <Color>[colorType(widget.type), colorScheme.surfaceContainerLowest.withOpacity(0.25)],
           stops: const [0.25, 1],
           begin: Alignment.bottomCenter,
           end: Alignment.topCenter,
         ),
       ),
       child: Container(
-        color: colorScheme.surface.withOpacity(0.5),
+        color: colorScheme.surfaceContainerLowest.withOpacity(0.5),
         child: Stack(children: [
           /// CURVE BOTTOM DECORATION
           Positioned(

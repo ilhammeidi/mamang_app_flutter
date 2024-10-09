@@ -101,6 +101,30 @@ class ThemeButton {
     );
   }
 
+  static ButtonStyle outlinedBlack(BuildContext context) {
+    return OutlinedButton.styleFrom(
+      side: const BorderSide(
+        color: Colors.black
+      ),
+      foregroundColor: Colors.black,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
+  static ButtonStyle outlinedWhite(BuildContext context) {
+    return OutlinedButton.styleFrom(
+      side: const BorderSide(
+        color: Colors.white
+      ),
+      foregroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
   static ButtonStyle outlinedInvert(BuildContext context) {
     return OutlinedButton.styleFrom(
       side: BorderSide(

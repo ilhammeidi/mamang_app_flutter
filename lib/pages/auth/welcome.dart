@@ -58,7 +58,7 @@ class Welcome extends StatelessWidget {
                     }
                   );
                 },
-                style: ThemeButton.btnBig.merge(ThemeButton.invert(context)),
+                style: ThemeButton.btnBig.merge(ThemeButton.black),
                 child: const Text('REGISTER', style: ThemeText.title2)
               ),
             ),
@@ -89,7 +89,7 @@ class Welcome extends StatelessWidget {
                     }
                   );
                 },
-                style: ThemeButton.btnBig.merge(ThemeButton.outlinedInvert2(context)),
+                style: ThemeButton.btnBig.merge(ThemeButton.outlinedWhite(context)),
                 child: const Text('LOGIN', style: ThemeText.title2)
               ),
             ),
