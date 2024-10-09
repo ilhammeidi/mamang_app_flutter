@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/widgets/home/download_mobile_app.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/latest_event.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/categories_grid.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/header.dart';
@@ -54,31 +56,39 @@ class _HomeMainState extends State<HomeMain> {
         ),
         child: CustomScrollView(
           controller: _scrollref,
-          slivers: const <Widget>[
+          slivers: <Widget>[
             // Search and Banner
-            SliverToBoxAdapter(child: SearchHome()),
-            SliverToBoxAdapter(child: VSpace()),
+            const SliverToBoxAdapter(child: SearchHome()),
+            const SliverToBoxAdapter(child: VSpace()),
+
+            // Download Mobile Apps
+            SliverToBoxAdapter(child: kIsWeb ? const DownloadMobileApp() : Container()),
+
             // Categories
-            CategoriesGrid(),
-            SliverToBoxAdapter(child: VSpaceBig()),
+            const CategoriesGrid(),
+            const SliverToBoxAdapter(child: VSpace()),
+
             // Slider Carousel
-            SliverToBoxAdapter(child: PremiumSlider()),
-            SliverToBoxAdapter(child: VSpaceBig()),
+            const SliverToBoxAdapter(child: PremiumSlider()),
+            const SliverToBoxAdapter(child: VSpaceBig()),
+
             // Promotions
-            SliverToBoxAdapter(child: PromoListDouble()),
-            SliverToBoxAdapter(child: VSpaceBig()),
+            const SliverToBoxAdapter(child: PromoListDouble()),
+            const SliverToBoxAdapter(child: VSpaceBig()),
+
             // Events
-            SliverToBoxAdapter(child: LatestEvent()),
+            const SliverToBoxAdapter(child: LatestEvent()),
+            
             // News
-            SliverToBoxAdapter(child: VSpace()),
-            SliverToBoxAdapter(child: NewsList()),
-            SliverToBoxAdapter(child: VSpaceBig()),
+            const SliverToBoxAdapter(child: VSpace()),
+            const SliverToBoxAdapter(child: NewsList()),
+            const SliverToBoxAdapter(child: VSpaceBig()),
             // Active Users
-            SliverPadding(
+            const SliverPadding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               sliver: UserGrid(),
             ),
-            SliverToBoxAdapter(child: SizedBox(
+            const SliverToBoxAdapter(child: SizedBox(
               height: 120,
             )),
           ],
