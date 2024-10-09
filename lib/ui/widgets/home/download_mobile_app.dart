@@ -17,8 +17,8 @@ class DownloadMobileApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Uri _iosUrl = Uri.parse('https://2ly.link/20CXM');
-    final Uri _androidUrl = Uri.parse('https://2ly.link/20CXO');
+    final Uri iosUrl = Uri.parse('https://2ly.link/20CXM');
+    final Uri androidUrl = Uri.parse('https://2ly.link/20CXO');
 
     return Container(
       padding: EdgeInsets.all(spacingUnit(1)),
@@ -28,7 +28,7 @@ class DownloadMobileApp extends StatelessWidget {
         Flexible(
           child: InkWell(
             onTap: () {
-              _launchUrl(_iosUrl);
+              _launchUrl(iosUrl);
             },
             child: Container(
               padding: const EdgeInsets.all(4),
@@ -54,7 +54,7 @@ class DownloadMobileApp extends StatelessWidget {
         Flexible(
           child: InkWell(
             onTap: () {
-              _launchUrl(_androidUrl);
+              _launchUrl(androidUrl);
             },
             child: Container(
               padding: const EdgeInsets.all(4),
