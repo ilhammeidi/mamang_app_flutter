@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/models/events.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/event/event_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/search_filter/search_input_btn.dart';

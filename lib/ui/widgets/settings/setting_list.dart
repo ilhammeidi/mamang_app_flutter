@@ -59,7 +59,7 @@ class SettingList extends StatelessWidget {
       physics: const ClampingScrollPhysics(),
       padding: EdgeInsets.all(spacingUnit(2)),
       children: [
-      /// UI SETTINGS
+        /// UI SETTINGS
         const TitleBasicSmall(title: 'UI Settings'),
         PaperCard(content:
           Padding(
@@ -95,6 +95,43 @@ class SettingList extends StatelessWidget {
           )
         ),
         const VSpace(),
+
+        /// AUTH PAGES
+        const TitleBasicSmall(title: 'Auth Pages'),
+         PaperCard(content:
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(children: [
+               ListTile(
+                leading: const Icon(Icons.waving_hand_outlined),
+                title: const Text('Welcome Page'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/welcome');
+                },
+               ),
+               const LineList(),
+               ListTile(
+                leading: const Icon(Icons.account_circle_outlined),
+                title: const Text('Login'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/login');
+                },
+               ),
+               const LineList(),
+               ListTile(
+                leading: const Icon(Icons.account_box_outlined),
+                title: const Text('Register'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/register');
+                },
+               ),
+            ])
+          )
+         ),
+         const VSpace(),
 
         /// ACCOUNT SETTING
         const TitleBasicSmall(title: 'Help and Account'),

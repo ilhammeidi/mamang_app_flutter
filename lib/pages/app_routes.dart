@@ -1,4 +1,6 @@
 import 'package:get/route_manager.dart';
+import 'package:mamang_app_flutter/pages/auth/login.dart';
+import 'package:mamang_app_flutter/pages/auth/register.dart';
 import 'package:mamang_app_flutter/pages/auth/welcome.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
 import 'package:mamang_app_flutter/pages/business/create_new.dart';
@@ -44,6 +46,14 @@ final List<GetPage> appRoutes = [
     page: () => const GeneralLayout(content: Welcome()),
     transition: Transition.fadeIn,
     transitionDuration: const Duration(microseconds: pageTransitionDuration)
+  ),
+  GetPage(
+    name: '/login',
+    page: () => const GeneralLayout(content: Login()),
+  ),
+  GetPage(
+    name: '/register',
+    page: () => const GeneralLayout(content: Register()),
   ),
   
   /// SEARCH
