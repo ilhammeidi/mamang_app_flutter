@@ -67,7 +67,7 @@ class SummaryInfo extends StatelessWidget {
                     Get.toNamed('/promos/$id');
                   },
                   style: ThemeButton.btnSmall.merge(ThemeButton.tonalPrimary(context)),
-                  child: const Text('See Promo Detail'),
+                  child: const Text('See Promo Detail', style: ThemeText.caption,),
                 )
               ],
             )
