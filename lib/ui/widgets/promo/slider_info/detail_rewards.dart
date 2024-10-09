@@ -39,7 +39,7 @@ class DetailRewards extends StatelessWidget {
         style: ThemeButton.btnBig.merge(ThemeButton.primary),
         child: const Text('Claim Rewards')
       ),
-      const VSpace()
+      const VSpaceBig()
     ]);
   }
 }

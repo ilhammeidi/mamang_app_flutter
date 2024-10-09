@@ -49,8 +49,9 @@ class DetailQr extends StatelessWidget {
             color: Colors.amber.shade200,
             borderRadius: ThemeRadius.small,
           ),
-          child: const Text('Please do not force people to exchange the promotion content'),
-        )
+          child: const Text('Please do not force people to exchange the promotion content', style: TextStyle(color: Colors.black),),
+        ),
+        const VSpaceBig()
       ]),
     );
   }

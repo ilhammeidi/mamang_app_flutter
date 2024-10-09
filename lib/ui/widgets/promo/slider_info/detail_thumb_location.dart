@@ -80,6 +80,7 @@ class DetailThumbLocation extends StatelessWidget {
                 child: Image.asset('assets/images/qrcode.jpg', fit: BoxFit.contain)
               ),
             ),
+            const VSpaceBig(),
           ]),
         ])
       ]),

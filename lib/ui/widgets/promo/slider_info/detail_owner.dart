@@ -80,7 +80,7 @@ class DetailOwner extends StatelessWidget {
             height: 250,
             child: Image.asset('assets/images/qrcode.jpg', fit: BoxFit.contain)
           ),
-          const VSpace(),
+          const VSpaceBig(),
         ]),
       ),
     ]);

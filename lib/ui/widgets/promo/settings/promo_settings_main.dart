@@ -64,18 +64,16 @@ class _PromoSettingsState extends State<PromoSettings> {
         const VSpace(),
 
         /// LINK INPUT
-        Expanded(
-          child: AppTextField(
-            controller: linkInputRef,
-            label: 'Link',
-            onChanged: (_) {},
-            suffix: Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: FilledButton(
-                onPressed: () {},
-                style: ThemeButton.tonalPrimary(context),
-                child: const Icon(Icons.check)
-              ),
+        AppTextField(
+          controller: linkInputRef,
+          label: 'Link',
+          onChanged: (_) {},
+          suffix: Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: FilledButton(
+              onPressed: () {},
+              style: ThemeButton.tonalPrimary(context),
+              child: const Icon(Icons.check)
             ),
           ),
         ),
