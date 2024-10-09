@@ -67,7 +67,7 @@ class VoucherCard extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: spacingUnit(3), vertical: spacingUnit(2)),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('Periode: $date', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold)),
+                  Text('Periode: $date', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: Colors.black)),
                 ]),
               ),
 
