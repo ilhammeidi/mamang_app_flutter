@@ -4,6 +4,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 
 class PuzzleCard extends StatelessWidget {
   const PuzzleCard({
@@ -40,6 +41,14 @@ class PuzzleCard extends StatelessWidget {
               fit: BoxFit.cover,
               color: Colors.black.withOpacity(0.5),
               colorBlendMode: BlendMode.darken,
+              loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                if (loadingProgress == null) return child;
+                return const SizedBox(
+                  width: 200,
+                  height: 200,
+                  child: ShimmerPreloader()
+                );
+              },
             ),
           ),
 

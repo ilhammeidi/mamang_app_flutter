@@ -20,6 +20,7 @@ import 'package:mamang_app_flutter/pages/sample_button.dart';
 import 'package:mamang_app_flutter/pages/sample_dark_light.dart';
 import 'package:mamang_app_flutter/pages/sample_forms.dart';
 import 'package:mamang_app_flutter/pages/sample_shadow.dart';
+import 'package:mamang_app_flutter/pages/sample_shimmer.dart';
 import 'package:mamang_app_flutter/pages/saved/puzzle_detail.dart';
 import 'package:mamang_app_flutter/pages/saved/saved_detail.dart';
 import 'package:mamang_app_flutter/pages/saved/saved_main.dart';
@@ -166,5 +167,9 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/dark-mode',
     page: () => SampleDarkLight(),
+  ),
+  GetPage(
+    name: '/shimmer',
+    page: () => const SampleShimmer()
   ),
 ];

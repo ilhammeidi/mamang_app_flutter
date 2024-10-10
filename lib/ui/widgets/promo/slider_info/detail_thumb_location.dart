@@ -4,6 +4,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/grabber_icon.dart';
 
 class DetailThumbLocation extends StatelessWidget {
@@ -34,7 +35,19 @@ class DetailThumbLocation extends StatelessWidget {
           /// THUMBNAIL
           ClipRRect(
             borderRadius: ThemeRadius.medium,
-            child: Image.network(thumb, width: double.infinity, fit: BoxFit.contain)
+            child: Image.network(
+              thumb,
+              width: double.infinity,
+              fit: BoxFit.contain,
+              loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                if (loadingProgress == null) return child;
+                return const SizedBox(
+                  width: double.infinity,
+                  height: 200,
+                  child: ShimmerPreloader()
+                );
+              },
+            )
           ),
           const VSpace(),
 

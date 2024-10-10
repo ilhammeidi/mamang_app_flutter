@@ -137,11 +137,11 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
               /// NAME
               AnimatedOpacity(
                 opacity: showItem ? 1 : 0,
-                duration: const Duration(milliseconds: 900),
+                duration: const Duration(milliseconds: 300),
                 child: Text(userDummy.name, style: ThemeText.title.copyWith(color: Colors.white)),
               ),
               AnimatedSwitcher(
-                duration: const Duration(milliseconds: 900),
+                duration: const Duration(milliseconds: 300),
                 child: showItem ? Text(
                   userDummy.title.toCapitalCase(),
                   key: const ValueKey<int>(1), 

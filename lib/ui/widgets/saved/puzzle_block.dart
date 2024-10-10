@@ -3,6 +3,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 
 class PuzzleBlock extends StatelessWidget {
   const PuzzleBlock({
@@ -99,6 +100,14 @@ class PuzzleBlock extends StatelessWidget {
                             width: 320,
                             height: 320,
                             fit: BoxFit.cover,
+                            loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                              if (loadingProgress == null) return child;
+                              return const SizedBox(
+                                width: 320,
+                                height: 320,
+                                child: ShimmerPreloader()
+                              );
+                            },
                           ),
                         ),
                       ),

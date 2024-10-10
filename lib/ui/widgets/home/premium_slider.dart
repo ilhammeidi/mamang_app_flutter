@@ -5,6 +5,7 @@ import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 import 'package:mamang_app_flutter/ui/widgets/title/title_action.dart';
 
 class PremiumSlider extends StatefulWidget {
@@ -40,7 +41,15 @@ class _PremiumSliderState extends State<PremiumSlider> {
           borderRadius: const BorderRadius.all(Radius.circular(12.0)),
           child: Stack(
             children: <Widget>[
-              Image.network(item, fit: BoxFit.cover, width: 1000),
+              Image.network(
+                item,
+                fit: BoxFit.cover,
+                width: 1000,
+                loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return const ShimmerPreloader();
+                },
+              ),
             ],
           )
         ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
 
 class NewsCard extends StatelessWidget {
@@ -24,7 +25,15 @@ class NewsCard extends StatelessWidget {
               thumb,
               width: double.infinity,
               height: 120,
-              fit: BoxFit.cover
+              fit: BoxFit.cover,
+              loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                if (loadingProgress == null) return child;
+                return const SizedBox(
+                  width: double.infinity,
+                  height: 120,
+                  child: ShimmerPreloader()
+                );
+              },
             )
           ),
           Padding(padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),

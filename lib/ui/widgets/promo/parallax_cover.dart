@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 
 class ParallaxCover extends StatelessWidget {
   const ParallaxCover({super.key, required this.thumb});
@@ -12,7 +13,15 @@ class ParallaxCover extends StatelessWidget {
       children: [
         Image.network(
           thumb,
-          fit: BoxFit.cover
+          fit: BoxFit.cover,
+          loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+            if (loadingProgress == null) return child;
+            return const SizedBox(
+              width: double.infinity,
+              height: 120,
+              child: ShimmerPreloader()
+            );
+          },
         ),
         Positioned(
           top: 0,
