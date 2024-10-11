@@ -13,7 +13,7 @@ class Puzzles extends StatelessWidget {
       padding: EdgeInsets.all(spacingUnit(1)),
       child: GridView.builder(
         shrinkWrap: true,
-        primary: true,
+        physics: const ClampingScrollPhysics(),
         itemCount: puzzleList.length,
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
