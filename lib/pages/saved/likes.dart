@@ -13,9 +13,7 @@ class SavedLikes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       const VSpaceShort(),
-      Expanded(
-        child: PromoList(items: controller.likedPromo, isHome: true,),
-      )
+      PromoList(items: controller.likedPromo, isHome: true)
     ]);
   }
 }

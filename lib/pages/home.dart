@@ -55,7 +55,7 @@ class _HomeMainState extends State<HomeMain> {
             slivers: <Widget>[
               // Search and Banner
               const SliverToBoxAdapter(child: SearchHome()),
-              const SliverToBoxAdapter(child: VSpace()),
+              const SliverToBoxAdapter(child: VSpaceShort()),
           
               // Download Mobile Apps
               SliverToBoxAdapter(child: kIsWeb ? const DownloadMobileApp() : Container()),

@@ -10,10 +10,10 @@ class BusinessHeader extends StatelessWidget {
   const BusinessHeader({super.key, this.isFixed = false});
 
   final bool isFixed;
-  static final bool _isDark = Get.isDarkMode;
 
   @override
   Widget build(BuildContext context) {
+    final bool isDark = Get.isDarkMode;
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return AppBar(
@@ -22,7 +22,7 @@ class BusinessHeader extends StatelessWidget {
       /// GRADIENT BG
       flexibleSpace: Container(
         decoration: BoxDecoration(
-          gradient: _isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
+          gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
         ),
       ),
       titleSpacing: spacingUnit(1),

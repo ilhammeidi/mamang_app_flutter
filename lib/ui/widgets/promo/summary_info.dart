@@ -25,6 +25,7 @@ class SummaryInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Column(children: [
       Padding(
         padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
@@ -67,7 +68,13 @@ class SummaryInfo extends StatelessWidget {
                     Get.toNamed('/promos/$id');
                   },
                   style: ThemeButton.btnSmall.merge(ThemeButton.tonalPrimary(context)),
-                  child: const Text('See Promo Detail', style: ThemeText.caption,),
+                  child: const Wrap(
+                    children: [
+                      Text('See Promo Detail', style: ThemeText.caption,),
+                      SizedBox(width: 4),
+                      Icon(Icons.arrow_forward_ios_sharp, size: 16)
+                    ],
+                  ),
                 )
               ],
             )

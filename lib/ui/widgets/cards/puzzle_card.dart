@@ -55,7 +55,7 @@ class PuzzleCard extends StatelessWidget {
           /// PROGRESS PUZZLE
           progress.length < 9 ?
             _puzzle(progress)
-            : Icon(Icons.check_box, color: ThemePalette.primaryLight, size: 50,),
+            : Icon(Icons.check_box, color: ThemePalette.primaryLight, size: 64,),
 
           /// TOP PROPERTIES
           Positioned(

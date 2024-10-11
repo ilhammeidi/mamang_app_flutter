@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:mamang_app_flutter/pages/saved/likes.dart';
 import 'package:mamang_app_flutter/pages/saved/puzzles.dart';
 import 'package:mamang_app_flutter/pages/saved/saved_promos.dart';
@@ -23,20 +24,25 @@ class _SavedMainState extends State<SavedMain> {
   final List<Widget> _content = [
     SavedPromos(),
     SavedLikes(),
-    const Puzzles()
+    const Puzzles(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(80),
-        child: SavedHeader(),
+      body: CustomScrollView(
+        slivers: [
+          const SavedHeader(),
+          SliverStickyHeader.builder(
+            builder: (context, state) {
+              return TabMenu(onSelect: _handleSelect, current: _current);
+            },
+            sliver: SliverList(delegate: SliverChildListDelegate([
+              _content[_current]
+            ]))
+          )
+        ]
       ),
-      body: Column(children: [
-        TabMenu(onSelect: _handleSelect, current: _current),
-        Expanded(child: _content[_current]),
-      ]),
     );
   }
 }
