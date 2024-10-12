@@ -127,6 +127,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                     xp: item.xp,
                     location: item.location,
                     distance: item.distance,
+                    category: item.category,
                   );
                 }
               ),

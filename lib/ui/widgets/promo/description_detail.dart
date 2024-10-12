@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/models/category.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
-import 'package:mamang_app_flutter/ui/utils/box_color.dart';
 import 'package:mamang_app_flutter/ui/widgets/title/title_basic.dart';
 
 class DescriptionDetail extends StatelessWidget {
@@ -26,7 +24,6 @@ class DescriptionDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double iconSize = 18;
-    Category categoryItem = categoryList.firstWhere((item) => item.id == category);
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Padding(
@@ -39,42 +36,18 @@ class DescriptionDetail extends StatelessWidget {
           /// DESCRIPTION
           const TitleBasic(title: 'Promo Description'),
           const VSpaceShort(),
-          Text(desc, textAlign: TextAlign.start,),
-          SizedBox(height: spacingUnit(2)),
-          Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Container(
-              padding: const EdgeInsets.all(1),
-              decoration: BoxDecoration(
-                borderRadius: ThemeRadius.small,
-                color: colorType(type)
-              ),
-              child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text(type.toUpperCase(), style: ThemeText.caption.copyWith(color: Colors.white),),
-                Container(
-                  padding: const EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    borderRadius: ThemeRadius.small,
-                  ),
-                  child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                    Icon(categoryItem.icon, size: 22, color: Colors.white),
-                    const SizedBox(height: 4),
-                    Text(categoryItem.name, style: ThemeText.caption.copyWith(color: Colors.white))
-                  ]),
-                )
-              ]),
-            ),
-            SizedBox(width: spacingUnit(2)),
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text('ID: #123456$id', textAlign: TextAlign.start),
-              const SizedBox(height: 4),
-              const Text('Periode: 12 Jan - 20 Jan 2025', textAlign: TextAlign.start),
-              const SizedBox(height: 4),
-              Text('Event: ${category.toUpperCase()}', textAlign: TextAlign.start),
-              const LineSpace(),
-            ]),
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('ID: #123456$id', textAlign: TextAlign.start),
+            const SizedBox(height: 4),
+            const Text('Periode: 12 Jan - 20 Jan 2025', textAlign: TextAlign.start),
+            const SizedBox(height: 4),
+            Text('Event: ${category.toUpperCase()}', textAlign: TextAlign.start),
           ]),
+          SizedBox(height: spacingUnit(2)),
+          Text(desc, textAlign: TextAlign.start,),
+          const LineSpace(),
 
-          /// GRID PROPERTIES INFO
+          /// PROPERTIES INFO
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[

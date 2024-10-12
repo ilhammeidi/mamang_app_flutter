@@ -1,5 +1,6 @@
 import 'package:change_case/change_case.dart';
 import 'package:flutter/material.dart';
+import 'package:mamang_app_flutter/models/category.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -22,7 +23,8 @@ class ColouredBoxDetail extends StatefulWidget {
     required this.xp,
     required this.location,
     required this.distance,
-    required this.userId
+    required this.userId,
+    required this.category
   });
 
   final String type;
@@ -37,6 +39,7 @@ class ColouredBoxDetail extends StatefulWidget {
   final String location;
   final double distance;
   final int userId;
+  final String category;
 
   @override
   State<ColouredBoxDetail> createState() => _ColouredBoxDetailState();
@@ -48,6 +51,7 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
   @override
   Widget build(BuildContext context) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
+    Category categoryItem = categoryList.firstWhere((item) => item.id == widget.category);
 
     return Container(
       decoration: BoxDecoration(
@@ -75,7 +79,7 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
             )
           ),
           Column(children: [
-            /// TITLE AND SHOR DESCRIPTION
+            /// TITLE AND SHORT DESCRIPTION
             Padding(
               padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
               child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -103,6 +107,22 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
                       Icon(Icons.access_time_outlined, color: colorScheme.surface, size: 16),
                       SizedBox(width: spacingUnit(1)),
                       Text('09:14:02', style: ThemeText.caption.copyWith(color: colorScheme.surface))
+                    ])
+                  )
+                ]),
+                Column(children: [
+                  Text(widget.type.toUpperCase(), style: ThemeText.caption),
+                  const SizedBox(height: 8),
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
+                    decoration: BoxDecoration(
+                      color: colorType(widget.type),
+                      borderRadius: ThemeRadius.medium,
+                    ),
+                    child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Icon(categoryItem.icon, color: Colors.white, size: 16),
+                      SizedBox(width: spacingUnit(1)),
+                      Text(categoryItem.name, style: ThemeText.caption.copyWith(color: Colors.white))
                     ])
                   )
                 ]),
