@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({super.key, required this.avatar, required this.name, required this.distance});
@@ -23,7 +24,15 @@ class ProfileCard extends StatelessWidget {
             avatar,
             width: 60,
             height: 60,
-            fit: BoxFit.cover
+            fit: BoxFit.cover,
+            loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+              if (loadingProgress == null) return child;
+              return const SizedBox(
+                width: 60,
+                height: 60,
+                child: ShimmerPreloader()
+              );
+            },
           )
         ),
         SizedBox(width: spacingUnit(1)),

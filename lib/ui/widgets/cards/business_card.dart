@@ -7,6 +7,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 
 class BusinessCard extends StatelessWidget {
   const BusinessCard({
@@ -59,7 +60,20 @@ class BusinessCard extends StatelessWidget {
             /// IMAGE THUMBNAIL
             ClipRRect(
               borderRadius: ThemeRadius.medium,
-              child: Image.network(thumb, width: double.infinity, height: 120, fit: BoxFit.cover),
+              child: Image.network(
+                thumb,
+                width: double.infinity,
+                height: 120,
+                fit: BoxFit.cover,
+                loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return const SizedBox(
+                    width: double.infinity,
+                    height: 120,
+                    child: ShimmerPreloader()
+                  );
+                },
+              ),
             ),
 
             /// STAR

@@ -18,7 +18,7 @@ class PuzzleBanner extends StatelessWidget {
           image: DecorationImage(
             image: NetworkImage(imageBanner),
             fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.hardLight)
+            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.hardLight),
           )
         ),
         child: Container(

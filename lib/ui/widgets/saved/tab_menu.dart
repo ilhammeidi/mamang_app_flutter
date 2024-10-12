@@ -36,11 +36,7 @@ class TabMenu extends StatelessWidget {
             )
           ),
           Container(
-            margin: EdgeInsets.only(
-              bottom: spacingUnit(1),
-              left: spacingUnit(1),
-              right: spacingUnit(1),
-            ),
+            margin: EdgeInsets.all(spacingUnit(1)),
             padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(

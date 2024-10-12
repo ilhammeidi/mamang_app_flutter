@@ -9,7 +9,7 @@ import 'package:mamang_app_flutter/ui/utils/box_color.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/fadded_bottom_header.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/coloured_box_detail.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/parallax_cover.dart';
-import 'package:mamang_app_flutter/ui/widgets/promo/settings/promo_settings_main.dart';
+import 'package:mamang_app_flutter/ui/widgets/business/settings/promo_settings_main.dart';
 
 class BusinessDetail extends StatefulWidget {
   const BusinessDetail({super.key});
@@ -127,6 +127,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                     xp: item.xp,
                     location: item.location,
                     distance: item.distance,
+                    category: item.category,
                   );
                 }
               ),

@@ -4,6 +4,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
 
 class PromoLandscapeCard extends StatelessWidget {
@@ -47,6 +48,14 @@ class PromoLandscapeCard extends StatelessWidget {
                   width: 150,
                   height: 150,
                   fit: BoxFit.cover,
+                  loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return const SizedBox(
+                      width: 150,
+                      height: 150,
+                      child: ShimmerPreloader()
+                    );
+                  },
                 ),
               ),
               liked ? Positioned(

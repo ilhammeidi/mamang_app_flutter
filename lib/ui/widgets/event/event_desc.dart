@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/image_viewer.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 
 class EventDesc extends StatelessWidget {
   const EventDesc({
@@ -65,15 +68,26 @@ class EventDesc extends StatelessWidget {
         /// THUMBNAIL HERO
         Hero(
           tag: thumb,
-          child: Container(
-            width: double.infinity,
-            height: 300,
-            decoration: BoxDecoration(
+          child: GestureDetector(
+            onTap: () {
+              Get.to(ImageViewer(img: thumb));
+            },
+            child: ClipRRect(
               borderRadius: ThemeRadius.medium,
-              image: DecorationImage(
-                image: NetworkImage(thumb),
-                fit: BoxFit.cover
-              )
+              child: Image.network(
+                thumb,
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: 300,
+                loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return const SizedBox(
+                    width: double.infinity,
+                    height: 300,
+                    child: ShimmerPreloader()
+                  );
+                },
+              ),
             ),
           )
         ),

@@ -9,7 +9,6 @@ class ProfileMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final topPadding = MediaQuery.of(context).padding.top;
-    final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       extendBody: true,
@@ -18,7 +17,7 @@ class ProfileMain extends StatelessWidget {
           SliverPersistentHeader(
             delegate: ProfileBannerHeader(
               minExtent: topPadding + 140,
-              maxExtent: screenHeight / 3
+              maxExtent: 300
             ),
             pinned: true,
           ),

@@ -37,6 +37,7 @@ ThemeData lightColorScheme = ThemeData(
     brightness: Brightness.light,
     outline: Colors.grey[300],
     outlineVariant: Colors.grey[400],
+    shadow: Colors.black.withOpacity(0.09),
   ),
 );
 
@@ -77,5 +78,6 @@ ThemeData darkColorScheme = ThemeData(
     brightness: Brightness.dark,
     outline: Colors.grey[700],
     outlineVariant: Colors.grey[500],
+    shadow: Colors.black.withOpacity(0.2)
   )
 );

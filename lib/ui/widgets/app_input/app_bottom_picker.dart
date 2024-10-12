@@ -38,13 +38,15 @@ class _BottomPickerRadioState extends State<BottomPickerRadio> {
   }
 
   @override
-  build(BuildContext context) {
+  Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(15),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
+      decoration: BoxDecoration(
+        color: colorScheme.surface,
+        borderRadius: const BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -53,8 +55,8 @@ class _BottomPickerRadioState extends State<BottomPickerRadio> {
               children: [
                 Text(
                   widget.title ?? '',
-                  style: const TextStyle(
-                    color: Colors.black,
+                  style: TextStyle(
+                    color: colorScheme.onSurface,
                     fontWeight: FontWeight.w600,
                     decoration: TextDecoration.none,
                     fontSize: 16,
@@ -68,7 +70,7 @@ class _BottomPickerRadioState extends State<BottomPickerRadio> {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.white70,
+                color: colorScheme.surface,
               ),
               child: Column(
                 children: [

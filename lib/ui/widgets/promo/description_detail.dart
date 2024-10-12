@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/models/category.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
-import 'package:mamang_app_flutter/ui/utils/box_color.dart';
 import 'package:mamang_app_flutter/ui/widgets/title/title_basic.dart';
 
 class DescriptionDetail extends StatelessWidget {
@@ -25,8 +23,7 @@ class DescriptionDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double iconSize = 48;
-    Category categoryItem = categoryList.firstWhere((item) => item.id == category);
+    const double iconSize = 18;
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Padding(
@@ -39,62 +36,63 @@ class DescriptionDetail extends StatelessWidget {
           /// DESCRIPTION
           const TitleBasic(title: 'Promo Description'),
           const VSpaceShort(),
-          Text(desc, textAlign: TextAlign.start,),
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('ID: #123456$id', textAlign: TextAlign.start),
+            const SizedBox(height: 4),
+            const Text('Periode: 12 Jan - 20 Jan 2025', textAlign: TextAlign.start),
+            const SizedBox(height: 4),
+            Text('Event: ${category.toUpperCase()}', textAlign: TextAlign.start),
+          ]),
           SizedBox(height: spacingUnit(2)),
-          Text('ID: #123456$id', textAlign: TextAlign.start),
-          const SizedBox(height: 4),
-          Text('Type: ${type.toUpperCase()}', textAlign: TextAlign.start),
-          const SizedBox(height: 4),
-          Text('Category: ${category.toUpperCase()}', textAlign: TextAlign.start),
+          Text(desc, textAlign: TextAlign.start,),
           const LineSpace(),
 
-          /// GRID PROPERTIES INFO
-          GridView.count(
-            shrinkWrap: true,
-            physics: const ClampingScrollPhysics(),
-            primary: false,
-            padding: EdgeInsets.all(spacingUnit(1)),
-            crossAxisSpacing: 2,
-            mainAxisSpacing: 2,
-            crossAxisCount: 3,
+          /// PROPERTIES INFO
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                const Icon(Icons.star_outline, size: iconSize, color: Colors.orangeAccent),
+                const Row(children: [
+                  Icon(Icons.star, size: iconSize, color: Colors.orangeAccent),
+                  Text(' Rating'),
+                ]),
                 const SizedBox(height: 8),
                 RichText(
                   softWrap: true,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  text: TextSpan(text: '', style: TextStyle(color: colorScheme.onSurface ), children: const [
-                    TextSpan(text: '4.5', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
-                    TextSpan(text: '/5'),
+                  text: TextSpan(text: '', style: TextStyle(color: colorScheme.onSurface, fontSize: 16), children: [
+                    TextSpan(text: '4.5', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+                    const TextSpan(text: '/5'),
                   ])
                 ),
               ]),
+              const SizedBox(width: 8),
               const Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Icon(Icons.favorite_outline, size: iconSize, color: Colors.redAccent),
+                Row(children: [
+                  Icon(Icons.favorite, size: iconSize, color: Colors.redAccent),
+                  Text(' Liked'),
+                ]),
                 SizedBox(height: 8),
-                Text('LIKED: 22', style: ThemeText.paragraph)
+                Text('22', style: ThemeText.title2)
               ]),
-              const Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Icon(Icons.bookmark_outline, size: iconSize, color: Colors.green),
-                SizedBox(height: 8),
-                Text('SAVED: 7', style: ThemeText.paragraph)
-              ]),
-              const Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Icon(Icons.remove_red_eye, size: iconSize, color: Colors.grey),
-                SizedBox(height: 8),
-                Text('VIEWS: 700', style: ThemeText.paragraph)
-              ]),
+              const SizedBox(width: 8),
               Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Icon(Icons.all_inbox_outlined, size: iconSize, color: colorType(type)),
+                Row(children: [
+                  Icon(Icons.bookmark, size: iconSize, color: ThemePalette.primaryMain),
+                  const Text(' Saved'),
+                ]),
                 const SizedBox(height: 8),
-                Text(type.toUpperCase(), style: ThemeText.paragraph)
+                const Text('8', style: ThemeText.title2)
               ]),
-              Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                Icon(categoryItem.icon, size: iconSize, color: categoryItem.color),
-                const SizedBox(height: 8),
-                Text(category.toUpperCase(), style: ThemeText.paragraph, overflow: TextOverflow.ellipsis, maxLines: 1,)
+              const SizedBox(width: 8),
+              const Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                Row(children: [
+                  Icon(Icons.remove_red_eye, size: iconSize, color: Colors.grey),
+                  Text(' Views'),
+                ]),
+                SizedBox(height: 8),
+                Text('1299', style: ThemeText.title2)
               ]),
             ]
           ),

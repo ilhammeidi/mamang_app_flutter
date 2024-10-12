@@ -8,21 +8,22 @@ import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 
 class SavedHeader extends StatelessWidget {
   const SavedHeader({super.key});
-  static final bool _isDark = Get.isDarkMode;
 
   @override
   Widget build(BuildContext context) {
+    final bool isDark = Get.isDarkMode;
+
     const TextStyle smallText = TextStyle(
       color: Colors.white,
       fontSize: 12,
     );
 
-    return AppBar(
+    return SliverAppBar(
       toolbarHeight: 80,
       automaticallyImplyLeading: false,
       flexibleSpace: Container(
         decoration: BoxDecoration(
-          gradient: _isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
+          gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
         ),
       ),
       title: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [

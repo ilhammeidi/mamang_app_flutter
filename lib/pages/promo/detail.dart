@@ -150,6 +150,7 @@ class _PromoDetailState extends State<PromoDetail> {
                     xp: item.xp,
                     location: item.location,
                     distance: item.distance,
+                    category: item.category,
                   );
                 }
               ),

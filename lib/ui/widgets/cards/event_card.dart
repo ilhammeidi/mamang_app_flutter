@@ -4,6 +4,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 
 class EventCard extends StatelessWidget {
   const EventCard({
@@ -32,13 +33,22 @@ class EventCard extends StatelessWidget {
           /// HERO THUMB
           Hero(
             tag: thumb,
-            child: Container(
-              width: double.infinity,
-              height: 150,
-              decoration: BoxDecoration(
-                borderRadius: ThemeRadius.small,
-                image: DecorationImage(image: NetworkImage(thumb), fit: BoxFit.cover)
-              )
+            child: ClipRRect(
+              borderRadius: ThemeRadius.small,
+              child: Image.network(
+                thumb,
+                width: double.infinity,
+                height: 150,
+                fit: BoxFit.cover,
+                loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return const SizedBox(
+                    width: double.infinity,
+                    height: 150,
+                    child: ShimmerPreloader()
+                  );
+                },
+              ),
             )
           ),
           liked ? Positioned(
@@ -51,6 +61,7 @@ class EventCard extends StatelessWidget {
             ),
           ) : Container(),
         ]),
+
         /// EVENT PROPERTIES
         Padding(padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
           child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [

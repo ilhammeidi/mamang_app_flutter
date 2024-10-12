@@ -6,6 +6,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/detail_owner.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/detail_qr.dart';
@@ -31,7 +32,7 @@ class SliderInfoList extends StatelessWidget {
   final String location;
   final int userId;
 
-  final double cardWidth = 250;
+  final double cardWidth = 300;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +81,20 @@ class SliderInfoList extends StatelessWidget {
             child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
               ClipRRect(
                 borderRadius: ThemeRadius.small,
-                child: Image.network(thumb, width: 100, height: 100, fit: BoxFit.cover)
+                child: Image.network(
+                  thumb,
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                  loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return const SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: ShimmerPreloader()
+                    );
+                  },
+                )
               ),
               SizedBox(width: spacingUnit(1)),
               Expanded(
@@ -126,9 +140,23 @@ class SliderInfoList extends StatelessWidget {
         child: PaperCard(
           content: Padding(padding: EdgeInsets.all(spacingUnit(1)),
             child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              CircleAvatar(
-                radius: 40,
-                backgroundImage: NetworkImage(promotor.avatar),
+              SizedBox(
+                width: 80,
+                height: 80,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(80),
+                  child: Image.network(
+                    promotor.avatar,
+                    loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return const SizedBox(
+                        width: 80,
+                        height: 80,
+                        child: ShimmerPreloader()
+                      );
+                    }
+                  ),
+                ),
               ),
               SizedBox(width: spacingUnit(2)),
               Expanded(

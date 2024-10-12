@@ -25,9 +25,7 @@ class SavedPromos extends StatelessWidget {
             onSelectDistance: controller.filterByDistance,
           ),
           const VSpaceShort(),
-          Expanded(
-            child: SavedList(items: controller.filteredList, isHome: true),
-          )
+          SavedList(items: controller.filteredList, isHome: true),
         ]);
       },
     );

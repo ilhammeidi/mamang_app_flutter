@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 
 class PromoCard extends StatelessWidget {
   const PromoCard({
@@ -37,6 +38,14 @@ class PromoCard extends StatelessWidget {
               width: double.infinity,
               height: 120,
               fit: BoxFit.cover,
+              loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                if (loadingProgress == null) return child;
+                return const SizedBox(
+                  width: double.infinity,
+                  height: 120,
+                  child: ShimmerPreloader()
+                );
+              },
             ),
           ),
           liked ? Positioned(

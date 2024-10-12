@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/image_viewer.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/grabber_icon.dart';
 
 class DetailThumbLocation extends StatelessWidget {
@@ -24,6 +27,8 @@ class DetailThumbLocation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const String qrImg = 'assets/images/qrcode.jpg';
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
       child: Column(children: [
@@ -32,9 +37,29 @@ class DetailThumbLocation extends StatelessWidget {
         
         Column(children: [
           /// THUMBNAIL
-          ClipRRect(
-            borderRadius: ThemeRadius.medium,
-            child: Image.network(thumb, width: double.infinity, fit: BoxFit.contain)
+          GestureDetector(
+            onTap: () {
+              Get.to(ImageViewer(img: thumb));
+            },
+            child: Hero(
+              tag: thumb,
+              child: ClipRRect(
+                borderRadius: ThemeRadius.medium,
+                child: Image.network(
+                  thumb,
+                  width: double.infinity,
+                  fit: BoxFit.contain,
+                  loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return const SizedBox(
+                      width: double.infinity,
+                      height: 200,
+                      child: ShimmerPreloader()
+                    );
+                  },
+                )
+              ),
+            ),
           ),
           const VSpace(),
 
@@ -77,7 +102,15 @@ class DetailThumbLocation extends StatelessWidget {
               child: SizedBox(
                 width: 250,
                 height: 250,
-                child: Image.asset('assets/images/qrcode.jpg', fit: BoxFit.contain)
+                child: Hero(
+                  tag:qrImg ,
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.to(const ImageViewer(img: qrImg, isLocal: true,));
+                    },
+                    child: Image.asset(qrImg, fit: BoxFit.contain)
+                  )
+                )
               ),
             ),
             const VSpaceBig(),
