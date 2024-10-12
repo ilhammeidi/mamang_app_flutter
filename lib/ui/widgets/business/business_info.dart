@@ -7,6 +7,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
+import 'package:mamang_app_flutter/ui/utils/gallery_viewer.dart';
 
 class BusinessInfo extends StatelessWidget {
   const BusinessInfo({
@@ -24,6 +25,44 @@ class BusinessInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<GalleryItem> galleryItems = <GalleryItem>[
+      GalleryItem(
+        id: "tag1",
+        resource: ImgApi.guideList[0],
+      ),
+      GalleryItem(
+        id: "tag2",
+        resource: ImgApi.guideList[1],
+      ),
+      GalleryItem(
+        id: "tag3",
+        resource: ImgApi.guideList[2],
+      ),
+      GalleryItem(
+        id: "tag4",
+        resource: ImgApi.guideList[3],
+      ),
+      GalleryItem(
+        id: "tag5",
+        resource: ImgApi.guideList[4],
+      ),
+      GalleryItem(
+        id: "tag6",
+        resource: ImgApi.guideList[5],
+      ),
+    ];
+
+    void open(BuildContext context, final int index) {
+      Get.to(GalleryPhotoViewWrapper(
+        galleryItems: galleryItems,
+        backgroundDecoration: const BoxDecoration(
+          color: Colors.black,
+        ),
+        initialIndex: index,
+        scrollDirection: Axis.horizontal,
+      ));
+    }
+
     return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
       const VSpace(),
       /// TITLE
@@ -41,7 +80,7 @@ class BusinessInfo extends StatelessWidget {
       SizedBox(
         height: 150,
         child: ListView.builder(
-          itemCount: ImgApi.guideList.length,
+          itemCount: galleryItems.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: ((context, index) {
             return Padding(padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
@@ -52,8 +91,8 @@ class BusinessInfo extends StatelessWidget {
                   child: index == 0 ?
                   Stack(alignment: Alignment.center, children: [
                      Image.network(
+                      galleryItems[index].resource,
                       height: 150,
-                      ImgApi.guideList[index],
                       fit: BoxFit.cover,
                       color: Colors.black.withOpacity(0.5),
                       colorBlendMode: BlendMode.multiply,
@@ -62,8 +101,12 @@ class BusinessInfo extends StatelessWidget {
                       onPressed: () {},
                       icon: Icon(Icons.play_arrow, size: 80, color: ThemePalette.primaryMain)
                     )
-                  ])
-                  : Image.network(ImgApi.guideList[index], fit: BoxFit.cover),
+                  ]) : GalleryItemThumbnail(
+                    galleryItem: galleryItems[index],
+                    onTap: () {
+                      open(context, index);
+                    },
+                  ),
                 ),
               ),
             );

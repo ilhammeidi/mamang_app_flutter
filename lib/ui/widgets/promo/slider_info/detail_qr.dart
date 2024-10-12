@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/image_viewer.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/grabber_icon.dart';
 
 class DetailQr extends StatelessWidget {
@@ -10,6 +12,8 @@ class DetailQr extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const String qrImg = 'assets/images/qrcode.jpg';
+    
     return Padding(
       padding: EdgeInsets.all(spacingUnit(2)),
       child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -24,7 +28,15 @@ class DetailQr extends StatelessWidget {
         SizedBox(
           width: 250,
           height: 250,
-          child: Image.asset('assets/images/qrcode.jpg', fit: BoxFit.contain)
+          child: Hero(
+            tag:qrImg ,
+            child: GestureDetector(
+              onTap: () {
+                Get.to(const ImageViewer(img: qrImg, isLocal: true,));
+              },
+              child: Image.asset(qrImg, fit: BoxFit.contain)
+            )
+          )
         ),
       
         /// GUIDE

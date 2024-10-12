@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/image_viewer.dart';
 
 class DetailOwner extends StatelessWidget {
   const DetailOwner({super.key, required this.avatar, required this.name});
@@ -13,6 +15,7 @@ class DetailOwner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
+    const String qrImg = 'assets/images/qrcode.jpg';
 
     return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
       /// AVATAR
@@ -29,9 +32,17 @@ class DetailOwner extends StatelessWidget {
               )
             ),
           ),
-          CircleAvatar(
-            radius: 50,
-            backgroundImage: NetworkImage(avatar)
+          Hero(
+            tag: avatar,
+            child: GestureDetector(
+              onTap: () {
+                Get.to(ImageViewer(img: avatar));
+              },
+              child: CircleAvatar(
+                radius: 50,
+                backgroundImage: NetworkImage(avatar)
+              ),
+            ),
           )
         ],
       ),
@@ -78,7 +89,15 @@ class DetailOwner extends StatelessWidget {
           SizedBox(
             width: 250,
             height: 250,
-            child: Image.asset('assets/images/qrcode.jpg', fit: BoxFit.contain)
+            child: Hero(
+              tag:qrImg ,
+              child: GestureDetector(
+                onTap: () {
+                  Get.to(const ImageViewer(img: qrImg, isLocal: true,));
+                },
+                child: Image.asset(qrImg, fit: BoxFit.contain)
+              )
+            )
           ),
           const VSpaceBig(),
         ]),

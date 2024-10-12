@@ -32,7 +32,7 @@ class SliderInfoList extends StatelessWidget {
   final String location;
   final int userId;
 
-  final double cardWidth = 250;
+  final double cardWidth = 300;
 
   @override
   Widget build(BuildContext context) {

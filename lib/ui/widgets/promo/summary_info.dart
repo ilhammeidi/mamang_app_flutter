@@ -6,6 +6,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/image_viewer.dart';
 
 class SummaryInfo extends StatelessWidget {
   const SummaryInfo({
@@ -31,13 +32,21 @@ class SummaryInfo extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
         child: Row(children: [
           /// Thumbnail
-          ClipRRect(
-            borderRadius: ThemeRadius.small,
-            child: Image.network(
-              thumb,
-              width: 150,
-              height: 150,
-              fit: BoxFit.cover,
+          Hero(
+            tag: thumb,
+            child: GestureDetector(
+              onTap: () {
+                Get.to(ImageViewer(img: thumb));
+              },
+              child: ClipRRect(
+                borderRadius: ThemeRadius.small,
+                child: Image.network(
+                  thumb,
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           SizedBox(width: spacingUnit(2)),

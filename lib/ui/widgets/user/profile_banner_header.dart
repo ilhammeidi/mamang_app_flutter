@@ -2,12 +2,14 @@ import 'package:change_case/change_case.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/dummy_api.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/image_viewer.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
 
 class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
@@ -118,9 +120,17 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
                   child: Stack(
                     alignment: Alignment.bottomRight,
                     children: [
-                      CircleAvatar(
-                        radius: 50,
-                        backgroundImage: NetworkImage(userDummy.avatar)
+                      Hero(
+                        tag: userDummy.avatar,
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.to(ImageViewer(img: userDummy.avatar));
+                          },
+                          child: CircleAvatar(
+                            radius: 50,
+                            backgroundImage: NetworkImage(userDummy.avatar),
+                          ),
+                        ),
                       ),
                       Positioned(
                         child: CircleAvatar(
