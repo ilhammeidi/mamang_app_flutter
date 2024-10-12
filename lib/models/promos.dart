@@ -57,7 +57,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 34,
-    type: 'purple',
+    type: 'vip',
     xp: 571,
     level: 76,
     saved: false
@@ -76,7 +76,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 5,
-    type: 'purple',
+    type: 'vip',
     xp: 568,
     level: 23,
     saved: false
@@ -95,7 +95,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 29,
-    type: 'grey',
+    type: 'free',
     xp: 628,
     level: 97,
     saved: false
@@ -114,7 +114,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 74,
-    type: 'green',
+    type: 'pro',
     xp: 629,
     level: 31,
     saved: false
@@ -133,7 +133,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 12,
-    type: 'grey',
+    type: 'free',
     xp: 197,
     level: 0,
     saved: false
@@ -152,7 +152,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 49,
-    type: 'blue',
+    type: 'gold',
     xp: 948,
     level: 74,
     saved: false,
@@ -172,7 +172,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 44,
-    type: 'blue',
+    type: 'gold',
     xp: 814,
     level: 61,
     saved: false
@@ -191,7 +191,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 59,
-    type: 'blue',
+    type: 'gold',
     xp: 898,
     level: 98,
     saved: false
@@ -210,7 +210,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 34,
-    type: 'grey',
+    type: 'free',
     xp: 670,
     level: 3,
     saved: false
@@ -229,7 +229,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 25,
-    type: 'blue',
+    type: 'gold',
     xp: 673,
     level: 58,
     saved: false,
@@ -249,7 +249,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 14,
-    type: 'grey',
+    type: 'free',
     xp: 591,
     level: 75,
     saved: false
@@ -268,7 +268,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 33,
-    type: 'green',
+    type: 'pro',
     xp: 678,
     level: 99,
     saved: false
@@ -287,7 +287,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 69,
-    type: 'green',
+    type: 'pro',
     xp: 786,
     level: 92,
     saved: false,
@@ -307,7 +307,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 58,
-    type: 'green',
+    type: 'pro',
     xp: 299,
     level: 2,
     saved: false
@@ -326,7 +326,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 21,
-    type: 'purple',
+    type: 'vip',
     xp: 24,
     level: 70,
     saved: false
@@ -345,7 +345,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 11,
-    type: 'green',
+    type: 'pro',
     xp: 696,
     level: 25,
     saved: true
@@ -364,7 +364,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 29,
-    type: 'grey',
+    type: 'free',
     xp: 538,
     level: 22,
     saved: false
@@ -383,7 +383,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 70,
-    type: 'grey',
+    type: 'free',
     xp: 728,
     level: 80,
     saved: false,
@@ -403,7 +403,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 27,
-    type: 'purple',
+    type: 'vip',
     xp: 401,
     level: 46,
     saved: false
@@ -422,7 +422,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 45,
-    type: 'green',
+    type: 'pro',
     xp: 866,
     level: 65,
     saved: true
@@ -441,7 +441,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 61,
-    type: 'blue',
+    type: 'gold',
     xp: 221,
     level: 19,
     saved: false
@@ -460,7 +460,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 23,
-    type: 'purple',
+    type: 'vip',
     xp: 468,
     level: 24,
     saved: false,
@@ -480,7 +480,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 23,
-    type: 'grey',
+    type: 'free',
     xp: 201,
     level: 3,
     saved: true
@@ -499,7 +499,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 6,
-    type: 'green',
+    type: 'pro',
     xp: 960,
     level: 79,
     saved: false,
@@ -519,7 +519,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 43,
-    type: 'grey',
+    type: 'free',
     xp: 575,
     level: 11,
     saved: false
@@ -538,7 +538,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 12,
-    type: 'green',
+    type: 'pro',
     xp: 691,
     level: 78,
     saved: false
@@ -557,7 +557,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 81,
-    type: 'grey',
+    type: 'free',
     xp: 105,
     level: 16,
     saved: false
@@ -576,7 +576,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 85,
-    type: 'green',
+    type: 'pro',
     xp: 484,
     level: 61,
     saved: true
@@ -595,7 +595,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 40,
-    type: 'blue',
+    type: 'gold',
     xp: 613,
     level: 33,
     saved: false
@@ -614,7 +614,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 68,
-    type: 'blue',
+    type: 'gold',
     xp: 98,
     level: 52,
     saved: false
@@ -633,7 +633,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 85,
-    type: 'blue',
+    type: 'gold',
     xp: 56,
     level: 57,
     saved: false
@@ -652,7 +652,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 29,
-    type: 'green',
+    type: 'pro',
     xp: 426,
     level: 88,
     saved: false
@@ -671,7 +671,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 87,
-    type: 'green',
+    type: 'pro',
     xp: 99,
     level: 61,
     saved: false
@@ -690,7 +690,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 96,
-    type: 'purple',
+    type: 'vip',
     xp: 363,
     level: 90,
     saved: false
@@ -709,7 +709,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 14,
-    type: 'blue',
+    type: 'gold',
     xp: 120,
     level: 59,
     saved: true
@@ -728,7 +728,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 73,
-    type: 'green',
+    type: 'pro',
     xp: 115,
     level: 13,
     saved: false
@@ -747,7 +747,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 78,
-    type: 'grey',
+    type: 'free',
     xp: 958,
     level: 67,
     saved: false,
@@ -767,7 +767,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 92,
-    type: 'green',
+    type: 'pro',
     xp: 108,
     level: 26,
     saved: false
@@ -786,7 +786,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 75,
-    type: 'blue',
+    type: 'gold',
     xp: 54,
     level: 83,
     saved: false
@@ -805,7 +805,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 48,
-    type: 'blue',
+    type: 'gold',
     xp: 257,
     level: 51,
     saved: true
@@ -824,7 +824,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 24,
-    type: 'purple',
+    type: 'vip',
     xp: 192,
     level: 4,
     saved: false
@@ -843,7 +843,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 83,
-    type: 'blue',
+    type: 'gold',
     xp: 717,
     level: 70,
     saved: false
@@ -862,7 +862,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 72,
-    type: 'grey',
+    type: 'free',
     xp: 922,
     level: 89,
     saved: false
@@ -881,7 +881,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 53,
-    type: 'purple',
+    type: 'vip',
     xp: 294,
     level: 3,
     saved: false
@@ -900,7 +900,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 46,
-    type: 'blue',
+    type: 'gold',
     xp: 384,
     level: 11,
     saved: false
@@ -919,7 +919,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 2,
-    type: 'green',
+    type: 'pro',
     xp: 517,
     level: 61,
     saved: true
@@ -938,7 +938,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 97,
-    type: 'purple',
+    type: 'vip',
     xp: 577,
     level: 19,
     saved: false
@@ -957,7 +957,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 75,
-    type: 'blue',
+    type: 'gold',
     xp: 253,
     level: 42,
     saved: false
@@ -976,7 +976,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 94,
-    type: 'green',
+    type: 'pro',
     xp: 458,
     level: 87,
     saved: false
@@ -995,7 +995,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 61,
-    type: 'green',
+    type: 'pro',
     xp: 602,
     level: 92,
     saved: false
@@ -1014,7 +1014,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 38,
-    type: 'purple',
+    type: 'vip',
     xp: 353,
     level: 86,
     saved: true
@@ -1033,7 +1033,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 51,
-    type: 'blue',
+    type: 'gold',
     xp: 870,
     level: 33,
     saved: true
@@ -1052,7 +1052,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 5,
-    type: 'green',
+    type: 'pro',
     xp: 565,
     level: 9,
     saved: false
@@ -1071,7 +1071,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 68,
-    type: 'blue',
+    type: 'gold',
     xp: 480,
     level: 65,
     saved: false
@@ -1090,7 +1090,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 21,
-    type: 'purple',
+    type: 'vip',
     xp: 577,
     level: 42,
     saved: false
@@ -1109,7 +1109,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 85,
-    type: 'grey',
+    type: 'free',
     xp: 472,
     level: 98,
     saved: false
@@ -1128,7 +1128,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 24,
-    type: 'green',
+    type: 'pro',
     xp: 114,
     level: 0,
     saved: true
@@ -1147,7 +1147,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 60,
-    type: 'grey',
+    type: 'free',
     xp: 895,
     level: 3,
     saved: false
@@ -1166,7 +1166,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 15,
-    type: 'blue',
+    type: 'gold',
     xp: 297,
     level: 44,
     saved: false
@@ -1185,7 +1185,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 48,
-    type: 'blue',
+    type: 'gold',
     xp: 866,
     level: 22,
     saved: false
@@ -1204,7 +1204,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 56,
-    type: 'green',
+    type: 'pro',
     xp: 777,
     level: 47,
     saved: false
@@ -1223,7 +1223,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 54,
-    type: 'blue',
+    type: 'gold',
     xp: 229,
     level: 47,
     saved: false
@@ -1242,7 +1242,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 79,
-    type: 'green',
+    type: 'pro',
     xp: 436,
     level: 19,
     saved: true
@@ -1261,7 +1261,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 65,
-    type: 'purple',
+    type: 'vip',
     xp: 702,
     level: 93,
     saved: false
@@ -1280,7 +1280,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 60,
-    type: 'purple',
+    type: 'vip',
     xp: 228,
     level: 92,
     saved: false
@@ -1299,7 +1299,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 7,
-    type: 'green',
+    type: 'pro',
     xp: 342,
     level: 20,
     saved: false
@@ -1318,7 +1318,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 72,
-    type: 'grey',
+    type: 'free',
     xp: 985,
     level: 44,
     saved: false
@@ -1337,7 +1337,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 84,
-    type: 'blue',
+    type: 'gold',
     xp: 411,
     level: 24,
     saved: false
@@ -1356,7 +1356,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 49,
-    type: 'green',
+    type: 'pro',
     xp: 969,
     level: 81,
     saved: true
@@ -1375,7 +1375,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 14,
-    type: 'purple',
+    type: 'vip',
     xp: 311,
     level: 46,
     saved: false
@@ -1394,7 +1394,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 15,
-    type: 'purple',
+    type: 'vip',
     xp: 221,
     level: 90,
     saved: true
@@ -1413,7 +1413,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 90,
-    type: 'purple',
+    type: 'vip',
     xp: 769,
     level: 79,
     saved: false
@@ -1432,7 +1432,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 16,
-    type: 'grey',
+    type: 'free',
     xp: 11,
     level: 14,
     saved: false
@@ -1451,7 +1451,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 24,
-    type: 'purple',
+    type: 'vip',
     xp: 392,
     level: 88,
     saved: true
@@ -1470,7 +1470,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 40,
-    type: 'green',
+    type: 'pro',
     xp: 297,
     level: 25,
     saved: false
@@ -1489,7 +1489,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 18,
-    type: 'grey',
+    type: 'free',
     xp: 831,
     level: 16,
     saved: false
@@ -1508,7 +1508,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 62,
-    type: 'blue',
+    type: 'gold',
     xp: 562,
     level: 66,
     saved: false
@@ -1527,7 +1527,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 41,
-    type: 'green',
+    type: 'pro',
     xp: 371,
     level: 61,
     saved: false
@@ -1546,7 +1546,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 21,
-    type: 'grey',
+    type: 'free',
     xp: 718,
     level: 49,
     saved: false
@@ -1565,7 +1565,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 20,
-    type: 'green',
+    type: 'pro',
     xp: 978,
     level: 95,
     saved: false
@@ -1584,7 +1584,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 79,
-    type: 'blue',
+    type: 'gold',
     xp: 869,
     level: 11,
     saved: false
@@ -1603,7 +1603,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 49,
-    type: 'blue',
+    type: 'gold',
     xp: 999,
     level: 2,
     saved: false
@@ -1622,7 +1622,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 68,
-    type: 'green',
+    type: 'pro',
     xp: 405,
     level: 68,
     saved: true
@@ -1641,7 +1641,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 82,
-    type: 'grey',
+    type: 'free',
     xp: 427,
     level: 46,
     saved: false
@@ -1660,7 +1660,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 7,
-    type: 'green',
+    type: 'pro',
     xp: 287,
     level: 95,
     saved: true
@@ -1679,7 +1679,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 11,
-    type: 'grey',
+    type: 'free',
     xp: 631,
     level: 23,
     saved: false
@@ -1698,7 +1698,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 71,
-    type: 'green',
+    type: 'pro',
     xp: 237,
     level: 84,
     saved: false
@@ -1717,7 +1717,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 81,
-    type: 'purple',
+    type: 'vip',
     xp: 616,
     level: 2,
     saved: false
@@ -1736,7 +1736,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 37,
-    type: 'green',
+    type: 'pro',
     xp: 959,
     level: 91,
     saved: false
@@ -1755,7 +1755,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 66,
-    type: 'grey',
+    type: 'free',
     xp: 1,
     level: 97,
     saved: false
@@ -1774,7 +1774,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 8,
-    type: 'purple',
+    type: 'vip',
     xp: 900,
     level: 41,
     saved: true
@@ -1793,7 +1793,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 94,
-    type: 'grey',
+    type: 'free',
     xp: 635,
     level: 20,
     saved: true
@@ -1812,7 +1812,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: true,
     stared: 35,
-    type: 'blue',
+    type: 'gold',
     xp: 601,
     level: 14,
     saved: false
@@ -1831,7 +1831,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 83,
-    type: 'blue',
+    type: 'gold',
     xp: 153,
     level: 78,
     saved: false
@@ -1850,7 +1850,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 10,
-    type: 'grey',
+    type: 'free',
     xp: 175,
     level: 85,
     saved: false
@@ -1869,7 +1869,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 32,
-    type: 'green',
+    type: 'pro',
     xp: 106,
     level: 71,
     saved: false
@@ -1888,7 +1888,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: true,
     stared: 52,
-    type: 'green',
+    type: 'pro',
     xp: 195,
     level: 12,
     saved: false
@@ -1907,7 +1907,7 @@ final List<Promotion> promoList = [
     verified: false,
     published: false,
     stared: 76,
-    type: 'green',
+    type: 'pro',
     xp: 434,
     level: 17,
     saved: false
@@ -1926,7 +1926,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 20,
-    type: 'blue',
+    type: 'gold',
     xp: 285,
     level: 91,
     saved: false
@@ -1945,7 +1945,7 @@ final List<Promotion> promoList = [
     verified: true,
     published: false,
     stared: 25,
-    type: 'grey',
+    type: 'free',
     xp: 219,
     level: 92,
     saved: false
