@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/controllers/all_promo_controller.dart';
@@ -26,6 +27,7 @@ class PromoDetail extends StatefulWidget {
 
 class _PromoDetailState extends State<PromoDetail> {
   final controller = Get.put(AllPromoController());
+  final FocusNode _buttonFocusNode = FocusNode(debugLabel: 'Menu Button');
 
   String id = Get.parameters['id'] ?? '';
 
@@ -40,11 +42,11 @@ class _PromoDetailState extends State<PromoDetail> {
     controller.getPromo(promoId);
   }
 
-  // @override
-  // void dispose() {
-  //   controller.dispose();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    _buttonFocusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,9 +93,48 @@ class _PromoDetailState extends State<PromoDetail> {
               Icon(Icons.favorite, color: ThemePalette.tertiaryMain)
               : const Icon(Icons.favorite_border_outlined, color: Colors.white)
           ),
-          IconButton(
-            onPressed: () {}, 
-            icon: const Icon(Icons.more_horiz_outlined, color: Colors.white)
+          MenuAnchor(
+            childFocusNode: _buttonFocusNode,
+            alignmentOffset: const Offset(-130, 0),
+            menuChildren: <Widget>[
+              MenuItemButton(
+                child: const Row(children: [
+                  Icon(Icons.store_outlined),
+                  SizedBox(width: 4,),
+                  Text('Home'),
+                ]),
+                onPressed: () {
+                  Get.offAndToNamed('/');
+                },
+              ),
+             const MenuItemButton(
+                child: Row(children: [
+                  Icon(Icons.help_outline_rounded),
+                  SizedBox(width: 4,),
+                  Text('Help and supports')
+                ])
+              ),
+              const MenuItemButton(
+                child: Row(children: [
+                  Icon(Icons.report_outlined),
+                  SizedBox(width: 4,),
+                  Text('Report this promo')
+                ])
+              )
+            ],
+            builder: (BuildContext context, MenuController controller, Widget? child) {
+              return IconButton(
+                focusNode: _buttonFocusNode,
+                onPressed: () {
+                  if (controller.isOpen) {
+                    controller.close();
+                  } else {
+                    controller.open();
+                  }
+                }, 
+                icon: const Icon(Icons.more_horiz_outlined, color: Colors.white)
+              );
+            },
           ),
         ],
       ),
