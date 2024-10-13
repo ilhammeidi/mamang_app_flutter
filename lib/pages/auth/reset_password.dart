@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/widgets/user/auth_wrap.dart';
-import 'package:mamang_app_flutter/ui/widgets/user/login_form.dart';
 import 'package:mamang_app_flutter/ui/widgets/user/reset_form.dart';
 
 class ResetPassword extends StatelessWidget {
@@ -18,7 +17,7 @@ class ResetPassword extends StatelessWidget {
         forceMaterialTransparency: true,
         leading: IconButton(
           onPressed: () {
-            Get.toNamed('/welcome');
+            Get.back();
           },
           style: IconButton.styleFrom(
             backgroundColor: colorScheme.surface,

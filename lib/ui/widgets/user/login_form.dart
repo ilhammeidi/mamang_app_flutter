@@ -64,7 +64,7 @@ class _LoginFormState extends State<LoginForm> {
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         InkWell(
           onTap: () {
-            Get.to('reset-password');
+            Get.toNamed('/reset-password');
           },
           child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             Stack(

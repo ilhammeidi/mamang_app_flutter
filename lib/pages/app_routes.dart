@@ -13,6 +13,8 @@ import 'package:mamang_app_flutter/pages/event/detail.dart';
 import 'package:mamang_app_flutter/pages/event/event_main.dart';
 import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
 import 'package:mamang_app_flutter/pages/home.dart';
+import 'package:mamang_app_flutter/pages/profile/contact.dart';
+import 'package:mamang_app_flutter/pages/profile/faq_list.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_password.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_profile.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
@@ -41,7 +43,7 @@ final List<GetPage> appRoutes = [
     name: '/',
     page: () => const HomeLayout(content: HomeMain()),
     transition: Transition.fadeIn,
-    transitionDuration: const Duration(microseconds: pageTransitionDuration)
+    transitionDuration: const Duration(milliseconds: pageTransitionDuration)
   ),
 
   /// USER AUTH
@@ -161,6 +163,14 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/otp',
     page: () => const GeneralLayout(content: OtpPin()),
+  ),
+  GetPage(
+    name: '/contact',
+    page: () => const GeneralLayout(content: Contact()),
+  ),
+  GetPage(
+    name: '/faq',
+    page: () => const GeneralLayout(content: FaqList()),
   ),
   GetPage(
     name: '/forms',

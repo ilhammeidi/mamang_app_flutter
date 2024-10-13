@@ -54,7 +54,7 @@ class _RegisterFormState extends State<RegisterForm> {
         height: 50,
         child: FilledButton(
           onPressed: () {
-            Get.toNamed('/');
+            Get.toNamed('/otp');
           },
           style: ThemeButton.btnBig.merge(ThemeButton.secondary),
           child: const Text('CONTINUE', style: ThemeText.subtitle)

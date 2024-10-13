@@ -128,6 +128,24 @@ class SettingList extends StatelessWidget {
                   Get.toNamed('/register');
                 },
                ),
+               const LineList(),
+               ListTile(
+                leading: const Icon(Icons.pin),
+                title: const Text('Pin OTP'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/otp');
+                },
+               ),
+               const LineList(),
+               ListTile(
+                leading: const Icon(Icons.key_sharp),
+                title: const Text('Reset Password'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/reset-password');
+                },
+               ),
             ])
           )
          ),
@@ -158,16 +176,22 @@ class SettingList extends StatelessWidget {
                 },
               ),
               const LineList(),
-              const ListTile(
-                leading: Icon(Icons.help_outline),
-                title: Text('Help Center'),
-                trailing: Icon(Icons.arrow_forward_ios),
+              ListTile(
+                onTap: () {
+                  Get.toNamed('/faq');
+                },
+                leading: const Icon(Icons.help_outline),
+                title: const Text('FAQ'),
+                trailing: const Icon(Icons.arrow_forward_ios),
               ),
               const LineList(),
-              const ListTile(
-                leading: Icon(Icons.call),
-                title: Text('Contact Admin'),
-                trailing: Icon(Icons.arrow_forward_ios),
+              ListTile(
+                onTap: () {
+                  Get.toNamed('/contact');
+                },
+                leading: const Icon(Icons.message_outlined),
+                title: const Text('Contact Admin'),
+                trailing: const Icon(Icons.arrow_forward_ios),
               ),
               const LineList(),
               const ListTile(
