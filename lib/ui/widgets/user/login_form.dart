@@ -62,20 +62,25 @@ class _LoginFormState extends State<LoginForm> {
       ),
       const VSpaceBig(),
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              CircleAvatar(
-                backgroundColor: ThemePalette.secondaryMain.withOpacity(0.25),
-                radius: 22,
-              ),
-              Icon(Icons.help_outline, size: 32, color: ThemePalette.secondaryDark),
-            ],
-          ),
-          const SizedBox(height: 4),
-          const Text('Forgot Password', style: ThemeText.caption)
-        ]),
+        InkWell(
+          onTap: () {
+            Get.to('reset-password');
+          },
+          child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                CircleAvatar(
+                  backgroundColor: ThemePalette.secondaryMain.withOpacity(0.25),
+                  radius: 22,
+                ),
+                Icon(Icons.help_outline, size: 32, color: ThemePalette.secondaryDark),
+              ],
+            ),
+            const SizedBox(height: 4),
+            const Text('Forgot Password', style: ThemeText.caption)
+          ]),
+        ),
         Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Stack(
             alignment: Alignment.center,

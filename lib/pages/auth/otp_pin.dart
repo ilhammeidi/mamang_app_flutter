@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/widgets/user/auth_wrap.dart';
-import 'package:mamang_app_flutter/ui/widgets/user/login_form.dart';
-import 'package:mamang_app_flutter/ui/widgets/user/reset_form.dart';
+import 'package:mamang_app_flutter/ui/widgets/user/otp_form.dart';
 
-class ResetPassword extends StatelessWidget {
-  const ResetPassword({super.key});
+class OtpPin extends StatelessWidget {
+  const OtpPin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class ResetPassword extends StatelessWidget {
         forceMaterialTransparency: true,
         leading: IconButton(
           onPressed: () {
-            Get.toNamed('/welcome');
+            Get.toNamed('/register');
           },
           style: IconButton.styleFrom(
             backgroundColor: colorScheme.surface,
@@ -30,7 +29,7 @@ class ResetPassword extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-            Get.toNamed('/profile');
+            Get.toNamed('/profilet');
           },
             child: const Row(
               children: [
@@ -42,7 +41,7 @@ class ResetPassword extends StatelessWidget {
           )
         ],
       ),
-      body: const AuthWrap(content: ResetForm())
+      body: const AuthWrap(content: OtpForm())
     );
   }
 }
