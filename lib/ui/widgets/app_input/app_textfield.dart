@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 
 class AppTextField extends StatefulWidget {
   const AppTextField({
@@ -9,6 +10,8 @@ class AppTextField extends StatefulWidget {
     required this.label,
     required this.onChanged,
     this.hint,
+    this.errorText,
+    this.initialValue,
     this.readOnly = false,
     this.maxLines = 1,
     this.controller,
@@ -20,6 +23,8 @@ class AppTextField extends StatefulWidget {
 
   final String label;
   final String? hint;
+  final String? errorText;
+  final String? initialValue;
   final bool readOnly;
   final TextEditingController? controller;
   final IconData? prefixIcon;
@@ -55,40 +60,65 @@ class _AppTextFieldState extends State<AppTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        borderRadius: ThemeRadius.small,
-        border: Border.all(
-          width: 1,
-          color: boxFocus ? ThemePalette.primaryMain : Theme.of(context).colorScheme.outlineVariant
-        )
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(
-          top: 4,
-          bottom: 4,
-          left: widget.prefixIcon != null ? 0 : spacingUnit(2),
-          right: widget.suffix != null ? 0 : spacingUnit(2)
-        ),
-        child: TextField(
-          controller: widget.controller,
-          focusNode: focusNode,
-          readOnly: widget.readOnly,
-          maxLines: widget.maxLines,
-          obscureText: widget.maxLines == 1 ? widget.obscureText : false,
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            labelText: widget.label,
-            alignLabelWithHint: widget.maxLines != 1 ? true : false,
-            hintText: widget.hint ?? widget.hint,
-            prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
-            suffixIcon: widget.suffix ?? widget.suffix
+    Color borderColor() {
+      if (widget.errorText != null) {
+        return Colors.red[400]!;
+      } else {
+        if (boxFocus) {
+          return ThemePalette.primaryMain;
+        } else {
+          return Theme.of(context).colorScheme.outlineVariant;
+        }
+      }
+    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        DecoratedBox(
+          decoration: BoxDecoration(
+            borderRadius: ThemeRadius.small,
+            border: Border.all(
+              width: 1,
+              color: borderColor(),
+            )
           ),
-          onTap: widget.onTap,
-          onChanged: (String value) => widget.onChanged(value),
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 4,
+              bottom: 4,
+              left: widget.prefixIcon != null ? 0 : spacingUnit(2),
+              right: widget.suffix != null ? 0 : spacingUnit(2)
+            ),
+            child: TextFormField(
+              controller: widget.controller,
+              initialValue: widget.initialValue,
+              focusNode: focusNode,
+              readOnly: widget.readOnly,
+              maxLines: widget.maxLines,
+              obscureText: widget.maxLines == 1 ? widget.obscureText : false,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                labelText: widget.label,
+                labelStyle: TextStyle(
+                  color: widget.errorText != null ? Colors.red : null
+                ),
+                alignLabelWithHint: widget.maxLines != 1 ? true : false,
+                hintText: widget.hint ?? widget.hint,
+                prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
+                suffixIcon: widget.suffix ?? widget.suffix
+              ),
+              onTap: widget.onTap,
+              onChanged: (String value) => widget.onChanged(value),
+            ),
+          ),
         ),
-      ),
+        widget.errorText != null ?
+          Padding(
+            padding: const EdgeInsets.only(top: 4, left: 16),
+            child: Text(widget.errorText!, style: ThemeText.caption.copyWith(color: Colors.red[400]),)
+          ) : Container()
+      ],
     );
   }
 }

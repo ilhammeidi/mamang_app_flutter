@@ -23,6 +23,7 @@ import 'package:mamang_app_flutter/pages/promo/detail.dart';
 import 'package:mamang_app_flutter/pages/promo/promo_main.dart';
 import 'package:mamang_app_flutter/pages/sample_button.dart';
 import 'package:mamang_app_flutter/pages/sample_dark_light.dart';
+import 'package:mamang_app_flutter/pages/sample_form_builder.dart';
 import 'package:mamang_app_flutter/pages/sample_forms.dart';
 import 'package:mamang_app_flutter/pages/sample_shadow.dart';
 import 'package:mamang_app_flutter/pages/sample_shimmer.dart';
@@ -180,6 +181,10 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/forms',
     page: () => const GeneralLayout(content: SampleForm()),
+  ),
+  GetPage(
+    name: '/form-builder',
+    page: () => GeneralLayout(content: SampleFormBuilder()),
   ),
   GetPage(
     name: '/buttons',
