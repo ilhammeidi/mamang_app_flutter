@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:get/state_manager.dart';
 import 'package:get/route_manager.dart';
+import 'package:mamang_app_flutter/models/dummy_api.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -194,10 +195,13 @@ class SettingList extends StatelessWidget {
                 trailing: const Icon(Icons.arrow_forward_ios),
               ),
               const LineList(),
-              const ListTile(
-                leading: Icon(Icons.insert_drive_file_outlined),
-                title: Text('Terms and Privacy'),
-                trailing: Icon(Icons.arrow_forward_ios),
+              ListTile(
+                onTap: () {
+                  Get.toNamed('/terms-conditions');
+                },
+                leading: const Icon(Icons.insert_drive_file_outlined),
+                title: const Text('Terms and Conditions'),
+                trailing: const Icon(Icons.arrow_forward_ios),
               ),
             ]),
           )
@@ -393,7 +397,7 @@ class SettingList extends StatelessWidget {
           ),
         ),
         const VSpace(),
-        const Center(child: Text('Mamang App version 1.0', style: ThemeText.caption)),
+        Center(child: Text('${branding.name} Version: ${branding.version}', style: ThemeText.caption)),
         const VSpaceBig(),
       ]
     );

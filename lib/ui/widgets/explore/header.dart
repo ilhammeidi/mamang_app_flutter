@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
@@ -37,8 +38,8 @@ class HeaderExplore extends StatelessWidget {
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Image.asset('assets/images/gift.png', height: 20),
               const SizedBox(width: 2,),
-              const Text('Claim Your Gift Today', style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 11),)
-            ],),
+              const Text('Claim Your Gift Today', style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 11),),
+            ]),
           ),
           /// ACTIONS HEADER BUTTON
           Row(children: [
@@ -60,7 +61,9 @@ class HeaderExplore extends StatelessWidget {
               width: 32,
               height: 32,
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/faq');
+                },
                 style: iconBtn,
                 icon: Icon(Icons.help, size: 24, color: colorScheme.onSurface)
               ),

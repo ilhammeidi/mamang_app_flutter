@@ -17,7 +17,7 @@ class Login extends StatelessWidget {
         forceMaterialTransparency: true,
         leading: IconButton(
           onPressed: () {
-            Get.toNamed('/welcome');
+            Get.back();
           },
           style: IconButton.styleFrom(
             backgroundColor: colorScheme.surface,

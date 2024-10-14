@@ -1,3 +1,4 @@
+import 'package:mamang_app_flutter/models/company.dart';
 import 'package:mamang_app_flutter/models/users.dart';
 import 'package:mamang_app_flutter/models/img_api.dart';
 
@@ -20,3 +21,18 @@ class ContentApi {
   static const paragraph = 'Sed rutrum augue libero, id faucibus quam aliquet sed. Phasellus interdum orci quam, volutpat ornare eros rhoncus sed. Donec vestibulum leo a auctor convallis. In dignissim consectetur molestie. Vivamus interdum tempor dui, nec posuere augue consequat sit amet. Suspendisse quis semper quam. Nullam nec neque sem.';
   static const date = '19 Sep 2024';
 }
+
+// Project
+Company branding = Company(
+  id: '1',
+  name: 'Mamang',
+  logo: '',
+  title: 'Your trusted local marketplace and advertising platforms.',
+  desc: 'This is the right place to find your favourite promotions, deals, and events!',
+  version: 'alpha-1',
+  prefix: 'mamang',
+  footerText: 'Mamang App',
+  year: 2024,
+  logoText: 'Mamang',
+  url: 'mamang.indisains.com'
+);

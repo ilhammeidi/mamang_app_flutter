@@ -19,7 +19,7 @@ class _RegisterFormState extends State<RegisterForm> {
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    return ListView(children: [
       /// TITLE
       const VSpace(),
       const Text('Register', style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold)),

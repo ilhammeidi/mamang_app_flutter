@@ -107,19 +107,25 @@ class _PromoDetailState extends State<PromoDetail> {
                   Get.offAndToNamed('/');
                 },
               ),
-             const MenuItemButton(
-                child: Row(children: [
+              MenuItemButton(
+                child: const Row(children: [
                   Icon(Icons.help_outline_rounded),
                   SizedBox(width: 4,),
                   Text('Help and supports')
-                ])
+                ]),
+                onPressed: () {
+                  Get.offAndToNamed('/faq');
+                },
               ),
-              const MenuItemButton(
-                child: Row(children: [
+              MenuItemButton(
+                child: const Row(children: [
                   Icon(Icons.report_outlined),
                   SizedBox(width: 4,),
                   Text('Report this promo')
-                ])
+                ]),
+                onPressed: () {
+                  Get.offAndToNamed('/contact');
+                },
               )
             ],
             builder: (BuildContext context, MenuController controller, Widget? child) {

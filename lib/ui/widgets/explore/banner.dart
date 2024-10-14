@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:mamang_app_flutter/models/dummy_api.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
@@ -40,16 +41,17 @@ class BannerExplore extends StatelessWidget {
                 right: spacingUnit(2),
                 bottom: spacingUnit(5),
               ),
-              child: const Column(children: [
-                Text('Looking for Promo?', style: ThemeText.title, textAlign: TextAlign.center,),
-                SizedBox(height: 8),
+              child: Column(children: [
+                const Text('Looking for Promo?', style: ThemeText.title, textAlign: TextAlign.center,),
+                const SizedBox(height: 8),
                 Text(
-                  'This is the right place to find your favourite promotions, deals, and events!',
+                  branding.desc,
                   style: ThemeText.subtitle2,
                   textAlign: TextAlign.center,
                 ),
               ])
             ),
+            
             /// BANNER WITH ILLUSTRATION
             Stack(alignment: Alignment.topCenter,
               children: [

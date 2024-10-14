@@ -24,7 +24,7 @@ class AuthWrap extends StatelessWidget {
         ),
         child: Container(
           margin: EdgeInsets.only(top: spacingUnit(10)),
-          padding: EdgeInsets.all(spacingUnit(3)),
+          padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
             color: Theme.of(context).colorScheme.surface,

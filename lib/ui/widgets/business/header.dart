@@ -47,7 +47,9 @@ class BusinessHeader extends StatelessWidget {
       actions: [
         const SizedBox(width: 1),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed('/faq');
+          },
           icon: const Icon(Icons.help_outline_outlined, size: 36, color: Colors.white)
         ),
         IconButton(

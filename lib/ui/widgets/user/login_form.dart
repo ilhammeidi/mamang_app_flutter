@@ -26,7 +26,7 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    return ListView(children: [
       /// TITLE
       const VSpace(),
       const Text('Login', style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold)),
@@ -71,7 +71,7 @@ class _LoginFormState extends State<LoginForm> {
               alignment: Alignment.center,
               children: [
                 CircleAvatar(
-                  backgroundColor: ThemePalette.secondaryMain.withOpacity(0.25),
+                  backgroundColor: ThemePalette.secondaryLight,
                   radius: 22,
                 ),
                 Icon(Icons.help_outline, size: 32, color: ThemePalette.secondaryDark),
@@ -81,20 +81,25 @@ class _LoginFormState extends State<LoginForm> {
             const Text('Forgot Password', style: ThemeText.caption)
           ]),
         ),
-        Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              CircleAvatar(
-                backgroundColor: ThemePalette.primaryMain.withOpacity(0.25),
-                radius: 22,
-              ),
-              Icon(Icons.question_answer_outlined, size: 32, color: ThemePalette.primaryDark),
-            ],
-          ),
-          const SizedBox(height: 4),
-          const Text('Help and Support', style: ThemeText.caption)
-        ]),
+        InkWell(
+          onTap: () {
+            Get.toNamed('/contact');
+          },
+          child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                CircleAvatar(
+                  backgroundColor: ThemePalette.primaryLight,
+                  radius: 22,
+                ),
+                Icon(Icons.question_answer_outlined, size: 32, color: ThemePalette.primaryDark),
+              ],
+            ),
+            const SizedBox(height: 4),
+            const Text('Help and Support', style: ThemeText.caption)
+          ]),
+        ),
         InkWell(
           onTap: () {
             Get.toNamed('/');
@@ -104,7 +109,7 @@ class _LoginFormState extends State<LoginForm> {
               alignment: Alignment.center,
               children: [
                 CircleAvatar(
-                  backgroundColor: ThemePalette.tertiaryMain.withOpacity(0.25),
+                  backgroundColor: ThemePalette.tertiaryLight,
                   radius: 22,
                 ),
                 Icon(Icons.group_outlined, size: 32, color: ThemePalette.tertiaryDark),

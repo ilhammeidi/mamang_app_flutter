@@ -18,6 +18,7 @@ import 'package:mamang_app_flutter/pages/profile/faq_list.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_password.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_profile.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
+import 'package:mamang_app_flutter/pages/profile/terms_condition.dart';
 import 'package:mamang_app_flutter/pages/promo/detail.dart';
 import 'package:mamang_app_flutter/pages/promo/promo_main.dart';
 import 'package:mamang_app_flutter/pages/sample_button.dart';
@@ -171,6 +172,10 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/faq',
     page: () => const GeneralLayout(content: FaqList()),
+  ),
+  GetPage(
+    name: '/terms-conditions',
+    page: () => const GeneralLayout(content: TermsCondition()),
   ),
   GetPage(
     name: '/forms',

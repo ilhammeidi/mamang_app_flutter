@@ -79,7 +79,7 @@ class BusinessCreateNew extends StatelessWidget {
                   return Wrap(children: [
                     BusinessInfo(
                       icon: const VipIcon(),
-                      color: 'purple',
+                      color: 'vip',
                       name: 'Diamond',
                       desc: descVip,
                     )
@@ -89,7 +89,7 @@ class BusinessCreateNew extends StatelessWidget {
             },
             child: PricingCard(
               mainIcon: const VipIcon(),
-              color: colorType('purple'),
+              color: colorType('vip'),
               title: 'Diamond',
               price: 20,
               desc: descVip
@@ -106,7 +106,7 @@ class BusinessCreateNew extends StatelessWidget {
                   return Wrap(children: [
                     BusinessInfo(
                       icon: const ProIcon(),
-                      color: 'blue',
+                      color: 'gold',
                       name: 'Gold',
                       desc: descPro,
                     )
@@ -117,7 +117,7 @@ class BusinessCreateNew extends StatelessWidget {
             child: PricingCard(
               isRecomended: true,
               mainIcon: const ProIcon(),
-              color: colorType('blue'),
+              color: colorType('gold'),
               title: 'Gold',
               price: 10,
               desc: descPro
@@ -134,7 +134,7 @@ class BusinessCreateNew extends StatelessWidget {
                   return Wrap(children: [
                     BusinessInfo(
                       icon: const BasicIcon(),
-                      color: 'green',
+                      color: 'pro',
                       name: 'Basic',
                       desc: descBasic,
                     )
@@ -144,7 +144,7 @@ class BusinessCreateNew extends StatelessWidget {
             },
             child: PricingCard(
               mainIcon: const BasicIcon(),
-              color: colorType('green'),
+              color: colorType('pro'),
               title: 'Basic',
               price: 5,
               desc: descBasic,
@@ -161,7 +161,7 @@ class BusinessCreateNew extends StatelessWidget {
                   return Wrap(children: [
                     BusinessInfo(
                       icon: const FreeIcon(),
-                      color: 'grey',
+                      color: 'free',
                       name: 'FREE',
                       desc: descFree,
                     )
@@ -171,7 +171,7 @@ class BusinessCreateNew extends StatelessWidget {
             },
             child: PricingCard(
               mainIcon: const FreeIcon(),
-              color: colorType('grey'),
+              color: colorType('free'),
               title: 'FREE',
               price: 0,
               desc: descFree
