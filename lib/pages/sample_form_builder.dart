@@ -17,7 +17,7 @@ class _SampleFormBuilderState extends State<SampleFormBuilder> {
   final _emailFieldKey = GlobalKey<FormBuilderFieldState>();
 
   final Map <String, dynamic>_initialValue = {
-    // 'first_name': 'John',
+    'first_name': 'John',
     'middle_name': 'Zombie',
     'last_name': 'Doe',
     'email': 'johndoe@example.com',
@@ -35,6 +35,7 @@ class _SampleFormBuilderState extends State<SampleFormBuilder> {
               name: 'first_name',
               builder: (FormFieldState<dynamic> field) {
                 return AppTextField(
+                  initialValue: 'john',
                   label: 'First Name',
                   onChanged: (value) => field.didChange(value),
                   errorText: field.hasError ? 'Error coy' : null,
@@ -44,19 +45,6 @@ class _SampleFormBuilderState extends State<SampleFormBuilder> {
                 FormBuilderValidators.required(),
               ]),
             ),
-            // FormBuilderField(
-            //   name: 'first_name',
-            //   builder: (FormFieldState<dynamic> field) {
-            //     return AppTextfieldFormBuilder(
-            //       name: 'first_name',
-            //       label: 'First Name',
-            //       errorText: field.hasError ? 'Error coy' : null,
-            //     );
-            //   },
-            //   validator: FormBuilderValidators.compose([
-            //     FormBuilderValidators.required(),
-            //   ]),
-            // ),
             const SizedBox(height: 10),
             AppTextfieldFormBuilder(
               label: 'Middle Name',

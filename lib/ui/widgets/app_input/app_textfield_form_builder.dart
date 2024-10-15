@@ -100,6 +100,8 @@ class _AppTextfieldFormBuilderState extends State<AppTextfieldFormBuilder> {
               readOnly: widget.readOnly,
               maxLines: widget.maxLines,
               obscureText: widget.maxLines == 1 ? widget.obscureText : false,
+              onTap: widget.onTap,
+              validator: widget.validator,
               decoration: InputDecoration(
                 errorStyle: const TextStyle(fontSize: 0),
                 border: InputBorder.none,
@@ -110,8 +112,6 @@ class _AppTextfieldFormBuilderState extends State<AppTextfieldFormBuilder> {
                 prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
                 suffixIcon: widget.suffix ?? widget.suffix
               ),
-              onTap: widget.onTap,
-              validator: widget.validator,
             ),
           ),
         ),

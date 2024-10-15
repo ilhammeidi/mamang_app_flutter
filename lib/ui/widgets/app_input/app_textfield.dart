@@ -19,6 +19,7 @@ class AppTextField extends StatefulWidget {
     this.suffix,
     this.onTap,
     this.obscureText = false,
+    this.validator,
   });
 
   final String label;
@@ -33,6 +34,7 @@ class AppTextField extends StatefulWidget {
   final void Function()? onTap;
   final void Function(String) onChanged;
   final bool obscureText;
+  final String? Function(String?)? validator;
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -96,6 +98,9 @@ class _AppTextFieldState extends State<AppTextField> {
               readOnly: widget.readOnly,
               maxLines: widget.maxLines,
               obscureText: widget.maxLines == 1 ? widget.obscureText : false,
+              onTap: widget.onTap,
+              onChanged: (String value) => widget.onChanged(value),
+              validator: widget.validator,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 enabledBorder: InputBorder.none,
@@ -108,8 +113,6 @@ class _AppTextFieldState extends State<AppTextField> {
                 prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
                 suffixIcon: widget.suffix ?? widget.suffix
               ),
-              onTap: widget.onTap,
-              onChanged: (String value) => widget.onChanged(value),
             ),
           ),
         ),
