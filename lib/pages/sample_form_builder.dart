@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:mamang_app_flutter/ui/widgets/app_input/app_textfield.dart';
+import 'package:mamang_app_flutter/ui/widgets/app_input/app_textfield_form_builder.dart';
 
 class SampleFormBuilder extends StatefulWidget {
   const SampleFormBuilder({super.key});
@@ -16,7 +17,8 @@ class _SampleFormBuilderState extends State<SampleFormBuilder> {
   final _emailFieldKey = GlobalKey<FormBuilderFieldState>();
 
   final Map <String, dynamic>_initialValue = {
-    'first_name': 'John',
+    // 'first_name': 'John',
+    'middle_name': 'Zombie',
     'last_name': 'Doe',
     'email': 'johndoe@example.com',
   };
@@ -42,6 +44,28 @@ class _SampleFormBuilderState extends State<SampleFormBuilder> {
                 FormBuilderValidators.required(),
               ]),
             ),
+            // FormBuilderField(
+            //   name: 'first_name',
+            //   builder: (FormFieldState<dynamic> field) {
+            //     return AppTextfieldFormBuilder(
+            //       name: 'first_name',
+            //       label: 'First Name',
+            //       errorText: field.hasError ? 'Error coy' : null,
+            //     );
+            //   },
+            //   validator: FormBuilderValidators.compose([
+            //     FormBuilderValidators.required(),
+            //   ]),
+            // ),
+            const SizedBox(height: 10),
+            AppTextfieldFormBuilder(
+              label: 'Middle Name',
+              name: 'middle_name',
+              validator: FormBuilderValidators.compose([
+                FormBuilderValidators.required(),
+              ]),
+            ),
+            const SizedBox(height: 10),
             FormBuilderTextField(
               // initialValue: 'dasa',
               name: 'last_name',
@@ -57,7 +81,10 @@ class _SampleFormBuilderState extends State<SampleFormBuilder> {
               decoration: const InputDecoration(labelText: 'Email'),
               validator: FormBuilderValidators.compose([
                 FormBuilderValidators.required(),
-                FormBuilderValidators.email(),
+                FormBuilderValidators.or([
+                  FormBuilderValidators.email(),
+                  FormBuilderValidators.phoneNumber(),
+                ])
               ]),
             ),
             const SizedBox(height: 10),
@@ -114,6 +141,16 @@ class _SampleFormBuilderState extends State<SampleFormBuilder> {
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
+                print(_formKey.currentState?.errors);
+                // if(_nameFieldKey.currentState?.isValid ?? false){
+                //   setState(() {
+                //     _message = '';
+                //   });
+                // } else {
+                //   setState(() {
+                //     _message = 'Error';
+                //   });
+                // }
                 if (_formKey.currentState?.saveAndValidate() ?? false) {
                   if (true) {
                     // Either invalidate using Form Key
@@ -145,6 +182,7 @@ class _SampleFormBuilderState extends State<SampleFormBuilder> {
               onPressed: () {
                 _formKey.currentState?.patchValue({
                   'first_name': 'Ubah',
+                  'middle_name': 'ome ome',
                   'last_name': 'rubah',
                 });
               },
