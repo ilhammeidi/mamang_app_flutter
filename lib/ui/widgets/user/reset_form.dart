@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -14,6 +15,8 @@ class ResetForm extends StatefulWidget {
 
 class _ResetFormState extends State<ResetForm> {
   bool _hidePassword = true;
+  final _resetPwdKey = GlobalKey<FormState>();
+  bool _isNotValid = false;
 
   void handleShowPassword() {
     setState(() {
@@ -25,29 +28,49 @@ class _ResetFormState extends State<ResetForm> {
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      /// TITLE
-      const VSpace(),
-      const Text('Password Recovery', style: ThemeText.title),
-      SizedBox(height: spacingUnit(1)),
-      Text('Please provide your email or phone', style: ThemeText.subtitle2.copyWith(color: colorScheme.onSurfaceVariant)),
-      const VSpaceBig(),
-    
-      /// INPUT FIELD
-      AppTextField(label: 'Email or Phone Number', onChanged: (_) {}),
-      const VSpace(),
-      SizedBox(
-        width: double.infinity,
-        height: 50,
-        child: FilledButton(
-          onPressed: () {
-            Get.toNamed('/');
-          },
-          style: ThemeButton.btnBig.merge(ThemeButton.secondary),
-          child: const Text('CONTINUE', style: ThemeText.subtitle)
+    return Form(
+      key: _resetPwdKey,
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        /// TITLE
+        const VSpace(),
+        const Text('Password Recovery', style: ThemeText.title),
+        SizedBox(height: spacingUnit(1)),
+        Text('Please provide your email or phone', style: ThemeText.subtitle2.copyWith(color: colorScheme.onSurfaceVariant)),
+        const VSpace(),
+      
+        /// INPUT FIELD
+        AppTextField(
+          label: 'Email or Phone Number',
+          onChanged: (_) {},
+          errorText: _isNotValid ? 'Incorrect email or phone number' : null,
+          validator: FormBuilderValidators.compose(<FormFieldValidator<String>>[
+            FormBuilderValidators.required(),
+            FormBuilderValidators.or([
+              FormBuilderValidators.email(),
+              FormBuilderValidators.phoneNumber(),
+            ])
+          ])
         ),
-      ),
-      const VSpaceBig(),
-    ]);
+        const VSpace(),
+        SizedBox(
+          width: double.infinity,
+          height: 50,
+          child: FilledButton(
+            onPressed: () {
+              if (_resetPwdKey.currentState!.validate()) {
+                Get.toNamed('/');
+              } else {
+                setState(() {
+                  _isNotValid = true;
+                });
+              }
+            },
+            style: ThemeButton.btnBig.merge(ThemeButton.secondary),
+            child: const Text('CONTINUE', style: ThemeText.subtitle)
+          ),
+        ),
+        const VSpaceBig(),
+      ]),
+    );
   }
 }

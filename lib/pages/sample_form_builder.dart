@@ -35,7 +35,7 @@ class _SampleFormBuilderState extends State<SampleFormBuilder> {
               name: 'first_name',
               builder: (FormFieldState<dynamic> field) {
                 return AppTextField(
-                  initialValue: 'john',
+                  // initialValue: 'john',
                   label: 'First Name',
                   onChanged: (value) => field.didChange(value),
                   errorText: field.hasError ? 'Error coy' : null,

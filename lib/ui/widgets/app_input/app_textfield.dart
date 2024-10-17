@@ -103,6 +103,7 @@ class _AppTextFieldState extends State<AppTextField> {
               validator: widget.validator,
               decoration: InputDecoration(
                 border: InputBorder.none,
+                errorStyle: const TextStyle(fontSize: 0),
                 enabledBorder: InputBorder.none,
                 labelText: widget.label,
                 labelStyle: TextStyle(

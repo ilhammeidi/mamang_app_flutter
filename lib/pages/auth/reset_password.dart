@@ -29,7 +29,7 @@ class ResetPassword extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-            Get.toNamed('/profile');
+            Get.toNamed('/faq');
           },
             child: const Row(
               children: [

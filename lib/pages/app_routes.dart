@@ -151,7 +151,7 @@ final List<GetPage> appRoutes = [
     transitionDuration: const Duration(milliseconds: pageTransitionDuration)
   ),
   GetPage(
-    name: '/change-profile',
+    name: '/edit-profile',
     page: () => const GeneralLayout(content: EditProfile()),
   ),
   GetPage(
