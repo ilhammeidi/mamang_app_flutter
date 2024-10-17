@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 class TermsCondition extends StatelessWidget {

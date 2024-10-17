@@ -47,7 +47,9 @@ class HeaderExplore extends StatelessWidget {
               width: 32,
               height: 32,
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('notifications');
+                },
                 style: iconBtn,
                 icon: Badge.count(
                   backgroundColor: ThemePalette.tertiaryMain,

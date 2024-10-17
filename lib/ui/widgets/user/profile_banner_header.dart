@@ -87,7 +87,9 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
             ),
             const SizedBox(width: 2),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed('notifications');
+              },
               icon: Badge.count(
                 backgroundColor: ThemePalette.tertiaryMain,
                 count: 10,

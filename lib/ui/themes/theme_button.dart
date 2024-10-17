@@ -180,6 +180,16 @@ class ThemeButton {
     );
   }
 
+  static ButtonStyle tonalDefault(BuildContext context) {
+    return FilledButton.styleFrom(
+      backgroundColor: Theme.of(context).colorScheme.outline.withOpacity(0.5),
+      foregroundColor: Theme.of(context).colorScheme.onSurface,
+      shape: RoundedRectangleBorder(
+        borderRadius: buttonRadius,
+      ),
+    );
+  }
+
   // Text Button
   static ButtonStyle textPrimary(BuildContext context) {
     return TextButton.styleFrom(
