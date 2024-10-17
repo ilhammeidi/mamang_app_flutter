@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 
-class AppTextField extends StatefulWidget {
-  const AppTextField({
+class AppTextfieldFormBuilder extends StatefulWidget {
+  const AppTextfieldFormBuilder({
     super.key,
     required this.label,
-    required this.onChanged,
+    required this.name,
     this.hint,
     this.errorText,
     this.initialValue,
@@ -23,6 +24,7 @@ class AppTextField extends StatefulWidget {
   });
 
   final String label;
+  final String name;
   final String? hint;
   final String? errorText;
   final String? initialValue;
@@ -32,15 +34,14 @@ class AppTextField extends StatefulWidget {
   final Widget? suffix;
   final int maxLines;
   final void Function()? onTap;
-  final void Function(String) onChanged;
   final bool obscureText;
   final String? Function(String?)? validator;
 
   @override
-  State<AppTextField> createState() => _AppTextFieldState();
+  State<AppTextfieldFormBuilder> createState() => _AppTextfieldFormBuilderState();
 }
 
-class _AppTextFieldState extends State<AppTextField> {
+class _AppTextfieldFormBuilderState extends State<AppTextfieldFormBuilder> {
   final focusNode = FocusNode();
   bool boxFocus = false;
 
@@ -59,6 +60,7 @@ class _AppTextFieldState extends State<AppTextField> {
     });
     super.initState();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +83,7 @@ class _AppTextFieldState extends State<AppTextField> {
             borderRadius: ThemeRadius.small,
             border: Border.all(
               width: 1,
-              color: borderColor(),
+              color: borderColor()
             )
           ),
           child: Padding(
@@ -91,24 +93,20 @@ class _AppTextFieldState extends State<AppTextField> {
               left: widget.prefixIcon != null ? 0 : spacingUnit(2),
               right: widget.suffix != null ? 0 : spacingUnit(2)
             ),
-            child: TextFormField(
-              controller: widget.controller,
-              initialValue: widget.initialValue,
+            child: FormBuilderTextField(
+              key: widget.key,
+              name: widget.name,
               focusNode: focusNode,
               readOnly: widget.readOnly,
               maxLines: widget.maxLines,
               obscureText: widget.maxLines == 1 ? widget.obscureText : false,
               onTap: widget.onTap,
-              onChanged: (String value) => widget.onChanged(value),
               validator: widget.validator,
               decoration: InputDecoration(
-                border: InputBorder.none,
                 errorStyle: const TextStyle(fontSize: 0),
+                border: InputBorder.none,
                 enabledBorder: InputBorder.none,
                 labelText: widget.label,
-                labelStyle: TextStyle(
-                  color: widget.errorText != null ? Colors.red : null
-                ),
                 alignLabelWithHint: widget.maxLines != 1 ? true : false,
                 hintText: widget.hint ?? widget.hint,
                 prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,

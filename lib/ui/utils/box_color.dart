@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 Color colorType(type) {
   switch(type) {
-    case 'purple':
+    case 'vip':
       return Colors.purpleAccent;
-    case 'blue':
+    case 'gold':
       return Colors.orangeAccent;
-    case 'green':
+    case 'pro':
       return Colors.lightBlueAccent;
     default:
       return Colors.lightGreen;

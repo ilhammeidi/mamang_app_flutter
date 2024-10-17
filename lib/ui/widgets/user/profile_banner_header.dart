@@ -96,7 +96,9 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
             ),
             const SizedBox(width: 2),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed('/faq');
+              },
               icon: const Icon(Icons.help, size: 24, color: Colors.white)
             ),
           ]),

@@ -3,7 +3,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 
 class ThemeButton {
-  static BorderRadius buttonRadius = ThemeRadius.medium;
+  static BorderRadius buttonRadius = ThemeRadius.big;
 
   // Filled Button
   static ButtonStyle primary = FilledButton.styleFrom(

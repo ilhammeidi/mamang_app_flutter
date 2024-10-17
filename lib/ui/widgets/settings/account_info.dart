@@ -52,13 +52,10 @@ class AccountInfo extends StatelessWidget {
               height: 40,
               child: FilledButton(
                 onPressed: () {
-                  Get.toNamed('/change-profile');
+                  Get.toNamed('/edit-profile');
                 },
                 style: ThemeButton.tonalPrimary(context),
-                child: const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Icon(Icons.create),
-                  Text('Change Profile', style: ThemeText.subtitle),
-                ])
+                child: const Text('Change Profile', style: ThemeText.subtitle)
               ),
             ),
             const VSpaceShort(),

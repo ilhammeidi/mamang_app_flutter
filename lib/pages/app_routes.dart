@@ -1,6 +1,8 @@
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/pages/auth/login.dart';
+import 'package:mamang_app_flutter/pages/auth/otp_pin.dart';
 import 'package:mamang_app_flutter/pages/auth/register.dart';
+import 'package:mamang_app_flutter/pages/auth/reset_password.dart';
 import 'package:mamang_app_flutter/pages/auth/welcome.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
 import 'package:mamang_app_flutter/pages/business/create_new.dart';
@@ -11,13 +13,17 @@ import 'package:mamang_app_flutter/pages/event/detail.dart';
 import 'package:mamang_app_flutter/pages/event/event_main.dart';
 import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
 import 'package:mamang_app_flutter/pages/home.dart';
+import 'package:mamang_app_flutter/pages/profile/contact.dart';
+import 'package:mamang_app_flutter/pages/profile/faq_list.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_password.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_profile.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
+import 'package:mamang_app_flutter/pages/profile/terms_condition.dart';
 import 'package:mamang_app_flutter/pages/promo/detail.dart';
 import 'package:mamang_app_flutter/pages/promo/promo_main.dart';
 import 'package:mamang_app_flutter/pages/sample_button.dart';
 import 'package:mamang_app_flutter/pages/sample_dark_light.dart';
+import 'package:mamang_app_flutter/pages/sample_form_builder.dart';
 import 'package:mamang_app_flutter/pages/sample_forms.dart';
 import 'package:mamang_app_flutter/pages/sample_shadow.dart';
 import 'package:mamang_app_flutter/pages/sample_shimmer.dart';
@@ -30,7 +36,7 @@ import 'package:mamang_app_flutter/pages/search/search_map.dart';
 import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
 import 'package:mamang_app_flutter/ui/layouts/home_layout.dart';
 
-const int pageTransitionDuration = 100;
+const int pageTransitionDuration = 200;
 
 final List<GetPage> appRoutes = [
 
@@ -39,7 +45,7 @@ final List<GetPage> appRoutes = [
     name: '/',
     page: () => const HomeLayout(content: HomeMain()),
     transition: Transition.fadeIn,
-    transitionDuration: const Duration(microseconds: pageTransitionDuration)
+    transitionDuration: const Duration(milliseconds: pageTransitionDuration)
   ),
 
   /// USER AUTH
@@ -47,7 +53,7 @@ final List<GetPage> appRoutes = [
     name: '/welcome',
     page: () => const GeneralLayout(content: Welcome()),
     transition: Transition.fadeIn,
-    transitionDuration: const Duration(microseconds: pageTransitionDuration)
+    transitionDuration: const Duration(milliseconds: pageTransitionDuration)
   ),
   GetPage(
     name: '/login',
@@ -73,7 +79,7 @@ final List<GetPage> appRoutes = [
     name: '/saved',
     page: () => const HomeLayout(content: SavedMain()),
     transition: Transition.fadeIn,
-    transitionDuration: const Duration(microseconds: pageTransitionDuration)
+    transitionDuration: const Duration(milliseconds: pageTransitionDuration)
   ),
   GetPage(
     name: '/saved/:id',
@@ -93,7 +99,7 @@ final List<GetPage> appRoutes = [
     name: '/explore',
     page: () => const HomeLayout(content: ExploreMain()),
     transition: Transition.fadeIn,
-    transitionDuration: const Duration(microseconds: pageTransitionDuration)
+    transitionDuration: const Duration(milliseconds: pageTransitionDuration)
   ),
   GetPage(
     name: '/promos',
@@ -118,7 +124,7 @@ final List<GetPage> appRoutes = [
     name: '/business',
     page: () => const HomeLayout(content: BusinessMain()),
     transition: Transition.fadeIn,
-    transitionDuration: const Duration(microseconds: pageTransitionDuration)
+    transitionDuration: const Duration(milliseconds: pageTransitionDuration)
   ),
   GetPage(
     name: '/business/:id',
@@ -142,10 +148,10 @@ final List<GetPage> appRoutes = [
     name: '/profile',
     page: () => const HomeLayout(content: ProfileMain()),
     transition: Transition.fadeIn,
-    transitionDuration: const Duration(microseconds: pageTransitionDuration)
+    transitionDuration: const Duration(milliseconds: pageTransitionDuration)
   ),
   GetPage(
-    name: '/change-profile',
+    name: '/edit-profile',
     page: () => const GeneralLayout(content: EditProfile()),
   ),
   GetPage(
@@ -153,8 +159,32 @@ final List<GetPage> appRoutes = [
     page: () => const GeneralLayout(content: EditPassword()),
   ),
   GetPage(
+    name: '/reset-password',
+    page: () => const GeneralLayout(content: ResetPassword()),
+  ),
+  GetPage(
+    name: '/otp',
+    page: () => const GeneralLayout(content: OtpPin()),
+  ),
+  GetPage(
+    name: '/contact',
+    page: () => const GeneralLayout(content: Contact()),
+  ),
+  GetPage(
+    name: '/faq',
+    page: () => const GeneralLayout(content: FaqList()),
+  ),
+  GetPage(
+    name: '/terms-conditions',
+    page: () => const GeneralLayout(content: TermsCondition()),
+  ),
+  GetPage(
     name: '/forms',
     page: () => const GeneralLayout(content: SampleForm()),
+  ),
+  GetPage(
+    name: '/form-builder',
+    page: () => GeneralLayout(content: SampleFormBuilder()),
   ),
   GetPage(
     name: '/buttons',

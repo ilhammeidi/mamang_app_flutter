@@ -21,19 +21,19 @@ class EventController extends GetxController {
   }
 
   void getEvent(id) {
-    var result = eventList.where((item) => item.id == id).toList();
+    var result = eventList.firstWhere((item) => item.id == id);
     selectedEvent.update((eventValue) {
-      eventValue!.id = result[0].id;
-      eventValue.title = result[0].title;
-      eventValue.desc = result[0].desc;
-      eventValue.thumb = result[0].thumb;
-      eventValue.clue1 = result[0].clue1;
-      eventValue.clue2 = result[0].clue2;
-      eventValue.clue3 = result[0].clue3;
-      eventValue.date = result[0].date;
-      eventValue.liked = result[0].liked;
-      eventValue.point = result[0].point;
-      eventValue.category = result[0].category;
+      eventValue!.id = result.id;
+      eventValue.title = result.title;
+      eventValue.desc = result.desc;
+      eventValue.thumb = result.thumb;
+      eventValue.clue1 = result.clue1;
+      eventValue.clue2 = result.clue2;
+      eventValue.clue3 = result.clue3;
+      eventValue.date = result.date;
+      eventValue.liked = result.liked;
+      eventValue.point = result.point;
+      eventValue.category = result.category;
     });
   }
 }
