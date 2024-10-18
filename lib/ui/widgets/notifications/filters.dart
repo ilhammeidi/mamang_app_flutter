@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 
 class NotificationFilters extends StatelessWidget {
   const NotificationFilters({super.key, required this.selected, this.onChangeFilter});
@@ -9,8 +11,9 @@ class NotificationFilters extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Get.isDarkMode;
     ButtonStyle buttonStyle = ThemeButton.btnSmall.merge(ThemeButton.tonalDefault(context));
-    ButtonStyle selectedStyle = ThemeButton.btnSmall.merge(ThemeButton.black);
+    ButtonStyle selectedStyle =  ThemeButton.btnSmall.merge(isDark ? ThemeButton.tonalSecondary(context) : ThemeButton.black);
 
     return SizedBox(
       height: 30,

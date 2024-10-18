@@ -233,6 +233,42 @@ class SettingList extends StatelessWidget {
               ),
               const LineList(),
               ListTile(
+                leading: const Icon(Icons.public),
+                title: const Text('Search Map'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/search-map');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.list_alt_outlined),
+                title: const Text('Search result'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/search-result');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.chat_bubble_outline),
+                title: const Text('Chat'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/inbox');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.notifications_outlined),
+                title: const Text('Notifications'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/notifications');
+                },
+              ),
+              const LineList(),
+              ListTile(
                 leading: const Icon(Icons.bookmark_outline),
                 title: const Text('Saved Promo'),
                 trailing: const Icon(Icons.arrow_forward_ios),

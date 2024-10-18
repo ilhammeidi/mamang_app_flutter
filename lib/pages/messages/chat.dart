@@ -63,7 +63,7 @@ class _ChatPageState extends State<ChatPage> {
         actions: [
           MenuAnchor(
             childFocusNode: _buttonFocusNode,
-            alignmentOffset: const Offset(-20, 0),
+            alignmentOffset: const Offset(-50, 0),
             builder: (BuildContext context, MenuController controller, Widget? child) {
               return IconButton(
                 focusNode: _buttonFocusNode,
@@ -80,7 +80,7 @@ class _ChatPageState extends State<ChatPage> {
             menuChildren: <Widget>[
               MenuItemButton(
                 child: const Row(children: [
-                  Icon(Icons.store_outlined),
+                  Icon(Icons.store_outlined, size: 16),
                   SizedBox(width: 4,),
                   Text('Home'),
                 ]),
@@ -90,7 +90,7 @@ class _ChatPageState extends State<ChatPage> {
               ),
               MenuItemButton(
                 child: const Row(children: [
-                  Icon(Icons.block),
+                  Icon(Icons.block, size: 16),
                   SizedBox(width: 4,),
                   Text('Block')
                 ]),
@@ -100,7 +100,7 @@ class _ChatPageState extends State<ChatPage> {
               ),
               MenuItemButton(
                 child: const Row(children: [
-                  Icon(Icons.report_outlined),
+                  Icon(Icons.report_outlined, size: 16),
                   SizedBox(width: 4,),
                   Text('Report')
                 ]),
