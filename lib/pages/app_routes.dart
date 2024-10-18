@@ -13,6 +13,7 @@ import 'package:mamang_app_flutter/pages/event/detail.dart';
 import 'package:mamang_app_flutter/pages/event/event_main.dart';
 import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
 import 'package:mamang_app_flutter/pages/home.dart';
+import 'package:mamang_app_flutter/pages/messages/inbox.dart';
 import 'package:mamang_app_flutter/pages/messages/notifications.dart';
 import 'package:mamang_app_flutter/pages/profile/contact.dart';
 import 'package:mamang_app_flutter/pages/profile/faq_list.dart';
@@ -51,6 +52,10 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/notifications',
     page: () => const GeneralLayout(content: Notifications()),
+  ),
+   GetPage(
+    name: '/inbox',
+    page: () => const GeneralLayout(content: Inbox()),
   ),
 
   /// USER AUTH

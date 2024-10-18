@@ -67,7 +67,9 @@ class HomeHeader extends StatelessWidget {
       /// ACTION BUTTONS
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed('/inbox');
+          },
           icon: Badge.count(
             backgroundColor: ThemePalette.tertiaryMain,
             count: 5,

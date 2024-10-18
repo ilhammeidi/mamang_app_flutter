@@ -78,7 +78,9 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
           right: spacingUnit(1),
           child: Row(children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed('/inbox');
+              },
               icon: Badge.count(
                 backgroundColor: ThemePalette.tertiaryMain,
                 count: 5,
@@ -88,7 +90,7 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
             const SizedBox(width: 2),
             IconButton(
               onPressed: () {
-                Get.toNamed('notifications');
+                Get.toNamed('/notifications');
               },
               icon: Badge.count(
                 backgroundColor: ThemePalette.tertiaryMain,
@@ -128,7 +130,7 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
                         tag: userDummy.avatar,
                         child: GestureDetector(
                           onTap: () {
-                            Get.to(ImageViewer(img: userDummy.avatar));
+                            Get.to(() => ImageViewer(img: userDummy.avatar));
                           },
                           child: CircleAvatar(
                             radius: 50,

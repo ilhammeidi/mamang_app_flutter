@@ -39,7 +39,7 @@ class DetailThumbLocation extends StatelessWidget {
           /// THUMBNAIL
           GestureDetector(
             onTap: () {
-              Get.to(ImageViewer(img: thumb));
+              Get.to(() => ImageViewer(img: thumb));
             },
             child: Hero(
               tag: thumb,
@@ -106,7 +106,7 @@ class DetailThumbLocation extends StatelessWidget {
                   tag:qrImg ,
                   child: GestureDetector(
                     onTap: () {
-                      Get.to(const ImageViewer(img: qrImg, isLocal: true,));
+                      Get.to(() => const ImageViewer(img: qrImg, isLocal: true,));
                     },
                     child: Image.asset(qrImg, fit: BoxFit.contain)
                   )

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
@@ -36,8 +35,8 @@ class NotifItem extends StatelessWidget {
           ListTile(
             leading: _buildIcon(context, type),
             title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-            subtitle: Text(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis,),
-            trailing: Text(date, style: ThemeText.caption,),
+            subtitle: Text(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis),
+            trailing: Text(date, style: ThemeText.caption),
           ),
           image != null ? 
             Padding(padding: const EdgeInsets.all(8),

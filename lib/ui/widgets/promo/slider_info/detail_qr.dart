@@ -32,7 +32,7 @@ class DetailQr extends StatelessWidget {
             tag:qrImg ,
             child: GestureDetector(
               onTap: () {
-                Get.to(const ImageViewer(img: qrImg, isLocal: true,));
+                Get.to(() => const ImageViewer(img: qrImg, isLocal: true,));
               },
               child: Image.asset(qrImg, fit: BoxFit.contain)
             )

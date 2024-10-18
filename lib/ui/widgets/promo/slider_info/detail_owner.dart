@@ -36,7 +36,7 @@ class DetailOwner extends StatelessWidget {
             tag: avatar,
             child: GestureDetector(
               onTap: () {
-                Get.to(ImageViewer(img: avatar));
+                Get.to(() => ImageViewer(img: avatar));
               },
               child: CircleAvatar(
                 radius: 50,
@@ -93,7 +93,7 @@ class DetailOwner extends StatelessWidget {
               tag:qrImg ,
               child: GestureDetector(
                 onTap: () {
-                  Get.to(const ImageViewer(img: qrImg, isLocal: true,));
+                  Get.to(() => const ImageViewer(img: qrImg, isLocal: true,));
                 },
                 child: Image.asset(qrImg, fit: BoxFit.contain)
               )

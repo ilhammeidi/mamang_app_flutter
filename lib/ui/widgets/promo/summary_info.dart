@@ -36,7 +36,7 @@ class SummaryInfo extends StatelessWidget {
             tag: thumb,
             child: GestureDetector(
               onTap: () {
-                Get.to(ImageViewer(img: thumb));
+                Get.to(() => ImageViewer(img: thumb));
               },
               child: ClipRRect(
                 borderRadius: ThemeRadius.small,

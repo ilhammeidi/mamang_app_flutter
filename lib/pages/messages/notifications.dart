@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/_http/_stub/_file_decoder_stub.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/notification.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';

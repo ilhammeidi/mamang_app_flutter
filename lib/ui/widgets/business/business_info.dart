@@ -53,7 +53,7 @@ class BusinessInfo extends StatelessWidget {
     ];
 
     void open(BuildContext context, final int index) {
-      Get.to(GalleryPhotoViewWrapper(
+      Get.to(() => GalleryPhotoViewWrapper(
         galleryItems: galleryItems,
         backgroundDecoration: const BoxDecoration(
           color: Colors.black,
