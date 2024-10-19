@@ -33,7 +33,7 @@ class Puzzles extends StatelessWidget {
                 liked: item.liked,
                 onTap: () {
                   if(item.progress.length < 9) {
-                    Get.toNamed('/puzzle/$index');
+                    Get.toNamed('/puzzle/${index+1}');
                   } else {
                     Get.toNamed('/voucher');
                   }

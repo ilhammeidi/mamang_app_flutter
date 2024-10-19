@@ -4,6 +4,7 @@ import 'package:mamang_app_flutter/models/notification.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/notifications/filters.dart';
+import 'package:mamang_app_flutter/ui/widgets/notifications/notif_empty.dart';
 import 'package:mamang_app_flutter/ui/widgets/notifications/notif_item.dart';
 
 class Notifications extends StatefulWidget {
@@ -16,6 +17,7 @@ class Notifications extends StatefulWidget {
 class _NotificationsState extends State<Notifications> {
   List _filteredItems = [];
   String _selectedFilter = 'all';
+  bool _isClear = false;
 
   void handleFilter(type) {
     var result = notifList
@@ -65,7 +67,11 @@ class _NotificationsState extends State<Notifications> {
         ]),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                _isClear = true;
+              });
+            },
             child: const Row(children: [
               Icon(Icons.clear_all_outlined, size: 18),
               SizedBox(width: 4,),
@@ -76,7 +82,7 @@ class _NotificationsState extends State<Notifications> {
         ],
         centerTitle: false,
       ),
-      body: Column(
+      body: _isClear ? const NotifEmpty() : Column(
         children: [
           /// FILTER
           Padding(

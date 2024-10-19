@@ -6,6 +6,7 @@ import 'package:mamang_app_flutter/models/promos.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
+import 'package:mamang_app_flutter/ui/widgets/business/business_not_found.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/fadded_bottom_header.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/coloured_box_detail.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/parallax_cover.dart';
@@ -45,7 +46,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
     var type = controller.selectedPromo.value.type;
 
-    return Scaffold(
+    return controller.isNotFound.value ? const BusinessNotFound() : Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         forceMaterialTransparency: true,

@@ -1,7 +1,7 @@
 import 'package:mamang_app_flutter/models/img_api.dart';
 
 class Puzzle {
-  final int id;
+  final String id;
   final String name;
   final bool liked;
   final String time;
@@ -10,19 +10,19 @@ class Puzzle {
   final String progress;
 
   Puzzle({
-    required this.id,
-    required this.name,
-    required this.liked,
-    required this.time,
-    required this.thumb,
-    required this.image,
-    required this.progress
+    this.id = '0',
+    this.name = '',
+    this.liked = false,
+    this.time = '',
+    this.thumb = '',
+    this.image = '',
+    this.progress = ''
   });
 }
 
 final List<Puzzle> puzzleList = [
   Puzzle(
-    id: 1,
+    id: '1',
     name: 'First-Time Customer Discounts',
     liked: true,
     time: '2 Days',
@@ -31,7 +31,7 @@ final List<Puzzle> puzzleList = [
     progress: '123456789'
   ),
   Puzzle(
-    id: 2,
+    id: '2',
     name: 'Leverage holidays and special occasions',
     liked: false,
     time: '01:12',
@@ -40,7 +40,7 @@ final List<Puzzle> puzzleList = [
     progress: '123456789'
   ),
   Puzzle(
-    id: 3,
+    id: '3',
     name: 'Volume Discounts',
     liked: true,
     time: '02:00',
@@ -49,7 +49,7 @@ final List<Puzzle> puzzleList = [
     progress: '24689',
   ),
   Puzzle(
-    id: 4,
+    id: '4',
     name: 'Flash Sales',
     liked: false,
     time: '2 Day',
@@ -58,7 +58,7 @@ final List<Puzzle> puzzleList = [
     progress: '123456789'
   ),
   Puzzle(
-    id: 5,
+    id: '5',
     name: 'Limited-time flash sales',
     liked: false,
     time: '01:22',

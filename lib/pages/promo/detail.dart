@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/controllers/all_promo_controller.dart';
@@ -16,6 +15,7 @@ import 'package:mamang_app_flutter/ui/widgets/promo/coloured_box_detail.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/description_detail.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/parallax_cover.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/promo_list_single.dart';
+import 'package:mamang_app_flutter/ui/widgets/promo/promo_not_found.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/working_time.dart';
 
 class PromoDetail extends StatefulWidget {
@@ -66,7 +66,7 @@ class _PromoDetailState extends State<PromoDetail> {
       promoList[59],
     ];
     
-    return Scaffold(
+    return controller.isNotFound.value ? const PromoNotFound() : Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         forceMaterialTransparency: true,

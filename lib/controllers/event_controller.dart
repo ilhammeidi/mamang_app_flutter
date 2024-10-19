@@ -7,6 +7,7 @@ class EventController extends GetxController {
   var allData = <Event>[].obs;
   var filteredList = <Event>[].obs;
   final selectedEvent = Event().obs;
+  var isNotFound = false.obs;
 
   @override
   void onInit() {
@@ -21,19 +22,24 @@ class EventController extends GetxController {
   }
 
   void getEvent(id) {
-    var result = eventList.firstWhere((item) => item.id == id);
-    selectedEvent.update((eventValue) {
-      eventValue!.id = result.id;
-      eventValue.title = result.title;
-      eventValue.desc = result.desc;
-      eventValue.thumb = result.thumb;
-      eventValue.clue1 = result.clue1;
-      eventValue.clue2 = result.clue2;
-      eventValue.clue3 = result.clue3;
-      eventValue.date = result.date;
-      eventValue.liked = result.liked;
-      eventValue.point = result.point;
-      eventValue.category = result.category;
-    });
+    var result = eventList.firstWhere((item) => item.id == id, orElse: () => Event());
+
+    if (result.id == '0') {
+      isNotFound.value = true;
+    } else {
+      selectedEvent.update((eventValue) {
+        eventValue!.id = result.id;
+        eventValue.title = result.title;
+        eventValue.desc = result.desc;
+        eventValue.thumb = result.thumb;
+        eventValue.clue1 = result.clue1;
+        eventValue.clue2 = result.clue2;
+        eventValue.clue3 = result.clue3;
+        eventValue.date = result.date;
+        eventValue.liked = result.liked;
+        eventValue.point = result.point;
+        eventValue.category = result.category;
+      });
+    }
   }
 }

@@ -6,18 +6,18 @@ import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/saved/puzzle_banner.dart';
 import 'package:mamang_app_flutter/ui/widgets/saved/puzzle_block.dart';
+import 'package:mamang_app_flutter/ui/widgets/saved/puzzle_not_found.dart';
 
 class PuzzleDetail extends StatelessWidget {
   PuzzleDetail({super.key});
 
-  final String id = Get.parameters['id'] ?? '';
+  final String puzzleId = Get.parameters['id'] ?? '';
 
   @override
   Widget build(BuildContext context) {
-    int puzzleId = int.parse(id);
-    Puzzle item = puzzleList[puzzleId];
+    Puzzle item = puzzleList.firstWhere((item) => item.id == puzzleId, orElse: () => Puzzle());
 
-    return Scaffold(
+    return item.id == '0' ? const PuzzleNotFound() : Scaffold(
       body: Column(children: [
         PuzzleBanner(imageBanner: item.thumb),
         PuzzleBlock(

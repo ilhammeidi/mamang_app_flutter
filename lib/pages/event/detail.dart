@@ -8,6 +8,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/event/event_desc.dart';
+import 'package:mamang_app_flutter/ui/widgets/event/event_not_found.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/promo_list.dart';
 
 class EventDetail extends StatefulWidget {
@@ -58,7 +59,7 @@ class _EventDetailState extends State<EventDetail> {
       });
     });
   
-    return Scaffold(
+    return controller.isNotFound.value ? const EventNotFound() : Scaffold(
       appBar: AppBar(
         toolbarHeight: 60,
         forceMaterialTransparency: true,

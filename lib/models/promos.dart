@@ -24,7 +24,7 @@ class Promotion {
     this.id = 0,
     this.userId = 0,
     this.name = '',
-    this.thumb = '',
+    this.thumb = 'https://res.cloudinary.com/doosabwhn/image/upload/v1726757161/9_n6bwog.jpg',
     this.category = '',
     this.desc = '',
     this.distance = 0,

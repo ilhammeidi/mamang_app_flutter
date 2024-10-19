@@ -17,7 +17,7 @@ class SearchHome extends StatelessWidget {
     final bool isTablet = MediaQuery.of(context).size.width >= 480;
 
     return Container(
-      height: isTablet ? 350 : 300,
+      height: isTablet ? 350 : 290,
       decoration: BoxDecoration(
         gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
       ),
