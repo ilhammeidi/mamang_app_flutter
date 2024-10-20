@@ -4,6 +4,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_bottom.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
 
 class TabMenu extends StatelessWidget {
@@ -15,23 +16,26 @@ class TabMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isDark = Get.isDarkMode;
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
-    return Container(
+    return DecoratedBox(
       decoration: BoxDecoration(
-        gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
+        color: colorScheme.surfaceContainerLowest,
       ),
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           Positioned(
-            bottom: 0,
+            top: 0,
             left: 0,
             child: ClipPath(
-              clipper: RoundedClipPathTop(),
+              clipper: RoundedClipPathBottom(),
               child: Container(
-                height: 70,
+                height: 50,
                 width: MediaQuery.of(context).size.width,
-                color: Theme.of(context).colorScheme.surfaceContainerLowest,
+                decoration: BoxDecoration(
+                  gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
+                )
               ),
             )
           ),
@@ -40,7 +44,7 @@ class TabMenu extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surface,
+              color: colorScheme.surface,
               boxShadow: [ThemeShade.shadeSoft(context)],
               borderRadius: ThemeRadius.big
             ),
@@ -58,13 +62,14 @@ class TabMenu extends StatelessWidget {
   }
 
   Widget _buttonTab(bool isSelected, String text, Function() onSelect, context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return FilledButton(
       onPressed: () {
         onSelect();
       },
       style: FilledButton.styleFrom(
-        backgroundColor: isSelected ? Theme.of(context).colorScheme.primaryContainer : Colors.transparent,
-        foregroundColor: isSelected ? Theme.of(context).colorScheme.onPrimaryContainer : Theme.of(context).colorScheme.onSurface,
+        backgroundColor: isSelected ? colorScheme.primaryContainer : Colors.transparent,
+        foregroundColor: isSelected ? colorScheme.onPrimaryContainer : colorScheme.onSurface,
         shape: RoundedRectangleBorder(
           borderRadius: ThemeRadius.big
         )
