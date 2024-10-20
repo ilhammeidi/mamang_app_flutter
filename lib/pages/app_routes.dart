@@ -199,7 +199,7 @@ final List<GetPage> appRoutes = [
   ),
   GetPage(
     name: '/form-builder',
-    page: () => GeneralLayout(content: SampleFormBuilder()),
+    page: () => const GeneralLayout(content: SampleFormBuilder()),
   ),
   GetPage(
     name: '/buttons',
