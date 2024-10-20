@@ -15,12 +15,12 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDark = Get.isDarkMode;
-
     return AppBar(
       toolbarHeight: 100,
+      backgroundColor: Colors.transparent,
+      forceMaterialTransparency: true,
       bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(20),
+        preferredSize: const Size.fromHeight(0),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           height: 20,
@@ -29,16 +29,19 @@ class HomeHeader extends StatelessWidget {
             borderRadius: BorderRadius.only(
               topLeft: isFixed ? const Radius.circular(20) : const Radius.circular(0),
               topRight: isFixed ? const Radius.circular(20) : const Radius.circular(0)
-            )
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: isFixed ? Colors.white : Colors.transparent,
+                blurRadius: 0.0,
+                spreadRadius: 0.0,
+                offset: const Offset(0, 1),
+              ),
+            ],
           ),
         ),
       ),
       automaticallyImplyLeading: false,
-      flexibleSpace: Container(
-        decoration: BoxDecoration(
-          gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
-        ),
-      ),
       titleSpacing: spacingUnit(1),
       title: Row(children: [
         /// AVATAR AND USER PROFILE

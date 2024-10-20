@@ -14,7 +14,7 @@ class SearchHome extends StatelessWidget {
     final bool isTablet = MediaQuery.of(context).size.width >= 480;
 
     return SizedBox(
-      height: isTablet ? 200 : 180,
+      height: isTablet ? 250 : 190,
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -32,6 +32,7 @@ class SearchHome extends StatelessWidget {
             )
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               /// HOME BANNER
               const HomeBanner(),
