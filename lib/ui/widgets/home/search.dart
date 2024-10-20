@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -13,16 +11,12 @@ class SearchHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDark = Get.isDarkMode;
     final bool isTablet = MediaQuery.of(context).size.width >= 480;
 
-    return Container(
-      height: isTablet ? 350 : 290,
-      decoration: BoxDecoration(
-        gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
-      ),
+    return SizedBox(
+      height: isTablet ? 200 : 180,
       child: Stack(
-        alignment: Alignment.bottomCenter,
+        alignment: Alignment.topCenter,
         children: [
           /// DECORATION
           Positioned(
@@ -38,12 +32,12 @@ class SearchHome extends StatelessWidget {
             )
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               /// HOME BANNER
               const HomeBanner(),
+              SizedBox(height: spacingUnit(1)),
               Padding(
-                padding: EdgeInsets.all(spacingUnit(1)),
+                padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
                 child: Row(
                   children: [
                     /// QR CODE SCANNER

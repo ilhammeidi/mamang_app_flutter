@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:get/route_manager.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/fadded_bottom_header.dart';
 import 'package:mamang_app_flutter/ui/widgets/home/download_mobile_app.dart';
@@ -20,6 +22,7 @@ class HomeMain extends StatefulWidget {
 }
 
 class _HomeMainState extends State<HomeMain> {
+  final bool isDark = Get.isDarkMode;
   final ScrollController _scrollref = ScrollController();
 
   bool _isFixed = false;
@@ -32,6 +35,8 @@ class _HomeMainState extends State<HomeMain> {
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+
     _scrollref.addListener(() {
       setState(() {
         if(_scrollref.offset > 200) {
@@ -43,60 +48,72 @@ class _HomeMainState extends State<HomeMain> {
     });
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100),
         child: HomeHeader(isFixed: _isFixed),
       ),
-      body: Stack(
-        children: [
-          CustomScrollView(
-            controller: _scrollref,
-            slivers: <Widget>[
-              // Search and Banner
-              const SliverToBoxAdapter(child: SearchHome()),
-              const SliverToBoxAdapter(child: VSpaceShort()),
-          
-              // Download Mobile Apps
-              SliverToBoxAdapter(child: kIsWeb ? const DownloadMobileApp() : Container()),
-          
-              // Categories
-              const CategoriesGrid(),
-              const SliverToBoxAdapter(child: VSpace()),
-          
-              // Slider Carousel
-              const SliverToBoxAdapter(child: PremiumSlider()),
-              const SliverToBoxAdapter(child: VSpaceBig()),
-          
-              // Promotions
-              const SliverToBoxAdapter(child: PromoListDouble()),
-              const SliverToBoxAdapter(child: VSpaceBig()),
-          
-              // Events
-              const SliverToBoxAdapter(child: LatestEvent()),
-              
-              // News
-              const SliverToBoxAdapter(child: VSpace()),
-              const SliverToBoxAdapter(child: NewsList()),
-              const SliverToBoxAdapter(child: VSpaceBig()),
-              // Active Users
-              const SliverPadding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                sliver: UserGrid(),
-              ),
-              const SliverToBoxAdapter(child: SizedBox(
-                height: 120,
-              )),
-            ],
-          ),
-          Positioned(
-            top: 100,
-            child: Opacity(
-              opacity: _isFixed ? 1 : 0,
-              child: const FadedBottomHeader()
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
+        ),
+        child: Stack(
+          children: [
+            CustomScrollView(
+              controller: _scrollref,
+              slivers: <Widget>[
+                // Search and Banner
+                const SliverToBoxAdapter(child: SearchHome()),
+            
+                // MAIN SECTIONS
+                DecoratedSliver(
+                  decoration: BoxDecoration(
+                    color: colorScheme.surface
+                  ),
+                  sliver: SliverMainAxisGroup(slivers: [
+                          // Download Mobile Apps
+                    const SliverToBoxAdapter(child: VSpaceShort()),
+                    SliverToBoxAdapter(child: kIsWeb ? const DownloadMobileApp() : Container()),
+                                      
+                    // Categories
+                    const CategoriesGrid(),
+                    const SliverToBoxAdapter(child: VSpace()),
+                                      
+                    // Slider Carousel
+                    const SliverToBoxAdapter(child: PremiumSlider()),
+                    const SliverToBoxAdapter(child: VSpaceBig()),
+                                      
+                    // Promotions
+                    const SliverToBoxAdapter(child: PromoListDouble()),
+                    const SliverToBoxAdapter(child: VSpaceBig()),
+                                      
+                    // Events
+                    const SliverToBoxAdapter(child: LatestEvent()),
+                    
+                    // News
+                    const SliverToBoxAdapter(child: VSpace()),
+                    const SliverToBoxAdapter(child: NewsList()),
+                    const SliverToBoxAdapter(child: VSpaceBig()),
+                    // Active Users
+                    const SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      sliver: UserGrid(),
+                    ),
+                    const SliverToBoxAdapter(child: SizedBox(
+                      height: 120,
+                    )),
+                  ]),
+                )
+              ],
             ),
-          ),
-        ],
+            Positioned(
+              top: 0,
+              child: Opacity(
+                opacity: _isFixed ? 1 : 0,
+                child: const FadedBottomHeader()
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
