@@ -33,6 +33,7 @@ class _BusinessMainState extends State<BusinessMain> {
   @override
   Widget build(BuildContext context) {
     final bool isDark = Get.isDarkMode;
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     _scrollref.addListener(() {
       setState(() {
@@ -50,81 +51,107 @@ class _BusinessMainState extends State<BusinessMain> {
         preferredSize: const Size.fromHeight(100),
         child: BusinessHeader(isFixed: _isFixed),
       ),
-      body: Stack(
-        children: [
-          ListView(
-            controller: _scrollref,
-            children: [
-              Container(
-                height: containerHeight,
-                decoration: BoxDecoration(
-                  gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
-                ),
-                child: Stack(
-                  alignment: Alignment.bottomCenter,
-                  children: [
-                    Positioned(
-                      bottom: 0,
-                      left: 0,
-                      child: ClipPath(
-                        clipper: RoundedClipPathTop(),
-                        child: Container(
-                          height: 80,
-                          width: MediaQuery.of(context).size.width,
-                          color: Theme.of(context).colorScheme.surfaceContainerLowest,
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
+        ),
+        child: Column(
+          children: [
+            const SizedBox(height: 100),
+            Expanded(
+              child: Stack(
+                children: [
+                  ListView(
+                    padding: const EdgeInsets.all(0),
+                    controller: _scrollref,
+                    children: [
+                      SizedBox(
+                        height: containerHeight,
+                        child: Stack(
+                          alignment: Alignment.bottomCenter,
+                          children: [
+                            /// CURVE DECORATION
+                            Positioned(
+                              bottom: 0,
+                              left: 0,
+                              child: ClipPath(
+                                clipper: RoundedClipPathTop(),
+                                child: Container(
+                                  height: 80,
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                    color: colorScheme.surfaceContainerLowest,
+                                    boxShadow: [BoxShadow(
+                                      color: colorScheme.surfaceContainerLowest,
+                                      blurRadius: 0.0,
+                                      spreadRadius: 0.0,
+                                      offset: const Offset(0, 2),
+                                    )],
+                                  )
+                                ),
+                              )
+                            ),
+                            /// INFOGRAPHIC STATS
+                            InfographicList(height: containerHeight)
+                          ],
                         ),
-                      )
-                    ),
-                    InfographicList(height: containerHeight,)
-                  ],
-                ),
-              ),
-              const VSpace(),
-              GetBuilder<BusinessController>(
-                builder: (controller) {
-                  return GridView.builder(
-                    shrinkWrap: true,
-                    padding: EdgeInsets.all(spacingUnit(1)),
-                    physics: const ClampingScrollPhysics(),
-                    itemCount: controller.myBusiness.length,
-                    gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 200,
-                      mainAxisExtent: 270,
-                      mainAxisSpacing: 16,
-                      crossAxisSpacing: 16,
-                    ),
-                    itemBuilder: (context, index) {
-                      Promotion item = controller.myBusiness[index];
-                      return GestureDetector(
-                        onTap: () {
-                          Get.toNamed('/business/${item.id}');
-                        },
-                        child: BusinessCard(
-                          id: item.id,
-                          name: item.name,
-                          thumb: item.thumb,
-                          category: item.category,
-                          verified: item.verified,
-                          stared: item.stared,
-                          type: item.type,
-                          level: item.level
+                      ),
+
+                      /// BUSINESS ITEMS
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: colorScheme.surfaceContainerLowest
                         ),
-                      );
-                    }
-                  );
-                }
+                        child: GetBuilder<BusinessController>(
+                          builder: (controller) {
+                            return GridView.builder(
+                              shrinkWrap: true,
+                              padding: EdgeInsets.all(spacingUnit(1)),
+                              physics: const ClampingScrollPhysics(),
+                              itemCount: controller.myBusiness.length,
+                              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                                maxCrossAxisExtent: 200,
+                                mainAxisExtent: 280,
+                                mainAxisSpacing: 16,
+                                crossAxisSpacing: 16,
+                              ),
+                              itemBuilder: (context, index) {
+                                Promotion item = controller.myBusiness[index];
+                                return GestureDetector(
+                                  onTap: () {
+                                    Get.toNamed('/business/${item.id}');
+                                  },
+                                  child: BusinessCard(
+                                    id: item.id,
+                                    name: item.name,
+                                    thumb: item.thumb,
+                                    category: item.category,
+                                    verified: item.verified,
+                                    stared: item.stared,
+                                    type: item.type,
+                                    level: item.level
+                                  ),
+                                );
+                              }
+                            );
+                          }
+                        ),
+                      ),
+                      const VSpaceBig()
+                    ],
+                  ),
+                  Positioned(
+                    top: 0,
+                    child: Opacity(
+                      opacity: _isFixed ? 1 : 0,
+                      child: const FadedBottomHeader()
+                    ),
+                  ),
+                ],
               ),
-              const VSpaceBig()
-            ],
-          ),
-          Positioned(
-            top: 100,
-            child: Opacity(
-              opacity: _isFixed ? 1 : 0,
-              child: const FadedBottomHeader()
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

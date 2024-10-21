@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -13,14 +11,11 @@ class SearchHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDark = Get.isDarkMode;
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     final bool isTablet = MediaQuery.of(context).size.width >= 480;
 
-    return Container(
-      height: isTablet ? 350 : 290,
-      decoration: BoxDecoration(
-        gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
-      ),
+    return SizedBox(
+      height: isTablet ? 250 : 195,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
@@ -33,7 +28,15 @@ class SearchHome extends StatelessWidget {
               child: Container(
                 height: 80,
                 width: MediaQuery.of(context).size.width,
-                color: Theme.of(context).colorScheme.surfaceContainerLowest,
+                decoration: BoxDecoration(
+                  color: colorScheme.surfaceContainerLowest,
+                  boxShadow: [BoxShadow(
+                    color: colorScheme.surfaceContainerLowest,
+                    blurRadius: 0.0,
+                    spreadRadius: 0.0,
+                    offset: const Offset(0, 2),
+                  ),]
+                ),
               ),
             )
           ),
@@ -55,7 +58,7 @@ class SearchHome extends StatelessWidget {
                         padding: EdgeInsets.all(spacingUnit(1)),
                         decoration: BoxDecoration(
                           boxShadow: [ThemeShade.shadeSoft(context)],
-                          color: Theme.of(context).colorScheme.surface,
+                          color: colorScheme.surface,
                           borderRadius: ThemeRadius.small
                         ),
                         child: const Icon(Icons.qr_code_scanner, size: 32,)

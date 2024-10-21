@@ -14,6 +14,7 @@ class TabMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     final bool isDark = Get.isDarkMode;
 
     return Container(
@@ -31,7 +32,17 @@ class TabMenu extends StatelessWidget {
               child: Container(
                 height: 70,
                 width: MediaQuery.of(context).size.width,
-                color: Theme.of(context).colorScheme.surfaceContainerLowest,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerLowest,
+                  boxShadow: [
+                    BoxShadow(
+                      color: colorScheme.surfaceContainerLowest,
+                      blurRadius: 0.0,
+                      spreadRadius: 0.0,
+                      offset: const Offset(0, 2),
+                    ),
+                  ]
+                ),
               ),
             )
           ),
@@ -40,7 +51,7 @@ class TabMenu extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surface,
+              color: colorScheme.surface,
               boxShadow: [ThemeShade.shadeSoft(context)],
               borderRadius: ThemeRadius.big
             ),
@@ -58,13 +69,14 @@ class TabMenu extends StatelessWidget {
   }
 
   Widget _buttonTab(bool isSelected, String text, Function() onSelect, context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return FilledButton(
       onPressed: () {
         onSelect();
       },
       style: FilledButton.styleFrom(
-        backgroundColor: isSelected ? Theme.of(context).colorScheme.primaryContainer : Colors.transparent,
-        foregroundColor: isSelected ? Theme.of(context).colorScheme.onPrimaryContainer : Theme.of(context).colorScheme.onSurface,
+        backgroundColor: isSelected ? colorScheme.primaryContainer : Colors.transparent,
+        foregroundColor: isSelected ? colorScheme.onPrimaryContainer : colorScheme.onSurface,
         shape: RoundedRectangleBorder(
           borderRadius: ThemeRadius.big
         )

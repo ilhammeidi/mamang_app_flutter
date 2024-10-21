@@ -129,7 +129,6 @@ class _SampleFormBuilderState extends State<SampleFormBuilder> {
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                print(_formKey.currentState?.errors);
                 // if(_nameFieldKey.currentState?.isValid ?? false){
                 //   setState(() {
                 //     _message = '';

@@ -12,7 +12,8 @@ class MiniMap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isDark = Get.isDarkMode;
-    
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+
     return Container(
       decoration: BoxDecoration(
         gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
@@ -22,14 +23,22 @@ class MiniMap extends StatelessWidget {
         children: [
           /// DECORATION
           Positioned(
-            bottom: -2,
+            bottom: 0,
             left: 0,
             child: ClipPath(
               clipper: RoundedClipPathTop(),
               child: Container(
                 height: 100,
                 width: MediaQuery.of(context).size.width,
-                color: Theme.of(context).colorScheme.surfaceContainerLowest,
+                decoration: BoxDecoration(
+                  color: colorScheme.surfaceContainerLowest,
+                  boxShadow: [BoxShadow(
+                    color: colorScheme.surfaceContainerLowest,
+                    blurRadius: 0.0,
+                    spreadRadius: 0.0,
+                    offset: const Offset(0, 2),
+                  )],
+                ),
               ),
             ),
           ),

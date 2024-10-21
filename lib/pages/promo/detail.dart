@@ -170,7 +170,13 @@ class _PromoDetailState extends State<PromoDetail> {
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),
                     topRight: Radius.circular(16),
-                  )
+                  ),
+                  boxShadow: [BoxShadow(
+                    color: colorScheme.surfaceContainerLowest,
+                    blurRadius: 0.0,
+                    spreadRadius: 0.0,
+                    offset: const Offset(0, 2),
+                  )],
                 ),
               ),
             )

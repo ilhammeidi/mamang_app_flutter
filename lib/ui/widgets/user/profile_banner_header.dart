@@ -44,14 +44,23 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
 
         /// CURVE DECORATION
         Positioned(
-          bottom: -1,
+          bottom: 0,
           left: 0,
           child: ClipPath(
             clipper: RoundedClipPathTop(),
+            clipBehavior: Clip.antiAlias,
             child: Container(
               height: 80,
               width: MediaQuery.of(context).size.width,
-              color: Theme.of(context).colorScheme.surfaceContainerLowest,
+              decoration: BoxDecoration(
+                color: colorScheme.surfaceContainerLowest,
+                boxShadow: [BoxShadow(
+                  color: colorScheme.surfaceContainerLowest,
+                  blurRadius: 0.0,
+                  spreadRadius: 0.0,
+                  offset: const Offset(0, 2),
+                )],
+              ),
             ),
           )
         ),
@@ -111,9 +120,8 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
         /// USER PROFILE
         Positioned(
           bottom: 0,
-          child: Container(
+          child: SizedBox(
             width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.all(spacingUnit(2)),
             child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
               /// AVATAR
               AnimatedOpacity(
@@ -166,8 +174,9 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
               ),
           
               /// COINS AND POINTS
+              const VSpaceShort(),
               Container(
-                margin: EdgeInsets.only(top: spacingUnit(2)),
+                margin: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
                 padding: EdgeInsets.all(spacingUnit(1)),
                 decoration: BoxDecoration(
                   borderRadius: ThemeRadius.small,
@@ -175,12 +184,12 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
                   boxShadow: [ThemeShade.shadeSoft(context)],
                 ),
                 child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  /// USER COINs
+                  /// USER COINS
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
                     child: CircleAvatar(
                       radius: 20.r,
-                      backgroundColor: Theme.of(context).colorScheme.surface,
+                      backgroundColor: colorScheme.surface,
                       child: Icon(Icons.stars, size: 40, color: ThemePalette.primaryMain)
                     ),
                   ),
@@ -202,7 +211,7 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
                     padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
                     child: CircleAvatar(
                       radius: 20.r,
-                      backgroundColor: Theme.of(context).colorScheme.surface,
+                      backgroundColor: colorScheme.surface,
                       child: const Icon(Icons.motion_photos_on, size: 40, color: Colors.amber)
                     ),
                   ),
@@ -214,6 +223,18 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
                     ]),
                   ),
                 ]),
+              ),
+              Container(
+                width: double.infinity,
+                height: 10,
+                decoration: BoxDecoration(
+                  boxShadow: [BoxShadow(
+                    color: colorScheme.surfaceContainerLowest,
+                    blurRadius: 0.0,
+                    spreadRadius: 0.0,
+                    offset: const Offset(0, 2),
+                  )],
+                )
               )
             ]),
           ),

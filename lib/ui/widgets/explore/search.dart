@@ -38,7 +38,17 @@ class SearchExplore extends StatelessWidget {
                 child: Container(
                   height: 80,
                   width: MediaQuery.of(context).size.width,
-                  color: colorScheme.surfaceContainerLowest,
+                  decoration: BoxDecoration(
+                    color: colorScheme.surfaceContainerLowest,
+                    boxShadow: [
+                      BoxShadow(
+                        color: colorScheme.surfaceContainerLowest,
+                        blurRadius: 0.0,
+                        spreadRadius: 0.0,
+                        offset: const Offset(0, 2),
+                      ),
+                    ]
+                  ),
                 ),
               ),
             )

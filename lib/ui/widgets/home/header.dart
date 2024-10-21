@@ -15,30 +15,34 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDark = Get.isDarkMode;
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return AppBar(
       toolbarHeight: 100,
+      forceMaterialTransparency: true,
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(20),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           height: 20,
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.surfaceContainerLowest.withOpacity(isFixed ? 1 : 0),
+            color: colorScheme.surfaceContainerLowest.withOpacity(isFixed ? 1 : 0),
             borderRadius: BorderRadius.only(
               topLeft: isFixed ? const Radius.circular(20) : const Radius.circular(0),
               topRight: isFixed ? const Radius.circular(20) : const Radius.circular(0)
-            )
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: colorScheme.surfaceContainerLowest.withOpacity(isFixed ? 1 : 0),
+                blurRadius: 0.0,
+                spreadRadius: 0.0,
+                offset: const Offset(0, 2),
+              ),
+            ]
           ),
         ),
       ),
       automaticallyImplyLeading: false,
-      flexibleSpace: Container(
-        decoration: BoxDecoration(
-          gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
-        ),
-      ),
       titleSpacing: spacingUnit(1),
       title: Row(children: [
         /// AVATAR AND USER PROFILE

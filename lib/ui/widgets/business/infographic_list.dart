@@ -19,6 +19,7 @@ class InfographicList extends StatelessWidget {
     return SizedBox(
       height: height,
       child: ListView(
+        padding: const EdgeInsets.all(0),
         scrollDirection: Axis.horizontal,
         children: [
           Container(
