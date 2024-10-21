@@ -76,6 +76,7 @@ class _BusinessMainState extends State<BusinessMain> {
                               left: 0,
                               child: ClipPath(
                                 clipper: RoundedClipPathTop(),
+                                clipBehavior: Clip.antiAlias,
                                 child: Container(
                                   height: 80,
                                   width: MediaQuery.of(context).size.width,

@@ -24,6 +24,7 @@ class SearchHome extends StatelessWidget {
             bottom: 0,
             left: 0,
             child: ClipPath(
+              clipBehavior: Clip.antiAlias,
               clipper: RoundedClipPathTop(),
               child: Container(
                 height: 80,

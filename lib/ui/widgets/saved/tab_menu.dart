@@ -7,19 +7,29 @@ import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
 
 class TabMenu extends StatelessWidget {
-  const TabMenu({super.key, required this.onSelect, required this.current});
+  const TabMenu({super.key, required this.onSelect, required this.current, required this.fixed});
 
   final Function(int) onSelect;
   final int current;
+  final bool fixed;
 
   @override
   Widget build(BuildContext context) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     final bool isDark = Get.isDarkMode;
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+    Gradient? fixedBg() {
+      if(fixed) {
+        if(isDark) {
+          return  ThemePalette.gradientMixedDark;
+        }
+        return ThemePalette.gradientMixedMain;
+      }
+      return null;
+    }
 
     return Container(
       decoration: BoxDecoration(
-        gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
+        gradient: fixedBg()
       ),
       child: Stack(
         alignment: Alignment.bottomCenter,
@@ -29,6 +39,7 @@ class TabMenu extends StatelessWidget {
             left: 0,
             child: ClipPath(
               clipper: RoundedClipPathTop(),
+              clipBehavior: Clip.antiAlias,
               child: Container(
                 height: 70,
                 width: MediaQuery.of(context).size.width,
@@ -64,7 +75,7 @@ class TabMenu extends StatelessWidget {
             ]),
           )
         ],
-      )
+      ),
     );
   }
 

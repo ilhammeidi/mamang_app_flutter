@@ -35,6 +35,7 @@ class SearchExplore extends StatelessWidget {
               ),
               child: ClipPath(
                 clipper: RoundedClipPathTop(),
+                clipBehavior: Clip.antiAlias,
                 child: Container(
                   height: 80,
                   width: MediaQuery.of(context).size.width,

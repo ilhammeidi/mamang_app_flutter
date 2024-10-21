@@ -121,7 +121,8 @@ class _ChatPageState extends State<ChatPage> {
             scrollCtrl: _scrollController
           )
         ),
-        ChatInput(sendMsg: _sendMessage)
+        ChatInput(sendMsg: _sendMessage),
+        const VSpace()
       ]),
     );
   }

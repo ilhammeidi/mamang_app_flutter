@@ -27,6 +27,7 @@ class MiniMap extends StatelessWidget {
             left: 0,
             child: ClipPath(
               clipper: RoundedClipPathTop(),
+              clipBehavior: Clip.antiAlias,
               child: Container(
                 height: 100,
                 width: MediaQuery.of(context).size.width,
