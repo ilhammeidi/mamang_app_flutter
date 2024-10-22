@@ -3,9 +3,9 @@ import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/controllers/all_promo_controller.dart';
 import 'package:mamang_app_flutter/models/promos.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
+import 'package:mamang_app_flutter/ui/widgets/action_header/like_btn.dart';
 import 'package:mamang_app_flutter/ui/widgets/business/business_not_found.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/fadded_bottom_header.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/coloured_box_detail.dart';
@@ -65,15 +65,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
-            child: IconButton(
-              style: IconButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.surface,
-                shadowColor: Colors.grey.withOpacity(0.5),
-                elevation: 3
-              ),
-              onPressed: () {}, 
-              icon: Icon(controller.selectedPromo.value.liked == true ? Icons.favorite : Icons.favorite_border_outlined, color: ThemePalette.tertiaryMain)
-            ),
+            child: LikeBtn(hasBg: true, isLiked: controller.selectedPromo.value.liked == true)
           )
         ],
       ),

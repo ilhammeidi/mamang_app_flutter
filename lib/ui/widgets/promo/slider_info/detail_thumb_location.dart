@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -86,7 +85,17 @@ class DetailThumbLocation extends StatelessWidget {
                 height: 80,
                 child: OutlinedButton(
                   onPressed: () {},
-                  style: ThemeButton.btnSmall.merge(ThemeButton.outlinedSecondary(context)),
+                  style: OutlinedButton.styleFrom(
+                    minimumSize: const Size(80, 30),
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    side: BorderSide(
+                      color: ThemePalette.secondaryMain,
+                    ),
+                    foregroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: ThemeRadius.small
+                    ),
+                  ),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
                     const Icon(Icons.directions, size: 48),
                     Text('ROUTES', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold),)
