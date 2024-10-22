@@ -14,15 +14,8 @@ class ResetForm extends StatefulWidget {
 }
 
 class _ResetFormState extends State<ResetForm> {
-  bool _hidePassword = true;
   final _resetPwdKey = GlobalKey<FormState>();
   bool _isNotValid = false;
-
-  void handleShowPassword() {
-    setState(() {
-      _hidePassword = !_hidePassword;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/app_input/app_textfield.dart';
-import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/grabber_icon.dart';
+import 'package:mamang_app_flutter/ui/utils/grabber_icon.dart';
 
 class SettingTime extends StatefulWidget {
   const SettingTime({super.key});
