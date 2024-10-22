@@ -9,6 +9,7 @@ import 'package:mamang_app_flutter/ui/widgets/promo/map_banner.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/scan_qr_step.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/summary_info.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/working_time.dart';
+import 'package:mamang_app_flutter/ui/widgets/review/review_button.dart';
 import 'package:mamang_app_flutter/ui/widgets/saved/saved_not_found.dart';
 
 class SavedDetail extends StatefulWidget {
@@ -89,6 +90,7 @@ class _SavedDetailState extends State<SavedDetail> {
                 ]) : Container(),
               );
             },
+
             /// THE REST INFORMATIONS AND DETAILS
             sliver: SliverList(delegate: SliverChildListDelegate([
               GetBuilder<SavedPromoController>(
@@ -106,6 +108,8 @@ class _SavedDetailState extends State<SavedDetail> {
               ),
               const VSpaceShort(),
               const WorkingTime(),
+              const VSpaceShort(),
+              const ReviewButton(),
               const VSpaceShort(),
               const ScanQrStep(),
               const VSpace(),

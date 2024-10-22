@@ -323,6 +323,15 @@ class SettingList extends StatelessWidget {
               ),
               const LineList(),
               ListTile(
+                leading: const Icon(Icons.star_outline),
+                title: const Text('Rating and Review'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/ratings-reviews');
+                },
+              ),
+              const LineList(),
+              ListTile(
                 leading: const Icon(Icons.emoji_events_rounded),
                 title: const Text('Events'),
                 trailing: const Icon(Icons.arrow_forward_ios),

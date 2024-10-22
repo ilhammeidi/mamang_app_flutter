@@ -23,6 +23,7 @@ import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
 import 'package:mamang_app_flutter/pages/profile/terms_condition.dart';
 import 'package:mamang_app_flutter/pages/promo/detail.dart';
 import 'package:mamang_app_flutter/pages/promo/promo_main.dart';
+import 'package:mamang_app_flutter/pages/review/ratings_reviews.dart';
 import 'package:mamang_app_flutter/pages/sample_button.dart';
 import 'package:mamang_app_flutter/pages/sample_dark_light.dart';
 import 'package:mamang_app_flutter/pages/sample_form_builder.dart';
@@ -132,6 +133,12 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/events/:id',
     page: () => const GeneralLayout(content: EventDetail()),
+  ),
+
+  /// RATINGS AND REVIEWS
+  GetPage(
+    name: '/ratings-reviews',
+    page: () => const GeneralLayout(content: RatingsReviews()),
   ),
   
   /// BUSINESS

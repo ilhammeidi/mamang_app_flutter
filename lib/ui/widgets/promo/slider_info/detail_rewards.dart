@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
-import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/grabber_icon.dart';
+import 'package:mamang_app_flutter/ui/utils/grabber_icon.dart';
 
 class DetailRewards extends StatelessWidget {
   const DetailRewards({super.key});
