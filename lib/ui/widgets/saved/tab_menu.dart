@@ -4,7 +4,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
-import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
+import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_bottom.dart';
 
 class TabMenu extends StatelessWidget {
   const TabMenu({super.key, required this.onSelect, required this.current, required this.fixed});
@@ -17,53 +17,29 @@ class TabMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isDark = Get.isDarkMode;
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
-    Gradient? fixedBg() {
-      if(fixed) {
-        if(isDark) {
-          return  ThemePalette.gradientMixedDark;
-        }
-        return ThemePalette.gradientMixedMain;
-      }
-      return null;
-    }
 
     return Container(
-      decoration: BoxDecoration(
-        gradient: fixedBg()
-      ),
       /// CURVE DECORATION
+      color: colorScheme.surfaceContainerLowest,
       child: Stack(
-        alignment: Alignment.bottomCenter,
+        alignment: Alignment.topCenter,
         children: [
           Positioned(
-            bottom: 0,
+            top: 0,
             left: 0,
             child: Column(
               children: [
                 ClipPath(
-                  clipper: RoundedClipPathTop(),
+                  clipper: RoundedClipPathBottom(),
                   clipBehavior: Clip.antiAlias,
                   child: Container(
-                    height: 55,
+                    height: 40,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                      color: colorScheme.surfaceContainerLowest,
+                      gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
                     ),
                   ),
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 5,
-                  decoration: BoxDecoration(
-                    color: colorScheme.surfaceContainerLowest,
-                    boxShadow: [BoxShadow(
-                      color: colorScheme.surfaceContainerLowest,
-                      blurRadius: 0.0,
-                      spreadRadius: 0.0,
-                      offset: const Offset(0, -5),
-                    )],
-                  )
-                )
               ],
             )
           ),

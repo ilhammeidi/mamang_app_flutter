@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -10,6 +11,7 @@ class SavedHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDark = Get.isDarkMode;
 
     const TextStyle smallText = TextStyle(
       color: Colors.white,
@@ -19,7 +21,11 @@ class SavedHeader extends StatelessWidget {
     return SliverAppBar(
       toolbarHeight: 80,
       automaticallyImplyLeading: false,
-      backgroundColor: Colors.transparent,
+      flexibleSpace: Container(
+        decoration: BoxDecoration(
+          gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
+        ),
+      ),
       title: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
         /// USER POINTS
         CircleAvatar(

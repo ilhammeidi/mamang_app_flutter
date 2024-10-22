@@ -12,7 +12,7 @@ class Puzzles extends StatelessWidget {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
     
     return Container(
-      padding: EdgeInsets.all(spacingUnit(1)),
+      padding: EdgeInsets.symmetric(vertical: spacingUnit(2), horizontal: spacingUnit(1)),
       color: colorScheme.surfaceContainerLowest,
       child: GridView.builder(
         shrinkWrap: true,

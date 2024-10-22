@@ -31,30 +31,24 @@ class _SavedMainState extends State<SavedMain> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDark = Get.isDarkMode;
 
     return Scaffold(
-      body: DecoratedBox(
-        decoration: BoxDecoration(
-          gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
-        ),
-        child: CustomScrollView(
-          slivers: [
-            const SavedHeader(),
-            SliverStickyHeader.builder(
-              builder: (context, state) {
-                return TabMenu(
-                  fixed: state.isPinned,
-                  onSelect: _handleSelect,
-                  current: _current
-                );
-              },
-              sliver: SliverToBoxAdapter(
-                child: _content[_current]
-              )
+      body: CustomScrollView(
+        slivers: [
+          const SavedHeader(),
+          SliverStickyHeader.builder(
+            builder: (context, state) {
+              return TabMenu(
+                fixed: state.isPinned,
+                onSelect: _handleSelect,
+                current: _current
+              );
+            },
+            sliver: SliverToBoxAdapter(
+              child: _content[_current]
             )
-          ]
-        ),
+          )
+        ]
       ),
     );
   }

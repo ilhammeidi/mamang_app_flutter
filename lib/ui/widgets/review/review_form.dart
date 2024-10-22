@@ -43,18 +43,18 @@ class _ReviewFormState extends State<ReviewForm> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(spacingUnit(2)),
-      child: Column(children: [
+      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
         const GrabberIcon(),
         const VSpace(),
         
         /// TEXT
         Text('Write Review', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
         SizedBox(height: spacingUnit(1)),
-        const Text('Click the star to change the rating. IMPORTANT: Reviews are public and include your name and avatar,'),
+        const Text('Click the star to change the rating. IMPORTANT: Reviews are public and include your name and avatar,', textAlign: TextAlign.center),
         const VSpace(),
 
         /// FORM
-        Row(children: [
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           RatingStar(initVal: 5, size: 32, onChanged: handleChange),
           SizedBox(width: spacingUnit(1)),
           Text(_review, style: ThemeText.subtitle)
