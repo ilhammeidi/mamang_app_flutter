@@ -9,8 +9,11 @@ class Puzzles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+    
+    return Container(
       padding: EdgeInsets.all(spacingUnit(1)),
+      color: colorScheme.surfaceContainerLowest,
       child: GridView.builder(
         shrinkWrap: true,
         physics: const ClampingScrollPhysics(),

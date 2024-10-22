@@ -23,22 +23,34 @@ class SearchHome extends StatelessWidget {
           Positioned(
             bottom: 0,
             left: 0,
-            child: ClipPath(
-              clipBehavior: Clip.antiAlias,
-              clipper: RoundedClipPathTop(),
-              child: Container(
-                height: 80,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: colorScheme.surfaceContainerLowest,
-                  boxShadow: [BoxShadow(
-                    color: colorScheme.surfaceContainerLowest,
-                    blurRadius: 0.0,
-                    spreadRadius: 0.0,
-                    offset: const Offset(0, 2),
-                  ),]
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ClipPath(
+                  clipBehavior: Clip.antiAlias,
+                  clipper: RoundedClipPathTop(),
+                  child: Container(
+                    height: 70,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: colorScheme.surfaceContainerLowest,
+                    ),
+                  ),
                 ),
-              ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    color: colorScheme.surfaceContainerLowest, 
+                    boxShadow: [BoxShadow(
+                      color: colorScheme.surfaceContainerLowest,
+                      blurRadius: 0.0,
+                      spreadRadius: 0.0,
+                      offset: const Offset(0, 5),
+                    )],
+                  )
+                )
+              ],
             )
           ),
           Column(

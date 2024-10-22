@@ -74,22 +74,33 @@ class _BusinessMainState extends State<BusinessMain> {
                             Positioned(
                               bottom: 0,
                               left: 0,
-                              child: ClipPath(
-                                clipper: RoundedClipPathTop(),
-                                clipBehavior: Clip.antiAlias,
-                                child: Container(
-                                  height: 80,
-                                  width: MediaQuery.of(context).size.width,
-                                  decoration: BoxDecoration(
-                                    color: colorScheme.surfaceContainerLowest,
-                                    boxShadow: [BoxShadow(
+                              child: Column(
+                                children: [
+                                  ClipPath(
+                                    clipper: RoundedClipPathTop(),
+                                    clipBehavior: Clip.antiAlias,
+                                    child: Container(
+                                      height: 70,
+                                      width: MediaQuery.of(context).size.width,
+                                      decoration: BoxDecoration(
+                                        color: colorScheme.surfaceContainerLowest,
+                                      )
+                                    ),
+                                  ),
+                                  Container(
+                                    width: MediaQuery.of(context).size.width,
+                                    height: 10,
+                                    decoration: BoxDecoration(
                                       color: colorScheme.surfaceContainerLowest,
-                                      blurRadius: 0.0,
-                                      spreadRadius: 0.0,
-                                      offset: const Offset(0, 2),
-                                    )],
+                                      boxShadow: [BoxShadow(
+                                        color: colorScheme.surfaceContainerLowest,
+                                        blurRadius: 0.0,
+                                        spreadRadius: 0.0,
+                                        offset: const Offset(0, -5),
+                                      )],
+                                    )
                                   )
-                                ),
+                                ],
                               )
                             ),
                             /// INFOGRAPHIC STATS

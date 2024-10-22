@@ -29,7 +29,13 @@ class DetailOwner extends StatelessWidget {
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(20),
                 topRight: Radius.circular(20),
-              )
+              ),
+              boxShadow: [BoxShadow(
+                color: colorScheme.surfaceContainerLowest,
+                blurRadius: 0.0,
+                spreadRadius: 0.0,
+                offset: const Offset(0, 2),
+              )],
             ),
           ),
           Hero(

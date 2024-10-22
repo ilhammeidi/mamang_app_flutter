@@ -32,7 +32,6 @@ class _SavedMainState extends State<SavedMain> {
   @override
   Widget build(BuildContext context) {
     final bool isDark = Get.isDarkMode;
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
       body: DecoratedBox(
@@ -51,12 +50,7 @@ class _SavedMainState extends State<SavedMain> {
                 );
               },
               sliver: SliverToBoxAdapter(
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: colorScheme.surfaceContainerLowest
-                  ),
-                  child: _content[_current]
-                ),
+                child: _content[_current]
               )
             )
           ]

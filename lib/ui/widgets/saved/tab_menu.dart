@@ -31,32 +31,43 @@ class TabMenu extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: fixedBg()
       ),
+      /// CURVE DECORATION
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           Positioned(
             bottom: 0,
             left: 0,
-            child: ClipPath(
-              clipper: RoundedClipPathTop(),
-              clipBehavior: Clip.antiAlias,
-              child: Container(
-                height: 70,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surfaceContainerLowest,
-                  boxShadow: [
-                    BoxShadow(
+            child: Column(
+              children: [
+                ClipPath(
+                  clipper: RoundedClipPathTop(),
+                  clipBehavior: Clip.antiAlias,
+                  child: Container(
+                    height: 55,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: colorScheme.surfaceContainerLowest,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 5,
+                  decoration: BoxDecoration(
+                    color: colorScheme.surfaceContainerLowest,
+                    boxShadow: [BoxShadow(
                       color: colorScheme.surfaceContainerLowest,
                       blurRadius: 0.0,
                       spreadRadius: 0.0,
-                      offset: const Offset(0, 2),
-                    ),
-                  ]
-                ),
-              ),
+                      offset: const Offset(0, -5),
+                    )],
+                  )
+                )
+              ],
             )
           ),
+          /// TAB MENUS
           Container(
             margin: EdgeInsets.all(spacingUnit(1)),
             padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),

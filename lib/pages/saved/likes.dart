@@ -11,9 +11,16 @@ class SavedLikes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      const VSpaceShort(),
-      PromoList(items: controller.likedPromo, isHome: true)
-    ]);
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: colorScheme.surfaceContainerLowest
+      ),
+      child: Column(children: [
+        const VSpaceShort(),
+        PromoList(items: controller.likedPromo, isHome: true)
+      ]),
+    );
   }
 }

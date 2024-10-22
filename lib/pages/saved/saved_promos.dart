@@ -12,21 +12,28 @@ class SavedPromos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+
     return GetBuilder<SavedPromoController>(
       builder: (controller) {
-        return Column(children: [
-          const VSpaceShort(),
-          Filter(
-            category: controller.category.value,
-            sortby: controller.sortby.value,
-            onChangeCategory: controller.filterByCategory,
-            onSortByDate: controller.sortDate,
-            onSortByDistance: controller.sortDistance,
-            onSelectDistance: controller.filterByDistance,
+        return DecoratedBox(
+          decoration: BoxDecoration(
+            color: colorScheme.surfaceContainerLowest
           ),
-          const VSpaceShort(),
-          SavedList(items: controller.filteredList, isHome: true),
-        ]);
+          child: Column(children: [
+            const VSpaceShort(),
+            Filter(
+              category: controller.category.value,
+              sortby: controller.sortby.value,
+              onChangeCategory: controller.filterByCategory,
+              onSortByDate: controller.sortDate,
+              onSortByDistance: controller.sortDistance,
+              onSelectDistance: controller.filterByDistance,
+            ),
+            const VSpaceShort(),
+            SavedList(items: controller.filteredList, isHome: true),
+          ]),
+        );
       },
     );
   }

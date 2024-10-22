@@ -25,22 +25,33 @@ class MiniMap extends StatelessWidget {
           Positioned(
             bottom: 0,
             left: 0,
-            child: ClipPath(
-              clipper: RoundedClipPathTop(),
-              clipBehavior: Clip.antiAlias,
-              child: Container(
-                height: 100,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: colorScheme.surfaceContainerLowest,
-                  boxShadow: [BoxShadow(
-                    color: colorScheme.surfaceContainerLowest,
-                    blurRadius: 0.0,
-                    spreadRadius: 0.0,
-                    offset: const Offset(0, 2),
-                  )],
+            child: Column(
+              children: [
+                ClipPath(
+                  clipper: RoundedClipPathTop(),
+                  clipBehavior: Clip.antiAlias,
+                  child: Container(
+                    height: 90,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: colorScheme.surfaceContainerLowest,
+                    ),
+                  ),
                 ),
-              ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    color: colorScheme.surfaceContainerLowest,
+                    boxShadow: [BoxShadow(
+                      color: colorScheme.surfaceContainerLowest,
+                      blurRadius: 0.0,
+                      spreadRadius: 0.0,
+                      offset: const Offset(0, -10),
+                    )],
+                  ),
+                )
+              ],
             ),
           ),
           Padding(
