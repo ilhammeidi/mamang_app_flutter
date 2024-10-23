@@ -23,7 +23,6 @@ class ReviewList extends StatelessWidget {
             date: item.date,
             description: item.description,
             rating: item.rating,
-            overflowDesc: false,
           ),
         );
       })

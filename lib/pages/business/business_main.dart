@@ -123,7 +123,7 @@ class _BusinessMainState extends State<BusinessMain> {
                               itemCount: controller.myBusiness.length,
                               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                                 maxCrossAxisExtent: 200,
-                                mainAxisExtent: 280,
+                                mainAxisExtent: 270,
                                 mainAxisSpacing: 16,
                                 crossAxisSpacing: 16,
                               ),

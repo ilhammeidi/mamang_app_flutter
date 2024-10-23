@@ -4,11 +4,13 @@ import 'package:get/get.dart';
 import 'package:mamang_app_flutter/controllers/all_promo_controller.dart';
 import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/models/promos.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
+import 'package:mamang_app_flutter/ui/widgets/action_header/like_btn.dart';
+import 'package:mamang_app_flutter/ui/widgets/action_header/other_btn.dart';
+import 'package:mamang_app_flutter/ui/widgets/action_header/share_btn.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/fadded_bottom_header.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/bottom_action_save_promo.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/coloured_box_detail.dart';
@@ -27,8 +29,7 @@ class PromoDetail extends StatefulWidget {
 
 class _PromoDetailState extends State<PromoDetail> {
   final controller = Get.put(AllPromoController());
-  final FocusNode _buttonFocusNode = FocusNode(debugLabel: 'Menu Button');
-
+ 
   String id = Get.parameters['id'] ?? '';
 
   @override
@@ -40,12 +41,6 @@ class _PromoDetailState extends State<PromoDetail> {
   Future<void> fetchDetail(val) async {
     int promoId = int.parse(id);
     controller.getPromo(promoId);
-  }
-
-  @override
-  void dispose() {
-    _buttonFocusNode.dispose();
-    super.dispose();
   }
 
   @override
@@ -83,65 +78,9 @@ class _PromoDetailState extends State<PromoDetail> {
           style: const TextStyle(color: Colors.white)
         ),
         actions: [
-          IconButton(
-            onPressed: () {}, 
-            icon: const Icon(Icons.share, color: Colors.white)
-          ),
-          IconButton(
-            onPressed: () {}, 
-            icon: controller.selectedPromo.value.liked == true ? 
-              Icon(Icons.favorite, color: ThemePalette.tertiaryMain)
-              : const Icon(Icons.favorite_border_outlined, color: Colors.white)
-          ),
-          MenuAnchor(
-            childFocusNode: _buttonFocusNode,
-            alignmentOffset: const Offset(-130, 0),
-            menuChildren: <Widget>[
-              MenuItemButton(
-                child: const Row(children: [
-                  Icon(Icons.store_outlined),
-                  SizedBox(width: 4,),
-                  Text('Home'),
-                ]),
-                onPressed: () {
-                  Get.offAndToNamed('/');
-                },
-              ),
-              MenuItemButton(
-                child: const Row(children: [
-                  Icon(Icons.help_outline_rounded),
-                  SizedBox(width: 4,),
-                  Text('Help and supports')
-                ]),
-                onPressed: () {
-                  Get.offAndToNamed('/faq');
-                },
-              ),
-              MenuItemButton(
-                child: const Row(children: [
-                  Icon(Icons.report_outlined),
-                  SizedBox(width: 4,),
-                  Text('Report this promo')
-                ]),
-                onPressed: () {
-                  Get.offAndToNamed('/contact');
-                },
-              )
-            ],
-            builder: (BuildContext context, MenuController controller, Widget? child) {
-              return IconButton(
-                focusNode: _buttonFocusNode,
-                onPressed: () {
-                  if (controller.isOpen) {
-                    controller.close();
-                  } else {
-                    controller.open();
-                  }
-                }, 
-                icon: const Icon(Icons.more_horiz_outlined, color: Colors.white)
-              );
-            },
-          ),
+          const ShareBtn(invert: true),
+          LikeBtn(isLiked: controller.selectedPromo.value.liked == true, invert: true,),
+          const OtherBtn(invert: true,),
         ],
       ),
       bottomNavigationBar: const BottomActionSavePromo(),

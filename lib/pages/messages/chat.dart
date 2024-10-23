@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mamang_app_flutter/models/chat.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/widgets/action_header/other_btn.dart';
 import 'package:mamang_app_flutter/ui/widgets/chat/chat_input.dart';
 import 'package:mamang_app_flutter/ui/widgets/chat/chat_message.dart';
 
@@ -60,56 +61,8 @@ class _ChatPageState extends State<ChatPage> {
           SizedBox(width: spacingUnit(1)),
           Text(widget.name, style: ThemeText.subtitle2),
         ]),
-        actions: [
-          MenuAnchor(
-            childFocusNode: _buttonFocusNode,
-            alignmentOffset: const Offset(-50, 0),
-            builder: (BuildContext context, MenuController controller, Widget? child) {
-              return IconButton(
-                focusNode: _buttonFocusNode,
-                onPressed: () {
-                  if (controller.isOpen) {
-                    controller.close();
-                  } else {
-                    controller.open();
-                  }
-                }, 
-                icon: const Icon(Icons.more_horiz_outlined)
-              );
-            },
-            menuChildren: <Widget>[
-              MenuItemButton(
-                child: const Row(children: [
-                  Icon(Icons.store_outlined, size: 16),
-                  SizedBox(width: 4,),
-                  Text('Home'),
-                ]),
-                onPressed: () {
-                  Get.offAndToNamed('/');
-                },
-              ),
-              MenuItemButton(
-                child: const Row(children: [
-                  Icon(Icons.block, size: 16),
-                  SizedBox(width: 4,),
-                  Text('Block')
-                ]),
-                onPressed: () {
-                  Get.offAndToNamed('/inbox');
-                },
-              ),
-              MenuItemButton(
-                child: const Row(children: [
-                  Icon(Icons.report_outlined, size: 16),
-                  SizedBox(width: 4,),
-                  Text('Report')
-                ]),
-                onPressed: () {
-                  Get.offAndToNamed('/contact');
-                },
-              )
-            ],
-          ),
+        actions: const [
+          OtherBtn()
         ],
       ),
       body: Column(children: [
