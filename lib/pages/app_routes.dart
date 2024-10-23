@@ -37,6 +37,7 @@ import 'package:mamang_app_flutter/pages/saved/saved_voucher.dart';
 import 'package:mamang_app_flutter/pages/search/search_list.dart';
 import 'package:mamang_app_flutter/pages/search/search_map.dart';
 import 'package:mamang_app_flutter/pages/search/search_result.dart';
+import 'package:mamang_app_flutter/pages/social_media/socmed_main.dart';
 import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
 import 'package:mamang_app_flutter/ui/layouts/home_layout.dart';
 
@@ -134,19 +135,24 @@ final List<GetPage> appRoutes = [
     name: '/events/:id',
     page: () => const GeneralLayout(content: EventDetail()),
   ),
-
   /// RATINGS AND REVIEWS
   GetPage(
     name: '/ratings-reviews',
     page: () => const GeneralLayout(content: RatingsReviews()),
   ),
+
+  /// SOCIAL MEDIA
+  GetPage(
+    name: '/updates',
+    page: () => const HomeLayout(content: SocmedMain()),
+    transition: Transition.fadeIn,
+    transitionDuration: const Duration(milliseconds: pageTransitionDuration)
+  ),
   
   /// BUSINESS
   GetPage(
     name: '/business',
-    page: () => const HomeLayout(content: BusinessMain()),
-    transition: Transition.fadeIn,
-    transitionDuration: const Duration(milliseconds: pageTransitionDuration)
+    page: () => const GeneralLayout(content: BusinessMain()),
   ),
   GetPage(
     name: '/business/:id',
@@ -165,7 +171,7 @@ final List<GetPage> appRoutes = [
     page: () => const GeneralLayout(content: BusinessForm()),
   ),
 
-  /// PROFILE, SETTINGS, AND REST PAGES
+  /// Settings
   GetPage(
     name: '/profile',
     page: () => const HomeLayout(content: ProfileMain()),

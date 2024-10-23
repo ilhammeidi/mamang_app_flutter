@@ -38,12 +38,12 @@ class BottomNavMenu extends StatelessWidget {
                     }
                   ),
                   MenuItem(
-                    title: 'Saved',
-                    icon: Icons.bookmark_outline,
-                    iconActive: Icons.bookmark,
-                    isActive: currentRoute == '/saved',
+                    title: 'Explore',
+                    icon: Icons.explore_outlined,
+                    iconActive: Icons.explore,
+                    isActive: currentRoute == '/explore',
                     onTap: () {
-                      Get.toNamed('/saved');
+                      Get.toNamed('/explore');
                     }
                   )
                 ]
@@ -56,11 +56,13 @@ class BottomNavMenu extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   MenuItem(
-                    title: 'Business',
-                    icon: Icons.all_inbox_outlined,
-                    iconActive: Icons.all_inbox,
-                    isActive: currentRoute == '/business',
-                    onTap: () => Get.toNamed('/business')
+                    title: 'Saved',
+                    icon: Icons.bookmark_outline,
+                    iconActive: Icons.bookmark,
+                    isActive: currentRoute == '/saved',
+                    onTap: () {
+                      Get.toNamed('/saved');
+                    }
                   ),
                   MenuItem(
                     title: 'Profile',

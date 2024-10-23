@@ -25,11 +25,11 @@ class HomeLayout extends StatelessWidget {
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              Get.toNamed('/explore');
+              Get.toNamed('/updates');
             },
-            backgroundColor: currentRoute == '/explore' ? ThemePalette.primaryMain : Theme.of(context).colorScheme.surface,
+            backgroundColor: currentRoute == '/updates' ? ThemePalette.primaryMain : Theme.of(context).colorScheme.surface,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-            child: Icon(Icons.search, size: 32, color: currentRoute == '/explore' ? Colors.white : ThemePalette.primaryMain  )
+            child: Icon(Icons.wifi_tethering, size: 32, color: currentRoute == '/updates' ? Colors.white : ThemePalette.primaryMain  )
           ),
         )),
       ),
