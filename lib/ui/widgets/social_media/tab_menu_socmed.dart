@@ -75,9 +75,9 @@ class TabMenuSocmed extends StatelessWidget {
                 height: 40,
                 child: IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.add, color: ThemePalette.secondaryMain, size: 24),
+                  icon: Icon(Icons.add, color: colorScheme.onSecondaryContainer, size: 24),
                   style: IconButton.styleFrom(
-                    backgroundColor: colorScheme.surface,
+                    backgroundColor: colorScheme.secondaryContainer,
                     shadowColor: Colors.grey.withOpacity(0.9),
                     elevation: 6
                   ),

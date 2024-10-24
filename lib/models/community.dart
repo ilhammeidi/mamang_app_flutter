@@ -67,13 +67,6 @@ List<Community> communityList = [
     totalMembers: 100
   ),
   Community(
-    id: '6',
-    avatar: ImgApi.photo[23],
-    name: 'Garage Community',
-    desc: '',
-    totalMembers: 100
-  ),
-  Community(
     id: '7',
     avatar: ImgApi.photo[102],
     name: 'Indonesia',

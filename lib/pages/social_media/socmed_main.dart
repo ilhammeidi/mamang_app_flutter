@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
+import 'package:mamang_app_flutter/pages/social_media/for_you_posts.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/header.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/tab_menu_socmed.dart';
 
@@ -19,6 +20,10 @@ class _SocmedMainState extends State<SocmedMain> {
     });
   }
 
+  final List<Widget> _content = [
+    const ForYouPosts(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +38,7 @@ class _SocmedMainState extends State<SocmedMain> {
                 current: _current
               );
             },
-            sliver: SliverToBoxAdapter(
-              child: Container(height: 1200, color: Colors.purple),
-            ),
+            sliver: _content[_current]
           )
         ]
       ),

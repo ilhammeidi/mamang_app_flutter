@@ -152,7 +152,7 @@ class ImgApi {
     'https://res.cloudinary.com/doosabwhn/image/upload/v1729703299/post16_zdi2v2.jpg',
     'https://res.cloudinary.com/doosabwhn/image/upload/v1729703299/post17_mfswk5.jpg',
     'https://res.cloudinary.com/doosabwhn/image/upload/v1729703300/post18_ljubbe.jpg',
-    'https://res.cloudinary.com/doosabwhn/image/upload/v1729703300/post19_e9frvk.jpg'
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1729703300/post19_e9frvk.jpg',
     'https://res.cloudinary.com/doosabwhn/image/upload/v1729703300/post20_ngzibp.jpg',
     'https://res.cloudinary.com/doosabwhn/image/upload/v1729703260/post21_efl3lm.jpg',
     'https://res.cloudinary.com/doosabwhn/image/upload/v1729703259/post22_vf2lvs.jpg',
@@ -184,7 +184,7 @@ class ImgApi {
     'https://res.cloudinary.com/doosabwhn/image/upload/v1729703313/post57_ofr8lr.jpg',
     'https://res.cloudinary.com/doosabwhn/image/upload/v1729707620/post58_fbxasj.jpg',
     'https://res.cloudinary.com/doosabwhn/image/upload/v1729707619/post59_yf6b0r.jpg',
-    'https://res.cloudinary.com/doosabwhn/image/upload/v1729703314/post60_te8clg.jpg'
+    'https://res.cloudinary.com/doosabwhn/image/upload/v1729703314/post60_te8clg.jpg',
   ];
 
   static List<String> avatar = [

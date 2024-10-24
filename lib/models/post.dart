@@ -10,7 +10,7 @@ class Post {
   double likes;
   double comments;
   double views;
-  double duration;
+  int duration;
   String timeFrom;
   String timeTo;
 
@@ -724,7 +724,7 @@ List<Post> postList = [
     id: "50",
     userId: 2,
     caption: 'In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.',
-    image: ImgApi.photo[170],
+    image: ImgApi.photo[169],
     location: 'PO Box 23221',
     likes: 38,
     comments: 27,
