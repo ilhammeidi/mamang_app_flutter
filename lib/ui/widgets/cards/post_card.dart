@@ -17,6 +17,7 @@ class PostCard extends StatelessWidget {
     required this.views,
     required this.location,
     required this.promoId,
+    this.onTap
   });
 
   final String name;
@@ -28,6 +29,7 @@ class PostCard extends StatelessWidget {
   final double views;
   final String location;
   final String promoId;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -64,17 +66,20 @@ class PostCard extends StatelessWidget {
         ),
 
         /// IMAGE
-        Image.network(
-          image,
-          fit: BoxFit.cover, width: double.infinity,
-          loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
-            if (loadingProgress == null) return child;
-            return const SizedBox(
-              width: double.infinity,
-              height: 120,
-              child: ShimmerPreloader()
-            );
-          },
+        GestureDetector(
+          onTap: onTap,
+          child: Image.network(
+            image,
+            fit: BoxFit.cover, width: double.infinity,
+            loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+              if (loadingProgress == null) return child;
+              return const SizedBox(
+                width: double.infinity,
+                height: 120,
+                child: ShimmerPreloader()
+              );
+            },
+          ),
         ),
 
         /// BUTTON ACTION

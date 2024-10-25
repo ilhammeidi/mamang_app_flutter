@@ -37,6 +37,7 @@ import 'package:mamang_app_flutter/pages/saved/saved_voucher.dart';
 import 'package:mamang_app_flutter/pages/search/search_list.dart';
 import 'package:mamang_app_flutter/pages/search/search_map.dart';
 import 'package:mamang_app_flutter/pages/search/search_result.dart';
+import 'package:mamang_app_flutter/pages/social_media/post_detail.dart';
 import 'package:mamang_app_flutter/pages/social_media/socmed_main.dart';
 import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
 import 'package:mamang_app_flutter/ui/layouts/home_layout.dart';
@@ -147,6 +148,10 @@ final List<GetPage> appRoutes = [
     page: () => const HomeLayout(content: SocmedMain()),
     transition: Transition.fadeIn,
     transitionDuration: const Duration(milliseconds: pageTransitionDuration)
+  ),
+  GetPage(
+    name: '/updates/:id',
+    page: () => const GeneralLayout(content: PostDetail()),
   ),
   
   /// BUSINESS

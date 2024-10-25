@@ -63,6 +63,7 @@ class PostShortCard extends StatelessWidget {
         
         /// RANGE AND TIME LEFT
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          Text('-$time', style: whiteShadow),
           Row(
             children: [
               Icon(Icons.location_on_rounded, size: 16, color: Colors.white, shadows: [ThemeShade.shadeMedium(context)],),
@@ -70,7 +71,6 @@ class PostShortCard extends StatelessWidget {
               Text('$range M', style: whiteShadow),
             ],
           ),
-          Text(time, style: whiteShadow),
         ]),
         const Spacer(),
         

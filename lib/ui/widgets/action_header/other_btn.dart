@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
 class OtherBtn extends StatefulWidget {
-  const OtherBtn({super.key, this.invert = false});
+  const OtherBtn({super.key, this.invert = false, this.highContrast = false});
 
   final bool invert;
+  final bool highContrast;
 
   @override
   State<OtherBtn> createState() => _OtherBtnState();
@@ -76,7 +77,11 @@ class _OtherBtnState extends State<OtherBtn> {
               controller.open();
             }
           }, 
-          icon: Icon(Icons.more_horiz_outlined, color: widget.invert ? Colors.white : colorScheme.onSurface)
+          icon: Icon(
+            Icons.more_horiz_outlined,
+            color: widget.invert ? Colors.white : colorScheme.onSurface,
+            shadows: widget.highContrast ? const [BoxShadow(color: Colors.black, offset: Offset(0, 0), blurRadius: 5)] : null,
+          )
         );
       },
     );

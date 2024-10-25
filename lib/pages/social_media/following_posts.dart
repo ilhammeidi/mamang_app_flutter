@@ -6,8 +6,8 @@ import 'package:mamang_app_flutter/ui/widgets/social_media/grid_post.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/list_post.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/list_post_slider.dart';
 
-class FollowingPost extends StatelessWidget {
-  const FollowingPost({super.key});
+class FollowingPosts extends StatelessWidget {
+  const FollowingPosts({super.key});
 
   @override
   Widget build(BuildContext context) {

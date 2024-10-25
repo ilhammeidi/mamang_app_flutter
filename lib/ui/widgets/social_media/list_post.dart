@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/post.dart';
 import 'package:mamang_app_flutter/models/users.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/post_card.dart';
@@ -28,6 +29,9 @@ class ListPost extends StatelessWidget {
           views: item.views,
           location: item.location,
           promoId: item.id,
+          onTap: () {
+            Get.toNamed('/updates/${item.id}');
+          },
         );
       }
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/post.dart';
 import 'package:mamang_app_flutter/models/users.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -32,13 +33,18 @@ class GridPost extends StatelessWidget {
         itemBuilder: (context, index) {
           Post item = postDatas[index];
           User user = userList.firstWhere((userItem) => userItem.id == item.userId);
-          return PostShortCard(
-            image: item.image,
-            avatar: user.avatar,
-            desc: item.caption,
-            range: item.views,
-            duration: item.duration,
-            time: item.timeFrom
+          return GestureDetector(
+            onTap: () {
+              Get.toNamed('/updates/${item.id}');
+            },
+            child: PostShortCard(
+              image: item.image,
+              avatar: user.avatar,
+              desc: item.caption,
+              range: item.views,
+              duration: item.duration,
+              time: item.timeFrom
+            ),
           );
         }
       )

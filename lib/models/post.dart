@@ -34,48 +34,56 @@ class Comment {
   String name;
   String avatar;
   String comment;
+  String date;
 
   Comment({
     required this.id,
     required this.name,
     required this.avatar,
     required this.comment,
+    required this.date,
   });
 }
 
 List<Comment> commentList = [
   Comment(
     id: '1',
+    date: 'Yesterday',
     avatar: userList[1].avatar,
     name: userList[1].name,
     comment: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere'
   ),
   Comment(
     id: '2',
+    date: 'Yesterday',
     avatar: userList[2].avatar,
     name: userList[2].name,
     comment: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere'
   ),
   Comment(
     id: '3',
+    date: '2 days ago',
     avatar: userList[3].avatar,
     name: userList[3].name,
     comment: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere'
   ),
   Comment(
     id: '4',
+    date: 'Last week',
     avatar: userList[4].avatar,
     name: userList[4].name,
     comment: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere'
   ),
   Comment(
     id: '5',
+    date: '1 Mar',
     avatar: userList[5].avatar,
     name: userList[5].name,
     comment: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere'
   ),
   Comment(
     id: '6',
+    date: '13 Jan',
     avatar: userList[6].avatar,
     name: userList[6].name,
     comment: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere'

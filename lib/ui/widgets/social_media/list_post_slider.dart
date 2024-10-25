@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/post.dart';
 import 'package:mamang_app_flutter/models/users.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -31,15 +32,20 @@ class ListPostSlider extends StatelessWidget {
                 left: index == 0 ? spacingUnit(1) : 4,
                 right: index < postDatas.length - 1 ? 4 : spacingUnit(1),
               ),
-              child: AspectRatio(
-                aspectRatio: 9/16,
-                child: PostShortCard(
-                  image: item.image,
-                  avatar: user.avatar,
-                  desc: item.caption,
-                  range: item.views,
-                  duration: item.duration,
-                  time: item.timeFrom
+              child: GestureDetector(
+                onTap: () {
+                  Get.toNamed('/updates/${item.id}');
+                },
+                child: AspectRatio(
+                  aspectRatio: 9/16,
+                  child: PostShortCard(
+                    image: item.image,
+                    avatar: user.avatar,
+                    desc: item.caption,
+                    range: item.views,
+                    duration: item.duration,
+                    time: item.timeFrom
+                  ),
                 ),
               ),
             );

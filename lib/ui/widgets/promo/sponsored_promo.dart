@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
@@ -15,7 +14,7 @@ class SponsoredPromo extends StatelessWidget {
       child: Stack(children: [
         ClipRRect(
           borderRadius: ThemeRadius.medium,
-          child: Image.network(ImgApi.photo[72], width: double.infinity, fit: BoxFit.contain)
+          child: Image.network(image, width: double.infinity, fit: BoxFit.contain)
         ),
         Positioned(
           top: spacingUnit(1),

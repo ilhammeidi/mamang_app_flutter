@@ -4,9 +4,10 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 
 class ChatInput extends StatefulWidget {
-  const ChatInput({super.key, required this.sendMsg});
+  const ChatInput({super.key, required this.sendMsg, this.hasBorder = true});
 
   final Function(MessageItem) sendMsg;
+  final bool hasBorder;
 
   @override
   State<ChatInput> createState() => _ChatInputState();
@@ -44,9 +45,9 @@ class _ChatInputState extends State<ChatInput> {
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: colorScheme.surface,
-        border: Border(
+        border: widget.hasBorder ? Border(
           top: BorderSide(color: colorScheme.outline, width: 1)
-        )
+        ) : null
       ),
       child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
         Expanded(
