@@ -25,14 +25,16 @@ class PostShortCard extends StatelessWidget {
   Widget build(BuildContext context) {
     const TextStyle whiteShadow = TextStyle(
       color: Colors.white,
-      shadows: [BoxShadow(color: Colors.black, offset: Offset(0, 0), blurRadius: 2)],
-      fontSize: 14
+      shadows: [BoxShadow(color: Colors.black, offset: Offset(0, 0), blurRadius: 5)],
+      fontSize: 14,
+      fontWeight: FontWeight.bold
     );
 
     return Container(
       padding: EdgeInsets.all(spacingUnit(1)),
       decoration: BoxDecoration(
         borderRadius: ThemeRadius.small,
+        color: Colors.grey[400],
         image: DecorationImage(
           image: NetworkImage(image),
           fit: BoxFit.cover,

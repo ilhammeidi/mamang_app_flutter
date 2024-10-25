@@ -4,6 +4,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_bottom.dart';
 
 class TabMenu extends StatelessWidget {
@@ -79,7 +80,7 @@ class TabMenu extends StatelessWidget {
           borderRadius: ThemeRadius.big
         )
       ),
-      child: Text(text),
+      child: Text(text, style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.bold),),
     );
   }
 }

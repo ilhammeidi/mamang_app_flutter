@@ -4,6 +4,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_bottom.dart';
 
 class TabMenuSocmed extends StatelessWidget {
@@ -78,7 +79,7 @@ class TabMenuSocmed extends StatelessWidget {
                   icon: Icon(Icons.add, color: colorScheme.onSecondaryContainer, size: 24),
                   style: IconButton.styleFrom(
                     backgroundColor: colorScheme.secondaryContainer,
-                    shadowColor: Colors.grey.withOpacity(0.9),
+                    shadowColor: Colors.grey.withOpacity(0.3),
                     elevation: 6
                   ),
                 ),
@@ -104,7 +105,7 @@ class TabMenuSocmed extends StatelessWidget {
           borderRadius: ThemeRadius.big
         )
       ),
-      child: Text(text),
+      child: Text(text, style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.bold),),
     );
   }
 }

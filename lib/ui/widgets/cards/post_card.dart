@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 
 class PostCard extends StatelessWidget {
   const PostCard({
@@ -12,7 +15,8 @@ class PostCard extends StatelessWidget {
     required this.likes,
     required this.comments,
     required this.views,
-    required this.location
+    required this.location,
+    required this.promoId,
   });
 
   final String name;
@@ -23,32 +27,34 @@ class PostCard extends StatelessWidget {
   final double comments;
   final double views;
   final String location;
+  final String promoId;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const VSpaceShort(),
         /// PROFILE
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
+          padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CircleAvatar(backgroundImage: NetworkImage(avatar)),
+              CircleAvatar(radius: 14, backgroundImage: NetworkImage(avatar)),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Text(name),
+                  padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
+                  child: Text(name, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
                 )
               ),
-              const Icon(Icons.more_vert)
+              const Opacity(opacity: 0.5, child: Text('17 hours ago', textAlign: TextAlign.end))
             ],
           ),
         ),
 
         /// CAPTION
         Padding(
-          padding: EdgeInsets.all(spacingUnit(1)),
+          padding: EdgeInsets.all(spacingUnit(2)),
           child: RichText(
             text: TextSpan(
               style: Theme.of(context).textTheme.bodyMedium,
@@ -58,9 +64,17 @@ class PostCard extends StatelessWidget {
         ),
 
         /// IMAGE
-        SizedBox(
-          height: 300,
-          child: Image.network(image, fit: BoxFit.cover,),
+        Image.network(
+          image,
+          fit: BoxFit.cover, width: double.infinity,
+          loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+            if (loadingProgress == null) return child;
+            return const SizedBox(
+              width: double.infinity,
+              height: 120,
+              child: ShimmerPreloader()
+            );
+          },
         ),
 
         /// BUTTON ACTION
@@ -94,28 +108,34 @@ class PostCard extends StatelessWidget {
                     icon: const Icon(Icons.comment_outlined)
                   ),
                   Text(comments.toString()),
-                  const Expanded(
-                    child: Opacity(opacity: 0.5, child: Text('17 hours ago', textAlign: TextAlign.end))
-                  ),
+                  SizedBox(width: spacingUnit(1),)
                 ],
+              ),
+
+              /// TAGING
+              Padding(
+                padding: EdgeInsets.all(spacingUnit(1)),
+                child: Wrap(
+                  children: [
+                    Icon(Icons.location_on_rounded, color: ThemePalette.tertiaryMain),
+                    const SizedBox(width: 4),
+                    const Text('Location: '),
+                    Text(location),
+                    const SizedBox(width: 8),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed('/promos/$promoId');
+                      },
+                      child: Text('#123456', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain))
+                    ),
+                    const SizedBox(width: 8),
+                    Text('@jamesdoe', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain)),
+                  ],
+                ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
                 child: const LineList(),
-              ),
-
-              /// TAGING
-              Wrap(
-                children: [
-                  Icon(Icons.location_on_rounded, color: ThemePalette.tertiaryMain),
-                  const SizedBox(width: 4),
-                  const Text('Location: '),
-                  Text(location),
-                  const SizedBox(width: 8),
-                  Text('#123456', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain)),
-                  const SizedBox(width: 8),
-                  Text('@jamesdoe', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain)),
-                ],
               ),
             ],
           ),

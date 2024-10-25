@@ -112,7 +112,7 @@ List<Post> postList = [
   Post(
     id: "3",
     userId: 8,
-    caption: 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam "null"a. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
+    caption: 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam a. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
     image: ImgApi.photo[123],
     location: 'PO Box 67767',
     likes: 64,
@@ -151,7 +151,7 @@ List<Post> postList = [
   Post(
     id: "6",
     userId: 8,
-    caption: 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam "null"a. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
+    caption: 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam a. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
     image: ImgApi.photo[126],
     location: '13th Floor',
     likes: 23,
@@ -177,7 +177,7 @@ List<Post> postList = [
   Post(
     id: "8",
     userId: 2,
-    caption: 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id "null"a ultrices aliquet.',
+    caption: 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id a ultrices aliquet.',
     image: ImgApi.photo[128],
     location: 'Suite 63',
     likes: 70,
@@ -190,7 +190,7 @@ List<Post> postList = [
   Post(
     id: "9",
     userId: 10,
-    caption: 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id "null"a ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.',
+    caption: 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id a ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.',
     image: ImgApi.photo[129],
     location: 'PO Box 32545',
     likes: 12,
@@ -229,7 +229,7 @@ List<Post> postList = [
   Post(
     id: "12",
     userId: 2,
-    caption: 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\n"null"a ut erat id mauris vulputate elementum. "null"am varius. "null"a facilisi.',
+    caption: 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\na ut erat id mauris vulputate elementum. am varius. a facilisi.',
     image: ImgApi.photo[132],
     location: 'Room 1528',
     likes: 67,
@@ -281,7 +281,7 @@ List<Post> postList = [
   Post(
     id: "16",
     userId: 8,
-    caption: 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, "null"a. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.',
+    caption: 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, a. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.',
     image: ImgApi.photo[136],
     location: 'Room 1031',
     likes: 26,
@@ -307,7 +307,7 @@ List<Post> postList = [
   Post(
     id: "18",
     userId: 6,
-    caption: 'Proin leo odio, porttitor id, consequat in, consequat ut, "null"a. Sed accumsan felis. Ut at dolor quis odio consequat varius.',
+    caption: 'Proin leo odio, porttitor id, consequat in, consequat ut, a. Sed accumsan felis. Ut at dolor quis odio consequat varius.',
     image: ImgApi.photo[138],
     location: 'PO Box 80343',
     likes: 6,
@@ -320,7 +320,7 @@ List<Post> postList = [
   Post(
     id: "19",
     userId: 9,
-    caption: 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. "null"am molestie nibh in lectus.\n\nPellentesque at "null"a. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
+    caption: 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. am molestie nibh in lectus.\n\nPellentesque at a. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
     image: ImgApi.photo[139],
     location: 'Room 1887',
     likes: 12,
@@ -333,7 +333,7 @@ List<Post> postList = [
   Post(
     id: "20",
     userId: 9,
-    caption: 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\n"null"am sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.',
+    caption: 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.',
     image: ImgApi.photo[140],
     location: 'Suite 10',
     likes: 86,
@@ -385,7 +385,7 @@ List<Post> postList = [
   Post(
     id: "24",
     userId: 4,
-    caption: 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel "null"a eget eros elementum pellentesque.',
+    caption: 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel a eget eros elementum pellentesque.',
     image: ImgApi.photo[144],
     location: 'Room 487',
     likes: 67,
@@ -398,7 +398,7 @@ List<Post> postList = [
   Post(
     id: "25",
     userId: 11,
-    caption: 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel "null"a eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, "null"a. Nunc purus.',
+    caption: 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel a eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, a. Nunc purus.',
     image: ImgApi.photo[145],
     location: 'Suite 84',
     likes: 40,
@@ -411,7 +411,7 @@ List<Post> postList = [
   Post(
     id: "26",
     userId: 10,
-    caption: 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. "null"a tellus.',
+    caption: 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. a tellus.',
     image: ImgApi.photo[146],
     location: 'PO Box 36097',
     likes: 74,
@@ -424,7 +424,7 @@ List<Post> postList = [
   Post(
     id: "27",
     userId: 4,
-    caption: '"null"am porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. "null"am orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
+    caption: 'am porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. am orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
     image: ImgApi.photo[147],
     location: 'Suite 16',
     likes: 29,
@@ -437,7 +437,7 @@ List<Post> postList = [
   Post(
     id: "28",
     userId: 2,
-    caption: 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. "null"a nisl. Nunc nisl.',
+    caption: 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. a nisl. Nunc nisl.',
     image: ImgApi.photo[148],
     location: 'Apt 674',
     likes: 37,
@@ -450,7 +450,7 @@ List<Post> postList = [
   Post(
     id: "29",
     userId: 9,
-    caption: 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel "null"a eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, "null"a. Nunc purus.',
+    caption: 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel a eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, a. Nunc purus.',
     image: ImgApi.photo[149],
     location: 'Suite 13',
     likes: 8,
@@ -515,7 +515,7 @@ List<Post> postList = [
   Post(
     id: "34",
     userId: 11,
-    caption: 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. "null"am orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.',
+    caption: 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. am orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.',
     image: ImgApi.photo[154],
     location: 'Room 33',
     likes: 43,
@@ -554,7 +554,7 @@ List<Post> postList = [
   Post(
     id: "37",
     userId: 2,
-    caption: 'Fusce consequat. "null"a nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
+    caption: 'Fusce consequat. a nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
     image: ImgApi.photo[157],
     location: '9th Floor',
     likes: 98,
@@ -567,7 +567,7 @@ List<Post> postList = [
   Post(
     id: "38",
     userId: 6,
-    caption: 'Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. "null"a neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
+    caption: 'Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. a neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
     image: ImgApi.photo[158],
     location: 'Suite 15',
     likes: 96,
@@ -580,7 +580,7 @@ List<Post> postList = [
   Post(
     id: "39",
     userId: 2,
-    caption: 'Maecenas ut massa quis augue luctus tincidunt. "null"a mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.',
+    caption: 'Maecenas ut massa quis augue luctus tincidunt. a mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.',
     image: ImgApi.photo[159],
     location: 'PO Box 93356',
     likes: 86,
@@ -593,7 +593,7 @@ List<Post> postList = [
   Post(
     id: "40",
     userId: 4,
-    caption: 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. "null"am molestie nibh in lectus.',
+    caption: 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. am molestie nibh in lectus.',
     image: ImgApi.photo[160],
     location: 'PO Box 62165',
     likes: 41,
@@ -619,7 +619,7 @@ List<Post> postList = [
   Post(
     id: "42",
     userId: 3,
-    caption: '"null"am sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.',
+    caption: 'am sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.',
     image: ImgApi.photo[162],
     location: 'Apt 697',
     likes: 87,
@@ -671,7 +671,7 @@ List<Post> postList = [
   Post(
     id: "46",
     userId: 11,
-    caption: 'Phasellus sit amet erat. "null"a tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. "null"a ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
+    caption: 'Phasellus sit amet erat. a tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. a ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
     image: ImgApi.photo[166],
     location: 'Suite 94',
     likes: 82,
@@ -697,7 +697,7 @@ List<Post> postList = [
   Post(
     id: "48",
     userId: 5,
-    caption: 'Phasellus sit amet erat. "null"a tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. "null"a ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
+    caption: 'Phasellus sit amet erat. a tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. a ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
     image: ImgApi.photo[168],
     location: 'Suite 48',
     likes: 97,
