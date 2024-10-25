@@ -100,7 +100,7 @@ class _PostDetailState extends State<PostDetail> {
         height: 80,
         color: Theme.of(context).colorScheme.surface,
         padding: EdgeInsets.all(spacingUnit(1)),
-        child: ChatInput(sendMsg: (_) {}, hasBorder: false,),
+        child: ChatInput(sendMsg: (_) {}, hasBorder: false, hintText: 'Write comment',),
       )
     );
   }

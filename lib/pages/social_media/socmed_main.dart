@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:mamang_app_flutter/pages/social_media/following_posts.dart';
 import 'package:mamang_app_flutter/pages/social_media/for_you_posts.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/grabber_icon.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/header.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/tab_menu_socmed.dart';
 
@@ -37,13 +42,67 @@ class _SocmedMainState extends State<SocmedMain> {
               return TabMenuSocmed(
                 fixed: state.isPinned,
                 onSelect: _handleSelect,
-                current: _current
+                current: _current,
+                onAddPost: () {
+                  showModalBottomSheet<dynamic>(
+                  context: context,
+                  isScrollControlled: true,
+                  builder: (BuildContext context) {
+                    return Wrap(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                            const GrabberIcon(),
+                            const VSpace(),
+
+                            /// TITLE
+                            Text('Create New Post', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+                            SizedBox(height: spacingUnit(1)),
+                            const Text('Choose your content post type. You can upload photo from gallery or take from camera', textAlign: TextAlign.center, style: ThemeText.subtitle),
+                            const VSpace(),
+
+                            /// ICON BUTTONS
+                            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                              _iconButton(context, Icons.upload, ThemePalette.primaryMain, 'Upload Photo'),
+                              _iconButton(context, Icons.camera_alt, ThemePalette.secondaryMain, 'Take Photo'),
+                              _iconButton(context, Icons.location_on, ThemePalette.tertiaryMain, 'Post Location'),
+                            ]),
+                            const VSpaceBig(),
+                          ]),
+                        )
+                      ]
+                    );
+                  }
+                );
+                },
               );
             },
             sliver: _content[_current]
           )
         ]
       ),
+    );
+  }
+
+  Widget _iconButton(BuildContext context, IconData icon, Color color, String text) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+          width: 100,
+          height: 100,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            borderRadius: ThemeRadius.medium,
+            color: colorScheme.outline.withOpacity(0.5),
+          ),
+          child: Icon(icon, size: 48, color: color),
+        ),
+        SizedBox(height: spacingUnit(1)),
+        Text(text)
+      ],
     );
   }
 }

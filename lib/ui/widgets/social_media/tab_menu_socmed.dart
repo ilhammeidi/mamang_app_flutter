@@ -12,12 +12,14 @@ class TabMenuSocmed extends StatelessWidget {
     super.key,
     required this.onSelect,
     required this.current,
-    required this.fixed
+    required this.fixed,
+    this.onAddPost
   });
 
   final Function(int) onSelect;
   final int current;
   final bool fixed;
+  final Function()? onAddPost;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +77,7 @@ class TabMenuSocmed extends StatelessWidget {
                 width: 40,
                 height: 40,
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: onAddPost,
                   icon: Icon(Icons.add, color: colorScheme.onSecondaryContainer, size: 24),
                   style: IconButton.styleFrom(
                     backgroundColor: colorScheme.secondaryContainer,
