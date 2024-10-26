@@ -54,6 +54,7 @@ class TabMenuSocmed extends StatelessWidget {
 
           /// TAB MENUS
           Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
                 child: Container(

@@ -3,10 +3,10 @@ import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/ui/utils/bottom_draggable_sheet.dart';
 import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/header_form.dart';
-import 'package:mamang_app_flutter/ui/widgets/social_media/post_form.dart';
+import 'package:mamang_app_flutter/ui/widgets/social_media/post_form_step.dart';
 
-class CreatePost extends StatelessWidget {
-  const CreatePost({super.key});
+class CreateShortPost extends StatelessWidget {
+  const CreateShortPost({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class CreatePost extends StatelessWidget {
                   height: height,
                   child: Center(
                     child: Image.network(
-                      ImgApi.photo[150],
+                      ImgApi.photo[162],
                       loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
                         if (loadingProgress == null) return child;
                         return const SizedBox(
@@ -50,10 +50,10 @@ class CreatePost extends StatelessWidget {
               
               /// BOTTOMSHEET FORM
               const BottomDraggableSheet(
-                initPosition: 0.6,
-                maxPosition: 0.6,
+                initPosition: 0.65,
+                maxPosition: 0.65,
                 content: Wrap(children: [
-                  PostForm()
+                  PostFormStep()
                 ],)
               )
             ],

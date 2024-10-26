@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 
 class BottomDraggableSheet extends StatefulWidget {
-  const BottomDraggableSheet({super.key, required this.content});
+  const BottomDraggableSheet({
+    super.key,
+    required this.content,
+    this.initPosition = 0.3,
+    this.maxPosition = 0.9
+  });
 
   final Widget content;
+  final double initPosition;
+  final double maxPosition;
 
   @override
   State<BottomDraggableSheet> createState() => _BottomDraggableSheetState();
@@ -15,6 +22,14 @@ class _BottomDraggableSheetState extends State<BottomDraggableSheet> {
   final double _dragSensitivity = 600;
 
   @override
+  void initState() {
+    setState(() {
+      _sheetPosition = widget.initPosition;
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
@@ -22,7 +37,7 @@ class _BottomDraggableSheetState extends State<BottomDraggableSheet> {
       initialChildSize: _sheetPosition,
       builder: (BuildContext context, ScrollController scrollController) {
         return Container(
-          padding: EdgeInsets.only(top: spacingUnit(1)),
+          padding: EdgeInsets.only(top: spacingUnit(2)),
           decoration: BoxDecoration(
             color: colorScheme.surface,
             borderRadius: const BorderRadius.only(
@@ -36,11 +51,13 @@ class _BottomDraggableSheetState extends State<BottomDraggableSheet> {
                 onVerticalDragUpdate: (DragUpdateDetails details) {
                   setState(() {
                     _sheetPosition -= details.delta.dy / _dragSensitivity;
+                    // Min
                     if (_sheetPosition < 0.25) {
                       _sheetPosition = 0.25;
                     }
-                    if (_sheetPosition > 1.0) {
-                      _sheetPosition = 1.0;
+                    // Max
+                    if (_sheetPosition > widget.maxPosition) {
+                      _sheetPosition = widget.maxPosition;
                     }
                   });
                 },

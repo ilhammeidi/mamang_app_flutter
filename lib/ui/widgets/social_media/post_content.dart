@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
@@ -62,7 +63,17 @@ class PostContent extends StatelessWidget {
               RichText(
                 text: TextSpan(
                   style: Theme.of(context).textTheme.bodyMedium,
-                  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis quis mauris vel placerat. Integer mollis lectus quis justo fermentum, at varius nibh molestie. '
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis quis mauris vel placerat. Integer mollis lectus quis justo fermentum, at varius nibh molestie. ',
+                  children: [
+                    TextSpan(
+                      recognizer: TapGestureRecognizer()..onTap = () {
+                        Get.toNamed('/promos/$promoId');
+                      },
+                      text: '#12345$promoId',
+                      style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain)
+                    ),
+                    TextSpan(text: ' @jamesdoe', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain)),
+                  ]
                 )
               ),
             ],
@@ -72,21 +83,28 @@ class PostContent extends StatelessWidget {
         /// TAGING
         Padding(
           padding: EdgeInsets.all(spacingUnit(1)),
-          child: Wrap(
+          child: Row(
             children: [
-              Icon(Icons.location_on_rounded, color: ThemePalette.tertiaryMain),
-              const SizedBox(width: 4),
-              const Text('Location: '),
-              Text(location),
-              const SizedBox(width: 8),
-              GestureDetector(
-                onTap: () {
-                  Get.toNamed('/promos/$promoId');
-                },
-                child: Text('#12345$promoId', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain))
+              Expanded(
+                child: Row(
+                  children: [
+                    Icon(Icons.location_on_rounded, color: ThemePalette.tertiaryMain),
+                    const SizedBox(width: 4),
+                    Expanded(child: Text(location)),
+                  ],
+                ),
               ),
-              const SizedBox(width: 8),
-              Text('@jamesdoe', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain)),
+              SizedBox(width: spacingUnit(1)),
+              TextButton(
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Icon(Icons.directions_outlined, size: 14, color: ThemePalette.secondaryMain),
+                    const SizedBox(width: 4,),
+                    Text('Check Route', style: TextStyle(color: ThemePalette.secondaryMain)),
+                  ],
+                )
+              )
             ],
           ),
         ),

@@ -90,7 +90,7 @@ class Welcome extends StatelessWidget {
                     }
                   );
                 },
-                style: ThemeButton.btnBig.merge(ThemeButton.outlinedWhite(context)),
+                style: ThemeButton.btnBig.merge(ThemeButton.outlinedWhite()),
                 child: const Text('LOGIN', style: ThemeText.title2)
               ),
             ),

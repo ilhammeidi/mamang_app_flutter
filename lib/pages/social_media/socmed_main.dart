@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
+import 'package:get/get.dart';
 import 'package:mamang_app_flutter/pages/social_media/following_posts.dart';
 import 'package:mamang_app_flutter/pages/social_media/for_you_posts.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
@@ -48,29 +49,9 @@ class _SocmedMainState extends State<SocmedMain> {
                   context: context,
                   isScrollControlled: true,
                   builder: (BuildContext context) {
-                    return Wrap(
+                    return const Wrap(
                       children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
-                          child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                            const GrabberIcon(),
-                            const VSpace(),
-
-                            /// TITLE
-                            Text('Create New Post', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
-                            SizedBox(height: spacingUnit(1)),
-                            const Text('Choose your content post type. You can upload photo from gallery or take from camera', textAlign: TextAlign.center, style: ThemeText.subtitle),
-                            const VSpace(),
-
-                            /// ICON BUTTONS
-                            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                              _iconButton(context, Icons.upload, ThemePalette.primaryMain, 'Upload Photo'),
-                              _iconButton(context, Icons.camera_alt, ThemePalette.secondaryMain, 'Take Photo'),
-                              _iconButton(context, Icons.location_on, ThemePalette.tertiaryMain, 'Post Location'),
-                            ]),
-                            const VSpaceBig(),
-                          ]),
-                        )
+                        PostOption()
                       ]
                     );
                   }
@@ -82,6 +63,50 @@ class _SocmedMainState extends State<SocmedMain> {
           )
         ]
       ),
+    );
+  }
+}
+
+class PostOption extends StatelessWidget {
+  const PostOption({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        const GrabberIcon(),
+        const VSpace(),
+
+        /// TITLE
+        Text('Create New Post', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+        SizedBox(height: spacingUnit(1)),
+        const Text('Choose your content post type. You can upload photo from gallery or take from camera', textAlign: TextAlign.center, style: ThemeText.subtitle),
+        const VSpace(),
+
+        /// ICON BUTTONS
+        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          GestureDetector(
+            onTap: () {
+              Get.toNamed('/create-post');
+            },
+            child: _iconButton(context, Icons.upload, ThemePalette.primaryMain, 'Upload Photo')
+          ),
+          GestureDetector(
+            onTap: () {
+              Get.toNamed('/create-post');
+            },
+            child: _iconButton(context, Icons.camera_alt, ThemePalette.secondaryMain, 'Take Photo'),
+          ),
+          GestureDetector(
+            onTap: () {
+              Get.toNamed('/create-short-post');
+            },
+            child: _iconButton(context, Icons.access_time, ThemePalette.tertiaryMain, 'Short Post'),
+          ),
+        ]),
+        const VSpaceBig(),
+      ]),
     );
   }
 

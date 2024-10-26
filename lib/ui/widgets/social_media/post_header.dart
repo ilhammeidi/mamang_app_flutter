@@ -43,14 +43,28 @@ class PostHeader extends StatelessWidget {
     return AppBar(
       forceMaterialTransparency: true,
       titleSpacing: 0,
-      backgroundColor: Colors.transparent,
       flexibleSpace: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         curve: Curves.linear,
         decoration: BoxDecoration(
-          color: colorScheme.surface.withOpacity(isFixed ? 1 : 0),
-          boxShadow: isFixed ? [ThemeShade.shadeSoft(context)] : null
-        )
+          boxShadow: isFixed ? [ThemeShade.shadeSoft(context)] : null,
+          gradient: isFixed ? LinearGradient(
+            colors: [
+              colorScheme.surface,
+              colorScheme.surface,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter
+          ) : LinearGradient(
+            colors: [
+              Colors.black.withOpacity(0.7),
+              Colors.black.withOpacity(0.5),
+              Colors.black.withOpacity(0),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter
+          ),
+        ),
       ),
       leading: IconButton(
         icon: isFixed ? const Icon(Icons.arrow_back_ios_new) : _whiteIcon(context, Icons.arrow_back_ios_new, 22),
