@@ -21,7 +21,6 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   List<MessageItem> initMsg = [];
   final _scrollController = ScrollController();
-  final FocusNode _buttonFocusNode = FocusNode(debugLabel: 'Menu Button');
 
   void _sendMessage(MessageItem message){
     setState(() {

@@ -7,12 +7,14 @@ class LikeBtn extends StatelessWidget {
     this.isLiked = false,
     this.invert = false,
     this.onPressed,
+    this.highContrast = false,
     this.hasBg = false
   });
 
   final bool isLiked;
   final bool invert;
   final bool hasBg;
+  final bool highContrast;
   final Function()? onPressed;
 
   @override
@@ -28,7 +30,11 @@ class LikeBtn extends StatelessWidget {
       ) : null,
       icon: isLiked == true ? 
         Icon(Icons.favorite, color: ThemePalette.tertiaryMain)
-        : Icon(Icons.favorite_border_outlined, color: invert ? Colors.white : colorScheme.onSurface)
+        : Icon(
+            Icons.favorite_border_outlined,
+            shadows: highContrast ? const [BoxShadow(color: Colors.black, offset: Offset(0, 0), blurRadius: 5)] : null,
+            color: invert ? Colors.white : colorScheme.onSurface
+          )
     );
   }
 }

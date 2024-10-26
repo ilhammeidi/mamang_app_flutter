@@ -101,7 +101,7 @@ class ThemeButton {
     );
   }
 
-  static ButtonStyle outlinedBlack(BuildContext context) {
+  static ButtonStyle outlinedBlack() {
     return OutlinedButton.styleFrom(
       side: const BorderSide(
         color: Colors.black
@@ -113,7 +113,7 @@ class ThemeButton {
     );
   }
 
-  static ButtonStyle outlinedWhite(BuildContext context) {
+  static ButtonStyle outlinedWhite() {
     return OutlinedButton.styleFrom(
       side: const BorderSide(
         color: Colors.white

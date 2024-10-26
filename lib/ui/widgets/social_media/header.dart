@@ -30,7 +30,7 @@ class SocialMediaHeader extends StatelessWidget {
         CircleAvatar(
           radius: 12.r,
           backgroundColor: Colors.transparent,
-          child: const Icon(Icons.wifi_tethering, color: Colors.white)
+          child: const Icon(Icons.bolt, color: Colors.white, size: 32,)
         ),
         SizedBox(width: spacingUnit(1)),
         Text('Latest Updates', style: ThemeText.title2.copyWith(color: Colors.white))

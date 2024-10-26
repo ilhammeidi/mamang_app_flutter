@@ -4,6 +4,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_bottom.dart';
 
 class TabMenuSocmed extends StatelessWidget {
@@ -11,12 +12,14 @@ class TabMenuSocmed extends StatelessWidget {
     super.key,
     required this.onSelect,
     required this.current,
-    required this.fixed
+    required this.fixed,
+    this.onAddPost
   });
 
   final Function(int) onSelect;
   final int current;
   final bool fixed;
+  final Function()? onAddPost;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +54,7 @@ class TabMenuSocmed extends StatelessWidget {
 
           /// TAB MENUS
           Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
                 child: Container(
@@ -74,11 +78,11 @@ class TabMenuSocmed extends StatelessWidget {
                 width: 40,
                 height: 40,
                 child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.add, color: ThemePalette.secondaryMain, size: 24),
+                  onPressed: onAddPost,
+                  icon: Icon(Icons.add, color: colorScheme.onSecondaryContainer, size: 24),
                   style: IconButton.styleFrom(
-                    backgroundColor: colorScheme.surface,
-                    shadowColor: Colors.grey.withOpacity(0.9),
+                    backgroundColor: colorScheme.secondaryContainer,
+                    shadowColor: Colors.grey.withOpacity(0.3),
                     elevation: 6
                   ),
                 ),
@@ -104,7 +108,7 @@ class TabMenuSocmed extends StatelessWidget {
           borderRadius: ThemeRadius.big
         )
       ),
-      child: Text(text),
+      child: Text(text, style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.bold),),
     );
   }
 }

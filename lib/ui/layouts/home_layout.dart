@@ -29,7 +29,7 @@ class HomeLayout extends StatelessWidget {
             },
             backgroundColor: currentRoute == '/updates' ? ThemePalette.primaryMain : Theme.of(context).colorScheme.surface,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-            child: Icon(Icons.wifi_tethering, size: 32, color: currentRoute == '/updates' ? Colors.white : ThemePalette.primaryMain  )
+            child: Icon(Icons.bolt, size: 32, color: currentRoute == '/updates' ? Colors.white : ThemePalette.primaryMain  )
           ),
         )),
       ),

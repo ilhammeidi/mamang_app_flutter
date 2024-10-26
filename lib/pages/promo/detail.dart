@@ -4,9 +4,7 @@ import 'package:get/get.dart';
 import 'package:mamang_app_flutter/controllers/all_promo_controller.dart';
 import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/models/promos.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
 import 'package:mamang_app_flutter/ui/widgets/action_header/like_btn.dart';
 import 'package:mamang_app_flutter/ui/widgets/action_header/other_btn.dart';
@@ -18,6 +16,7 @@ import 'package:mamang_app_flutter/ui/widgets/promo/description_detail.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/parallax_cover.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/promo_list_single.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/promo_not_found.dart';
+import 'package:mamang_app_flutter/ui/widgets/promo/sponsored_promo.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/working_time.dart';
 
 class PromoDetail extends StatefulWidget {
@@ -168,25 +167,9 @@ class _PromoDetailState extends State<PromoDetail> {
               const VSpace(),
 
               /// SPONSORED PROMO
-              Padding(padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
-                child: Stack(children: [
-                  ClipRRect(
-                    borderRadius: ThemeRadius.medium,
-                    child: Image.network(ImgApi.photo[72], width: double.infinity, fit: BoxFit.contain)
-                  ),
-                  Positioned(
-                    top: spacingUnit(1),
-                    right: spacingUnit(1),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: ThemeRadius.medium
-                      ),
-                      child: Text('Sponsored', style: ThemeText.caption.copyWith(color: Colors.white)),
-                    ),
-                  ),
-                ]),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
+                child: SponsoredPromo(image: ImgApi.photo[72]),
               ),
               const VSpaceBig(),
 
