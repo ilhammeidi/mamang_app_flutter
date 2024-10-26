@@ -39,6 +39,7 @@ import 'package:mamang_app_flutter/pages/search/search_map.dart';
 import 'package:mamang_app_flutter/pages/search/search_result.dart';
 import 'package:mamang_app_flutter/pages/social_media/create_post.dart';
 import 'package:mamang_app_flutter/pages/social_media/create_short_post.dart';
+import 'package:mamang_app_flutter/pages/social_media/groups.dart';
 import 'package:mamang_app_flutter/pages/social_media/post_detail.dart';
 import 'package:mamang_app_flutter/pages/social_media/socmed_main.dart';
 import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
@@ -162,6 +163,10 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/create-short-post',
     page: () => const GeneralLayout(content: CreateShortPost()),
+  ),
+  GetPage(
+    name: '/groups',
+    page: () => const GeneralLayout(content: Groups()),
   ),
   
   /// BUSINESS

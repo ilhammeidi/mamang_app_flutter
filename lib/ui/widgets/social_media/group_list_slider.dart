@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/community.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -19,7 +20,9 @@ class GroupListSlider extends StatelessWidget {
             children: [
               Text('Popular Groups', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
               FilledButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/groups');
+                },
                 style: ThemeButton.btnSmall.merge(ThemeButton.tonalSecondary(context)),
                 child: const Text('See All Groups', style: ThemeText.caption)
               )

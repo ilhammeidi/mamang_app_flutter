@@ -167,7 +167,10 @@ class _PromoDetailState extends State<PromoDetail> {
               const VSpace(),
 
               /// SPONSORED PROMO
-              SponsoredPromo(image: ImgApi.photo[72]),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
+                child: SponsoredPromo(image: ImgApi.photo[72]),
+              ),
               const VSpaceBig(),
 
               /// RELATED PROMO

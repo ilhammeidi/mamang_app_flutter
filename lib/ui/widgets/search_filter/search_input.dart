@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SearchInput extends StatefulWidget {
-  const SearchInput({super.key, this.autofocus = false});
+  const SearchInput({super.key, this.autofocus = false, this.hintText = 'Search promo, event, or anything'});
 
   final bool autofocus;
+  final String hintText;
 
   @override
   State<SearchInput> createState() => _SearchInputState();
@@ -36,7 +37,7 @@ class _SearchInputState extends State<SearchInput> {
         ),
         disabledBorder: InputBorder.none,
         alignLabelWithHint: true,
-        hintText: 'Search promo, event, or anything',
+        hintText: widget.hintText,
         suffixIcon: _textRef.text.isNotEmpty ? IconButton(
           onPressed: () {
             setState(() {

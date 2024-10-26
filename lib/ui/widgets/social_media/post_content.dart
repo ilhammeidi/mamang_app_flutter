@@ -39,8 +39,6 @@ class PostContent extends StatelessWidget {
         /// IMAGE
         Image.network(
           image,
-          color: Colors.black.withOpacity(0.2),
-          colorBlendMode: BlendMode.darken,
           fit: BoxFit.cover, width: double.infinity,
           loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
             if (loadingProgress == null) return child;

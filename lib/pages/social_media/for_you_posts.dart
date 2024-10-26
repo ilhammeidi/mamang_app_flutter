@@ -24,7 +24,7 @@ class ForYouPosts extends StatelessWidget {
       const VSpaceShort(),
 
       /// List Post
-      ListPost(postDatas: postList.sublist(10, 13)),
+      ListPost(postDatas: postList.sublist(6, 10)),
       const VSpaceShort(),
 
       /// List Post Slider

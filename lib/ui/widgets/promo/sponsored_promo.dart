@@ -10,7 +10,7 @@ class SponsoredPromo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
+    return Padding(padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
       child: Stack(children: [
         ClipRRect(
           borderRadius: ThemeRadius.medium,

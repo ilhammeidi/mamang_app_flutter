@@ -111,7 +111,6 @@ class PostOption extends StatelessWidget {
   }
 
   Widget _iconButton(BuildContext context, IconData icon, Color color, String text) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -121,7 +120,7 @@ class PostOption extends StatelessWidget {
           alignment: Alignment.center,
           decoration: BoxDecoration(
             borderRadius: ThemeRadius.medium,
-            color: colorScheme.outline.withOpacity(0.5),
+            color: color.withOpacity(0.1),
           ),
           child: Icon(icon, size: 48, color: color),
         ),
