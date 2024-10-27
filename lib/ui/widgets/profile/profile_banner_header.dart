@@ -9,7 +9,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/image_viewer.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
-import 'package:mamang_app_flutter/ui/widgets/profile/tab_menu_profile.dart';
+import 'package:mamang_app_flutter/ui/widgets/tab_menu/menu.dart';
 
 class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
   const ProfileBannerHeader({
@@ -175,7 +175,7 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
               ),
           
               const VSpaceShort(),
-              TabMenuProfile(onSelect: onSelect, current: current),
+              TabMenu(onSelect: onSelect, current: current, menus: const ['Profile', 'Business', 'Settings']),
 
               Container(
                 width: double.infinity,

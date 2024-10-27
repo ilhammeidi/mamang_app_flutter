@@ -29,20 +29,22 @@ class TabMenu extends StatelessWidget {
         boxShadow: [ThemeShade.shadeSoft(context)],
         borderRadius: ThemeRadius.big
       ),
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Expanded(
-          flex: 1,
-          child: ButtonTab(
-            isSeleted: current == 0,
-            text: 'Promos', 
-            onSelect: onSelect(0)
-          ),
-        ),
-        const SizedBox(width: 2),
-        Expanded(flex: 1, child: _buttonTab(current == 2, 'Vouchers', () => onSelect(2), context)),
-        const SizedBox(width: 2),
-        Expanded(flex: 1, child: _buttonTab(current == 1, 'Liked', () => onSelect(1), context)),
-      ]),
-    )
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: menus.asMap().entries.map((entry) {
+          String item = entry.value;
+          int index = entry.key;
+
+          return Expanded(
+            flex: 1,
+            child: ButtonTab(
+              isSelected: current == index,
+              text: item,
+              onSelect: () => onSelect(index)
+            ),
+          );
+        }).toList()
+      ),
+    );
   }
 }

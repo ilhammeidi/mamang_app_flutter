@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_bottom.dart';
 import 'package:mamang_app_flutter/ui/widgets/tab_menu/menu.dart';
 
-class TabMenuSocmed extends StatelessWidget {
-  const TabMenuSocmed({
-    super.key,
-    required this.onSelect,
-    required this.current,
-    this.onAddPost
-  });
+class TabMenuSaved extends StatelessWidget {
+  const TabMenuSaved({super.key, required this.onSelect, required this.current});
 
   final Function(int) onSelect;
   final int current;
-  final Function()? onAddPost;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +18,6 @@ class TabMenuSocmed extends StatelessWidget {
     return Container(
       /// CURVE DECORATION
       color: colorScheme.surfaceContainerLowest,
-      padding: EdgeInsets.only(bottom: spacingUnit(1)),
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -48,34 +40,12 @@ class TabMenuSocmed extends StatelessWidget {
               ],
             )
           ),
-
+          
           /// TAB MENUS
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: TabMenu(
-                  onSelect: onSelect,
-                  current: current,
-                  menus: const ['For You', 'Following']
-                )
-              ),
-              const SizedBox(width: 4),
-              SizedBox(
-                width: 40,
-                height: 40,
-                child: IconButton(
-                  onPressed: onAddPost,
-                  icon: Icon(Icons.add, color: colorScheme.onSecondaryContainer, size: 24),
-                  style: IconButton.styleFrom(
-                    backgroundColor: colorScheme.secondaryContainer,
-                    shadowColor: Colors.grey.withOpacity(0.3),
-                    elevation: 6
-                  ),
-                ),
-              ),
-              SizedBox(width: spacingUnit(1)),
-            ],
+          TabMenu(
+            onSelect: onSelect,
+            current: current,
+            menus: const ['Saved', 'Voucher', 'Liked']
           )
         ],
       ),

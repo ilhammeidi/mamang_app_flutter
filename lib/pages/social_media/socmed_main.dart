@@ -41,7 +41,6 @@ class _SocmedMainState extends State<SocmedMain> {
           SliverStickyHeader.builder(
             builder: (context, state) {
               return TabMenuSocmed(
-                fixed: state.isPinned,
                 onSelect: _handleSelect,
                 current: _current,
                 onAddPost: () {

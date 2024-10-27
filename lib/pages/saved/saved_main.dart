@@ -4,7 +4,7 @@ import 'package:mamang_app_flutter/pages/saved/likes.dart';
 import 'package:mamang_app_flutter/pages/saved/puzzles.dart';
 import 'package:mamang_app_flutter/pages/saved/saved_promos.dart';
 import 'package:mamang_app_flutter/ui/widgets/saved/header.dart';
-import 'package:mamang_app_flutter/ui/widgets/saved/tab_menu.dart';
+import 'package:mamang_app_flutter/ui/widgets/saved/tab_menu_saved.dart';
 
 class SavedMain extends StatefulWidget {
   const SavedMain({super.key});
@@ -23,8 +23,8 @@ class _SavedMainState extends State<SavedMain> {
 
   final List<Widget> _content = [
     SavedPromos(),
-    SavedLikes(),
     const Puzzles(),
+    SavedLikes(),
   ];
 
   @override
@@ -36,8 +36,7 @@ class _SavedMainState extends State<SavedMain> {
           const SavedHeader(),
           SliverStickyHeader.builder(
             builder: (context, state) {
-              return TabMenu(
-                fixed: state.isPinned,
+              return TabMenuSaved(
                 onSelect: _handleSelect,
                 current: _current
               );
