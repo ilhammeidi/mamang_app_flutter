@@ -4,7 +4,6 @@ import 'package:mamang_app_flutter/pages/auth/otp_pin.dart';
 import 'package:mamang_app_flutter/pages/auth/register.dart';
 import 'package:mamang_app_flutter/pages/auth/reset_password.dart';
 import 'package:mamang_app_flutter/pages/auth/welcome.dart';
-import 'package:mamang_app_flutter/pages/business/business_main.dart';
 import 'package:mamang_app_flutter/pages/business/create_new.dart';
 import 'package:mamang_app_flutter/pages/business/detail.dart';
 import 'package:mamang_app_flutter/pages/business/form.dart';
@@ -170,10 +169,6 @@ final List<GetPage> appRoutes = [
   ),
   
   /// BUSINESS
-  GetPage(
-    name: '/business',
-    page: () => const GeneralLayout(content: BusinessMain()),
-  ),
   GetPage(
     name: '/business/:id',
     page: () => const GeneralLayout(content: BusinessDetail()),

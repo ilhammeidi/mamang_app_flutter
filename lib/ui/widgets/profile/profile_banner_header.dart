@@ -5,18 +5,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/dummy_api.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/image_viewer.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
+import 'package:mamang_app_flutter/ui/widgets/profile/tab_menu_profile.dart';
 
 class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
   const ProfileBannerHeader({
+    required this.current,
+    required this.onSelect, 
     required this.maxExtent,
     required this.minExtent
   });
+
+  final int current;
+  final Function(int) onSelect;
 
   @override
   final double maxExtent;
@@ -27,9 +31,6 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
-    const TextStyle smallText = TextStyle(
-      fontSize: 12,
-    );
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
     final showItem = shrinkOffset < 50;
 
@@ -173,57 +174,9 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
                 ) : const SizedBox()
               ),
           
-              /// COINS AND POINTS
               const VSpaceShort(),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
-                padding: EdgeInsets.all(spacingUnit(1)),
-                decoration: BoxDecoration(
-                  borderRadius: ThemeRadius.small,
-                  color: colorScheme.surface,
-                  boxShadow: [ThemeShade.shadeSoft(context)],
-                ),
-                child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  /// USER COINS
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
-                    child: CircleAvatar(
-                      radius: 20.r,
-                      backgroundColor: colorScheme.surface,
-                      child: Icon(Icons.stars, size: 40, color: ThemePalette.primaryMain)
-                    ),
-                  ),
-                  Expanded(
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      const Text('Your Point', style: smallText),
-                      const SizedBox(width: 2),
-                      Text('200', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
-                    ]),
-                  ),
-                  
-                  SizedBox(
-                    height: 40,
-                    child: VerticalDivider(color: colorScheme.outline, width: 20, thickness: 2)
-                  ),
-              
-                  /// USER POINT
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
-                    child: CircleAvatar(
-                      radius: 20.r,
-                      backgroundColor: colorScheme.surface,
-                      child: const Icon(Icons.motion_photos_on, size: 40, color: Colors.amber)
-                    ),
-                  ),
-                  Expanded(
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      const Text('Coins', style: smallText),
-                      const SizedBox(width: 2),
-                      Text('10000', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
-                    ]),
-                  ),
-                ]),
-              ),
+              TabMenuProfile(onSelect: onSelect, current: current),
+
               Container(
                 width: double.infinity,
                 height: 10,

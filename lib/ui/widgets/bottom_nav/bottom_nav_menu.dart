@@ -65,7 +65,7 @@ class BottomNavMenu extends StatelessWidget {
                     }
                   ),
                   MenuItem(
-                    title: 'Profile',
+                    title: 'You',
                     icon: Icons.person_outline,
                     iconActive: Icons.person,
                     isActive: currentRoute == '/profile',

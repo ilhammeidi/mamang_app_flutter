@@ -12,13 +12,11 @@ class TabMenuSocmed extends StatelessWidget {
     super.key,
     required this.onSelect,
     required this.current,
-    required this.fixed,
     this.onAddPost
   });
 
   final Function(int) onSelect;
   final int current;
-  final bool fixed;
   final Function()? onAddPost;
 
   @override
@@ -29,6 +27,7 @@ class TabMenuSocmed extends StatelessWidget {
     return Container(
       /// CURVE DECORATION
       color: colorScheme.surfaceContainerLowest,
+      padding: EdgeInsets.only(bottom: spacingUnit(1)),
       child: Stack(
         alignment: Alignment.topCenter,
         children: [

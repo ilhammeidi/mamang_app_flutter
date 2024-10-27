@@ -4,7 +4,6 @@ import 'package:mamang_app_flutter/controllers/business_controller.dart';
 import 'package:mamang_app_flutter/models/promos.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
-import 'package:mamang_app_flutter/ui/widgets/business/header.dart';
 import 'package:mamang_app_flutter/ui/widgets/business/infographic_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/business_card.dart';
 import 'package:mamang_app_flutter/ui/widgets/decorations/fadded_bottom_header.dart';
@@ -47,10 +46,6 @@ class _BusinessMainState extends State<BusinessMain> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(100),
-        child: BusinessHeader(isFixed: _isFixed),
-      ),
       body: DecoratedBox(
         decoration: BoxDecoration(
           gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
