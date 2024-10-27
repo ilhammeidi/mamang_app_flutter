@@ -174,7 +174,6 @@ class ProfileBannerHeader extends SliverPersistentHeaderDelegate {
                 ) : const SizedBox()
               ),
           
-              const VSpaceShort(),
               TabMenu(onSelect: onSelect, current: current, menus: const ['Profile', 'Business', 'Settings']),
 
               Container(

@@ -19,7 +19,8 @@ class BusinessCard extends StatelessWidget {
     required this.verified,
     required this.stared,
     required this.type,
-    required this.level
+    required this.level,
+    this.mini = false
   });
 
   final int id;
@@ -30,6 +31,7 @@ class BusinessCard extends StatelessWidget {
   final int stared;
   final String type;
   final int level;
+  final bool mini;
   
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,6 @@ class BusinessCard extends StatelessWidget {
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        boxShadow: [ThemeShade.shadeSoft(context)],
         color: colorScheme.surface,
         borderRadius: ThemeRadius.medium
       ),
@@ -92,11 +93,11 @@ class BusinessCard extends StatelessWidget {
                   Text(stared.toString(), style: ThemeText.caption,)
                 ]),
               )
-            )
+            ),
           ]),
 
           /// PROPERTIES
-          Padding(
+          mini ? Container() : Padding(
             padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
             child: Row(children: [
               Expanded(
@@ -117,10 +118,12 @@ class BusinessCard extends StatelessWidget {
             ]),
           ),
 
+          mini ? const SizedBox(height: 4,) : Container(),
+
           /// TITLE AND CATEGORY
           Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
             CircleAvatar(
-              radius: 15,
+              radius: mini ? 10 : 15,
               backgroundColor: lighten(colorType(type), 0.4),
               child: Icon(getCategory.icon, size: 20, color: colorType(type)),
             ),
@@ -128,15 +131,15 @@ class BusinessCard extends StatelessWidget {
             Expanded(
               child: Text(
                 name.toCapitalCase(),
-                style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.w600),
+                style: mini ? ThemeText.caption : ThemeText.paragraph.copyWith(fontWeight: FontWeight.w600),
                 overflow: TextOverflow.ellipsis,
-                maxLines: 2,
+                maxLines: mini ? 1 : 2,
               )
             )
           ]),
 
           /// PROGRESS LEVEL
-          Padding(padding: EdgeInsets.symmetric(vertical: spacingUnit(2)),
+          mini ? Container() : Padding(padding: EdgeInsets.symmetric(vertical: spacingUnit(2)),
             child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
               ClipRRect(
                 borderRadius: ThemeRadius.medium,

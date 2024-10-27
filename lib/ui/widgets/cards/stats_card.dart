@@ -27,7 +27,7 @@ class StatsCard extends StatelessWidget {
       padding: EdgeInsets.all(spacingUnit(2)),
       decoration: BoxDecoration(
         color: background,
-        boxShadow: [ThemeShade.shadeMedium(context)],
+        boxShadow: [ThemeShade.shadeSoft(context)],
         borderRadius: ThemeRadius.small,
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.end, children: [

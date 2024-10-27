@@ -23,13 +23,18 @@ class InfographicList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: spacingUnit(1), vertical: spacingUnit(1)),
+            padding: EdgeInsets.only(
+              left: spacingUnit(2), 
+              right: spacingUnit(1), 
+              top: spacingUnit(1),
+              bottom: spacingUnit(1)
+            ),
             width: cardWidth,
             child: StatsCard(
               background: colorScheme.primaryContainer,
               foreground: colorScheme.onPrimaryContainer,
               bigText: 'Medium',
-              title: 'Profile Strength',
+              title: 'Business Strength',
               infoGraphic: SizedBox(
                 width: 120,
                 child: Stack(
@@ -69,7 +74,12 @@ class InfographicList extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: spacingUnit(1), vertical: spacingUnit(1)),
+            padding: EdgeInsets.only(
+              left: spacingUnit(1), 
+              right: spacingUnit(2), 
+              top: spacingUnit(1),
+              bottom: spacingUnit(1)
+            ),
             width: cardWidth,
             child: StatsCard(
               background: colorScheme.tertiaryContainer,

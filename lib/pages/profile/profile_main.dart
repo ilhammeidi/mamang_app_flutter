@@ -36,7 +36,7 @@ class _ProfileMainState extends State<ProfileMain> {
         slivers: [
           SliverPersistentHeader(
             delegate: ProfileBannerHeader(
-              minExtent: topPadding + 140,
+              minExtent: topPadding + 120,
               maxExtent: 300,
               current: _current,
               onSelect: _handleSelect,

@@ -24,7 +24,7 @@ class BusinessCreateNew extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Get.toNamed('/business');
+            Get.back();
           },
           icon: const Icon(Icons.arrow_back_ios_new)
         ),
