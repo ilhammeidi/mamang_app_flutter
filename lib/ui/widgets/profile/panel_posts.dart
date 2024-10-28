@@ -16,7 +16,6 @@ class PanelPosts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     final isDark = Get.isDarkMode;
 
     return Container(

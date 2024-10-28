@@ -56,44 +56,46 @@ class BusinessCard extends StatelessWidget {
           borderRadius: ThemeRadius.medium
         ),
         child: Column(children: [
-          Stack(children: [
-            /// IMAGE THUMBNAIL
-            ClipRRect(
-              borderRadius: ThemeRadius.medium,
-              child: Image.network(
-                thumb,
-                width: double.infinity,
-                height: 120,
-                fit: BoxFit.cover,
-                loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return const SizedBox(
-                    width: double.infinity,
-                    height: 120,
-                    child: ShimmerPreloader()
-                  );
-                },
-              ),
-            ),
-
-            /// STAR
-            Positioned(
-              top: spacingUnit(1),
-              right: spacingUnit(1),
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-                decoration: BoxDecoration(
-                  color: colorScheme.surface,
-                  borderRadius: ThemeRadius.medium
+          Expanded(
+            child: Stack(children: [
+              /// IMAGE THUMBNAIL
+              ClipRRect(
+                borderRadius: ThemeRadius.medium,
+                child: Image.network(
+                  thumb,
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                  loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return const SizedBox(
+                      width: double.infinity,
+                      height: 120,
+                      child: ShimmerPreloader()
+                    );
+                  },
                 ),
-                child: Row(children: [
-                  Icon(Icons.star, color: Colors.yellow.shade700, size: 11,),
-                  const SizedBox(width: 2),
-                  Text(stared.toString(), style: ThemeText.caption,)
-                ]),
-              )
-            ),
-          ]),
+              ),
+            
+              /// STAR
+              Positioned(
+                top: spacingUnit(1),
+                right: spacingUnit(1),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+                  decoration: BoxDecoration(
+                    color: colorScheme.surface,
+                    borderRadius: ThemeRadius.medium
+                  ),
+                  child: Row(children: [
+                    Icon(Icons.star, color: Colors.yellow.shade700, size: 11,),
+                    const SizedBox(width: 2),
+                    Text(stared.toString(), style: ThemeText.caption,)
+                  ]),
+                )
+              ),
+            ]),
+          ),
 
           /// PROPERTIES
           mini ? Container() : Padding(
@@ -117,25 +119,26 @@ class BusinessCard extends StatelessWidget {
             ]),
           ),
 
-          mini ? const SizedBox(height: 4,) : Container(),
-
           /// TITLE AND CATEGORY
-          Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            CircleAvatar(
-              radius: mini ? 10 : 15,
-              backgroundColor: lighten(colorType(type), 0.4),
-              child: Icon(getCategory.icon, size: 20, color: colorType(type)),
-            ),
-            const SizedBox(width: 4),
-            Expanded(
-              child: Text(
-                name.toCapitalCase(),
-                style: mini ? ThemeText.caption : ThemeText.paragraph.copyWith(fontWeight: FontWeight.w600),
-                overflow: TextOverflow.ellipsis,
-                maxLines: mini ? 1 : 2,
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: mini ? spacingUnit(1) : 0),
+            child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+              CircleAvatar(
+                radius: mini ? 10 : 15,
+                backgroundColor: lighten(colorType(type), 0.4),
+                child: Icon(getCategory.icon, size: 20, color: colorType(type)),
+              ),
+              const SizedBox(width: 4),
+              Expanded(
+                child: Text(
+                  name.toCapitalCase(),
+                  style: mini ? ThemeText.caption : ThemeText.paragraph.copyWith(fontWeight: FontWeight.w600),
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: mini ? 1 : 2,
+                )
               )
-            )
-          ]),
+            ]),
+          ),
 
           /// PROGRESS LEVEL
           mini ? Container() : Padding(padding: EdgeInsets.symmetric(vertical: spacingUnit(2)),
