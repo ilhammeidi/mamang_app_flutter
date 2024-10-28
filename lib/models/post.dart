@@ -600,7 +600,7 @@ List<Post> postList = [
   ),
   Post(
     id: "40",
-    userId: 4,
+    userId: 1,
     caption: 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. am molestie nibh in lectus.',
     image: ImgApi.photo[160],
     location: 'PO Box 62165',

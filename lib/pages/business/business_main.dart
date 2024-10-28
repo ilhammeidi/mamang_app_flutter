@@ -50,13 +50,13 @@ class _BusinessMainState extends State<BusinessMain> {
               onPressed: () {
                 handleToggleSearch();
               },
-              icon: const Icon(Icons.search, size: 40)
+              icon: const Icon(Icons.search, size: 36)
             ) : Container(),
           IconButton(
             onPressed: () {
               Get.toNamed('/business-new');
             },
-            icon: const Icon(Icons.add_circle_outline, size: 36)
+            icon: const Icon(Icons.add_circle_outline, size: 32)
           ),
         ],
       ),

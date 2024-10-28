@@ -6,8 +6,8 @@ import 'package:mamang_app_flutter/ui/widgets/business/infographic_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/news/news_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/review/review_list_slider.dart';
 
-class BusinessDashboard extends StatelessWidget {
-  const BusinessDashboard({super.key});
+class DashboardBusiness extends StatelessWidget {
+  const DashboardBusiness({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/controllers/business_controller.dart';
 import 'package:mamang_app_flutter/models/promos.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
@@ -21,7 +22,7 @@ class BusinessPanel extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
       decoration: BoxDecoration(
         borderRadius: ThemeRadius.medium,
-        color: colorScheme.secondary
+        color: isDark ? ThemePalette.secondaryDark : colorScheme.secondary
       ),
       child: Column(
         children: [
@@ -36,7 +37,7 @@ class BusinessPanel extends StatelessWidget {
                 return Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      padding: EdgeInsets.all(spacingUnit(1)),
                       child: TitleAction(
                         title: 'Business',
                         textAction: 'All Business',
@@ -49,9 +50,11 @@ class BusinessPanel extends StatelessWidget {
                     SizedBox(height: spacingUnit(1),),
                     GridView.builder(
                       shrinkWrap: true,
-                      padding: const EdgeInsets.all(0),
                       physics: const ClampingScrollPhysics(),
                       itemCount: 4,
+                      padding: EdgeInsets.only(
+                        bottom: spacingUnit(2)
+                      ),
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         childAspectRatio: 1,
                         crossAxisCount: 2,

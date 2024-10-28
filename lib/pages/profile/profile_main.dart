@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/pages/profile/business_dashboard.dart';
-import 'package:mamang_app_flutter/pages/profile/personal_dashboard.dart';
+import 'package:mamang_app_flutter/pages/profile/dashboard_business.dart';
+import 'package:mamang_app_flutter/pages/profile/dashboard_personal.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/settings/setting_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/profile/profile_banner_header.dart';
@@ -21,8 +21,8 @@ class _ProfileMainState extends State<ProfileMain> {
   }
 
   final List<Widget> _content = [
-    const PersonalDashboard(),
-    const BusinessDashboard(),
+    const DashboardPersonal(),
+    const DashboardBusiness(),
     SettingList(),
   ];
 
