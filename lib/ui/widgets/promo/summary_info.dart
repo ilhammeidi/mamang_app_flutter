@@ -1,7 +1,6 @@
 import 'package:change_case/change_case.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -13,14 +12,12 @@ class SummaryInfo extends StatelessWidget {
     super.key,
     required this.id,
     required this.title,
-    required this.category,
     required this.location,
     required this.thumb
   });
 
   final int id;
   final String title;
-  final String category;
   final String location;
   final String thumb;
 
@@ -64,24 +61,21 @@ class SummaryInfo extends StatelessWidget {
                   maxLines: 2,
                 ),
                 const SizedBox(height: 4),
-                Text('Category: ${category.toCapitalCase()}', style: ThemeText.caption),
-                SizedBox(height: spacingUnit(2)),
                 Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                   Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
                   const SizedBox(width: 4),
                   Text(location, overflow: TextOverflow.ellipsis,)
                 ]),
-                SizedBox(height: spacingUnit(1)),
-                FilledButton(
-                  onPressed: () {
+                SizedBox(height: spacingUnit(2)),
+                InkWell(
+                  onTap: () {
                     Get.toNamed('/promos/$id');
                   },
-                  style: ThemeButton.btnSmall.merge(ThemeButton.tonalPrimary(context)),
-                  child: const Wrap(
+                  child: Row(
                     children: [
-                      Text('See Promo Detail', style: ThemeText.caption,),
-                      SizedBox(width: 4),
-                      Icon(Icons.arrow_forward_ios_sharp, size: 16)
+                      Text('See Promo Detail', style: ThemeText.caption.copyWith(color: ThemePalette.primaryMain)),
+                      const SizedBox(width: 4),
+                      Icon(Icons.arrow_forward_ios_sharp, size: 14, color: ThemePalette.primaryMain)
                     ],
                   ),
                 )

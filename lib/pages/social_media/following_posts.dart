@@ -12,7 +12,7 @@ class FollowingPosts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList(delegate: SliverChildListDelegate([
-      const VSpaceShort(),
+      const SizedBox(height: 8),
       /// List Post Slider
       ListPostSlider(postDatas: postList.sublist(42, 48)),
       const VSpaceShort(),

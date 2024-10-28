@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:mamang_app_flutter/pages/social_media/following_posts.dart';
 import 'package:mamang_app_flutter/pages/social_media/for_you_posts.dart';
-import 'package:mamang_app_flutter/pages/social_media/post_option.dart';
+import 'package:mamang_app_flutter/ui/widgets/social_media/forms/post_option.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/header.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/tab_menu_socmed.dart';
 

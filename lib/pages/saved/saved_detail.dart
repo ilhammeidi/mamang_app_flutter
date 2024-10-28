@@ -100,7 +100,6 @@ class _SavedDetailState extends State<SavedDetail> {
                   return SummaryInfo(
                     id: item.id,
                     title: item.name,
-                    category: item.category,
                     location: item.location,
                     thumb: item.thumb
                   );

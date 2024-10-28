@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/models/users.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
@@ -64,9 +65,15 @@ class PanelRank extends StatelessWidget {
         point: 5,
       ),
     ];
-    return PaperCard(
-      flat: true,
-      content: Padding(
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: ThemeRadius.medium,
+        border: Border.all(
+          width: 1,
+          color: Theme.of(context).colorScheme.outline
+        )
+      ),
+      child: Padding(
         padding: EdgeInsets.all(spacingUnit(1)),
         child: Row(children: [
           Expanded(

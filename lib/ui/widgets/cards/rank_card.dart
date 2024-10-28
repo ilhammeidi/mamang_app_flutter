@@ -32,7 +32,7 @@ class RankCard extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 borderRadius: ThemeRadius.medium,
-                color: color.withOpacity(0.1)
+                color: color.withOpacity(0.15)
               ),
               child: Stack(
                 alignment: Alignment.center,

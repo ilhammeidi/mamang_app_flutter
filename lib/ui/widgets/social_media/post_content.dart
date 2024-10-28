@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 
 class PostContent extends StatelessWidget {
@@ -33,6 +34,7 @@ class PostContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -56,11 +58,11 @@ class PostContent extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Opacity(opacity: 0.5, child: Text('17 hours ago', textAlign: TextAlign.end)),
+              const Opacity(opacity: 0.5, child: Text('17 hours ago', textAlign: TextAlign.end, style: ThemeText.caption,)),
               const SizedBox(height: 4),
               RichText(
                 text: TextSpan(
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  style: ThemeText.paragraph.copyWith(color: colorScheme.onSurface),
                   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis quis mauris vel placerat. Integer mollis lectus quis justo fermentum, at varius nibh molestie. ',
                   children: [
                     TextSpan(
@@ -120,26 +122,26 @@ class PostContent extends StatelessWidget {
                     onPressed: () {},
                     icon: const Icon(Icons.favorite_outline)
                   ),
-                  Text(likes.toString()),
+                  Text(likes.toString(), style: ThemeText.caption),
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.remove_red_eye_outlined)
                   ),
-                  Text(views.toString()),
+                  Text(views.toString(), style: ThemeText.caption),
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.share_outlined)
                   ),
-                  const Text('20'),
+                  const Text('20', style: ThemeText.caption),
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.comment_outlined)
                   ),
-                  Text(comments.toString()),
-                  SizedBox(width: spacingUnit(1))
+                  Text(comments.toString(), style: ThemeText.caption),
+                  SizedBox(width: spacingUnit(1),)
                 ],
               ),
               Padding(

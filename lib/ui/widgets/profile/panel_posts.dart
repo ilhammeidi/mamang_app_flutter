@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/controllers/post_controller.dart';
 import 'package:mamang_app_flutter/models/post.dart';
-import 'package:mamang_app_flutter/pages/social_media/post_option.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
+import 'package:mamang_app_flutter/ui/widgets/social_media/forms/post_option.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
@@ -21,7 +20,7 @@ class PanelPosts extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: ThemeRadius.medium,
-        color: isDark ? ThemePalette.secondaryDark : Colors.black
+        color: isDark ? Colors.grey : Colors.black
       ),
       child: Column(
         children: [

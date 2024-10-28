@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
-import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
 
 class PanelPoint extends StatelessWidget {
   const PanelPoint({super.key});
@@ -15,9 +15,15 @@ class PanelPoint extends StatelessWidget {
       fontSize: 12,
     );
 
-    return PaperCard(
-      flat: true,
-      content: Padding(
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: ThemeRadius.medium,
+        border: Border.all(
+          width: 1,
+          color: Theme.of(context).colorScheme.outline
+        )
+      ),
+      child: Padding(
         padding: EdgeInsets.all(spacingUnit(1)),
         child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
           /// USER COINS
@@ -26,7 +32,7 @@ class PanelPoint extends StatelessWidget {
             child: CircleAvatar(
               radius: 20.r,
               backgroundColor: colorScheme.surface,
-              child: Icon(Icons.stars, size: 40, color: ThemePalette.primaryMain)
+              child: const Icon(Icons.stars, size: 40, color: Colors.amber)
             ),
           ),
           Expanded(
@@ -48,7 +54,7 @@ class PanelPoint extends StatelessWidget {
             child: CircleAvatar(
               radius: 20.r,
               backgroundColor: colorScheme.surface,
-              child: const Icon(Icons.motion_photos_on, size: 40, color: Colors.amber)
+              child: Icon(Icons.motion_photos_on, size: 40, color: ThemePalette.primaryMain)
             ),
           ),
           Expanded(

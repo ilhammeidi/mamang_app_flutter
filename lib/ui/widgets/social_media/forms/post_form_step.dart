@@ -65,7 +65,7 @@ class _PostFormStepState extends State<PostFormStep> {
             return Padding(
               padding: EdgeInsets.only(
                 top: spacingUnit(2),
-                bottom: spacingUnit(4)
+                bottom: 100
               ),
               child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                 Expanded(

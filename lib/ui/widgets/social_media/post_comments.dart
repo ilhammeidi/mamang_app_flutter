@@ -79,13 +79,14 @@ class CommentItem extends StatelessWidget {
           ),
         ),
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(name, style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.bold)),
+            Text(name, style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold)),
             SizedBox(width: spacingUnit(2)),
             Text(date, style: ThemeText.caption.copyWith(color: colorScheme.onSurfaceVariant)),
           ],
         ),
-        subtitle: Text(message, style: ThemeText.paragraph, maxLines: 2, overflow: TextOverflow.ellipsis),
+        subtitle: Text(message, maxLines: 2, overflow: TextOverflow.ellipsis),
       ),
       !isLast ? const LineList() : Container()
     ]);

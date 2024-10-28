@@ -33,6 +33,7 @@ class PostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Column(
       children: [
         const VSpaceShort(),
@@ -49,7 +50,7 @@ class PostCard extends StatelessWidget {
                   child: Text(name, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
                 )
               ),
-              const Opacity(opacity: 0.5, child: Text('17 hours ago', textAlign: TextAlign.end))
+              const Opacity(opacity: 0.5, child: Text('17 hours ago', textAlign: TextAlign.end, style: ThemeText.caption))
             ],
           ),
         ),
@@ -59,7 +60,7 @@ class PostCard extends StatelessWidget {
           padding: EdgeInsets.all(spacingUnit(2)),
           child: RichText(
             text: TextSpan(
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: ThemeText.paragraph.copyWith(color: colorScheme.onSurface),
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis quis mauris vel placerat. Integer mollis lectus quis justo fermentum, at varius nibh molestie. '
             )
           ),
@@ -94,25 +95,25 @@ class PostCard extends StatelessWidget {
                     onPressed: () {},
                     icon: const Icon(Icons.favorite_outline)
                   ),
-                  Text(likes.toString()),
+                  Text(likes.toString(), style: ThemeText.caption),
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.remove_red_eye_outlined)
                   ),
-                  Text(views.toString()),
+                  Text(views.toString(), style: ThemeText.caption),
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.share_outlined)
                   ),
-                  const Text('20'),
+                  const Text('20', style: ThemeText.caption),
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.comment_outlined)
                   ),
-                  Text(comments.toString()),
+                  Text(comments.toString(), style: ThemeText.caption),
                   SizedBox(width: spacingUnit(1),)
                 ],
               ),
