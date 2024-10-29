@@ -86,7 +86,7 @@ class CommentItem extends StatelessWidget {
             Text(date, style: ThemeText.caption.copyWith(color: colorScheme.onSurfaceVariant)),
           ],
         ),
-        subtitle: Text(message, maxLines: 2, overflow: TextOverflow.ellipsis),
+        subtitle: Text(message, style: TextStyle(color: colorScheme.onSurface, fontWeight: FontWeight.normal), maxLines: 2, overflow: TextOverflow.ellipsis),
       ),
       !isLast ? const LineList() : Container()
     ]);

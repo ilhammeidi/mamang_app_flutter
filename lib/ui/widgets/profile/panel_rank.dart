@@ -5,7 +5,6 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
-import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/rank_card.dart';
 
 class PanelRank extends StatelessWidget {

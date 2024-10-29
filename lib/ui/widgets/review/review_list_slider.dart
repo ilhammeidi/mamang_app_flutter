@@ -23,7 +23,7 @@ class ReviewListSlider extends StatelessWidget {
       ),
       const VSpaceShort(),
       SizedBox(
-        height: 140,
+        height: 150,
         child: ListView.builder(
           itemCount: ratingList.length,
           scrollDirection: Axis.horizontal,

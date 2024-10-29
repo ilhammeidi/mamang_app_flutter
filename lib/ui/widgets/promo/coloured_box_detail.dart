@@ -85,7 +85,7 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
               child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                 Text(widget.title.toCapitalCase(), textAlign: TextAlign.center, style: ThemeText.title2),
                 SizedBox(height: spacingUnit(1)),
-                Text(widget.desc, textAlign: TextAlign.center),
+                Text(widget.desc, textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.w100)),
               ]),
             ),
             const VSpaceShort(),

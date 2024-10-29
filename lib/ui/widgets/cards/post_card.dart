@@ -60,7 +60,7 @@ class PostCard extends StatelessWidget {
           padding: EdgeInsets.all(spacingUnit(2)),
           child: RichText(
             text: TextSpan(
-              style: ThemeText.paragraph.copyWith(color: colorScheme.onSurface),
+              style: ThemeText.paragraph.copyWith(color: colorScheme.onSurface, fontWeight: FontWeight.normal),
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis quis mauris vel placerat. Integer mollis lectus quis justo fermentum, at varius nibh molestie. '
             )
           ),

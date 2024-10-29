@@ -15,7 +15,7 @@ class SocialMediaHeader extends StatelessWidget {
     final bool isDark = Get.isDarkMode;
 
     return SliverAppBar(
-      toolbarHeight: 60,
+      toolbarHeight: 64,
       forceMaterialTransparency: true,
       automaticallyImplyLeading: false,
       flexibleSpace: Container(
@@ -25,8 +25,7 @@ class SocialMediaHeader extends StatelessWidget {
       ),
       titleSpacing: spacingUnit(1),
       title: Row(children: [
-
-        /// AVATAR AND USER PROFILE
+        /// PAGE TITLE
         CircleAvatar(
           radius: 12.r,
           backgroundColor: Colors.transparent,
