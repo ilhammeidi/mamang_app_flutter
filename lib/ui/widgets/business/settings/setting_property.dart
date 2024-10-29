@@ -46,7 +46,7 @@ class _SettingPropertyState extends State<SettingProperty> {
           padding: EdgeInsets.only(
             bottom: spacingUnit(2),
           ),
-          child: Text('Setting Property', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+          child: Text('Setting Property', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
         ),
         const VSpaceShort(),
       

@@ -99,13 +99,13 @@ class PanelRank extends StatelessWidget {
                 DataColumn(
                   label: Expanded(
                     flex: 1,
-                    child: Text('#', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold),),
+                    child: Text('#', style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700),),
                   ),
                 ),
                 DataColumn(
                   label: Expanded(
                     flex: 2,
-                    child: Text('Name', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold),),
+                    child: Text('Name', style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700),),
                   ),
                 ),
                 const DataColumn(

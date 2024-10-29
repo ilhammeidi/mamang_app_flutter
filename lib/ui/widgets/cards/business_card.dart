@@ -102,7 +102,7 @@ class BusinessCard extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
             child: Row(children: [
               Expanded(
-                child: Text('#123456${id.toString()}', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold))
+                child: Text('#123456${id.toString()}', style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700))
               ),
               verified ? Container(
                 padding: const EdgeInsets.symmetric(horizontal: 4),

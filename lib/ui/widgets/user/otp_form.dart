@@ -142,7 +142,7 @@ class _OtpFormState extends State<OtpForm> {
                   children: const [
                     TextSpan(
                       text: '1:30',
-                      style: TextStyle(fontWeight: FontWeight.bold)
+                      style: TextStyle(fontWeight: FontWeight.w700)
                     ),
                     TextSpan(
                       text: ' to send again',

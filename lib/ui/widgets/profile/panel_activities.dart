@@ -64,7 +64,7 @@ class PanelActivities extends StatelessWidget {
           )
         ),
       ),
-      title: Text(time, style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold)),
+      title: Text(time, style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700)),
       subtitle: Row(
         children: [
           Icon(icon, color: color, size: 16),

@@ -40,7 +40,7 @@ class ReviewButton extends StatelessWidget {
           )
         ),
         child: const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('Your Review', style: TextStyle(fontWeight: FontWeight.bold)),
+          Text('Your Review', style: TextStyle(fontWeight: FontWeight.w700)),
           SizedBox(height: 4),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             RatingStar(initVal: 5),

@@ -62,7 +62,7 @@ class HomeHeader extends StatelessWidget {
             ),
             child: Text(
               '${userDummy.title.toUpperCase()} • ${userDummy.point} Points',
-              style: TextStyle(color: Colors.white, fontSize: 11, fontFamily: appFont, fontWeight: FontWeight.bold)
+              style: TextStyle(color: Colors.white, fontSize: 11, fontFamily: appFont, fontWeight: FontWeight.w700)
             )
           )
         ])

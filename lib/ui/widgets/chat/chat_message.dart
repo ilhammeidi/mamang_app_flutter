@@ -76,7 +76,7 @@ class ChatBuble extends StatelessWidget {
             crossAxisAlignment: isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
             children: [
               Row(mainAxisAlignment: isMe ? MainAxisAlignment.end : MainAxisAlignment.start, children: [
-                Text(isMe ? 'Me' : name, style: const TextStyle(fontWeight: FontWeight.bold),),
+                Text(isMe ? 'Me' : name, style: const TextStyle(fontWeight: FontWeight.w700),),
                 const SizedBox(width: 8),
                 Text(date, style: ThemeText.caption),
               ]),

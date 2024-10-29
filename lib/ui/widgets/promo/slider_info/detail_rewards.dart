@@ -12,7 +12,7 @@ class DetailRewards extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
       const GrabberIcon(),
       const VSpace(),
-      Text('REWARDS', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+      Text('REWARDS', style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
       const VSpaceShort(),
 
       /// REWARD ITEMS
@@ -28,7 +28,7 @@ class DetailRewards extends StatelessWidget {
             return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
               Image.asset('assets/images/gift.png', height: 80, width: 80, fit: BoxFit.contain,),
               const SizedBox(height: 4),
-              Text('#123456$index', style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.bold))
+              Text('#123456$index', style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.w700))
             ]);
           })
         ),

@@ -55,7 +55,7 @@ class _WorkingTimeState extends State<WorkingTime> {
                           child: Row(children: [
                             const Icon(Icons.access_time_outlined, size: 12, color: Colors.green),
                             const SizedBox(width: 2),
-                            Text('OPEN', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: Colors.green)),
+                            Text('OPEN', style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700, color: Colors.green)),
                           ])
                         ),
                         const Spacer(),

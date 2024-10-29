@@ -60,7 +60,7 @@ class BusinessCreateNew extends StatelessWidget {
                   children: const [
                     TextSpan(
                       text: 'Tap to watch the tutorial on YouTube',
-                      style: TextStyle(fontWeight: FontWeight.bold)
+                      style: TextStyle(fontWeight: FontWeight.w700)
                     )
                   ]
                 )),

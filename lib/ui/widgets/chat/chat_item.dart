@@ -45,7 +45,7 @@ class ChatItem extends StatelessWidget {
               },
             ),
           ),
-          title: Text(name, style: const TextStyle(fontWeight: FontWeight.bold)),
+          title: Text(name, style: const TextStyle(fontWeight: FontWeight.w700)),
           subtitle: Text(message, maxLines: 2, overflow: TextOverflow.ellipsis),
           trailing: Text(date, style: ThemeText.caption),
         ),

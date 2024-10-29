@@ -65,7 +65,7 @@ class RankCard extends StatelessWidget {
                           children: [
                             const Icon(Icons.stars, size: 22, color: Colors.amber),
                             const SizedBox(width: 4),
-                            Text(point.toString(), style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold),),
+                            Text(point.toString(), style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700),),
                           ],
                         ),
                       )

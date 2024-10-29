@@ -155,7 +155,7 @@ class ScanQrStep extends StatelessWidget {
 
   Widget _progressContent(String title, String desc, Widget content, context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.start, children: [
-      Text(title, textAlign: TextAlign.start, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+      Text(title, textAlign: TextAlign.start, style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
       SizedBox(height: spacingUnit(1)),
       Text(desc, textAlign: TextAlign.start),
       SizedBox(height: spacingUnit(2)),
@@ -199,7 +199,7 @@ class _QuizState extends State<Quiz> {
       
       Padding(
         padding: EdgeInsets.all(spacingUnit(2)),
-        child: Text('Please answer this question', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+        child: Text('Please answer this question', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
       ),
       Padding(
         padding: EdgeInsets.all(spacingUnit(2)),

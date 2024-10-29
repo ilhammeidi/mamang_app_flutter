@@ -37,7 +37,7 @@ class Welcome extends StatelessWidget {
             ),
           
             /// TEXT
-            Text('Welcome to ${branding.name}', style: TextStyle(fontSize: 42.sp, color: Colors.white, fontWeight: FontWeight.bold)),
+            Text('Welcome to ${branding.name}', style: TextStyle(fontSize: 42.sp, color: Colors.white, fontWeight: FontWeight.w700)),
             const VSpaceShort(),
             Text(branding.title, style: ThemeText.title2.copyWith(color: Colors.white, fontWeight: FontWeight.normal)),
             const VSpaceBig(),

@@ -95,7 +95,7 @@ class BusinessPanel extends StatelessWidget {
               child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 const Icon(Icons.add, color: Colors.white),
                 const SizedBox(width: 4),
-                Text('Create New Business', style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.bold, color: Colors.white))
+                Text('Create New Business', style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.w700, color: Colors.white))
               ]),
             ),
           )

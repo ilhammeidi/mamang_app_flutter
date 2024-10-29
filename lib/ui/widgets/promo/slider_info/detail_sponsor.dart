@@ -58,7 +58,7 @@ class DetailSponsor extends StatelessWidget {
           child: Text('Sponsored', style: ThemeText.caption.copyWith(color: colorScheme.onPrimaryContainer)),
         ),
         const SizedBox(height: 4),
-        Text(title.toCapitalCase(), textAlign: TextAlign.start, style: ThemeText.title.copyWith(fontWeight: FontWeight.bold)),
+        Text(title.toCapitalCase(), textAlign: TextAlign.start, style: ThemeText.title.copyWith(fontWeight: FontWeight.w700)),
         SizedBox(height: spacingUnit(1)),
         Text(desc, textAlign: TextAlign.start, style: ThemeText.subtitle),
         const VSpace(),
@@ -67,7 +67,7 @@ class DetailSponsor extends StatelessWidget {
         Row(mainAxisAlignment: MainAxisAlignment.start, children:[
           Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
           const SizedBox(width: 4),
-          Text('Promo Location', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))
+          Text('Promo Location', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700))
         ]),
         const SizedBox(height: 4),
         Text('Distance: $distance - $location', textAlign: TextAlign.start),

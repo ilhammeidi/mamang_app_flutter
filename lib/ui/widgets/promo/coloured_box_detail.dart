@@ -85,7 +85,7 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
               child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                 Text(widget.title.toCapitalCase(), textAlign: TextAlign.center, style: ThemeText.title2),
                 SizedBox(height: spacingUnit(1)),
-                Text(widget.desc, textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.w100)),
+                Text(widget.desc, textAlign: TextAlign.center, style: const TextStyle(fontWeight: FontWeight.w100)),
               ]),
             ),
             const VSpaceShort(),
@@ -164,7 +164,7 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
                       child: Text(
                         '4',
                         textAlign: TextAlign.center,
-                        style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold, color: Colors.white)
+                        style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700, color: Colors.white)
                       ),
                     )
                   )
@@ -186,7 +186,7 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
                       child: Text(
                         widget.xp.toString(),
                         textAlign: TextAlign.center,
-                        style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold, color: Colors.white)
+                        style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700, color: Colors.white)
                       ),
                     )
                   )
@@ -194,12 +194,12 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
                 Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                   const Text('Save Total', style: ThemeText.caption),
                   const SizedBox(height: 4),
-                  Text('4', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold))
+                  Text('4', style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700))
                 ]),
                 Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                   const Text('Validate Tofal', style: ThemeText.caption),
                   const SizedBox(height: 4),
-                  Text('10', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold))
+                  Text('10', style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700))
                 ])
               ]),
             ) : Container(),

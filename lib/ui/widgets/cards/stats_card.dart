@@ -35,7 +35,7 @@ class StatsCard extends StatelessWidget {
         SizedBox(width: spacingUnit(1)),
         Expanded(
           child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(bigText, style: whiteText.copyWith(fontSize: 32, fontWeight: FontWeight.bold)),
+            Text(bigText, style: whiteText.copyWith(fontSize: 32, fontWeight: FontWeight.w700)),
             Text(title, style: whiteText),
           ])
         )

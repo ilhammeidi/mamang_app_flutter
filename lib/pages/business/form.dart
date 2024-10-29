@@ -126,7 +126,7 @@ class _BusinessFormState extends State<BusinessForm> {
                     Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                       const Text('Promo ID', style: ThemeText.caption),
                       const SizedBox(height: 4),
-                      Text('#123456', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+                      Text('#123456', style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
                     ])
                   ])
                 ),
