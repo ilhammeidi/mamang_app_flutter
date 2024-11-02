@@ -31,7 +31,7 @@ Company branding = Company(
   desc: 'This is the right place to find your favourite promotions, deals, and events!',
   version: 'alpha-1',
   prefix: 'mamang',
-  footerText: 'Mamang App',
+  footerText: 'Mobile Apps Marketing And Games',
   year: 2024,
   logoText: 'Mamang',
   url: 'mamang.indisains.com'
