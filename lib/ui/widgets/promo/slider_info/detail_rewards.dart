@@ -36,7 +36,7 @@ class DetailRewards extends StatelessWidget {
       const VSpaceShort(),
       FilledButton(
         onPressed: () {},
-        style: ThemeButton.btnBig.merge(ThemeButton.primary),
+        style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
         child: const Text('Claim Rewards')
       ),
       const VSpaceBig()

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
-import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_bottom.dart';
+import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_deco_main.dart';
 import 'package:mamang_app_flutter/ui/widgets/tab_menu/menu.dart';
 
 class TabMenuSocmed extends StatelessWidget {
@@ -34,15 +34,11 @@ class TabMenuSocmed extends StatelessWidget {
             left: 0,
             child: Column(
               children: [
-                ClipPath(
-                  clipper: RoundedClipPathBottom(),
-                  clipBehavior: Clip.antiAlias,
-                  child: Container(
-                    height: 40,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
-                    ),
+                RoundedDecoMain(
+                  height: 40,
+                  toBottom: true,
+                  bgDecoration: BoxDecoration(
+                    gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
                   ),
                 ),
               ],

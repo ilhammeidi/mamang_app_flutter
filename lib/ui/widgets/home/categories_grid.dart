@@ -11,8 +11,9 @@ class CategoriesGrid extends StatelessWidget {
     return SliverPadding(
       padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
       sliver: SliverGrid(
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 100,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          // maxCrossAxisExtent: 100,
           mainAxisExtent: 100,
           mainAxisSpacing: 8,
           crossAxisSpacing: 8,

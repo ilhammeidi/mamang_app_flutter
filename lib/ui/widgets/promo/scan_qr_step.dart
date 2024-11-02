@@ -262,7 +262,7 @@ class _QuizState extends State<Quiz> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              style: ThemeButton.primary,
+              style: ThemeButton.tonalPrimary(context),
               child: const Text('Confirm My Answer'),
             ),
           )

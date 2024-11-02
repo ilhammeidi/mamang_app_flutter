@@ -6,7 +6,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
-import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
+import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_deco_main.dart';
 import 'package:mamang_app_flutter/ui/widgets/promo/slider_info/slider_info_list.dart';
 
 class ColouredBoxDetail extends StatefulWidget {
@@ -69,14 +69,12 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
           Positioned(
             bottom: 0,
             left: 0,
-            child: ClipPath(
-              clipper: RoundedClipPathTop(),
-              child: Container(
-                height: 80,
-                width: MediaQuery.of(context).size.width,
-                color: Theme.of(context).colorScheme.surfaceContainerLowest,
+            child: RoundedDecoMain(
+              height: 80,
+              bgDecoration: BoxDecoration(
+                color: colorScheme.surfaceContainerLowest,
               ),
-            )
+            ),
           ),
           Column(children: [
             /// TITLE AND SHORT DESCRIPTION

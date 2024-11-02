@@ -8,7 +8,7 @@ class SavedNotFound extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NoData(
-      image: 'assets/images/grab.png',
+      image: 'assets/images/saved.png',
       title: 'Sorry we couldn\'t find the item',
       desc: 'Please go to saved page or back to the homepage',
       primaryTxtBtn: 'Go to Saved page',

@@ -52,10 +52,10 @@ class DetailSponsor extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
-            color: colorScheme.primaryContainer,
+            color: Colors.black,
             borderRadius: ThemeRadius.medium
           ),
-          child: Text('Sponsored', style: ThemeText.caption.copyWith(color: colorScheme.onPrimaryContainer)),
+          child: Text('Sponsored', style: ThemeText.caption.copyWith(color: Colors.white)),
         ),
         const SizedBox(height: 4),
         Text(title.toCapitalCase(), textAlign: TextAlign.start, style: ThemeText.title.copyWith(fontWeight: FontWeight.w700)),

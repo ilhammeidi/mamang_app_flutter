@@ -51,7 +51,7 @@ class CreatePost extends StatelessWidget {
               /// BOTTOMSHEET FORM
               const BottomDraggableSheet(
                 initPosition: 0.6,
-                maxPosition: 0.6,
+                maxPosition: 0.95,
                 content: Wrap(children: [
                   PostForm()
                 ],)

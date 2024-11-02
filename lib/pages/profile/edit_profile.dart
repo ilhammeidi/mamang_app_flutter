@@ -90,7 +90,7 @@ class _EditProfileState extends State<EditProfile> {
                       });
                     }
                   },
-                  style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
+                  style: ThemeButton.btnBig.merge(ThemeButton.secondary),
                   child: Text('UPDATE'.toUpperCase(), style: ThemeText.subtitle,)
                 ),
               )

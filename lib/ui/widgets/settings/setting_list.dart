@@ -350,6 +350,42 @@ class SettingList extends StatelessWidget {
               ),
               const LineList(),
               ListTile(
+                leading: const Icon(Icons.bolt),
+                title: const Text('Social Media'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/updates');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.campaign),
+                title: const Text('Post Detail'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/updates/11');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.camera_alt_outlined),
+                title: const Text('Create Post'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/create-post');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.access_time_outlined),
+                title: const Text('Create Short Post'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/create-short-post');
+                },
+              ),
+              const LineList(),
+              ListTile(
                 leading: const Icon(Icons.all_inbox_outlined),
                 title: const Text('Business'),
                 trailing: const Icon(Icons.arrow_forward_ios),

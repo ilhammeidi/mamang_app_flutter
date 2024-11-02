@@ -4,7 +4,7 @@ import 'package:mamang_app_flutter/models/dummy_api.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
-import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
+import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_deco_main.dart';
 
 class BannerExplore extends StatelessWidget {
   const BannerExplore({super.key});
@@ -58,16 +58,12 @@ class BannerExplore extends StatelessWidget {
                 Positioned(
                   bottom: 0,
                   left: 0,
-                  child: ClipPath(
-                    clipper: RoundedClipPathTop(),
-                    child: Container(
-                      height: 100,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
-                      ),
+                  child: RoundedDecoMain(
+                    height: 100,
+                    bgDecoration: BoxDecoration(
+                      gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
                     ),
-                  ),
+                  )
                 ),
                 SizedBox(
                   height: 150,

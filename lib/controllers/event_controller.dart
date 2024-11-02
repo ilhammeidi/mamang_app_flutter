@@ -27,6 +27,7 @@ class EventController extends GetxController {
     if (result.id == '0') {
       isNotFound.value = true;
     } else {
+      isNotFound.value = false;
       selectedEvent.update((eventValue) {
         eventValue!.id = result.id;
         eventValue.title = result.title;

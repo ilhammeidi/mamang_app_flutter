@@ -25,6 +25,7 @@ class PostController extends GetxController {
     if (result.id == '0') {
       isNotFound.value = true;
     } else {
+      isNotFound.value = false;
       selectedPost.update((postVal) {
         postVal!.id = result.id;
         postVal.userId = result.userId;

@@ -49,7 +49,7 @@ class _PostFormState extends State<PostForm> {
             Expanded(
               child: FilledButton(
                 onPressed: () {},
-                style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
+                style: ThemeButton.btnBig.merge(ThemeButton.primary),
                 child: Text('Post Now'.toUpperCase())
               ),
             )

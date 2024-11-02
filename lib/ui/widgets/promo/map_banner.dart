@@ -7,6 +7,7 @@ class MapBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
     double height = MediaQuery.sizeOf(context).height;
     var padding = MediaQuery.paddingOf(context);
 
@@ -35,11 +36,17 @@ class MapBanner extends StatelessWidget {
             height: 16,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.surface,
+              color: Theme.of(context).colorScheme.surfaceContainerLowest,
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(16),
                 topRight: Radius.circular(16),
-              )
+              ),
+              boxShadow: [BoxShadow(
+                color: colorScheme.surfaceContainerLowest,
+                blurRadius: 0.0,
+                spreadRadius: 0.0,
+                offset: const Offset(0, 2),
+              )],
             ),
           )
         ],)

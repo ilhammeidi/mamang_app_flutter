@@ -17,9 +17,9 @@ class DashboardPersonal extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
       children: [
         const SizedBox(height: 4),
-        const PanelPoint(),
-        const VSpace(),
         const FollowStats(),
+        const VSpace(),
+        const PanelPoint(),
         const VSpace(),
         const PanelRank(),
         const VSpace(),

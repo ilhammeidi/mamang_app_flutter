@@ -54,7 +54,7 @@ class AccountInfo extends StatelessWidget {
                 onPressed: () {
                   Get.toNamed('/edit-profile');
                 },
-                style: ThemeButton.tonalPrimary(context),
+                style: ThemeButton.tonalSecondary(context),
                 child: const Text('Change Profile', style: ThemeText.subtitle)
               ),
             ),

@@ -49,7 +49,7 @@ class DetailQr extends StatelessWidget {
         const VSpace(),
         FilledButton(
           onPressed: () {},
-          style: ThemeButton.btnBig.merge(ThemeButton.primary),
+          style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
           child: const Text('Scan QR')
         ),
         const VSpace(),

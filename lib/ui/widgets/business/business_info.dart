@@ -141,7 +141,7 @@ class BusinessInfo extends StatelessWidget {
               onPressed: () {
                 Get.toNamed('/business-new/payment');
               },
-              style: ThemeButton.primary,
+              style: ThemeButton.tonalPrimary(context),
               child: const Text('Continue'),
             ),
           ),

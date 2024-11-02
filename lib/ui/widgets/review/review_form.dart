@@ -72,11 +72,12 @@ class _ReviewFormState extends State<ReviewForm> {
             onPressed: () {
               Get.back();
             },
-            style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
+            style: ThemeButton.btnBig.merge(ThemeButton.primary),
             child: const Text('POST REVIEW'),
           ),
         ),
         const VSpaceBig(),
+        const SizedBox(height: 300)
       ]),
     );
   }

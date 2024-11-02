@@ -25,6 +25,7 @@ class CaptionForm extends StatelessWidget {
         const VSpace(),
         AppInputBox(
           content: ListTile(
+            contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 4),
             title: const Text('Tag Promos and People', style: ThemeText.subtitle2,),
             subtitle: Text('#123456, #678901, @johndrome', style: TextStyle(color: ThemePalette.primaryMain)),
             trailing: const Icon(Icons.arrow_forward_ios),

@@ -67,13 +67,13 @@ class SummaryInfo extends StatelessWidget {
                   Text(location, overflow: TextOverflow.ellipsis,)
                 ]),
                 SizedBox(height: spacingUnit(2)),
-                InkWell(
+                GestureDetector(
                   onTap: () {
                     Get.toNamed('/promos/$id');
                   },
                   child: Row(
                     children: [
-                      Text('See Promo Detail', style: ThemeText.caption.copyWith(color: ThemePalette.primaryMain)),
+                      Text('PROMO DETAIL', style: ThemeText.caption.copyWith(color: ThemePalette.primaryMain)),
                       const SizedBox(width: 4),
                       Icon(Icons.arrow_forward_ios_sharp, size: 14, color: ThemePalette.primaryMain)
                     ],
