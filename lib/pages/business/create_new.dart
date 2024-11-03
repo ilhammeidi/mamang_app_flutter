@@ -24,7 +24,7 @@ class BusinessCreateNew extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Get.toNamed('/business');
+            Get.back();
           },
           icon: const Icon(Icons.arrow_back_ios_new)
         ),
@@ -60,7 +60,7 @@ class BusinessCreateNew extends StatelessWidget {
                   children: const [
                     TextSpan(
                       text: 'Tap to watch the tutorial on YouTube',
-                      style: TextStyle(fontWeight: FontWeight.bold)
+                      style: TextStyle(fontWeight: FontWeight.w700)
                     )
                   ]
                 )),

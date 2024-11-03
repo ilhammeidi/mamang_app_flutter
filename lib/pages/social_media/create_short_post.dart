@@ -3,7 +3,7 @@ import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/ui/utils/bottom_draggable_sheet.dart';
 import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/header_form.dart';
-import 'package:mamang_app_flutter/ui/widgets/social_media/post_form_step.dart';
+import 'package:mamang_app_flutter/ui/widgets/social_media/forms/post_form_step.dart';
 
 class CreateShortPost extends StatelessWidget {
   const CreateShortPost({super.key});
@@ -51,7 +51,7 @@ class CreateShortPost extends StatelessWidget {
               /// BOTTOMSHEET FORM
               const BottomDraggableSheet(
                 initPosition: 0.65,
-                maxPosition: 0.65,
+                maxPosition: 0.95,
                 content: Wrap(children: [
                   PostFormStep()
                 ],)

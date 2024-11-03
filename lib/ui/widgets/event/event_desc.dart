@@ -43,7 +43,7 @@ class EventDesc extends StatelessWidget {
               title,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
-              style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold))
+              style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700))
             ),
             SizedBox(width: spacingUnit(1)),
 
@@ -98,7 +98,7 @@ class EventDesc extends StatelessWidget {
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(desc, style: ThemeText.subtitle2),
             SizedBox(height: spacingUnit(1)),
-            Text('Challenge Clue:', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
+            Text('Challenge Clue:', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
             SizedBox(height: spacingUnit(1)),
             Text(clue1, style: ThemeText.paragraph),
             SizedBox(height: spacingUnit(1)),

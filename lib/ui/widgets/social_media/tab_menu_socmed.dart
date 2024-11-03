@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
-import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_bottom.dart';
+import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_deco_main.dart';
+import 'package:mamang_app_flutter/ui/widgets/tab_menu/menu.dart';
 
 class TabMenuSocmed extends StatelessWidget {
   const TabMenuSocmed({
     super.key,
     required this.onSelect,
     required this.current,
-    required this.fixed,
     this.onAddPost
   });
 
   final Function(int) onSelect;
   final int current;
-  final bool fixed;
   final Function()? onAddPost;
 
   @override
@@ -29,6 +25,7 @@ class TabMenuSocmed extends StatelessWidget {
     return Container(
       /// CURVE DECORATION
       color: colorScheme.surfaceContainerLowest,
+      padding: EdgeInsets.only(bottom: spacingUnit(1)),
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -37,15 +34,11 @@ class TabMenuSocmed extends StatelessWidget {
             left: 0,
             child: Column(
               children: [
-                ClipPath(
-                  clipper: RoundedClipPathBottom(),
-                  clipBehavior: Clip.antiAlias,
-                  child: Container(
-                    height: 40,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
-                    ),
+                RoundedDecoMain(
+                  height: 40,
+                  toBottom: true,
+                  bgDecoration: BoxDecoration(
+                    gradient: isDark ? ThemePalette.gradientMixedDark : ThemePalette.gradientMixedMain
                   ),
                 ),
               ],
@@ -57,21 +50,11 @@ class TabMenuSocmed extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(spacingUnit(1)),
-                  padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    color: colorScheme.surface,
-                    boxShadow: [ThemeShade.shadeSoft(context)],
-                    borderRadius: ThemeRadius.big
-                  ),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                    Expanded(flex: 1, child: _buttonTab(current == 0, 'For You', () => onSelect(0), context)),
-                    const SizedBox(width: 2),
-                    Expanded(flex: 1, child: _buttonTab(current == 1, 'Following', () => onSelect(1), context)),
-                  ]),
-                ),
+                child: TabMenu(
+                  onSelect: onSelect,
+                  current: current,
+                  menus: const ['For You', 'Following']
+                )
               ),
               const SizedBox(width: 4),
               SizedBox(
@@ -92,23 +75,6 @@ class TabMenuSocmed extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-
-  Widget _buttonTab(bool isSelected, String text, Function() onSelect, context) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
-    return FilledButton(
-      onPressed: () {
-        onSelect();
-      },
-      style: FilledButton.styleFrom(
-        backgroundColor: isSelected ? colorScheme.primaryContainer : Colors.transparent,
-        foregroundColor: isSelected ? colorScheme.onPrimaryContainer : colorScheme.onSurface,
-        shape: RoundedRectangleBorder(
-          borderRadius: ThemeRadius.big
-        )
-      ),
-      child: Text(text, style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.bold),),
     );
   }
 }

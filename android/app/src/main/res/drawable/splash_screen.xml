@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <!-- Set background color and specify the logo as drawable -->
+    <solid android:color="@color/splash_background"/>
+    <!-- If using a logo -->
+    <item android:drawable="@drawable/logo" android:gravity="center"/>
+</shape>

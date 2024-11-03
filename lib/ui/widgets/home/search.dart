@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
+import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_deco_main.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
@@ -26,30 +26,12 @@ class SearchHome extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ClipPath(
-                  clipBehavior: Clip.antiAlias,
-                  clipper: RoundedClipPathTop(),
-                  child: Container(
-                    height: 70,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      color: colorScheme.surfaceContainerLowest,
-                    ),
+                RoundedDecoMain(
+                  height: 70,
+                  bgDecoration: BoxDecoration(
+                    color: colorScheme.surfaceContainerLowest,
                   ),
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 10,
-                  decoration: BoxDecoration(
-                    color: colorScheme.surfaceContainerLowest, 
-                    boxShadow: [BoxShadow(
-                      color: colorScheme.surfaceContainerLowest,
-                      blurRadius: 0.0,
-                      spreadRadius: 0.0,
-                      offset: const Offset(0, 5),
-                    )],
-                  )
-                )
               ],
             )
           ),

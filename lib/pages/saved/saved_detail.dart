@@ -55,7 +55,7 @@ class _SavedDetailState extends State<SavedDetail> {
                 left: spacingUnit(1),
                 child: IconButton(
                   onPressed: () {
-                    Get.offAndToNamed('/saved');
+                    Get.back();
                   },
                   style: iconBtn,
                   icon: const Icon(Icons.arrow_back_ios_new, size: 22),
@@ -69,7 +69,7 @@ class _SavedDetailState extends State<SavedDetail> {
               return Container(
                 padding: EdgeInsets.all(spacingUnit(1)),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface,
+                  color: Theme.of(context).colorScheme.surfaceContainerLowest,
                 ),
                 child: state.isPinned ? Row(children: [
                   IconButton(
@@ -100,7 +100,6 @@ class _SavedDetailState extends State<SavedDetail> {
                   return SummaryInfo(
                     id: item.id,
                     title: item.name,
-                    category: item.category,
                     location: item.location,
                     thumb: item.thumb
                   );

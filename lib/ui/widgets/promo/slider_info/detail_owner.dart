@@ -83,7 +83,7 @@ class DetailOwner extends StatelessWidget {
                 child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   const FaIcon(FontAwesomeIcons.whatsapp, color: Colors.lightGreen),
                   const SizedBox(width: 4),
-                  Text('Whatsapp', style: TextStyle(fontWeight: FontWeight.bold, color: colorScheme.onSurface))
+                  Text('Whatsapp', style: TextStyle(fontWeight: FontWeight.w700, color: colorScheme.onSurface))
                 ]),
               )
             ),
@@ -91,7 +91,7 @@ class DetailOwner extends StatelessWidget {
           const VSpace(),
 
           /// QR CODE
-          Text('QR Code Promo', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
+          Text('QR Code Promo', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700)),
           SizedBox(
             width: 250,
             height: 250,

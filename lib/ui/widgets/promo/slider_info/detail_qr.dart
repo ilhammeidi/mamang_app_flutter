@@ -21,7 +21,7 @@ class DetailQr extends StatelessWidget {
         const VSpace(),
       
         /// TITLE
-        Text('Exchange Content', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+        Text('Exchange Content', style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
         const VSpaceShort(),
       
         /// QR CODE
@@ -49,7 +49,7 @@ class DetailQr extends StatelessWidget {
         const VSpace(),
         FilledButton(
           onPressed: () {},
-          style: ThemeButton.btnBig.merge(ThemeButton.primary),
+          style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
           child: const Text('Scan QR')
         ),
         const VSpace(),

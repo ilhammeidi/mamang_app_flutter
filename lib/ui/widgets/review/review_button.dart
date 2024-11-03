@@ -40,7 +40,7 @@ class ReviewButton extends StatelessWidget {
           )
         ),
         child: const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('Your Review', style: TextStyle(fontWeight: FontWeight.bold)),
+          Text('Your Review', style: TextStyle(fontWeight: FontWeight.w700)),
           SizedBox(height: 4),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             RatingStar(initVal: 5),
@@ -53,10 +53,12 @@ class ReviewButton extends StatelessWidget {
     ) : Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Row(children: [
-        const Expanded(
-          child: Text('Write your review and get 🪙 10 coins'),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
+            child: const Text('Write your review and get 🪙 10 coins'),
+          ),
         ),
-        SizedBox(width: spacingUnit(1)),
         SizedBox(
           height: 40,
           child: OutlinedButton(

@@ -4,7 +4,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
-import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_top.dart';
+import 'package:mamang_app_flutter/ui/widgets/decorations/rounded_deco_main.dart';
 
 class MiniMap extends StatelessWidget {
   const MiniMap({super.key});
@@ -27,30 +27,12 @@ class MiniMap extends StatelessWidget {
             left: 0,
             child: Column(
               children: [
-                ClipPath(
-                  clipper: RoundedClipPathTop(),
-                  clipBehavior: Clip.antiAlias,
-                  child: Container(
-                    height: 90,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      color: colorScheme.surfaceContainerLowest,
-                    ),
+                RoundedDecoMain(
+                  height: 90, 
+                  bgDecoration: BoxDecoration(
+                    color: colorScheme.surfaceContainerLowest,
                   ),
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 10,
-                  decoration: BoxDecoration(
-                    color: colorScheme.surfaceContainerLowest,
-                    boxShadow: [BoxShadow(
-                      color: colorScheme.surfaceContainerLowest,
-                      blurRadius: 0.0,
-                      spreadRadius: 0.0,
-                      offset: const Offset(0, -10),
-                    )],
-                  ),
-                )
               ],
             ),
           ),

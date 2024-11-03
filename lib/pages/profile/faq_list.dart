@@ -60,7 +60,7 @@ class _FaqListState extends State<FaqList> {
           },
           icon: const Icon(Icons.arrow_back_ios_new),
         ),
-        title: const Text('Frequently Asks and Questions'),
+        title: const Text('FAQ'),
         centerTitle: false,
       ),
       body: Container(
@@ -139,11 +139,11 @@ class _FaqListState extends State<FaqList> {
                       const SizedBox(height: 8),
                       const Text('Contact us and we’ll get back to you as soon as possible.', textAlign: TextAlign.center, style: ThemeText.paragraph,),
                       const VSpaceShort(),
-                      FilledButton(
+                      OutlinedButton(
                         onPressed: () {
                           Get.toNamed('/contact');
                         },
-                        style: ThemeButton.primary,
+                        style: ThemeButton.outlinedPrimary(context),
                         child: const Text('Contact Us'),
                       )
                     ],)

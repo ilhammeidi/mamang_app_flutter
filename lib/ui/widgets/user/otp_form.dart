@@ -136,13 +136,13 @@ class _OtpFormState extends State<OtpForm> {
                 ),
               ),
               const SizedBox(height: 8),
-              RichText(text: const TextSpan(
+              RichText(text: TextSpan(
                 text: 'Please wait ',
-                style: ThemeText.paragraph,  
-                  children: [
+                style: ThemeText.paragraph.copyWith(color: colorScheme.onSurface),  
+                  children: const [
                     TextSpan(
                       text: '1:30',
-                      style: TextStyle(fontWeight: FontWeight.bold)
+                      style: TextStyle(fontWeight: FontWeight.w700)
                     ),
                     TextSpan(
                       text: ' to send again',

@@ -13,7 +13,7 @@ class SelectCategoryGrid extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Padding(
         padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
-        child: Text('Category Search', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
+        child: Text('Category Search', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
       ),
       GridView.builder(
         shrinkWrap: true,
@@ -40,7 +40,7 @@ class SelectCategoryGrid extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(spacingUnit(1)),
                 child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
-                  Expanded(child: Text(item.name, style: TextStyle(fontWeight: FontWeight.bold, color: item.color))),
+                  Expanded(child: Text(item.name, style: TextStyle(fontWeight: FontWeight.w700, color: item.color))),
                   Image.asset(item.image, fit: BoxFit.contain, height: 30,)
                 ]),
               ),          

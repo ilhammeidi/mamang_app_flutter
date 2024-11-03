@@ -90,7 +90,7 @@ class _EventDetailState extends State<EventDetail> {
               color: Theme.of(context).colorScheme.primaryContainer,
               borderRadius: ThemeRadius.medium
             ),
-            child: Obx(() => Text('${controller.selectedEvent.value.point} POINT', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold)))
+            child: Obx(() => Text('${controller.selectedEvent.value.point} POINT', style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700)))
           ),
           SizedBox(width: spacingUnit(1)),
           /// LIKED
@@ -181,7 +181,7 @@ class _PromoWithEventState extends State<PromoWithEvent> {
           child: Text(
             'Explore the best ${controller.filteredList.length} ${widget.filter} promo!',
             textAlign: TextAlign.start,
-            style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)
+            style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)
           ),
         ),
         const VSpace(),

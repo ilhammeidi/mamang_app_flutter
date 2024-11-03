@@ -131,7 +131,7 @@ class _EditPasswordState extends State<EditPassword> {
                       });
                     }
                   },
-                  style: ThemeButton.tonalPrimary(context),
+                  style: ThemeButton.secondary,
                   child: const Text('UPDATE', style: ThemeText.subtitle2,)
                 ),
               )

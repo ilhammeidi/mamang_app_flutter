@@ -27,7 +27,7 @@ class PostShortCard extends StatelessWidget {
       color: Colors.white,
       shadows: [BoxShadow(color: Colors.black, offset: Offset(0, 0), blurRadius: 5)],
       fontSize: 14,
-      fontWeight: FontWeight.bold
+      fontWeight: FontWeight.w700
     );
 
     return Container(

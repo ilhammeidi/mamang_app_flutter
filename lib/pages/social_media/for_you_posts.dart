@@ -14,7 +14,6 @@ class ForYouPosts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList(delegate: SliverChildListDelegate([
-      const VSpaceShort(),
       /// Group List
       const GroupListSlider(),
       const VSpaceShort(),

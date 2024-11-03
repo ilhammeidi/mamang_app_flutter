@@ -83,7 +83,7 @@ class PromoLandscapeCard extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 4),
                   child: Text(
                     title.toCapitalCase(),
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.w700),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                   ),

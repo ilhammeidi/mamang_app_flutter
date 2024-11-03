@@ -22,9 +22,10 @@ class PostController extends GetxController {
   void getPost(String id) {
     Post result = allPost.firstWhere((item) => item.id == id, orElse: () => Post());
 
-    if (result.id == 0) {
+    if (result.id == '0') {
       isNotFound.value = true;
     } else {
+      isNotFound.value = false;
       selectedPost.update((postVal) {
         postVal!.id = result.id;
         postVal.userId = result.userId;

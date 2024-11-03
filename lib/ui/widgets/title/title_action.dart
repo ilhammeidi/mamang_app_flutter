@@ -37,7 +37,7 @@ class TitleAction extends StatelessWidget {
           onTap()
         },
         style: ThemeButton.btnSmall.merge(ThemeButton.tonalSecondary(context)),
-        child: Text(textAction, style: const TextStyle(fontWeight: FontWeight.bold))
+        child: Text(textAction, style: const TextStyle(fontWeight: FontWeight.w700))
       )
     ]);
   }
@@ -75,7 +75,7 @@ class TitleActionSetting extends StatelessWidget {
         onPressed: () => {
           onTap()
         },
-        child: Text(textAction, style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain))
+        child: Text(textAction, style: TextStyle(fontWeight: FontWeight.w700, color: ThemePalette.primaryMain))
       )
     ]);
   }

@@ -8,6 +8,7 @@ import 'package:mamang_app_flutter/ui/widgets/chat/chat_input.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/post_comments.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/post_content.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/post_header.dart';
+import 'package:mamang_app_flutter/ui/widgets/social_media/post_not_found.dart';
 
 class PostDetail extends StatefulWidget {
   const PostDetail({super.key});
@@ -58,7 +59,7 @@ class _PostDetailState extends State<PostDetail> {
       });
     });
 
-    return controller.isNotFound.value ? const Text('Post not found') : Scaffold(
+    return controller.isNotFound.value ? const PostNotFound() : Scaffold(
       extendBodyBehindAppBar: true,
       extendBody: true,
       appBar: PreferredSize(

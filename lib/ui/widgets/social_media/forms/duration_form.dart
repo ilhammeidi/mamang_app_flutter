@@ -20,7 +20,7 @@ class _DurationFormState extends State<DurationForm> {
     return Column(children: [
       const Text('Please set your post duration', textAlign: TextAlign.center, style: ThemeText.subtitle),
       const VSpace(),
-      const Text('08:30 - 11:30', style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold)),
+      const Text('08:30 - 11:30', style: TextStyle(fontSize: 50, fontWeight: FontWeight.w700)),
       const VSpace(),
       Slider(
         value: _currentSliderValue,

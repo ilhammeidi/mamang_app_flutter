@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/models/chat.dart';
+import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/action_header/other_btn.dart';
@@ -43,39 +44,41 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        titleSpacing: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new),
-          onPressed: () {
-            Get.back();
-          },
-        ),
-        title: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          CircleAvatar(
-            radius: 15,
-            backgroundImage: NetworkImage(widget.avatar)
+    return GeneralLayout(
+      content: Scaffold(
+        appBar: AppBar(
+          titleSpacing: 0,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios_new),
+            onPressed: () {
+              Get.back();
+            },
           ),
-          SizedBox(width: spacingUnit(1)),
-          Text(widget.name, style: ThemeText.subtitle2),
-        ]),
-        actions: const [
-          OtherBtn()
-        ],
-      ),
-      body: Column(children: [
-        Expanded(
-          child: ChatMessage(
-            avatar: widget.avatar,
-            name: widget.name,
-            chatMessages: initMsg,
-            scrollCtrl: _scrollController
-          )
+          title: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            CircleAvatar(
+              radius: 15,
+              backgroundImage: NetworkImage(widget.avatar)
+            ),
+            SizedBox(width: spacingUnit(1)),
+            Text(widget.name, style: ThemeText.subtitle2),
+          ]),
+          actions: const [
+            OtherBtn()
+          ],
         ),
-        ChatInput(sendMsg: _sendMessage),
-        const VSpace()
-      ]),
+        body: Column(children: [
+          Expanded(
+            child: ChatMessage(
+              avatar: widget.avatar,
+              name: widget.name,
+              chatMessages: initMsg,
+              scrollCtrl: _scrollController
+            )
+          ),
+          ChatInput(sendMsg: _sendMessage),
+          const VSpace()
+        ]),
+      ),
     );
   }
 }

@@ -102,7 +102,7 @@ class SliderInfoList extends StatelessWidget {
                   Row(mainAxisAlignment: MainAxisAlignment.start, children:[
                     Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
                     const SizedBox(width: 4),
-                    Text('Location', overflow: TextOverflow.ellipsis, maxLines: 3, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))
+                    Text('Location', overflow: TextOverflow.ellipsis, maxLines: 3, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700))
                   ]),
                   const SizedBox(height: 4),
                   Text('Distance: $distance m - $location', textAlign: TextAlign.start,)
@@ -161,7 +161,7 @@ class SliderInfoList extends StatelessWidget {
               SizedBox(width: spacingUnit(2)),
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Text(promotor.name, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                  Text(promotor.name, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700, color: Theme.of(context).colorScheme.onPrimaryContainer)),
                   const SizedBox(height: 2),
                   Text('Business Owner', style: ThemeText.caption.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
                   const SizedBox(height: 4),
@@ -211,7 +211,7 @@ class SliderInfoList extends StatelessWidget {
               SizedBox(width: spacingUnit(1)),
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Text('Exchange', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
+                  Text('Exchange', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700)),
                   const SizedBox(height: 4),
                   const Text('Scan the QR Code to your friends who want trade the content.', style: ThemeText.caption, textAlign: TextAlign.start,),
                 ])
@@ -249,7 +249,7 @@ class SliderInfoList extends StatelessWidget {
               SizedBox(width: spacingUnit(1)),
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Text('Reward Info', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
+                  Text('Reward Info', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700)),
                   const SizedBox(height: 4),
                   const Text('Claim your rewards before it expired', style: ThemeText.caption, textAlign: TextAlign.start,),
                 ])
@@ -293,7 +293,7 @@ class SliderInfoList extends StatelessWidget {
               SizedBox(width: spacingUnit(1)),
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Text('Sponsor Ads', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
+                  Text('Sponsor Ads', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700)),
                   const SizedBox(height: 4),
                   const Text('Sponsor ads will be attached in this promo', style: ThemeText.caption, textAlign: TextAlign.start,),
                 ])

@@ -30,6 +30,7 @@ class AllPromoController extends GetxController {
     if (result.id == 0) {
       isNotFound.value = true;
     } else {
+      isNotFound.value = false;
       selectedPromo.update((promoVal) {
         promoVal!.id = result.id;
         promoVal.userId = result.userId;

@@ -33,6 +33,7 @@ class PostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Column(
       children: [
         const VSpaceShort(),
@@ -46,10 +47,10 @@ class PostCard extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
-                  child: Text(name, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
+                  child: Text(name, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700)),
                 )
               ),
-              const Opacity(opacity: 0.5, child: Text('17 hours ago', textAlign: TextAlign.end))
+              const Opacity(opacity: 0.5, child: Text('17 hours ago', textAlign: TextAlign.end, style: ThemeText.caption))
             ],
           ),
         ),
@@ -57,11 +58,14 @@ class PostCard extends StatelessWidget {
         /// CAPTION
         Padding(
           padding: EdgeInsets.all(spacingUnit(2)),
-          child: RichText(
-            text: TextSpan(
-              style: Theme.of(context).textTheme.bodyMedium,
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis quis mauris vel placerat. Integer mollis lectus quis justo fermentum, at varius nibh molestie. '
-            )
+          child: GestureDetector(
+            onTap: onTap,
+            child: RichText(
+              text: TextSpan(
+                style: ThemeText.paragraph.copyWith(color: colorScheme.onSurface, fontWeight: FontWeight.normal),
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis quis mauris vel placerat. Integer mollis lectus quis justo fermentum, at varius nibh molestie. '
+              )
+            ),
           ),
         ),
 
@@ -94,25 +98,25 @@ class PostCard extends StatelessWidget {
                     onPressed: () {},
                     icon: const Icon(Icons.favorite_outline)
                   ),
-                  Text(likes.toString()),
+                  Text(likes.toString(), style: ThemeText.caption),
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.remove_red_eye_outlined)
                   ),
-                  Text(views.toString()),
+                  Text(views.toString(), style: ThemeText.caption),
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.share_outlined)
                   ),
-                  const Text('20'),
+                  const Text('20', style: ThemeText.caption),
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.comment_outlined)
                   ),
-                  Text(comments.toString()),
+                  Text(comments.toString(), style: ThemeText.caption),
                   SizedBox(width: spacingUnit(1),)
                 ],
               ),
@@ -131,10 +135,10 @@ class PostCard extends StatelessWidget {
                       onTap: () {
                         Get.toNamed('/promos/$promoId');
                       },
-                      child: Text('#123456', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain))
+                      child: Text('#123456', style: TextStyle(fontWeight: FontWeight.w700, color: ThemePalette.primaryMain))
                     ),
                     const SizedBox(width: 8),
-                    Text('@jamesdoe', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain)),
+                    Text('@jamesdoe', style: TextStyle(fontWeight: FontWeight.w700, color: ThemePalette.primaryMain)),
                   ],
                 ),
               ),

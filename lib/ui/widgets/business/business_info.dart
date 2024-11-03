@@ -71,7 +71,7 @@ class BusinessInfo extends StatelessWidget {
         SizedBox(width: spacingUnit(2)),
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(name, style: ThemeText.title),
-          Text('Total: 1/99999', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: colorType(color))),
+          Text('Total: 1/99999', style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700, color: colorType(color))),
         ],)
       ]),
       const VSpace(),
@@ -141,7 +141,7 @@ class BusinessInfo extends StatelessWidget {
               onPressed: () {
                 Get.toNamed('/business-new/payment');
               },
-              style: ThemeButton.primary,
+              style: ThemeButton.tonalPrimary(context),
               child: const Text('Continue'),
             ),
           ),

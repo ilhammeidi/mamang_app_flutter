@@ -23,23 +23,30 @@ class ChatMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
-    return Container(
-      color: colorScheme.primaryContainer,
-      child: ListView.builder(
-        controller: scrollCtrl,
-        itemCount: chatMessages.length,
-        itemBuilder: (context, index) {
-          return Padding(padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-            child: ChatBuble(
-              avatar: avatar,
-              name: name,
-              date: chatMessages[index].date,
-              isMe: chatMessages[index].isMe,
-              message: chatMessages[index].message,
-            )
-          );
-        }
-      ),
+    return Stack(
+      children: [
+        Positioned.fill(
+          child: Image.asset(
+            'images/fabric_pattern.png',
+            repeat: ImageRepeat.repeat,
+          ),
+        ),
+        ListView.builder(
+          controller: scrollCtrl,
+          itemCount: chatMessages.length,
+          itemBuilder: (context, index) {
+            return Padding(padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+              child: ChatBuble(
+                avatar: avatar,
+                name: name,
+                date: chatMessages[index].date,
+                isMe: chatMessages[index].isMe,
+                message: chatMessages[index].message,
+              )
+            );
+          }
+        ),
+      ],
     );
   }
 }
@@ -76,7 +83,7 @@ class ChatBuble extends StatelessWidget {
             crossAxisAlignment: isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
             children: [
               Row(mainAxisAlignment: isMe ? MainAxisAlignment.end : MainAxisAlignment.start, children: [
-                Text(isMe ? 'Me' : name, style: const TextStyle(fontWeight: FontWeight.bold),),
+                Text(isMe ? 'Me' : name, style: const TextStyle(fontWeight: FontWeight.w700),),
                 const SizedBox(width: 8),
                 Text(date, style: ThemeText.caption),
               ]),
@@ -84,15 +91,19 @@ class ChatBuble extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 margin: const EdgeInsets.only(bottom: 4),
                 decoration: BoxDecoration(
-                  color: isMe ? colorScheme.surface : ThemePalette.secondaryMain,
+                  color: isMe ? colorScheme.surface : colorScheme.secondaryContainer,
                   borderRadius: BorderRadius.only(
                     topLeft: isMe ? const Radius.circular(29) : const Radius.circular(0),
                     topRight: isMe ? const Radius.circular(0) : const Radius.circular(20),
                     bottomLeft: const Radius.circular(20),
                     bottomRight: const Radius.circular(20),
                   ),
+                  border: Border.all(
+                    width: 1,
+                    color: ThemePalette.secondaryMain
+                  )
                 ),
-                child: Text(message, style: TextStyle(color: isMe ? colorScheme.onSurface : Colors.white))
+                child: Text(message)
               )
             ]
           )

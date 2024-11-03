@@ -48,7 +48,7 @@ class _ReviewFormState extends State<ReviewForm> {
         const VSpace(),
         
         /// TEXT
-        Text('Write Review', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+        Text('Write Review', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
         SizedBox(height: spacingUnit(1)),
         const Text('Click the star to change the rating. IMPORTANT: Reviews are public and include your name and avatar,', textAlign: TextAlign.center),
         const VSpace(),
@@ -72,11 +72,12 @@ class _ReviewFormState extends State<ReviewForm> {
             onPressed: () {
               Get.back();
             },
-            style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
+            style: ThemeButton.btnBig.merge(ThemeButton.primary),
             child: const Text('POST REVIEW'),
           ),
         ),
         const VSpaceBig(),
+        const SizedBox(height: 300)
       ]),
     );
   }

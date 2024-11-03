@@ -37,8 +37,10 @@ class _LocationFormState extends State<LocationForm> {
     return Column(children: [
       const Text('Please set your current location', textAlign: TextAlign.center, style: ThemeText.subtitle),
       const VSpaceShort(),
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      ListView(
+        shrinkWrap: true,
+        physics: const ClampingScrollPhysics(),
+        padding: const EdgeInsets.all(0),
         children: [
           Container(
             padding: EdgeInsets.all(spacingUnit(1)),

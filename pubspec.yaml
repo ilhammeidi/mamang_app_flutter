@@ -1,5 +1,5 @@
 name: mamang_app_flutter
-description: "Mamang App Flutter project."
+description: "Mobile App Marketing and Gaming"
 publish_to: 'none'
 version: 0.1.0
 
@@ -40,11 +40,6 @@ flutter:
   fonts:
     - family: Nunito
       fonts:
-        - asset: assets/fonts/Nunito-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Nunito-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Nunito-SemiBold.ttf
-          weight: 600
+        - asset: assets/fonts/Nunito-Light.ttf
         - asset: assets/fonts/Nunito-Bold.ttf
           weight: 700

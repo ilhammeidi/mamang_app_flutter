@@ -32,7 +32,7 @@ class AuthOptions extends StatelessWidget {
           Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
             const GrabberIcon(),
             const VSpace(),
-            Text('Choose ${isLogin ? 'Login' : 'Register'} Method', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
+            Text('Choose ${isLogin ? 'Login' : 'Register'} Method', style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
             const VSpace(),
           
             // SOCIAL MEDIA BUTTONS
@@ -129,7 +129,7 @@ class AuthOptions extends StatelessWidget {
                   backgroundColor: colorScheme.primaryContainer,
                   foregroundColor: colorScheme.onPrimaryContainer,
                 ),
-                child: Text('Continue with Email or Phone Number', style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.bold),)
+                child: Text('Continue with Email or Phone Number', style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.w700),)
               ),
             ),
             const VSpaceBig()
