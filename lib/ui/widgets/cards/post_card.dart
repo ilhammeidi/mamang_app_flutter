@@ -47,7 +47,7 @@ class PostCard extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
-                  child: Text(name, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700)),
+                  child: Text(name, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
                 )
               ),
               const Opacity(opacity: 0.5, child: Text('17 hours ago', textAlign: TextAlign.end, style: ThemeText.caption))
@@ -135,10 +135,10 @@ class PostCard extends StatelessWidget {
                       onTap: () {
                         Get.toNamed('/promos/$promoId');
                       },
-                      child: Text('#123456', style: TextStyle(fontWeight: FontWeight.w700, color: ThemePalette.primaryMain))
+                      child: Text('#123456', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain))
                     ),
                     const SizedBox(width: 8),
-                    Text('@jamesdoe', style: TextStyle(fontWeight: FontWeight.w700, color: ThemePalette.primaryMain)),
+                    Text('@jamesdoe', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain)),
                   ],
                 ),
               ),

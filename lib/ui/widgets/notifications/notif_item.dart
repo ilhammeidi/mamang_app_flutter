@@ -34,7 +34,7 @@ class NotifItem extends StatelessWidget {
         child: Column(children: [
           ListTile(
             leading: _buildIcon(context, type),
-            title: Text(title, style: const TextStyle(fontWeight: FontWeight.w700)),
+            title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
             subtitle: Text(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis),
             trailing: Text(date, style: ThemeText.caption),
           ),

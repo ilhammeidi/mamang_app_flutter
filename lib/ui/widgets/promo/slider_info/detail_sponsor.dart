@@ -24,8 +24,6 @@ class DetailSponsor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
-
     return Padding(
       padding: EdgeInsets.all(spacingUnit(2)),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -58,16 +56,16 @@ class DetailSponsor extends StatelessWidget {
           child: Text('Sponsored', style: ThemeText.caption.copyWith(color: Colors.white)),
         ),
         const SizedBox(height: 4),
-        Text(title.toCapitalCase(), textAlign: TextAlign.start, style: ThemeText.title.copyWith(fontWeight: FontWeight.w700)),
+        Text(title.toCapitalCase(), textAlign: TextAlign.start, style: ThemeText.title.copyWith(fontWeight: FontWeight.bold)),
         SizedBox(height: spacingUnit(1)),
-        Text(desc, textAlign: TextAlign.start, style: ThemeText.subtitle),
+        Text(desc, textAlign: TextAlign.start, style: ThemeText.subtitle2),
         const VSpace(),
       
         /// LOCATION INFO
         Row(mainAxisAlignment: MainAxisAlignment.start, children:[
           Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
           const SizedBox(width: 4),
-          Text('Promo Location', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700))
+          Text('Promo Location', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))
         ]),
         const SizedBox(height: 4),
         Text('Distance: $distance - $location', textAlign: TextAlign.start),

@@ -20,6 +20,8 @@ class AppTextField extends StatefulWidget {
     this.onTap,
     this.obscureText = false,
     this.validator,
+    this.focusCallback,
+    this.blurCallback,
   });
 
   final String label;
@@ -35,6 +37,8 @@ class AppTextField extends StatefulWidget {
   final void Function(String) onChanged;
   final bool obscureText;
   final String? Function(String?)? validator;
+  final Function()? focusCallback;
+  final Function()? blurCallback;
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -48,10 +52,16 @@ class _AppTextFieldState extends State<AppTextField> {
   void initState(){
     focusNode.addListener(() {
       if (focusNode.hasFocus) {
+        if (widget.focusCallback != null) {
+          widget.focusCallback!();
+        }
         setState(() {
           boxFocus = true;
         });
       } else {
+        if (widget.blurCallback != null) {
+          widget.blurCallback!();
+        }
         setState(() {
           boxFocus = false;
         });

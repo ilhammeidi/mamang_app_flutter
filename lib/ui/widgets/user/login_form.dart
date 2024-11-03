@@ -34,7 +34,7 @@ class _LoginFormState extends State<LoginForm> {
       child: ListView(children: [
         /// TITLE
         const VSpace(),
-        const Text('Login', style: TextStyle(fontSize: 48, fontWeight: FontWeight.w700)),
+        const Text('Login', style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold)),
         SizedBox(height: spacingUnit(1)),
         Text('✨ Welcome back! Please login to your account.', style: ThemeText.subtitle2.copyWith(color: colorScheme.onSurfaceVariant)),
         const VSpaceBig(),

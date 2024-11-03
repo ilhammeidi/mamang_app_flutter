@@ -70,9 +70,9 @@ class PostContent extends StatelessWidget {
                         Get.toNamed('/promos/$promoId');
                       },
                       text: '#12345$promoId',
-                      style: TextStyle(fontWeight: FontWeight.w700, color: ThemePalette.primaryMain)
+                      style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain)
                     ),
-                    TextSpan(text: ' @jamesdoe', style: TextStyle(fontWeight: FontWeight.w700, color: ThemePalette.primaryMain)),
+                    TextSpan(text: ' @jamesdoe', style: TextStyle(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain)),
                   ]
                 )
               ),

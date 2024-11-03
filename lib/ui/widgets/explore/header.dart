@@ -38,7 +38,7 @@ class HeaderExplore extends StatelessWidget {
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Image.asset('assets/images/gift.png', height: 20),
               const SizedBox(width: 2,),
-              const Text('Claim Your Gift Today', style: TextStyle(color: Colors.red, fontWeight: FontWeight.w700, fontSize: 11),),
+              const Text('Claim Your Gift Today', style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 11),),
             ]),
           ),
           /// ACTIONS HEADER BUTTON

@@ -55,6 +55,10 @@ class MainApp extends StatelessWidget {
           darkTheme: darkColorScheme,
           initialRoute: '/',
           getPages: appRoutes,
+          builder: (context, child) => MediaQuery(
+            data: MediaQuery.of(context).copyWith(boldText: false),
+            child: child!,
+          ),
           // routeInformationParser: AppRoutes.routes.routeInformationParser,
           // routeInformationProvider: AppRoutes.routes.routeInformationProvider,
           // routerDelegate: AppRoutes.routes.routerDelegate,

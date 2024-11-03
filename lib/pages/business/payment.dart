@@ -113,7 +113,7 @@ class _BusinessPaymentState extends State<BusinessPayment> {
                       ),
                       title: Row(
                         children: [
-                          Text('Buy Timer', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+                          Text('Buy Timer', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
                           const Spacer(),
                           Padding(
                             padding: EdgeInsets.only(left: spacingUnit(2)),
@@ -137,7 +137,7 @@ class _BusinessPaymentState extends State<BusinessPayment> {
                       ),
                       title: Row(
                         children: [
-                          Text('Use Points', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+                          Text('Use Points', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
                           const Spacer(),
                           Padding(
                             padding: EdgeInsets.only(left: spacingUnit(2)),
@@ -161,7 +161,7 @@ class _BusinessPaymentState extends State<BusinessPayment> {
                       ),
                       title: Row(
                         children: [
-                          Text('Get Members', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+                          Text('Get Members', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
                           const Spacer(),
                           Padding(
                             padding: EdgeInsets.only(left: spacingUnit(2)),
@@ -185,7 +185,7 @@ class _BusinessPaymentState extends State<BusinessPayment> {
                       ),
                       title: Row(
                         children: [
-                          Text('Watch Ads', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+                          Text('Watch Ads', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
                           const Spacer(),
                           Padding(
                             padding: EdgeInsets.only(left: spacingUnit(2)),

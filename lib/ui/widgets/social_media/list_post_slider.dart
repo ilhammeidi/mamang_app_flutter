@@ -16,7 +16,7 @@ class ListPostSlider extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Padding(
         padding: EdgeInsets.all(spacingUnit(1)),
-        child: Text('Latest Updates', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700)),
+        child: Text('Latest Updates', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
       ),
       SizedBox(
         height: 300,

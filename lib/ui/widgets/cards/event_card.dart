@@ -71,7 +71,7 @@ class EventCard extends StatelessWidget {
                 color: Theme.of(context).colorScheme.primaryContainer,
                 borderRadius: ThemeRadius.medium
               ),
-              child: Text('$point POINT', style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700))
+              child: Text('$point POINT', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold))
             ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),

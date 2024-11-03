@@ -15,7 +15,7 @@ class TagHistory extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Search History', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+          Text('Search History', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
           SizedBox(height: spacingUnit(1)),
           Wrap(alignment: WrapAlignment.start, children: 
             tagsList.map((item) => InkWell(
@@ -50,7 +50,7 @@ class TagTrending extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Trending Search', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+          Text('Trending Search', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
           SizedBox(height: spacingUnit(1)),
           Wrap(alignment: WrapAlignment.start, children: 
             tagsList.map((item) => InkWell(

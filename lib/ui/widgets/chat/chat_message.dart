@@ -21,8 +21,6 @@ class ChatMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
-
     return Stack(
       children: [
         Positioned.fill(
@@ -83,7 +81,7 @@ class ChatBuble extends StatelessWidget {
             crossAxisAlignment: isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
             children: [
               Row(mainAxisAlignment: isMe ? MainAxisAlignment.end : MainAxisAlignment.start, children: [
-                Text(isMe ? 'Me' : name, style: const TextStyle(fontWeight: FontWeight.w700),),
+                Text(isMe ? 'Me' : name, style: const TextStyle(fontWeight: FontWeight.bold),),
                 const SizedBox(width: 8),
                 Text(date, style: ThemeText.caption),
               ]),

@@ -5,9 +5,14 @@ import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/header_form.dart';
 import 'package:mamang_app_flutter/ui/widgets/social_media/forms/post_form.dart';
 
-class CreatePost extends StatelessWidget {
+class CreatePost extends StatefulWidget {
   const CreatePost({super.key});
 
+  @override
+  State<CreatePost> createState() => _CreatePostState();
+}
+
+class _CreatePostState extends State<CreatePost> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,8 +58,8 @@ class CreatePost extends StatelessWidget {
                 initPosition: 0.6,
                 maxPosition: 0.95,
                 content: Wrap(children: [
-                  PostForm()
-                ],)
+                  PostForm(),
+                ])
               )
             ],
           );

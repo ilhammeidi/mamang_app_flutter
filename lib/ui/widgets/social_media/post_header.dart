@@ -37,7 +37,7 @@ class PostHeader extends StatelessWidget {
     const TextStyle whiteShadow = TextStyle(
       color: Colors.white,
       shadows: [BoxShadow(color: Colors.black, offset: Offset(0, 0), blurRadius: 5)],
-      fontWeight: FontWeight.w700
+      fontWeight: FontWeight.bold
     );
   
     return AppBar(

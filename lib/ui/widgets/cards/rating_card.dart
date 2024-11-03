@@ -36,7 +36,7 @@ class RatingCard extends StatelessWidget {
               backgroundImage: NetworkImage(avatar),
             ),
             SizedBox(width: spacingUnit(1)),
-            Text(name, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700)),
+            Text(name, style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
           ]),
           
           /// RATING

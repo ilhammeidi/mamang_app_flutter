@@ -14,7 +14,7 @@ class AccountInfo extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
       const GrabberIcon(),
       const VSpace(),
-      Text('Account Info', style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
+      Text('Account Info', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
       const VSpaceShort(),
 
       /// ACCOUNT INFO
@@ -24,7 +24,7 @@ class AccountInfo extends StatelessWidget {
           padding: EdgeInsets.all(spacingUnit(2)),
           child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             Row(children: [
-              Text('Name', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+              Text('Name', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
               const Spacer(),
               Text(userDummy.name),
             ]),
@@ -33,7 +33,7 @@ class AccountInfo extends StatelessWidget {
               child: const LineList(),
             ),
             Row(children: [
-              Text('Email', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+              Text('Email', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
               const Spacer(),
               const Text('name@mail.com'),
             ]),
@@ -42,7 +42,7 @@ class AccountInfo extends StatelessWidget {
               child: const LineList(),
             ),
             Row(children: [
-              Text('Phone Number/WhatsApp', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+              Text('Phone Number/WhatsApp', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
               const Spacer(),
               const Text('+621234567890'),
             ]),

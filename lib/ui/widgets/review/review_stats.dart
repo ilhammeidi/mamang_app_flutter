@@ -21,7 +21,7 @@ class ReviewStats extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               text: TextSpan(text: '', style: TextStyle(color: colorScheme.onSurface, fontSize: 16), children: [
-                TextSpan(text: '4.5', style: ThemeText.title.copyWith(fontWeight: FontWeight.w700)),
+                TextSpan(text: '4.5', style: ThemeText.title.copyWith(fontWeight: FontWeight.bold)),
                 const TextSpan(text: '/5'),
               ])
             ),

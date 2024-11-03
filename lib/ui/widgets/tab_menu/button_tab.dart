@@ -23,7 +23,7 @@ class ButtonTab extends StatelessWidget {
           borderRadius: ThemeRadius.big
         )
       ),
-      child: Text(text, style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.w700),),
+      child: Text(text, style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.bold),),
     );
   }
 }

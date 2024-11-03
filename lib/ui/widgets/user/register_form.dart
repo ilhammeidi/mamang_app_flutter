@@ -26,7 +26,7 @@ class _RegisterFormState extends State<RegisterForm> {
       child: ListView(children: [
         /// TITLE
         const VSpace(),
-        const Text('Register', style: TextStyle(fontSize: 48, fontWeight: FontWeight.w700)),
+        const Text('Register', style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold)),
         SizedBox(height: spacingUnit(1)),
         Text('👋 Very nice to meet you! Create new account for free.', style: ThemeText.subtitle2.copyWith(color: colorScheme.onSurfaceVariant)),
         const VSpaceBig(),

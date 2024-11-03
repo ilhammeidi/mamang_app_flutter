@@ -98,7 +98,7 @@ class DetailThumbLocation extends StatelessWidget {
                   ),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
                     const Icon(Icons.directions, size: 48),
-                    Text('ROUTES', style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700),)
+                    Text('ROUTES', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold),)
                   ],)
                 ),
               ),
@@ -106,7 +106,7 @@ class DetailThumbLocation extends StatelessWidget {
             const VSpaceBig(),
           
             /// QR CODE
-            Center(child: Text('QR Code Promo', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700))),
+            Center(child: Text('QR Code Promo', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold))),
             Center(
               child: SizedBox(
                 width: 250,

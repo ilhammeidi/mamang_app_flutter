@@ -29,7 +29,7 @@ class FollowStats extends StatelessWidget {
 
   Widget _itemFollow(BuildContext context, String text, IconData icon, double count) {
     return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-      Text(count.toString(), style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700),),
+      Text(count.toString(), style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold),),
       const SizedBox(height: 4),
       Row(
         children: [

@@ -39,7 +39,7 @@ class PanelPoint extends StatelessWidget {
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const Text('Your Point', style: smallText),
               const SizedBox(width: 2),
-              Text('200', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+              Text('200', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
             ]),
           ),
           
@@ -61,7 +61,7 @@ class PanelPoint extends StatelessWidget {
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const Text('Coins', style: smallText),
               const SizedBox(width: 2),
-              Text('10000', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+              Text('10000', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
             ]),
           ),
         ]),

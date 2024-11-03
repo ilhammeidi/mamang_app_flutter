@@ -162,7 +162,7 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
                       child: Text(
                         '4',
                         textAlign: TextAlign.center,
-                        style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700, color: Colors.white)
+                        style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold, color: Colors.white)
                       ),
                     )
                   )
@@ -184,7 +184,7 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
                       child: Text(
                         widget.xp.toString(),
                         textAlign: TextAlign.center,
-                        style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700, color: Colors.white)
+                        style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold, color: Colors.white)
                       ),
                     )
                   )
@@ -192,12 +192,12 @@ class _ColouredBoxDetailState extends State<ColouredBoxDetail> {
                 Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                   const Text('Save Total', style: ThemeText.caption),
                   const SizedBox(height: 4),
-                  Text('4', style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700))
+                  Text('4', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold))
                 ]),
                 Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                   const Text('Validate Tofal', style: ThemeText.caption),
                   const SizedBox(height: 4),
-                  Text('10', style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700))
+                  Text('10', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold))
                 ])
               ]),
             ) : Container(),

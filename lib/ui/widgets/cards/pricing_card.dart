@@ -43,7 +43,7 @@ class PricingCard extends StatelessWidget {
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Row(
                 children: [
-                  Text(title, style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
+                  Text(title, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
                   isRecomended ?
                     Container(
                       margin: const EdgeInsets.symmetric(horizontal: 8),
@@ -52,7 +52,7 @@ class PricingCard extends StatelessWidget {
                         borderRadius: ThemeRadius.medium,
                         color: color,
                       ),
-                      child: Text(' POPULAR ', style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700, color: colorScheme.surface)),
+                      child: Text(' POPULAR ', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: colorScheme.surface)),
                     ) : Container()
                 ],
               ),

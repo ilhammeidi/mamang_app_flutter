@@ -40,14 +40,14 @@ class ReviewButton extends StatelessWidget {
           )
         ),
         child: const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('Your Review', style: TextStyle(fontWeight: FontWeight.w700)),
+          Text('Your Review', style: TextStyle(fontWeight: FontWeight.bold)),
           SizedBox(height: 4),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             RatingStar(initVal: 5),
             Text('2 day ago', style: ThemeText.caption)
           ]),
           SizedBox(height: 4),
-          Text('Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae', textAlign: TextAlign.start)  
+          Text('Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae', textAlign: TextAlign.start, style: ThemeText.paragraph)  
         ]),
       ),
     ) : Padding(

@@ -16,6 +16,7 @@ class ReviewForm extends StatefulWidget {
 
 class _ReviewFormState extends State<ReviewForm> {
   String _review = 'Awesome';
+  bool _showKeyboard = false;
 
   void handleChange(val) {
     setState(() {
@@ -48,7 +49,7 @@ class _ReviewFormState extends State<ReviewForm> {
         const VSpace(),
         
         /// TEXT
-        Text('Write Review', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
+        Text('Write Review', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
         SizedBox(height: spacingUnit(1)),
         const Text('Click the star to change the rating. IMPORTANT: Reviews are public and include your name and avatar,', textAlign: TextAlign.center),
         const VSpace(),
@@ -64,6 +65,16 @@ class _ReviewFormState extends State<ReviewForm> {
           label: 'Write your description',
           maxLines: 4,
           onChanged: (_) {},
+          focusCallback: () {
+            setState(() {
+              _showKeyboard = true;
+            });
+          },
+          blurCallback: () {
+            setState(() {
+              _showKeyboard = false;
+            });
+          },
         ),
         const VSpace(),
         SizedBox(
@@ -77,7 +88,10 @@ class _ReviewFormState extends State<ReviewForm> {
           ),
         ),
         const VSpaceBig(),
-        const SizedBox(height: 300)
+        AnimatedContainer(
+          duration: const Duration(milliseconds: 100),
+          height: _showKeyboard ? 300 : 0,
+        )
       ]),
     );
   }

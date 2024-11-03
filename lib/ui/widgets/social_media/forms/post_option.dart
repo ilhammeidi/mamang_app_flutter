@@ -18,7 +18,7 @@ class PostOption extends StatelessWidget {
         const VSpace(),
 
         /// TITLE
-        Text('Create New Post', style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
+        Text('Create New Post', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
         SizedBox(height: spacingUnit(1)),
         const Text('Choose your content post type. You can upload photo from gallery or take from camera', textAlign: TextAlign.center, style: ThemeText.subtitle),
         const VSpace(),

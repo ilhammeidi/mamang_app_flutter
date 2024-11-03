@@ -18,7 +18,7 @@ class GroupListSlider extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Popular Groups', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700)),
+              Text('Popular Groups', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
               FilledButton(
                 onPressed: () {
                   Get.toNamed('/groups');

@@ -14,7 +14,7 @@ class PostComments extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
-          child: Text('${commentList.length} Comments', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700)),
+          child: Text('${commentList.length} Comments', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
         ),
         SizedBox(height: spacingUnit(1)),
         ListView.builder(
@@ -81,7 +81,7 @@ class CommentItem extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(name, style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700)),
+            Text(name, style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold)),
             SizedBox(width: spacingUnit(2)),
             Text(date, style: ThemeText.caption.copyWith(color: colorScheme.onSurfaceVariant)),
           ],

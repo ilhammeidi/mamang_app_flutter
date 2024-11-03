@@ -25,7 +25,7 @@ class _PostFormState extends State<PostForm> {
         physics: const ClampingScrollPhysics(),
         children: [
           /// TITLE
-          Text('Write Caption', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
+          Text('Write Caption', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
 
           /// FORM
           _showMap ? const LocationForm() : const CaptionForm(),

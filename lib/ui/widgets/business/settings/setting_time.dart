@@ -43,7 +43,7 @@ class _SettingTimeState extends State<SettingTime> {
           padding: EdgeInsets.only(
             bottom: spacingUnit(2),
           ),
-          child: Text('Setting Open Hours', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.w700)),
+          child: Text('Setting Open Hours', textAlign: TextAlign.center, style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold)),
         ),
         const VSpaceShort(),
         SizedBox(
@@ -95,7 +95,7 @@ class _SettingTimeState extends State<SettingTime> {
 
   Widget _timePicker(BuildContext context, String dayName) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Text(dayName, textAlign: TextAlign.start, style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.w700)),
+      Text(dayName, textAlign: TextAlign.start, style: ThemeText.paragraph.copyWith(fontWeight: FontWeight.bold)),
       const SizedBox(height: 4),
       Row(children: [
         SizedBox(

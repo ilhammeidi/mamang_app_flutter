@@ -56,7 +56,7 @@ class SummaryInfo extends StatelessWidget {
               children: [
                 Text(
                   title.toCapitalCase(),
-                  style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700),
+                  style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
                 ),

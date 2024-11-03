@@ -17,7 +17,7 @@ class GridPost extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Padding(
         padding: EdgeInsets.all(spacingUnit(1)),
-        child: Text('Nearby Updates', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.w700)),
+        child: Text('Nearby Updates', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
       ),
       GridView.builder(
         padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),

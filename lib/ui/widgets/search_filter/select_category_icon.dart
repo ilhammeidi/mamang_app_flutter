@@ -103,7 +103,7 @@ class _SelectCategoryIconState extends State<SelectCategoryIcon> {
                           child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
                             Icon(item.icon, color: item.color, size: 14),
                             const SizedBox(width: 4),
-                            Text(item.name, style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700, color: item.color)),
+                            Text(item.name, style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: item.color)),
                             const Spacer(),
                             SizedBox(
                               width: 20,

@@ -42,7 +42,7 @@ class VoucherCard extends StatelessWidget {
                   color: Colors.cyan[50],
                   borderRadius: ThemeRadius.medium,
                 ),
-                child: Text('012EASB7', style: ThemeText.title.copyWith(color: Colors.black, fontWeight: FontWeight.w700,))
+                child: Text('012EASB7', style: ThemeText.title.copyWith(color: Colors.black, fontWeight: FontWeight.bold,))
               ),
               SizedBox(
                 width: 230,
@@ -67,7 +67,7 @@ class VoucherCard extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: spacingUnit(3), vertical: spacingUnit(2)),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('Periode: $date', style: ThemeText.caption.copyWith(fontWeight: FontWeight.w700, color: Colors.black)),
+                  Text('Periode: $date', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: Colors.black)),
                 ]),
               ),
 
@@ -91,7 +91,7 @@ class VoucherCard extends StatelessWidget {
 
                     /// TEXT CONTENT
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      Text('Baby Sushi Special Discount 20%', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.w700, color: Colors.black)),
+                      Text('Baby Sushi Special Discount 20%', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold, color: Colors.black)),
                       const SizedBox(height: 4),
                       Row(mainAxisAlignment: MainAxisAlignment.start, children:[
                         Icon(Icons.location_on, size: 16, color: ThemePalette.tertiaryMain),
