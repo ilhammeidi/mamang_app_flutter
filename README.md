@@ -1,3 +1,23 @@
-# mamang_app_flutter
+# Mamang (Mobile Advertising, Marketing and Gaming)
 
-A new Flutter project.
+Project hasil latihan coding mobile apps menggunakan Flutter yang dirancang untuk Android, iOS, dan Mobile Web. Aplikasi berburu diskon dari berbagai macam UMKM, seperti pedagang keliling, pedagang kaki lima, warung, kios, dan sejenisnya. Dengan kata lain aplikasi ini menggabungkan penawaran diskon dan pengalaman gaming yang membuat setiap transaksi terasa seperti kemenangan.
+
+Mamang dirancang untuk membantu pengguna menemukan berbagai diskon terbaik di sekitarnya. Aplikasi ini menggunakan elemen gamifikasi untuk meningkatkan keterlibatan pengguna, memungkinkan mereka “berburu” diskon melalui tantangan, misi harian, dan sistem reward yang menghibur.
+
+Proyek ini juga memberikan fasilitas untuk pelaku usaha UMKM untuk mengoptimalkan promosi produk mereka, sehingga iklan dari produk atau layanan yang dijual dapat ditempatkan sedekat mungkin dengan calon pelanggan. Selain itu proyek ini memiliki konsep “Flash Campaign” yang mempermudah pedagang keliling (lokasi tidak tetap) dalam mempromosikan produknya dengan memanfaatkan sosial media dan peta lokasi.
+
+
+#####Fitur Utama:
+- Peta Diskon: Pengguna dapat melihat diskon terdekat dalam bentuk peta interaktif, sehingga memudahkan untuk mengetahui diskon apa yang tersedia di area mereka.
+- Sistem Poin dan Hadiah: Setiap aktivitas dan transaksi memberikan poin yang dapat ditukarkan dengan diskon tambahan, hadiah eksklusif, atau voucher khusus.
+- Social Sharing: Bagikan promo dan tantangan ke teman-teman dan dapatkan poin rewards.
+- Profil dan Level Pengguna: Tingkatkan profil pengguna melalui sistem level, dengan semakin tinggi level, semakin banyak diskon eksklusif yang bisa didapatkan.-
+- Kelola Bisnis: Pelaku usaha bisa bisa membuat promosi iklan dan memantau traffic, engagement, rating dan statistik lainnya di dashboard aplikasi
+
+Bila teman-teman ingin membuat proyek yang relate dengan proyek ini, silahkan di fork di githubnya. Atau jika ada yang ingin kerjasama dalam developing proyek ini silahkan DM.
+
+Semoga bermanfaat.
+
+
+
+
