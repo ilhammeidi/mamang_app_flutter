@@ -25,7 +25,7 @@ class ChatMessage extends StatelessWidget {
       children: [
         Positioned.fill(
           child: Image.asset(
-            'images/fabric_pattern.png',
+            'assets/images/fabric_pattern.png',
             repeat: ImageRepeat.repeat,
           ),
         ),
