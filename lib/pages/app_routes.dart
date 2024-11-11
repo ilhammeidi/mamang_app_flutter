@@ -19,6 +19,8 @@ import 'package:mamang_app_flutter/pages/profile/contact.dart';
 import 'package:mamang_app_flutter/pages/profile/faq_list.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_password.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_profile.dart';
+import 'package:mamang_app_flutter/pages/profile/profile_group.dart';
+import 'package:mamang_app_flutter/pages/profile/profile_user.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
 import 'package:mamang_app_flutter/pages/profile/terms_condition.dart';
 import 'package:mamang_app_flutter/pages/promo/detail.dart';
@@ -167,6 +169,14 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/groups',
     page: () => const GeneralLayout(content: Groups()),
+  ),
+  GetPage(
+    name: '/user-profile',
+    page: () => const GeneralLayout(content: ProfileUser()),
+  ),
+  GetPage(
+    name: '/group-profile',
+    page: () => const GeneralLayout(content: ProfileGroup()),
   ),
   
   /// BUSINESS
