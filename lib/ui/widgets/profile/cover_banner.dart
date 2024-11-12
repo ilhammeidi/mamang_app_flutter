@@ -11,9 +11,9 @@ class CoverBanner extends StatelessWidget {
     required this.image,
     required this.avatar,
     required this.bio,
-    required this.followings,
-    required this.followers,
-    required this.groups,
+    this.followings,
+    this.followers,
+    this.groups,
   });
 
   final String name;
@@ -21,9 +21,9 @@ class CoverBanner extends StatelessWidget {
   final String avatar;
   final String username;
   final String bio;
-  final double followings;
-  final double followers;
-  final double groups;
+  final double? followings;
+  final double? followers;
+  final double? groups;
 
   @override
   Widget build(BuildContext context) {
@@ -60,10 +60,14 @@ class CoverBanner extends StatelessWidget {
             bottom: 0,
             child: Container(
               width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.all(spacingUnit(2)),
+              padding: EdgeInsets.only(
+                top:  spacingUnit(2),
+                left:  spacingUnit(2),
+                right:  spacingUnit(2),
+              ),
               alignment: Alignment.topLeft,
               decoration: BoxDecoration(
-                color: colorScheme.surface,
+                color: colorScheme.surfaceContainerLowest,
                 boxShadow: [BoxShadow(
                   color: colorScheme.surfaceContainerLowest,
                   blurRadius: 0.0,
@@ -84,10 +88,10 @@ class CoverBanner extends StatelessWidget {
                   SizedBox(width: 16),
                   Icon(Icons.date_range, size: 14),
                   SizedBox(width: 4),
-                  Text('Joined Dec 2024'),
+                  Text('Dec 2024'),
                 ]),
                 SizedBox(height: spacingUnit(2)),
-                Row(children: [
+                (followers != null && followings != null && groups != null) ? Row(children: [
                   Text(followings.toString()),
                   const SizedBox(width: 4),
                   Text('Followings', style: TextStyle(color: colorScheme.onSurfaceVariant)),
@@ -99,7 +103,7 @@ class CoverBanner extends StatelessWidget {
                   Text(groups.toString()),
                   const SizedBox(width: 4),
                   Text('Groups', style: TextStyle(color: colorScheme.onSurfaceVariant)),
-                ])
+                ]) : Container()
               ]),
             ),
           ),

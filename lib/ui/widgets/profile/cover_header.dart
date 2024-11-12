@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
-
-import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/widgets/profile/cover_options.dart';
 
 class CoverHeader extends StatelessWidget {
-  const CoverHeader({super.key, required this.animationRef});
+  const CoverHeader({
+    super.key,
+    required this.animationRef,
+    required this.coverOptions,
+    required this.avatar,
+    required this.name,
+    this.isJoin = false,
+  });
 
   final AnimationController animationRef;
+  final Widget coverOptions;
+  final String avatar;
+  final String name;
+  final bool isJoin;
 
   @override
   Widget build(BuildContext context) {
@@ -25,44 +35,9 @@ class CoverHeader extends StatelessWidget {
             Container(
               width: double.infinity,
               height: 100,
-              color: colorScheme.surface,
+              color: colorScheme.surfaceContainerLowest,
               padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
-              child: Row(children: [
-                const Spacer(),
-                SizedBox(
-                  width: 32,
-                  height: 32,
-                  child: IconButton(
-                    onPressed: () {},
-                    style: ThemeButton.outlinedPrimary(context),
-                    icon: Icon(Icons.more_horiz, size: 16, color: ThemePalette.primaryMain),
-                  ),
-                ),
-                SizedBox(
-                  width: spacingUnit(1)
-                ),
-                SizedBox(
-                  width: 32,
-                  height: 32,
-                  child: IconButton(
-                    onPressed: () {},
-                    style: ThemeButton.outlinedPrimary(context),
-                    icon: Icon(Icons.message_outlined, size: 16, color: ThemePalette.primaryMain),
-                  ),
-                ),
-                SizedBox(
-                  width: spacingUnit(1)
-                ),
-                FilledButton(
-                  onPressed: () {},
-                  style: ThemeButton.tonalPrimary(context),
-                  child: const Row(children: [
-                    Icon(Icons.person_add_outlined),
-                    SizedBox(width: 4),
-                    Text('Follow')
-                  ])
-                )
-              ])
+              child: coverOptions
             ),
             SlideTransition(
               position: Tween<Offset>(
@@ -71,16 +46,13 @@ class CoverHeader extends StatelessWidget {
               ).animate(CurvedAnimation(parent: animationRef, curve: Curves.decelerate)),
               child: Container(
                 width: double.infinity,
-                color: colorScheme.surface,
-                child: const Center(
-                  child: Text(
-                    "PINNED HEADER",
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+                height: 100,
+                color: colorScheme.surfaceContainerLowest,
+                child: OptionsFixed(
+                  avatar: avatar,
+                  name: name,
+                  isJoin: isJoin,
+                )
               ),
             ),
           ],
@@ -91,43 +63,30 @@ class CoverHeader extends StatelessWidget {
 }
 
 class CoverTab extends StatelessWidget {
-  const CoverTab({super.key, required this.tabController});
+  const CoverTab({super.key, required this.tabController, required this.menuList});
 
-  final TabController? tabController; 
+  final TabController? tabController;
+  final List<String> menuList;
 
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
+
     return SliverPersistentHeader(
       pinned: true,
       delegate: _SliverAppBarDelegate(
         minHeight: 40,
         maxHeight: 40,
         child: Container(
-          color: Colors.green[200],
+          color: colorScheme.surfaceContainerLowest,
           child: TabBar(
             controller: tabController,
-            tabs: const [
-              Tab(
-                child: Text(
-                  'TITLE1',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-              Tab(
-                child: Text(
-                  'TITLE2',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-              Tab(
-                child: Text(
-                  'TITLE3',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-            ],
+            isScrollable: true,
+            tabAlignment: TabAlignment.start,
+            padding: const EdgeInsets.all(0),
+            tabs: menuList.map((item) => Tab(
+              child: Text(item, style: ThemeText.paragraph)
+            )).toList(),
           ),
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:mamang_app_flutter/models/dummy_api.dart';
 import 'package:mamang_app_flutter/models/img_api.dart';
 import 'package:mamang_app_flutter/ui/widgets/profile/cover_banner.dart';
 import 'package:mamang_app_flutter/ui/widgets/profile/cover_header.dart';
+import 'package:mamang_app_flutter/ui/widgets/profile/cover_options.dart';
 
 class ProfileUser extends StatefulWidget {
   const ProfileUser({super.key});
@@ -23,7 +24,7 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
       vsync: this,
       duration: const Duration(milliseconds: 300)
     );
-    _tabController = TabController(initialIndex: 0, length: 3, vsync: this);
+    _tabController = TabController(initialIndex: 0, length: 5, vsync: this);
     super.initState();
   }
 
@@ -47,7 +48,6 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
     });
 
     return Scaffold(
-      backgroundColor: Colors.grey,
       body: DefaultTabController(
         length: 3,
         child: NestedScrollView(
@@ -64,8 +64,13 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
                 followings: 125,
                 groups: 3,
               ),
-              CoverHeader(animationRef: _slideRef),
-              CoverTab(tabController: _tabController)
+              CoverHeader(
+                animationRef: _slideRef,
+                coverOptions: const UserOptions(),
+                avatar: ImgApi.avatar[8],
+                name: 'James Doe',
+              ),
+              CoverTab(tabController: _tabController, menuList: const ['Posts', 'Followings', 'Followers', 'Groups', 'About'],)
             ];
           },
           body: TabBarView(
@@ -95,6 +100,36 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
                         padding: EdgeInsets.only(bottom: 600),
                         child: Center(
                           child: Text("TITLE2"),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SingleChildScrollView(
+                child: Container(
+                  padding: EdgeInsets.only(bottom: 600),
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(bottom: 600),
+                        child: Center(
+                          child: Text("TITLE3"),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SingleChildScrollView(
+                child: Container(
+                  padding: EdgeInsets.only(bottom: 600),
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(bottom: 600),
+                        child: Center(
+                          child: Text("TITLE3"),
                         ),
                       ),
                     ],
