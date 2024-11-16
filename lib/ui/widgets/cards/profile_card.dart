@@ -43,7 +43,7 @@ class ProfileCard extends StatelessWidget {
             Row(children: [
               Icon(Icons.location_on_outlined, size: 14, color: greyText),
               const SizedBox(width: 2),
-              Text('$distance M', style: TextStyle( color: greyText))
+              Text('$distance KM', style: TextStyle( color: greyText))
             ],)
           ],),
         )

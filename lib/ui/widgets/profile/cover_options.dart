@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mamang_app_flutter/models/users.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/rank_color.dart';
@@ -27,8 +26,8 @@ class UserOptions extends StatelessWidget {
         height: 32,
         child: IconButton(
           onPressed: () {},
-          style: ThemeButton.outlinedPrimary(context),
-          icon: Icon(Icons.more_horiz, size: 16, color: ThemePalette.primaryMain),
+          style: ThemeButton.tonalDefault(context),
+          icon: const Icon(Icons.more_horiz, size: 16),
         ),
       ),
       SizedBox(
@@ -39,8 +38,8 @@ class UserOptions extends StatelessWidget {
         height: 32,
         child: IconButton(
           onPressed: () {},
-          style: ThemeButton.outlinedPrimary(context),
-          icon: Icon(Icons.message_outlined, size: 16, color: ThemePalette.primaryMain),
+          style: ThemeButton.tonalDefault(context),
+          icon: const Icon(Icons.message_outlined, size: 16),
         ),
       ),
       SizedBox(
@@ -48,7 +47,7 @@ class UserOptions extends StatelessWidget {
       ),
       FilledButton(
         onPressed: () {},
-        style: ThemeButton.tonalPrimary(context),
+        style: ThemeButton.invert(context),
         child: const Row(children: [
           Icon(Icons.person_add_outlined),
           SizedBox(width: 4),
@@ -81,8 +80,8 @@ class GroupOptions extends StatelessWidget {
         height: 32,
         child: IconButton(
           onPressed: () {},
-          style: ThemeButton.outlinedPrimary(context),
-          icon: Icon(Icons.more_horiz, size: 16, color: ThemePalette.primaryMain),
+          style: ThemeButton.outlinedInvert(context),
+          icon: const Icon(Icons.more_horiz, size: 16),
         ),
       ),
       SizedBox(
@@ -90,7 +89,7 @@ class GroupOptions extends StatelessWidget {
       ),
       FilledButton(
         onPressed: () {},
-        style: ThemeButton.tonalPrimary(context),
+        style: ThemeButton.outlinedInvert(context),
         child: const Row(children: [
           Text('Join Group')
         ])
@@ -128,13 +127,13 @@ class OptionsFixed extends StatelessWidget {
       ),
       isJoin ? FilledButton(
         onPressed: () {},
-        style: ThemeButton.tonalPrimary(context),
+        style: ThemeButton.invert(context),
         child: const Row(children: [
           Text('Join Group')
         ])
       ) : FilledButton(
         onPressed: () {},
-        style: ThemeButton.tonalPrimary(context),
+        style: ThemeButton.invert(context),
         child: const Row(children: [
           Icon(Icons.person_add_outlined),
           SizedBox(width: 4),
