@@ -80,7 +80,7 @@ class GroupOptions extends StatelessWidget {
         height: 32,
         child: IconButton(
           onPressed: () {},
-          style: ThemeButton.outlinedInvert(context),
+          style: ThemeButton.tonalDefault(context),
           icon: const Icon(Icons.more_horiz, size: 16),
         ),
       ),
@@ -89,7 +89,7 @@ class GroupOptions extends StatelessWidget {
       ),
       FilledButton(
         onPressed: () {},
-        style: ThemeButton.outlinedInvert(context),
+        style: ThemeButton.invert(context),
         child: const Row(children: [
           Text('Join Group')
         ])

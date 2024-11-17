@@ -67,7 +67,7 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
               CoverBanner(
                 name: 'James Doe',
                 username: '@james_doe',
-                image: 'assets/images/profile_banner.jpg',
+                image: 'assets/images/profile_banner3.jpg',
                 avatar: ImgApi.avatar[8],
                 bio: ContentApi.sentences,
                 followers: 34,
@@ -88,7 +88,7 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
             children: [
               /// POST
               SingleChildScrollView(
-                child: ListPost(postDatas: postList.sublist(28, 48)),
+                child: ListPost(postDatas: postList.sublist(14, 34)),
               ),
 
               /// FOLLOWINGS

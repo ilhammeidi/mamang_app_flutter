@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:mamang_app_flutter/models/dummy_api.dart';
+import 'package:mamang_app_flutter/models/events.dart';
 import 'package:mamang_app_flutter/models/img_api.dart';
+import 'package:mamang_app_flutter/models/post.dart';
+import 'package:mamang_app_flutter/models/users.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
+import 'package:mamang_app_flutter/ui/widgets/cards/profile_card.dart';
+import 'package:mamang_app_flutter/ui/widgets/cards/profile_card_landscape.dart';
+import 'package:mamang_app_flutter/ui/widgets/event/event_list.dart';
+import 'package:mamang_app_flutter/ui/widgets/profile/about_group.dart';
 import 'package:mamang_app_flutter/ui/widgets/profile/cover_banner.dart';
 import 'package:mamang_app_flutter/ui/widgets/profile/cover_header.dart';
 import 'package:mamang_app_flutter/ui/widgets/profile/cover_options.dart';
+import 'package:mamang_app_flutter/ui/widgets/social_media/list_post.dart';
 
 class ProfileGroup extends StatefulWidget {
   const ProfileGroup({super.key});
@@ -57,7 +66,7 @@ class _ProfileGroupState extends State<ProfileGroup> with TickerProviderStateMix
               CoverBanner(
                 name: 'Ice Cream Lovers',
                 username: '230 Members',
-                image: 'assets/images/profile_banner.jpg',
+                image: 'assets/images/profile_banner2.jpg',
                 avatar: ImgApi.photo[19],
                 bio: ContentApi.sentences,
               ),
@@ -74,80 +83,67 @@ class _ProfileGroupState extends State<ProfileGroup> with TickerProviderStateMix
           body: TabBarView(
             controller: _tabController,
             children: [
+              /// POST
               SingleChildScrollView(
-                child: Container(
-                  padding: EdgeInsets.only(bottom: 600),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.only(bottom: 600),
-                        child: Center(
-                          child: Text("TITLE1"),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                child: ListPost(postDatas: postList.sublist(18, 38)),
               ),
+
+              /// EVENTS
               SingleChildScrollView(
-                child: Container(
-                  padding: EdgeInsets.only(bottom: 600),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(bottom: 600),
-                        child: Center(
-                          child: Text("TITLE2"),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                child: EventList(items: eventList.sublist(0, 4))
               ),
+
+              /// ABOUT
               SingleChildScrollView(
-                child: Container(
-                  padding: EdgeInsets.only(bottom: 600),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(bottom: 600),
-                        child: Center(
-                          child: Text("TITLE3"),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                child: Padding(
+                  padding: EdgeInsets.all(spacingUnit(2)),
+                  child: const AboutGroup(),
+                )
               ),
+
+              /// MEMBERS
               SingleChildScrollView(
-                child: Container(
-                  padding: EdgeInsets.only(bottom: 600),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(bottom: 600),
-                        child: Center(
-                          child: Text("TITLE3"),
-                        ),
-                      ),
-                    ],
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: const ClampingScrollPhysics(),
+                  itemCount: 10,
+                  padding: EdgeInsets.all(spacingUnit(2)),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 4,
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16,
+                    mainAxisExtent: 60
                   ),
-                ),
+                  itemBuilder: (BuildContext context, int index) {
+                    User item = userList[index];
+                    return ProfileCard(
+                      avatar: item.avatar,
+                      name: item.name,
+                      distance: item.distance
+                    );
+                  }
+                )
               ),
+
+              // ADMINS
               SingleChildScrollView(
-                child: Container(
-                  padding: EdgeInsets.only(bottom: 600),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(bottom: 600),
-                        child: Center(
-                          child: Text("TITLE3"),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                child: ListView.builder(
+                  itemCount: 4,
+                  shrinkWrap: true,
+                  physics: const ClampingScrollPhysics(),
+                  padding: EdgeInsets.all(spacingUnit(2)),
+                  itemBuilder: ((BuildContext context, int index) {
+                    User item = userList[index];
+                    return ProfileCardLandscape(
+                      avatar: item.avatar,
+                      name: item.name,
+                      distance: item.distance,
+                      textButton: 'Follow',
+                      isLast: index == 3,
+                    );
+                  })
+                )
               ),
             ],
           ),
