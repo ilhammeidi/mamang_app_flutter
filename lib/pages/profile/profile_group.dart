@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/dummy_api.dart';
 import 'package:mamang_app_flutter/models/events.dart';
 import 'package:mamang_app_flutter/models/img_api.dart';
@@ -117,10 +118,15 @@ class _ProfileGroupState extends State<ProfileGroup> with TickerProviderStateMix
                   ),
                   itemBuilder: (BuildContext context, int index) {
                     User item = userList[index];
-                    return ProfileCard(
-                      avatar: item.avatar,
-                      name: item.name,
-                      distance: item.distance
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to('/user-profile');
+                      },
+                      child: ProfileCard(
+                        avatar: item.avatar,
+                        name: item.name,
+                        distance: item.distance
+                      ),
                     );
                   }
                 )
@@ -135,12 +141,17 @@ class _ProfileGroupState extends State<ProfileGroup> with TickerProviderStateMix
                   padding: EdgeInsets.all(spacingUnit(2)),
                   itemBuilder: ((BuildContext context, int index) {
                     User item = userList[index];
-                    return ProfileCardLandscape(
-                      avatar: item.avatar,
-                      name: item.name,
-                      distance: item.distance,
-                      textButton: 'Follow',
-                      isLast: index == 3,
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to('/user-profile');
+                      },
+                      child: ProfileCardLandscape(
+                        avatar: item.avatar,
+                        name: item.name,
+                        distance: item.distance,
+                        textButton: 'Follow',
+                        isLast: index == 3,
+                      ),
                     );
                   })
                 )

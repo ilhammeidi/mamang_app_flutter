@@ -34,11 +34,16 @@ class Groups extends StatelessWidget {
         ),
         itemBuilder: (context, index) {
           Community item = communityList[index];
-          return ProfileCardPortrait(
-            avatar: item.avatar,
-            name: item.name,
-            desc: 'Members: ${item.totalMembers}',
-            btnText: 'JOIN'
+          return GestureDetector(
+            onTap: () {
+              Get.to('/group-profile');
+            },
+            child: ProfileCardPortrait(
+              avatar: item.avatar,
+              name: item.name,
+              desc: 'Members: ${item.totalMembers}',
+              btnText: 'JOIN'
+            ),
           );
         },
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/image_viewer.dart';
 
 class CoverBanner extends StatelessWidget {
   const CoverBanner({
@@ -110,9 +111,17 @@ class CoverBanner extends StatelessWidget {
           Positioned(
             bottom: 160,
             right: spacingUnit(2),
-            child: CircleAvatar(
-              radius: 50,
-              backgroundImage: NetworkImage(avatar),
+            child: Hero(
+              tag: avatar,
+              child: GestureDetector(
+                onTap: () {
+                  Get.to(() => ImageViewer(img: avatar));
+                },
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundImage: NetworkImage(avatar),
+                ),
+              ),
             )
           ),
         ]

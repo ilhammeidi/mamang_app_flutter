@@ -72,22 +72,27 @@ class PostHeader extends StatelessWidget {
           Get.back();
         },
       ),
-      title: Row(
-        children: [
-          CircleAvatar(
-            radius: 15,
-            backgroundImage: NetworkImage(avatar),
-          ),
-          const SizedBox(width: 8,),
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(name, style: isFixed ? ThemeText.subtitle : ThemeText.subtitle.merge(whiteShadow)),
-            Row(children: [
-              isFixed ? const Icon(Icons.location_on_rounded, size: 12) : _whiteIcon(context, Icons.location_on_rounded, 12),
-              const SizedBox(width: 4),
-              Text('$range M', style: isFixed ? ThemeText.caption : ThemeText.caption.merge(whiteShadow)),
-            ])
-          ]),
-        ],
+      title: GestureDetector(
+        onTap: () {
+          Get.to('/user-profile');
+        },
+        child: Row(
+          children: [
+            CircleAvatar(
+              radius: 15,
+              backgroundImage: NetworkImage(avatar),
+            ),
+            const SizedBox(width: 8,),
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(name, style: isFixed ? ThemeText.subtitle : ThemeText.subtitle.merge(whiteShadow)),
+              Row(children: [
+                isFixed ? const Icon(Icons.location_on_rounded, size: 12) : _whiteIcon(context, Icons.location_on_rounded, 12),
+                const SizedBox(width: 4),
+                Text('$range M', style: isFixed ? ThemeText.caption : ThemeText.caption.merge(whiteShadow)),
+              ])
+            ]),
+          ],
+        ),
       ),
       actions: [
         const SizedBox(width: 4),

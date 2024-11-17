@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/models/community.dart';
 import 'package:mamang_app_flutter/models/dummy_api.dart';
 import 'package:mamang_app_flutter/models/img_api.dart';
@@ -152,11 +153,16 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
                   ),
                   itemBuilder: (context, index) {
                     Community item = communityList[index];
-                    return ProfileCardPortrait(
-                      avatar: item.avatar,
-                      name: item.name,
-                      desc: 'Members: ${item.totalMembers}',
-                      btnText: 'JOIN'
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to('/group-profile');
+                      },
+                      child: ProfileCardPortrait(
+                        avatar: item.avatar,
+                        name: item.name,
+                        desc: 'Members: ${item.totalMembers}',
+                        btnText: 'JOIN'
+                      ),
                     );
                   },
                 ),

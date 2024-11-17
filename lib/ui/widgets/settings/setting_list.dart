@@ -386,6 +386,24 @@ class SettingList extends StatelessWidget {
               ),
               const LineList(),
               ListTile(
+                leading: const Icon(Icons.person_2_outlined),
+                title: const Text('User Profile'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/user-profile');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.group_outlined),
+                title: const Text('Group Profile'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/group-profile');
+                },
+              ),
+              const LineList(),
+              ListTile(
                 leading: const Icon(Icons.all_inbox_outlined),
                 title: const Text('Business'),
                 trailing: const Icon(Icons.arrow_forward_ios),

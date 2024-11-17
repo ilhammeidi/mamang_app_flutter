@@ -44,29 +44,34 @@ class HomeHeader extends StatelessWidget {
       ),
       automaticallyImplyLeading: false,
       titleSpacing: spacingUnit(1),
-      title: Row(children: [
-        /// AVATAR AND USER PROFILE
-        CircleAvatar(
-          radius: 24.r,
-          backgroundImage: NetworkImage(userDummy.avatar),
-        ),
-        SizedBox(width: spacingUnit(1)),
-        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(userDummy.name, style: ThemeText.title2.copyWith(color: Colors.white)),
-          Container(
-            margin: const EdgeInsets.only(top: 4),
-            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-            decoration: BoxDecoration(
-              borderRadius: ThemeRadius.small,
-              color: Colors.amber.shade700,
-            ),
-            child: Text(
-              '${userDummy.title.toUpperCase()} • ${userDummy.point} Points',
-              style: TextStyle(color: Colors.white, fontSize: 11, fontFamily: appFont, fontWeight: FontWeight.bold)
+      title: GestureDetector(
+        onTap: () {
+          Get.to('/profile');
+        },
+        child: Row(children: [
+          /// AVATAR AND USER PROFILE
+          CircleAvatar(
+            radius: 24.r,
+            backgroundImage: NetworkImage(userDummy.avatar),
+          ),
+          SizedBox(width: spacingUnit(1)),
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(userDummy.name, style: ThemeText.title2.copyWith(color: Colors.white)),
+            Container(
+              margin: const EdgeInsets.only(top: 4),
+              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+              decoration: BoxDecoration(
+                borderRadius: ThemeRadius.small,
+                color: Colors.amber.shade700,
+              ),
+              child: Text(
+                '${userDummy.title.toUpperCase()} • ${userDummy.point} Points',
+                style: TextStyle(color: Colors.white, fontSize: 11, fontFamily: appFont, fontWeight: FontWeight.bold)
+              )
             )
-          )
-        ])
-      ]),
+          ])
+        ]),
+      ),
 
       /// ACTION BUTTONS
       actions: [
