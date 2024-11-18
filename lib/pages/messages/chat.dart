@@ -56,7 +56,7 @@ class _ChatPageState extends State<ChatPage> {
           ),
           title: GestureDetector(
             onTap: () {
-              Get.to('/user-profile');
+              Get.toNamed('/user-profile');
             },
             child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
               CircleAvatar(

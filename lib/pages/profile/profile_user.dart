@@ -155,7 +155,7 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
                     Community item = communityList[index];
                     return GestureDetector(
                       onTap: () {
-                        Get.to('/group-profile');
+                        Get.toNamed('/group-profile');
                       },
                       child: ProfileCardPortrait(
                         avatar: item.avatar,

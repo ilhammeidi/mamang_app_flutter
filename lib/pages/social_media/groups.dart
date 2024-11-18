@@ -36,13 +36,13 @@ class Groups extends StatelessWidget {
           Community item = communityList[index];
           return GestureDetector(
             onTap: () {
-              Get.to('/group-profile');
+              Get.toNamed('/group-profile');
             },
             child: ProfileCardPortrait(
               avatar: item.avatar,
               name: item.name,
               desc: 'Members: ${item.totalMembers}',
-              btnText: 'JOIN'
+              btnText: 'JOIN',
             ),
           );
         },

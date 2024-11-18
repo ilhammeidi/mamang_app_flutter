@@ -74,7 +74,7 @@ class PostHeader extends StatelessWidget {
       ),
       title: GestureDetector(
         onTap: () {
-          Get.to('/user-profile');
+          Get.toNamed('/user-profile');
         },
         child: Row(
           children: [

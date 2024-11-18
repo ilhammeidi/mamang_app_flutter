@@ -27,7 +27,7 @@ class UserGrid extends StatelessWidget {
             final item = userList[index];
             return GestureDetector(
               onTap: () {
-                Get.to('/user-profile');
+                Get.toNamed('/user-profile');
               },
               child: ProfileCard(
                 avatar: item.avatar,

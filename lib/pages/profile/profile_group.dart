@@ -120,7 +120,7 @@ class _ProfileGroupState extends State<ProfileGroup> with TickerProviderStateMix
                     User item = userList[index];
                     return GestureDetector(
                       onTap: () {
-                        Get.to('/user-profile');
+                        Get.toNamed('/user-profile');
                       },
                       child: ProfileCard(
                         avatar: item.avatar,
@@ -143,7 +143,7 @@ class _ProfileGroupState extends State<ProfileGroup> with TickerProviderStateMix
                     User item = userList[index];
                     return GestureDetector(
                       onTap: () {
-                        Get.to('/user-profile');
+                        Get.toNamed('/user-profile');
                       },
                       child: ProfileCardLandscape(
                         avatar: item.avatar,

@@ -45,7 +45,7 @@ class GroupListSlider extends StatelessWidget {
                 ),
                 child: GestureDetector(
                   onTap: () {
-                    Get.to('/user-profile');
+                    Get.toNamed('/group-profile');
                   },
                   child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                     CircleAvatar(

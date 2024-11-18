@@ -46,7 +46,7 @@ class HomeHeader extends StatelessWidget {
       titleSpacing: spacingUnit(1),
       title: GestureDetector(
         onTap: () {
-          Get.to('/profile');
+          Get.toNamed('/profile');
         },
         child: Row(children: [
           /// AVATAR AND USER PROFILE
