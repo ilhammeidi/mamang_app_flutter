@@ -54,14 +54,19 @@ class _ChatPageState extends State<ChatPage> {
               Get.back();
             },
           ),
-          title: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            CircleAvatar(
-              radius: 15,
-              backgroundImage: NetworkImage(widget.avatar)
-            ),
-            SizedBox(width: spacingUnit(1)),
-            Text(widget.name, style: ThemeText.subtitle2),
-          ]),
+          title: GestureDetector(
+            onTap: () {
+              Get.toNamed('/user-profile');
+            },
+            child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+              CircleAvatar(
+                radius: 15,
+                backgroundImage: NetworkImage(widget.avatar)
+              ),
+              SizedBox(width: spacingUnit(1)),
+              Text(widget.name, style: ThemeText.subtitle2),
+            ]),
+          ),
           actions: const [
             OtherBtn()
           ],

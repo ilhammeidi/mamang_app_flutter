@@ -43,17 +43,22 @@ class GroupListSlider extends StatelessWidget {
                   left: index == 0 ? spacingUnit(2) : spacingUnit(1),
                   right: index < communityList.length ? spacingUnit(1) : spacingUnit(2),
                 ),
-                child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  CircleAvatar(
-                    radius: 28,
-                    backgroundImage: NetworkImage(item.avatar),
-                  ),
-                  const SizedBox(height: 4),
-                  SizedBox(
-                    width: 60,
-                    child: Text(item.name, style: ThemeText.caption, textAlign: TextAlign.center, overflow: TextOverflow.ellipsis, maxLines: 1)
-                  )
-                ]),
+                child: GestureDetector(
+                  onTap: () {
+                    Get.toNamed('/group-profile');
+                  },
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                    CircleAvatar(
+                      radius: 28,
+                      backgroundImage: NetworkImage(item.avatar),
+                    ),
+                    const SizedBox(height: 4),
+                    SizedBox(
+                      width: 60,
+                      child: Text(item.name, style: ThemeText.caption, textAlign: TextAlign.center, overflow: TextOverflow.ellipsis, maxLines: 1)
+                    )
+                  ]),
+                ),
               );
             },
           ),
