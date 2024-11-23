@@ -9,6 +9,7 @@ import 'package:mamang_app_flutter/pages/business/create_new.dart';
 import 'package:mamang_app_flutter/pages/business/detail.dart';
 import 'package:mamang_app_flutter/pages/business/form.dart';
 import 'package:mamang_app_flutter/pages/business/payment.dart';
+import 'package:mamang_app_flutter/pages/business/report.dart';
 import 'package:mamang_app_flutter/pages/event/detail.dart';
 import 'package:mamang_app_flutter/pages/event/event_main.dart';
 import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
@@ -187,6 +188,10 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/business/:id',
     page: () => const GeneralLayout(content: BusinessDetail()),
+  ),
+  GetPage(
+    name: '/business-report',
+    page: () => GeneralLayout(content: BusinessReport()),
   ),
   GetPage(
     name: '/business-new',
