@@ -81,7 +81,6 @@ class _ChatPageState extends State<ChatPage> {
             )
           ),
           ChatInput(sendMsg: _sendMessage),
-          const VSpace()
         ]),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
@@ -22,71 +23,86 @@ class InfographicList extends StatelessWidget {
         padding: const EdgeInsets.all(0),
         scrollDirection: Axis.horizontal,
         children: [
-          Container(
-            padding: EdgeInsets.only(
-              left: spacingUnit(2), 
-              right: spacingUnit(1), 
-              top: spacingUnit(1),
-              bottom: spacingUnit(1)
-            ),
-            width: cardWidth,
-            child: StatsCard(
-              background: colorScheme.primaryContainer,
-              foreground: colorScheme.onPrimaryContainer,
-              bigText: 'Medium',
-              title: 'Business Strength',
-              infoGraphic: SizedBox(
-                width: 120,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: CircularProgressIndicator(
-                        value: 0.7,
-                        strokeWidth: 15.0,
-                        backgroundColor: ThemePalette.primaryMain.withOpacity(0.5),
-                        valueColor: AlwaysStoppedAnimation<Color>(ThemePalette.primaryMain),
+          GestureDetector(
+            onTap: () {
+              Get.toNamed('/business-report');
+            },
+            child: Container(
+              padding: EdgeInsets.only(
+                left: spacingUnit(2), 
+                right: spacingUnit(1), 
+                top: spacingUnit(1),
+                bottom: spacingUnit(1)
+              ),
+              width: cardWidth,
+              child: StatsCard(
+                background: colorScheme.primaryContainer,
+                foreground: colorScheme.onPrimaryContainer,
+                bigText: 'Medium',
+                title: 'Business Strength',
+                infoGraphic: SizedBox(
+                  width: 120,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: CircularProgressIndicator(
+                          value: 0.7,
+                          strokeWidth: 15.0,
+                          backgroundColor: ThemePalette.primaryMain.withOpacity(0.5),
+                          valueColor: AlwaysStoppedAnimation<Color>(ThemePalette.primaryMain),
+                        ),
                       ),
-                    ),
-                    Text('70%', style: ThemeText.subtitle.copyWith(color: colorScheme.onPrimaryContainer))
-                  ],
+                      Text('70%', style: ThemeText.subtitle.copyWith(color: colorScheme.onPrimaryContainer))
+                    ],
+                  )
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Get.toNamed('/business-analytics');
+            },
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: spacingUnit(1), vertical: spacingUnit(1)),
+              width: cardWidth,
+              child: StatsCard(
+                background: colorScheme.secondaryContainer,
+                foreground: colorScheme.onSecondaryContainer,
+                bigText: '112',
+                title: 'Engagement',
+                infoGraphic: SizedBox(
+                  width: 160,
+                  child: AspectRatio(
+                    aspectRatio: 2,
+                    child: SimpleBarChart(color: ThemePalette.secondaryMain,),
+                  ),
                 )
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: spacingUnit(1), vertical: spacingUnit(1)),
-            width: cardWidth,
-            child: StatsCard(
-              background: colorScheme.secondaryContainer,
-              foreground: colorScheme.onSecondaryContainer,
-              bigText: '112',
-              title: 'Engagement',
-              infoGraphic: SizedBox(
-                width: 160,
-                child: AspectRatio(
-                  aspectRatio: 2,
-                  child: SimpleBarChart(color: ThemePalette.secondaryMain,),
-                ),
-              )
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(
-              left: spacingUnit(1), 
-              right: spacingUnit(2), 
-              top: spacingUnit(1),
-              bottom: spacingUnit(1)
-            ),
-            width: cardWidth,
-            child: StatsCard(
-              background: colorScheme.tertiaryContainer,
-              foreground: colorScheme.onTertiaryContainer,
-              bigText: '12',
-              title: 'Total Campaigns',
-              infoGraphic: Icon(Icons.campaign, color: ThemePalette.tertiaryMain, size: 120)
+          GestureDetector(
+            onTap: () {
+              Get.toNamed('/business');
+            },
+            child: Container(
+              padding: EdgeInsets.only(
+                left: spacingUnit(1), 
+                right: spacingUnit(2), 
+                top: spacingUnit(1),
+                bottom: spacingUnit(1)
+              ),
+              width: cardWidth,
+              child: StatsCard(
+                background: colorScheme.tertiaryContainer,
+                foreground: colorScheme.onTertiaryContainer,
+                bigText: '12',
+                title: 'Total Campaigns',
+                infoGraphic: Icon(Icons.campaign, color: ThemePalette.tertiaryMain, size: 120)
+              ),
             ),
           )
         ],

@@ -33,6 +33,7 @@ class NotifItem extends StatelessWidget {
         color: !isRead ? Colors.orange.withOpacity(0.15) : Colors.transparent,
         child: Column(children: [
           ListTile(
+            contentPadding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
             leading: _buildIcon(context, type),
             title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
             subtitle: Text(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis),

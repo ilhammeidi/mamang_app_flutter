@@ -29,8 +29,7 @@ class TagHistory extends StatelessWidget {
                   ),
                   child: Text(item),
                 ),
-            )
-            ).toList()
+            )).toList()
           )
         ],
       ),

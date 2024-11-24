@@ -117,9 +117,9 @@ class OptionsFixed extends StatelessWidget {
             icon: const Icon(Icons.arrow_back_ios_new)
           ),
           SizedBox(width: spacingUnit(1)),
-          CircleAvatar(radius: 12, backgroundImage: NetworkImage(avatar)),
+          CircleAvatar(radius: 15, backgroundImage: NetworkImage(avatar)),
           SizedBox(width: spacingUnit(1)),
-          Text(name, style: ThemeText.paragraph, overflow: TextOverflow.ellipsis, maxLines: 1,)
+          Text(name, style: ThemeText.subtitle2, overflow: TextOverflow.ellipsis, maxLines: 1,)
         ]),
       ),
       SizedBox(

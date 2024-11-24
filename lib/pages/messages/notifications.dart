@@ -108,7 +108,7 @@ class _NotificationsState extends State<Notifications> {
                   date: item.date,
                   image: item.image,
                   isRead: item.isRead,
-                  isLast: _filteredItems.length == index + 1,
+                  isLast: true
                 );
               })
             ),

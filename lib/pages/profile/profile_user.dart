@@ -106,7 +106,7 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
                       name: item.name,
                       distance: item.distance,
                       textButton: 'Follow',
-                      isLast: index + 1 == followCount,
+                      isLast: true,
                     );
                   })
                 )

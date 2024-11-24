@@ -30,13 +30,14 @@ ThemeData lightColorScheme = ThemeData(
     onTertiaryContainer: ThemePalette.tertiaryDark,
     surface: ThemePalette.paperLight,
     onSurface: Colors.black,
+    surfaceContainerHighest: ThemePalette.defaultLight,
     surfaceContainerLowest: ThemePalette.paperLight,
     onSurfaceVariant: Colors.grey[600],
     error: Colors.red,
     onError: Colors.white,
     brightness: Brightness.light,
-    outline: Colors.grey[300],
-    outlineVariant: Colors.grey[400],
+    outline: const Color.fromARGB(255, 226, 235, 235),
+    outlineVariant: const Color.fromARGB(255, 198, 208, 208),
     shadow: Colors.black.withOpacity(0.09),
   ),
 );
@@ -71,13 +72,14 @@ ThemeData darkColorScheme = ThemeData(
     onTertiaryContainer: ThemePalette.tertiaryLight,
     surface: ThemePalette.paperDark,
     onSurface: Colors.white,
+    surfaceContainerHighest: ThemePalette.paperDark,
     surfaceContainerLowest: ThemePalette.defaultDark,
     onSurfaceVariant: Colors.grey.shade300,
     error: Colors.red,
     onError: Colors.white,
     brightness: Brightness.dark,
-    outline: Colors.grey[700],
-    outlineVariant: Colors.grey[500],
+    outline: const Color.fromARGB(255, 53, 69, 69),
+    outlineVariant: const Color.fromARGB(255, 107, 135, 135),
     shadow: Colors.black.withOpacity(0.2)
   )
 );
