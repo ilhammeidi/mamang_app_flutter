@@ -48,12 +48,15 @@ class _ChatInputState extends State<ChatInput> {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Container(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.only(
+        top: 8,
+        left: 8,
+        right: 8,
+        bottom: 32
+      ),
+      height: 80,
       decoration: BoxDecoration(
-        color: colorScheme.surface,
-        border: widget.hasBorder ? Border(
-          top: BorderSide(color: colorScheme.outline, width: 1)
-        ) : null
+        color: colorScheme.surfaceContainerHighest,
       ),
       child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
         Expanded(

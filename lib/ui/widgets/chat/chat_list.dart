@@ -20,7 +20,7 @@ class ChatList extends StatelessWidget {
           name: item.name,
           message: item.messages[0].message,
           date: item.messages[0].date,
-          isLast: data.length == index + 1,
+          isLast: true,
           onTap: () {
             Get.to(() => ChatPage(
               messageData: item.messages,

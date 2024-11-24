@@ -19,7 +19,7 @@ class ThemePalette {
   // Base
   static Color paperLight = Colors.white;
   static Color paperDark = const Color.fromARGB(255, 36, 36, 36);
-  static Color defaultLight = Colors.grey.shade200;
+  static Color defaultLight = Colors.grey.shade50;
   static Color defaultDark = const Color.fromARGB(255, 18, 18, 18);
 
   // Gradient Mixed
