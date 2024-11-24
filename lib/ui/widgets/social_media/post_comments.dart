@@ -29,7 +29,7 @@ class PostComments extends StatelessWidget {
               name: item.name,
               message: item.comment,
               date: item.date,
-              isLast: commentList.length == index + 1,
+              isLast: true
             );
           })
         ),

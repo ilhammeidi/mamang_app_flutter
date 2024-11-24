@@ -5,7 +5,6 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/shimmer_preloader.dart';
-import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
 
 class PromoLandscapeCard extends StatelessWidget {
   const PromoLandscapeCard({
@@ -34,10 +33,10 @@ class PromoLandscapeCard extends StatelessWidget {
     Color greyText = Theme.of(context).colorScheme.onSurfaceVariant;
 
     return SizedBox(
-      height: 150,
+      height: 120,
       child: InkWell(
         onTap: onTap,
-        child: PaperCard(content: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
           /// THUMBNAIL
           Stack(
             children: [
@@ -45,14 +44,14 @@ class PromoLandscapeCard extends StatelessWidget {
                 borderRadius: ThemeRadius.small,
                 child: Image.network(
                   thumb,
-                  width: 150,
-                  height: 150,
+                  width: 120,
+                  height: 120,
                   fit: BoxFit.cover,
                   loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
                     if (loadingProgress == null) return child;
                     return const SizedBox(
-                      width: 150,
-                      height: 150,
+                      width: 120,
+                      height: 120,
                       child: ShimmerPreloader()
                     );
                   },
@@ -85,7 +84,7 @@ class PromoLandscapeCard extends StatelessWidget {
                     title.toCapitalCase(),
                     style: const TextStyle(fontWeight: FontWeight.bold),
                     overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
+                    maxLines: 1,
                   ),
                 ),
                 /// PROPERTIES
@@ -134,7 +133,7 @@ class PromoLandscapeCard extends StatelessWidget {
               ])
             ),
           )
-        ])),
+        ]),
       ),
     );
   }

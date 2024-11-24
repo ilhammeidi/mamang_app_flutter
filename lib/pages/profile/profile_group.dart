@@ -150,7 +150,7 @@ class _ProfileGroupState extends State<ProfileGroup> with TickerProviderStateMix
                         name: item.name,
                         distance: item.distance,
                         textButton: 'Follow',
-                        isLast: index == 3,
+                        isLast: true,
                       ),
                     );
                   })

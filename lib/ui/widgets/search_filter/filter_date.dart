@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/grabber_icon.dart';
@@ -29,7 +30,6 @@ class _FilterDateState extends State<FilterDate> {
     ButtonStyle buttonStyle = ThemeButton.btnSmall.merge(ThemeButton.tonalDefault(context));
     ButtonStyle selectedStyle = ThemeButton.btnSmall.merge(ThemeButton.invert(context));
 
-
     return Column(children: [
       /// FILTER DATE
       InkWell(
@@ -45,12 +45,16 @@ class _FilterDateState extends State<FilterDate> {
           );
         },
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
+          margin: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
+          decoration: BoxDecoration(
+            borderRadius: ThemeRadius.medium,
+            color: colorScheme.outline.withOpacity(0.5)
+          ),
           child: Row(children: [
             SizedBox(
               width: 180,
               child: ListTile(
-                leading: const Icon(Icons.calendar_month),
+                leading: Icon(Icons.calendar_month, color: colorScheme.onSecondaryContainer, size: 22),
                 title: Text('Date from', style: ThemeText.caption.copyWith(color: colorScheme.onSurfaceVariant)),
                 subtitle: Text('22 May 2024', style: ThemeText.paragraph.copyWith(color: colorScheme.onSurface)),
               ),
@@ -59,7 +63,7 @@ class _FilterDateState extends State<FilterDate> {
             SizedBox(
               width: 180,
               child: ListTile(
-                leading: const Icon(Icons.calendar_month),
+                leading: Icon(Icons.calendar_month, color: colorScheme.onSecondaryContainer, size: 22),
                 title: Text('Date to', style: ThemeText.caption.copyWith(color: colorScheme.onSurfaceVariant)),
                 subtitle: Text('30 May 2024', style: ThemeText.paragraph.copyWith(color: colorScheme.onSurface)),
               ),
