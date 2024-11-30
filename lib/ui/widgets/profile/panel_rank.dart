@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mamang_app_flutter/models/img_api.dart';
+import 'package:mamang_app_flutter/models/rank_list.dart';
 import 'package:mamang_app_flutter/models/users.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
@@ -12,58 +12,7 @@ class PanelRank extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<User> rankList = [
-      User(
-        id: 1,
-        name: 'Jean Doe',
-        distance: 4,
-        title: 'regular',
-        status: 'active',
-        avatar: ImgApi.avatar[6],
-        coin: 200,
-        point: 100,
-      ),
-      User(
-        id: 2,
-        name: 'John Doe',
-        distance: 1.5,
-        title: 'premium',
-        status: 'active',
-        avatar: ImgApi.avatar[0],
-        coin: 100,
-        point: 90,
-      ),
-      User(
-        id: 3,
-        name: 'Jena Doe',
-        distance: 5,
-        title: 'VIP',
-        status: 'non-active',
-        avatar: ImgApi.avatar[1],
-        coin: 80,
-        point: 80,
-      ),
-      User(
-        id: 4,
-        name: 'James Doe',
-        distance: 0.5,
-        title: 'regular',
-        status: 'active',
-        avatar: ImgApi.avatar[7],
-        coin: 40,
-        point: 10,
-      ),
-      User(
-        id: 5,
-        name: 'Jack Doe',
-        distance: 1,
-        title: 'VIP',
-        status: 'non-active',
-        avatar: ImgApi.avatar[8],
-        coin: 10,
-        point: 5,
-      ),
-    ];
+    final List<User> topRank = rankList.sublist(0, 5);
     return Container(
       decoration: BoxDecoration(
         borderRadius: ThemeRadius.medium,
@@ -77,9 +26,9 @@ class PanelRank extends StatelessWidget {
         child: Row(children: [
           Expanded(
             child: RankCard(
-              point: rankList[0].point,
+              point: topRank[0].point,
               title: '#2 Gold',
-              avatar: rankList[0].avatar,
+              avatar: topRank[0].avatar,
               color: Colors.purple,
               badge: Icon(
                 Icons.emoji_events_rounded,
@@ -112,12 +61,12 @@ class PanelRank extends StatelessWidget {
                   numeric: true,
                   label: Expanded(
                     flex: 1,
-                    child: Align(alignment: Alignment.centerRight, child: Icon(Icons.stars, size: 16, color: Colors.amber)),
+                    child: Align(alignment: Alignment.centerRight, child: Icon(Icons.stars, size: 16, color: Colors.cyan)),
                   ),
                 ),
               ],
-              rows: List.generate(rankList.length, (int index) {
-                User item = rankList[index];
+              rows: List.generate(topRank.length, (int index) {
+                User item = topRank[index];
                 return DataRow(
                   color: index == 1 ? WidgetStateProperty.all(Theme.of(context).primaryColor.withOpacity(0.25)) : null,
                   cells: <DataCell>[

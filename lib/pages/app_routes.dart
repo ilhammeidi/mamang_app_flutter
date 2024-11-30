@@ -17,10 +17,12 @@ import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
 import 'package:mamang_app_flutter/pages/home.dart';
 import 'package:mamang_app_flutter/pages/messages/inbox.dart';
 import 'package:mamang_app_flutter/pages/messages/notifications.dart';
+import 'package:mamang_app_flutter/pages/profile/activities.dart';
 import 'package:mamang_app_flutter/pages/profile/contact.dart';
 import 'package:mamang_app_flutter/pages/profile/faq_list.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_password.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_profile.dart';
+import 'package:mamang_app_flutter/pages/profile/leaderboards.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_group.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_user.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
@@ -177,6 +179,10 @@ final List<GetPage> appRoutes = [
     page: () => const GeneralLayout(content: ProfileUser()),
   ),
   GetPage(
+    name: '/user-profile/:menu',
+    page: () => const GeneralLayout(content: ProfileUser()),
+  ),
+  GetPage(
     name: '/group-profile',
     page: () => const GeneralLayout(content: ProfileGroup()),
   ),
@@ -211,13 +217,23 @@ final List<GetPage> appRoutes = [
     page: () => const GeneralLayout(content: BusinessForm()),
   ),
 
-  /// Settings
+  /// USER PROFILE
   GetPage(
     name: '/profile',
     page: () => const HomeLayout(content: ProfileMain()),
     transition: Transition.fadeIn,
     transitionDuration: const Duration(milliseconds: pageTransitionDuration)
   ),
+  GetPage(
+    name: '/activities',
+    page: () => const GeneralLayout(content: Activities()),
+  ),
+  GetPage(
+    name: '/leaderboards',
+    page: () => const GeneralLayout(content: Leaderboards()),
+  ),
+
+  /// SETTINGS
   GetPage(
     name: '/edit-profile',
     page: () => const GeneralLayout(content: EditProfile()),

@@ -26,6 +26,8 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
   final ScrollController _scrollref = ScrollController();
   late AnimationController _slideRef;
   final followCount = 13;
+
+  String menu = Get.parameters['menu'] ?? '0';
   
   TabController? _tabController;
 
@@ -35,7 +37,7 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
       vsync: this,
       duration: const Duration(milliseconds: 300)
     );
-    _tabController = TabController(initialIndex: 0, length: 5, vsync: this);
+    _tabController = TabController(initialIndex: int.parse(menu), length: 5, vsync: this);
     super.initState();
   }
 

@@ -40,48 +40,48 @@ final List<Activity> activityList = [
   ),
   Activity(
     id: '4',
-    title: 'You like a post',
+    title: 'You liked a post',
     icon: Icons.favorite,
     color: Colors.pink,
     date: 'A week ago'
   ),
   Activity(
-    id: '1',
+    id: '5',
     title: 'Login from Bandung',
     icon: Icons.person,
     color: Colors.grey,
     date: '12 Aug'
   ),
   Activity(
-    id: '1',
+    id: '6',
     title: 'You sent a report',
     icon: Icons.report,
     color: Colors.orange,
     date: '11 Aug'
   ),
   Activity(
-    id: '1',
-    title: 'You comment on John Doe posts',
+    id: '7',
+    title: 'You commented on John Doe posts',
     icon: Icons.comment,
     color: Colors.cyan,
     date: '3 Jan'
   ),
   Activity(
-    id: '1',
-    title: 'Redeem Voucher',
+    id: '8',
+    title: 'Voucher Redeemed',
     icon: Icons.airplane_ticket_outlined,
     color: Colors.purple,
     date: '22 Sep'
   ),
   Activity(
-    id: '1',
+    id: '9',
     title: 'Used 200 point to buy puzzle',
     icon: Icons.bubble_chart,
     color: Colors.amber,
     date: '1 Sep'
   ),
   Activity(
-    id: '1',
+    id: '10',
     title: 'You crated new business',
     icon: Icons.all_inbox,
     color: Colors.teal,

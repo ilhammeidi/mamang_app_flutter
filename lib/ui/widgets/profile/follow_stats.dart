@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 
@@ -12,17 +13,32 @@ class FollowStats extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        _itemFollow(context, 'Followers', Icons.group_rounded, 102),
+        GestureDetector(
+          onTap: () {
+            Get.toNamed('/user-profile/1');
+          },
+          child: _itemFollow(context, 'Followers', Icons.group_rounded, 102)
+        ),
         SizedBox(
           height: 30,
           child: VerticalDivider(color: colorScheme.outline, width: 20, thickness: 1)
         ),
-        _itemFollow(context, 'Following', Icons.group_outlined, 67),
+        GestureDetector(
+          onTap: () {
+            Get.toNamed('/user-profile/2');
+          },
+          child: _itemFollow(context, 'Following', Icons.group_outlined, 67)
+        ),
         SizedBox(
           height: 30,
           child: VerticalDivider(color: colorScheme.outline, width: 20, thickness: 1)
         ),
-        _itemFollow(context, 'Groups', Icons.group_work_outlined, 5),
+        GestureDetector(
+          onTap: () {
+            Get.toNamed('/user-profile/3');
+          },
+          child: _itemFollow(context, 'Groups', Icons.group_work_outlined, 5),
+        ),
       ]),
     );
   }
