@@ -19,7 +19,7 @@ final List<User> rankList = [
     title: 'premium',
     status: 'active',
     avatar: ImgApi.avatar[0],
-    coin: 100,
+    coin: 190,
     point: 90,
   ),
   User(
@@ -29,7 +29,7 @@ final List<User> rankList = [
     title: 'VIP',
     status: 'non-active',
     avatar: ImgApi.avatar[1],
-    coin: 80,
+    coin: 180,
     point: 80,
   ),
   User(
@@ -39,7 +39,7 @@ final List<User> rankList = [
     title: 'regular',
     status: 'active',
     avatar: ImgApi.avatar[7],
-    coin: 40,
+    coin: 140,
     point: 10,
   ),
   User(
@@ -49,7 +49,7 @@ final List<User> rankList = [
     title: 'VIP',
     status: 'non-active',
     avatar: ImgApi.avatar[8],
-    coin: 10,
+    coin: 110,
     point: 5,
   ),
   User(
@@ -59,7 +59,7 @@ final List<User> rankList = [
     title: 'regular',
     status: 'active',
     avatar: ImgApi.avatar[6],
-    coin: 200,
+    coin: 98,
     point: 100,
   ),
   User(
@@ -69,7 +69,7 @@ final List<User> rankList = [
     title: 'premium',
     status: 'active',
     avatar: ImgApi.avatar[0],
-    coin: 100,
+    coin: 95,
     point: 90,
   ),
   User(
@@ -89,7 +89,7 @@ final List<User> rankList = [
     title: 'regular',
     status: 'active',
     avatar: ImgApi.avatar[7],
-    coin: 40,
+    coin: 70,
     point: 10,
   ),
   User(
@@ -99,7 +99,7 @@ final List<User> rankList = [
     title: 'VIP',
     status: 'non-active',
     avatar: ImgApi.avatar[8],
-    coin: 10,
+    coin: 60,
     point: 5,
   ),
   User(
@@ -109,7 +109,7 @@ final List<User> rankList = [
     title: 'regular',
     status: 'active',
     avatar: ImgApi.avatar[6],
-    coin: 200,
+    coin: 50,
     point: 100,
   ),
   User(
@@ -119,7 +119,7 @@ final List<User> rankList = [
     title: 'premium',
     status: 'active',
     avatar: ImgApi.avatar[0],
-    coin: 100,
+    coin: 40,
     point: 90,
   ),
   User(
@@ -129,7 +129,7 @@ final List<User> rankList = [
     title: 'VIP',
     status: 'non-active',
     avatar: ImgApi.avatar[1],
-    coin: 80,
+    coin: 30,
     point: 80,
   ),
   User(
@@ -159,7 +159,7 @@ final List<User> rankList = [
     title: 'regular',
     status: 'active',
     avatar: ImgApi.avatar[6],
-    coin: 200,
+    coin: 8,
     point: 100,
   ),
   User(
@@ -179,7 +179,7 @@ final List<User> rankList = [
     title: 'VIP',
     status: 'non-active',
     avatar: ImgApi.avatar[1],
-    coin: 80,
+    coin: 8,
     point: 80,
   ),
   User(
@@ -189,7 +189,7 @@ final List<User> rankList = [
     title: 'regular',
     status: 'active',
     avatar: ImgApi.avatar[7],
-    coin: 40,
+    coin: 4,
     point: 10,
   ),
   User(
@@ -199,7 +199,7 @@ final List<User> rankList = [
     title: 'VIP',
     status: 'non-active',
     avatar: ImgApi.avatar[8],
-    coin: 10,
+    coin: 1,
     point: 5,
   ),
 ];

@@ -16,10 +16,8 @@ class Leaderboards extends StatelessWidget {
     );
 
     return Scaffold(
-      extendBody: true,
       appBar: AppBar(
-        forceMaterialTransparency: true,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.purple,
         titleSpacing: 0,
         leading: IconButton(
           onPressed: () {
@@ -35,18 +33,20 @@ class Leaderboards extends StatelessWidget {
         ),
         centerTitle: true,
         /// TITLE AND SEARCH
-        title: const Text('Leaderboards'),
+        title: const Text('Your Achievement', style: TextStyle(color: Colors.white),),
       ),
-      body: Column(children: [
-        const PanelRankStats(color: Colors.purple),
-        Container(
-          padding: EdgeInsets.only(top: spacingUnit(2)),
-          decoration: BoxDecoration(
-            color: Colors.purple.withOpacity(0.15),
+      body: SingleChildScrollView(
+        child: Column(children: [
+          const PanelRankStats(color: Colors.purple),
+          Container(
+            padding: EdgeInsets.only(top: spacingUnit(2)),
+            decoration: const BoxDecoration(
+              color: Colors.purple,
+            ),
+            child: const TableRank(),
           ),
-          child: const TableRank(),
-        )
-      ])
+        ]),
+      )
     );
   }
 }
