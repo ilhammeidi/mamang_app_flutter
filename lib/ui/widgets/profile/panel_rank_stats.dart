@@ -15,10 +15,6 @@ class PanelRankStats extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(spacingUnit(1)),
-      decoration: BoxDecoration(
-        color: color,
-        image: const DecorationImage(image: AssetImage('assets/images/bg_blink.png'), fit: BoxFit.contain)
-      ),
       child: Row(children: [
         Expanded(
           child: Padding(

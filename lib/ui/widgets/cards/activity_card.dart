@@ -3,12 +3,20 @@ import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 
 class ActivityCard extends StatelessWidget {
-  const ActivityCard({super.key, required this.title, required this.time, required this.icon, required this.color});
+  const ActivityCard({
+    super.key,
+    required this.title,
+    required this.time,
+    required this.icon,
+    required this.color,
+    this.isHighlighted = false,
+  });
 
   final String title;
   final String time;
   final IconData icon;
   final Color color;
+  final bool isHighlighted;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +42,7 @@ class ActivityCard extends StatelessWidget {
         children: [
           Icon(icon, color: color, size: 16),
           const SizedBox(width: 4),
-          Text(title, style: ThemeText.subtitle2.copyWith(color: colorScheme.onSurface)),
+          Text(title, style: ThemeText.subtitle2.copyWith(color: isHighlighted ? Colors.orange : colorScheme.onSurface)),
         ],
       ),
     );

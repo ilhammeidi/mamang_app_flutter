@@ -22,7 +22,10 @@ import 'package:mamang_app_flutter/pages/profile/contact.dart';
 import 'package:mamang_app_flutter/pages/profile/faq_list.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_password.dart';
 import 'package:mamang_app_flutter/pages/profile/edit_profile.dart';
+import 'package:mamang_app_flutter/pages/profile/personal/detail_coin.dart';
+import 'package:mamang_app_flutter/pages/profile/personal/detail_point.dart';
 import 'package:mamang_app_flutter/pages/profile/personal/leaderboards.dart';
+import 'package:mamang_app_flutter/pages/profile/personal/rewards.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_group.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_user.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
@@ -227,6 +230,18 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/activities',
     page: () => const GeneralLayout(content: Activities()),
+  ),
+  GetPage(
+    name: '/rewards',
+    page: () => const GeneralLayout(content: Rewards()),
+  ),
+  GetPage(
+    name: '/detail-point',
+    page: () => const GeneralLayout(content: DetailPoint()),
+  ),
+  GetPage(
+    name: '/detail-coin',
+    page: () => const GeneralLayout(content: DetailCoin()),
   ),
   GetPage(
     name: '/leaderboards',

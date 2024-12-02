@@ -20,7 +20,12 @@ class DashboardPersonal extends StatelessWidget {
         const SizedBox(height: 4),
         const FollowStats(),
         const VSpace(),
-        const PanelPoint(),
+        GestureDetector(
+          onTap: () {
+            Get.toNamed('/rewards');
+          },
+          child: const PanelPoint()
+        ),
         const VSpace(),
         GestureDetector(
           onTap: () {
