@@ -3,25 +3,31 @@ import 'package:get/get.dart';
 import 'package:mamang_app_flutter/models/activity.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/activity_card.dart';
-import 'package:mamang_app_flutter/ui/widgets/title/title_action.dart';
 
-class PanelActivities extends StatelessWidget {
-  const PanelActivities({super.key});
-  
+class Activities extends StatelessWidget {
+  const Activities({super.key});
+
   @override
   Widget build(BuildContext context) {
-    const double itemHeight = 50;
-
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
-    return Column(
-      children: [
-        TitleAction(
-          title: 'Latest Activities',
-          textAction: 'View All',
-          onTap: () {
-            Get.toNamed('/activities');
-          }
+    const double itemHeight = 55;
+
+    return Scaffold(
+      appBar: AppBar(
+        forceMaterialTransparency: true,
+        backgroundColor: colorScheme.surface,
+        titleSpacing: 0,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: const Icon(Icons.arrow_back_ios_new)
         ),
+        centerTitle: false,
+        /// TITLE AND SEARCH
+        title: const Text('Your Activities'),
+      ),
+      body: Column(children: [
         const VSpaceShort(),
         Stack(
           alignment: Alignment.centerLeft,
@@ -30,7 +36,7 @@ class PanelActivities extends StatelessWidget {
               left: 24,
               child: Container(
                 width: 3,
-                height: itemHeight * 5,
+                height: itemHeight * activityList.length,
                 decoration: BoxDecoration(
                   color: colorScheme.outline,
                   borderRadius: BorderRadius.circular(5)
@@ -38,7 +44,7 @@ class PanelActivities extends StatelessWidget {
               ),
             ),
             ListView.builder(
-              itemCount: 5,
+              itemCount: activityList.length,
               shrinkWrap: true,
               physics: const ClampingScrollPhysics(),
               padding: const EdgeInsets.all(0),
@@ -54,7 +60,7 @@ class PanelActivities extends StatelessWidget {
             )
           ],
         )
-      ],
+      ]),
     );
   }
 }

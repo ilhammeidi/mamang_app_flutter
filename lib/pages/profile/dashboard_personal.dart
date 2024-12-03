@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/profile/follow_stats.dart';
 import 'package:mamang_app_flutter/ui/widgets/profile/panel_activities.dart';
@@ -19,9 +20,19 @@ class DashboardPersonal extends StatelessWidget {
         const SizedBox(height: 4),
         const FollowStats(),
         const VSpace(),
-        const PanelPoint(),
+        GestureDetector(
+          onTap: () {
+            Get.toNamed('/rewards');
+          },
+          child: const PanelPoint()
+        ),
         const VSpace(),
-        const PanelRank(),
+        GestureDetector(
+          onTap: () {
+            Get.toNamed('/leaderboards');
+          },
+          child: const PanelRank()
+        ),
         const VSpace(),
         PanelPosts(),
         const VSpaceBig(),

@@ -22,6 +22,7 @@ class RankCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Stack(
       alignment: Alignment.topCenter,
       children: [
@@ -32,7 +33,11 @@ class RankCard extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 borderRadius: ThemeRadius.medium,
-                color: color.withOpacity(0.15)
+                color: colorScheme.surfaceContainer,
+                border: Border.all(
+                  width: 1,
+                  color: color,
+                )
               ),
               child: Stack(
                 alignment: Alignment.center,

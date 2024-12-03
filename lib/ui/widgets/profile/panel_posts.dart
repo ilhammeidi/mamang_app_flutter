@@ -114,7 +114,7 @@ class PanelPosts extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: FilledButton(
             onPressed: () {
-              Get.toNamed('/updates');
+              Get.toNamed('/user-profile');
             },
             style: ThemeButton.invert(context),
             child: const Text('Show All Posts'),
