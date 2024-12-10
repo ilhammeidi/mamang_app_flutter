@@ -19,7 +19,7 @@ class BusinessInfo extends StatelessWidget {
   });
 
   final Widget icon;
-  final String color;
+  final Color color;
   final String name;
   final String desc;
 
@@ -71,7 +71,7 @@ class BusinessInfo extends StatelessWidget {
         SizedBox(width: spacingUnit(2)),
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(name, style: ThemeText.title),
-          Text('Total: 1/99999', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: colorType(color))),
+          Text('Total: 1/99999', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: color)),
         ],)
       ]),
       const VSpace(),

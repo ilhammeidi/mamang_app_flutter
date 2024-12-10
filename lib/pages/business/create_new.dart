@@ -5,18 +5,48 @@ import 'package:get/route_manager.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/utils/animated_slide_horizontal.dart';
 import 'package:mamang_app_flutter/ui/utils/box_color.dart';
 import 'package:mamang_app_flutter/ui/widgets/business/business_icon.dart';
-import 'package:mamang_app_flutter/ui/widgets/business/business_info.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/pricing_card.dart';
+import 'package:mamang_app_flutter/ui/widgets/tab_menu/menu.dart';
 
-class BusinessCreateNew extends StatelessWidget {
+class BusinessCreateNew extends StatefulWidget {
   const BusinessCreateNew({super.key});
 
+  @override
+  State<BusinessCreateNew> createState() => _BusinessCreateNewState();
+}
+
+class _BusinessCreateNewState extends State<BusinessCreateNew> {
   final String descVip = 'This makes it easy to spread offers quickly and efficiently.';
   final String descPro = 'For business people, they can place their advertisements';
   final String descBasic = 'Makes it easy for users to customize the appearance';
   final String descFree = 'Easily access special offers directly through their gadgets.';
+  final List<String> features = ['Create ads', 'Coupon Creation', 'QR Code', 'Nearby Location Access', 'Community Members', 'Help center access', 'Phone & email support'];
+
+  bool _startMonthly = true;
+  bool _startYearly = false;
+  int _current = 0;
+
+  void _handleSwitch(int index) {
+    setState(() {
+      _current = index;
+    });
+    Future.delayed(const Duration(milliseconds: 1000), () {
+      if (index == 0) {
+        setState(() {
+          _startMonthly = true;
+          _startYearly = false;
+        });
+      } else {
+        setState(() {
+          _startYearly = true;
+          _startMonthly = false;
+        });
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +64,6 @@ class BusinessCreateNew extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.all(spacingUnit(2)),
         child: Column(children: [
-
           /// YOUTUBE TUTORIAL
           Container(
             padding: EdgeInsets.all(spacingUnit(1)),
@@ -67,119 +96,153 @@ class BusinessCreateNew extends StatelessWidget {
               )
             ]),
           ),
-          const VSpace(),
+          const VSpaceShort(),
 
           /// PACKAGE PRICING AND PLAN LIST
-          InkWell(
-            onTap: () {
-              showModalBottomSheet<dynamic>(
-                context: context,
-                isScrollControlled: true,
-                builder: (BuildContext context) {
-                  return Wrap(children: [
-                    BusinessInfo(
-                      icon: const VipIcon(),
-                      color: 'vip',
-                      name: 'Diamond',
-                      desc: descVip,
-                    )
-                  ]);
-                }
-              );
-            },
-            child: PricingCard(
-              mainIcon: const VipIcon(),
-              color: colorType('vip'),
-              title: 'Diamond',
-              price: 20,
-              desc: descVip
-            ),
-          ),
-          const VSpace(),
-
-          InkWell(
-            onTap: () {
-              showModalBottomSheet<dynamic>(
-                context: context,
-                isScrollControlled: true,
-                builder: (BuildContext context) {
-                  return Wrap(children: [
-                    BusinessInfo(
-                      icon: const ProIcon(),
-                      color: 'gold',
-                      name: 'Gold',
-                      desc: descPro,
-                    )
-                  ]);
-                }
-              );
-            },
-            child: PricingCard(
-              isRecomended: true,
-              mainIcon: const ProIcon(),
-              color: colorType('gold'),
-              title: 'Gold',
-              price: 10,
-              desc: descPro
-            ),
-          ),
-          const VSpace(),
-
-          InkWell(
-            onTap: () {
-              showModalBottomSheet<dynamic>(
-                context: context,
-                isScrollControlled: true,
-                builder: (BuildContext context) {
-                  return Wrap(children: [
-                    BusinessInfo(
-                      icon: const BasicIcon(),
-                      color: 'pro',
-                      name: 'Basic',
-                      desc: descBasic,
-                    )
-                  ]);
-                }
-              );
-            },
-            child: PricingCard(
-              mainIcon: const BasicIcon(),
-              color: colorType('pro'),
-              title: 'Basic',
-              price: 5,
-              desc: descBasic,
-            ),
-          ),
-          const VSpace(),
-
-          InkWell(
-            onTap: () {
-              showModalBottomSheet<dynamic>(
-                context: context,
-                isScrollControlled: true,
-                builder: (BuildContext context) {
-                  return Wrap(children: [
-                    BusinessInfo(
-                      icon: const FreeIcon(),
-                      color: 'free',
-                      name: 'FREE',
-                      desc: descFree,
-                    )
-                  ]);
-                }
-              );
-            },
-            child: PricingCard(
-              mainIcon: const FreeIcon(),
-              color: colorType('free'),
-              title: 'FREE',
-              price: 0,
-              desc: descFree
-            ),
-          ),
-          const VSpace(),
+          TabMenu(onSelect: _handleSwitch, current: _current, menus: const['Monthly', 'Yearly']),
+          Expanded(
+            child: _current == 0 ? _monthlyPrice(context) : _yearlyPrice(context),
+          )
         ]),
       )
     );
+  }
+
+  /// MONTHLY PRICE LISTS
+  Widget _monthlyPrice(BuildContext context) {
+    return ListView(
+      primary: false,
+      shrinkWrap: true,
+      padding: EdgeInsets.all(spacingUnit(1)),
+      children: [
+        AnimatedSlideHorizontal(
+        order: 0,
+        start: _startMonthly,
+        child: PricingCard(
+          mainIcon: const VipIcon(),
+          color: colorType('vip'),
+          title: 'Diamond',
+          price: 20,
+          desc: descVip,
+          features: features,
+          enableIcons: const [true, true, true, true, true, true, true],
+        ),
+      ),
+      const VSpaceShort(),
+
+      AnimatedSlideHorizontal(
+        order: 1,
+        start: _startMonthly,
+        child: PricingCard(
+          mainIcon: const ProIcon(),
+          color: colorType('gold'),
+          title: 'Gold',
+          price: 10,
+          desc: descPro,
+          features: features,
+          enableIcons: const [true, true, true, true, true, false, false],
+        ),
+      ),
+      const VSpaceShort(),
+
+      AnimatedSlideHorizontal(
+        order: 2,
+        start: _startMonthly,
+        child: PricingCard(
+          mainIcon: const BasicIcon(),
+          color: colorType('pro'),
+          title: 'Basic',
+          price: 5,
+          desc: descBasic,
+          features: features,
+          enableIcons: const [true, true, true, true, false, false, false],
+        ),
+      ),
+      const VSpaceShort(),
+
+      AnimatedSlideHorizontal(
+        order: 3,
+        start: _startMonthly,
+        child: PricingCard(
+          mainIcon: const FreeIcon(),
+          color: colorType('free'),
+          title: 'FREE',
+          price: 0,
+          desc: descFree,
+          features: features,
+          enableIcons: const [true, true, false, false, false, false, false],
+        ),
+      ),
+      const VSpaceShort(),
+    ]);
+  }
+
+  /// YEARLY PRICE LISTS
+  Widget _yearlyPrice(BuildContext context) {
+    return ListView(
+      primary: false,
+      shrinkWrap: true,
+      padding: EdgeInsets.all(spacingUnit(1)),
+      children: [
+        AnimatedSlideHorizontal(
+        order: 0,
+        start: _startYearly,
+        child: PricingCard(
+          mainIcon: const VipIcon(),
+          color: colorType('vip'),
+          title: 'Diamond',
+          price: 200,
+          desc: descVip,
+          features: features,
+          enableIcons: const [true, true, true, true, true, true, true],
+        ),
+      ),
+      const VSpaceShort(),
+
+      AnimatedSlideHorizontal(
+        order: 1,
+        start: _startYearly,
+        child: PricingCard(
+          mainIcon: const ProIcon(),
+          color: colorType('gold'),
+          title: 'Gold',
+          price: 100,
+          desc: descPro,
+          features: features,
+          enableIcons: const [true, true, true, true, true, false, false],
+        ),
+      ),
+      const VSpaceShort(),
+
+      AnimatedSlideHorizontal(
+        order: 2,
+        start: _startYearly,
+        child: PricingCard(
+          mainIcon: const BasicIcon(),
+          color: colorType('pro'),
+          title: 'Basic',
+          price: 50,
+          desc: descBasic,
+          features: features,
+          enableIcons: const [true, true, true, true, false, false, false],
+        ),
+      ),
+      const VSpaceShort(),
+
+      AnimatedSlideHorizontal(
+        order: 3,
+        start: _startYearly,
+        child: PricingCard(
+          mainIcon: const FreeIcon(),
+          color: colorType('free'),
+          title: 'FREE',
+          price: 0,
+          desc: descFree,
+          features: features,
+          enableIcons: const [true, true, false, false, false, false, false],
+        ),
+      ),
+      const VSpace(),
+    ]);
   }
 }
