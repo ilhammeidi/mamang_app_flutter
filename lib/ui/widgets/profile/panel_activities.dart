@@ -10,7 +10,7 @@ class PanelActivities extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    const double itemHeight = 50;
+    const double itemHeight = 52;
 
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Column(

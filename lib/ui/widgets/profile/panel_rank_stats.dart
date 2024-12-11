@@ -15,22 +15,19 @@ class PanelRankStats extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(spacingUnit(1)),
-      child: Row(children: [
+      child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: RankCard(
-              point: 200,
-              title: '#2 Gold',
-              avatar: ImgApi.avatar[6],
-              color: color,
-              badge: Icon(
-                Icons.emoji_events_rounded,
-                color: Colors.amber,
-                size: 65,
-                shadows: [ThemeShade.shadeMedium(context)]
-              )
-            ),
+          child: RankCard(
+            point: 200,
+            title: '#2 Gold',
+            avatar: ImgApi.avatar[6],
+            color: color,
+            badge: Icon(
+              Icons.emoji_events_rounded,
+              color: Colors.amber,
+              size: 65,
+              shadows: [ThemeShade.shadeMedium(context)]
+            )
           ),
         ),
         SizedBox(width: spacingUnit(2)),

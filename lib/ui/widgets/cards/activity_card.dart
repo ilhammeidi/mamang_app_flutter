@@ -42,7 +42,7 @@ class ActivityCard extends StatelessWidget {
         children: [
           Icon(icon, color: color, size: 16),
           const SizedBox(width: 4),
-          Text(title, style: ThemeText.subtitle2.copyWith(color: isHighlighted ? Colors.orange : colorScheme.onSurface)),
+          Text(title, maxLines: 1, overflow: TextOverflow.ellipsis,  style: ThemeText.subtitle2.copyWith(color: isHighlighted ? Colors.orange : colorScheme.onSurface)),
         ],
       ),
     );

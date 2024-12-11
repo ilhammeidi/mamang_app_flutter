@@ -32,7 +32,7 @@ class PanelPoint extends StatelessWidget {
             child: CircleAvatar(
               radius: 20.r,
               backgroundColor: colorScheme.surface,
-              child: const Icon(Icons.stars, size: 40, color: Colors.amber)
+              child: Icon(Icons.stars, size: 40, color: ThemePalette.primaryMain)
             ),
           ),
           Expanded(
@@ -48,13 +48,13 @@ class PanelPoint extends StatelessWidget {
             child: VerticalDivider(color: colorScheme.outline, width: 20, thickness: 2)
           ),
             
-          /// USER POINT
+          /// USER COINS
           Padding(
             padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
             child: CircleAvatar(
               radius: 20.r,
               backgroundColor: colorScheme.surface,
-              child: Icon(Icons.motion_photos_on, size: 40, color: ThemePalette.primaryMain)
+              child: const Icon(Icons.motion_photos_on, size: 40, color: Colors.amber)
             ),
           ),
           Expanded(

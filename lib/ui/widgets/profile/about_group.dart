@@ -106,7 +106,7 @@ class AboutGroup extends StatelessWidget {
               leading: CircleAvatar(
                 backgroundColor: colorScheme.outline.withOpacity(0.5),
                 radius: 18,
-                child: Icon(FontAwesomeIcons.x, color: colorScheme.onSurface),
+                child: Icon(FontAwesomeIcons.xTwitter, color: colorScheme.onSurface),
               ),
               title: Text('X (Twitter)', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold)),
               subtitle: const Text('@icecream_lovers', style: ThemeText.subtitle2,),

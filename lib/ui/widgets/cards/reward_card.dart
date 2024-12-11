@@ -15,6 +15,7 @@ class RewardCard extends StatelessWidget {
     required this.progress,
     this.max = 100,
     this.onTap,
+    this.label = ''
   });
 
   final Color color;
@@ -24,6 +25,7 @@ class RewardCard extends StatelessWidget {
   final double progress;
   final double max;
   final Function()? onTap;
+  final String label;
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +51,8 @@ class RewardCard extends StatelessWidget {
                   ]),
                   SizedBox(height: spacingUnit(1)),
                   Row(children: [
-                    Text(progress.toString(), style: ThemeText.title.copyWith(color: Colors.white)),
-                    Text('/$max', style: ThemeText.subtitle2.copyWith(color: Colors.white)),
+                    Text('$progress$label', style: ThemeText.title.copyWith(color: Colors.white)),
+                    Text(' / $max$label', style: ThemeText.subtitle2.copyWith(color: Colors.white)),
                   ])
                 ]),
               ),

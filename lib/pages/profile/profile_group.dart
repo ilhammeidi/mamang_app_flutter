@@ -138,7 +138,7 @@ class _ProfileGroupState extends State<ProfileGroup> with TickerProviderStateMix
                   itemCount: 4,
                   shrinkWrap: true,
                   physics: const ClampingScrollPhysics(),
-                  padding: EdgeInsets.all(spacingUnit(2)),
+                  padding: EdgeInsets.all(spacingUnit(1)),
                   itemBuilder: ((BuildContext context, int index) {
                     User item = userList[index];
                     return GestureDetector(

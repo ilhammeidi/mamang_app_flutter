@@ -46,25 +46,32 @@ class _FilterDateState extends State<FilterDate> {
         },
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
+          padding: EdgeInsets.symmetric(horizontal: spacingUnit(2)),
           decoration: BoxDecoration(
             borderRadius: ThemeRadius.medium,
             color: colorScheme.outline.withOpacity(0.5)
           ),
-          child: Row(children: [
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             SizedBox(
-              width: 180,
+              width: 120,
               child: ListTile(
-                leading: Icon(Icons.calendar_month, color: colorScheme.onSecondaryContainer, size: 22),
-                title: Text('Date from', style: ThemeText.caption.copyWith(color: colorScheme.onSurfaceVariant)),
+                title: Row(children: [
+                  Icon(Icons.calendar_month, color: colorScheme.onSurfaceVariant, size: 12),
+                  Text(' Date from', style: ThemeText.caption.copyWith(color: colorScheme.onSurfaceVariant))
+                ]),
+                contentPadding: const EdgeInsets.all(0),
                 subtitle: Text('22 May 2024', style: ThemeText.paragraph.copyWith(color: colorScheme.onSurface)),
               ),
             ),
             Expanded(child: Container(alignment: Alignment.center, child: const Text('-', style: ThemeText.subtitle2,))),
             SizedBox(
-              width: 180,
+              width: 120,
               child: ListTile(
-                leading: Icon(Icons.calendar_month, color: colorScheme.onSecondaryContainer, size: 22),
-                title: Text('Date to', style: ThemeText.caption.copyWith(color: colorScheme.onSurfaceVariant)),
+                title: Row(children: [
+                  Icon(Icons.calendar_month, color: colorScheme.onSurfaceVariant, size: 12),
+                  Text(' Date to', style: ThemeText.caption.copyWith(color: colorScheme.onSurfaceVariant))
+                ]),
+                contentPadding: const EdgeInsets.all(0),
                 subtitle: Text('30 May 2024', style: ThemeText.paragraph.copyWith(color: colorScheme.onSurface)),
               ),
             ),

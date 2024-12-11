@@ -45,14 +45,17 @@ class UserOptions extends StatelessWidget {
       SizedBox(
         width: spacingUnit(1)
       ),
-      FilledButton(
-        onPressed: () {},
-        style: ThemeButton.invert(context),
-        child: const Row(children: [
-          Icon(Icons.person_add_outlined),
-          SizedBox(width: 4),
-          Text('Follow')
-        ])
+      SizedBox(
+        height: 30,
+        child: FilledButton(
+          onPressed: () {},
+          style: ThemeButton.invert(context),
+          child: const Row(children: [
+            Icon(Icons.person_add_outlined),
+            SizedBox(width: 4),
+            Text('Follow')
+          ])
+        ),
       )
     ]);
   }
