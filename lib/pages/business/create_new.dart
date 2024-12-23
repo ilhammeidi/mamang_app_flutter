@@ -1,248 +1,228 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/route_manager.dart';
-import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:get/get.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
-import 'package:mamang_app_flutter/ui/utils/animated_slide_horizontal.dart';
-import 'package:mamang_app_flutter/ui/utils/box_color.dart';
+import 'package:mamang_app_flutter/ui/widgets/app_input/app_input_box.dart';
+import 'package:mamang_app_flutter/ui/widgets/app_input/app_textfield.dart';
 import 'package:mamang_app_flutter/ui/widgets/business/business_icon.dart';
-import 'package:mamang_app_flutter/ui/widgets/cards/pricing_card.dart';
-import 'package:mamang_app_flutter/ui/widgets/tab_menu/menu.dart';
+import 'package:mamang_app_flutter/ui/widgets/title/title_basic.dart';
 
-class BusinessCreateNew extends StatefulWidget {
-  const BusinessCreateNew({super.key});
+class CreateNewBusiness extends StatefulWidget {
+  const CreateNewBusiness({
+    super.key,
+    this.name = 'VIP Business',
+    this.icon = const VipIcon()
+  });
+
+  final String name;
+  final Widget icon;
 
   @override
-  State<BusinessCreateNew> createState() => _BusinessCreateNewState();
+  State<CreateNewBusiness> createState() => _CreateNewBusinessState();
 }
 
-class _BusinessCreateNewState extends State<BusinessCreateNew> {
-  final String descVip = 'This makes it easy to spread offers quickly and efficiently.';
-  final String descPro = 'For business people, they can place their advertisements';
-  final String descBasic = 'Makes it easy for users to customize the appearance';
-  final String descFree = 'Easily access special offers directly through their gadgets.';
-  final List<String> features = ['Create ads', 'Coupon Creation', 'QR Code', 'Nearby Location Access', 'Community Members', 'Help center access', 'Phone & email support'];
-
-  bool _startMonthly = true;
-  bool _startYearly = false;
-  int _current = 0;
-
-  void _handleSwitch(int index) {
-    setState(() {
-      _current = index;
-    });
-    Future.delayed(const Duration(milliseconds: 1000), () {
-      if (index == 0) {
-        setState(() {
-          _startMonthly = true;
-          _startYearly = false;
-        });
-      } else {
-        setState(() {
-          _startYearly = true;
-          _startMonthly = false;
-        });
-      }
-    });
-  }
+class _CreateNewBusinessState extends State<CreateNewBusiness> {
+  final _paymentKey = GlobalKey<FormState>();
+  bool _active = true;
+  bool _isNotValid = false;
 
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: AppBar(
+        forceMaterialTransparency: true,
         leading: IconButton(
           onPressed: () {
             Get.back();
           },
           icon: const Icon(Icons.arrow_back_ios_new)
         ),
-        centerTitle: false,
-        title: const Text('Choose Your Package')
+        centerTitle: true,
+        title: Text(widget.name)
       ),
-      body: Container(
+      body: Padding(
         padding: EdgeInsets.all(spacingUnit(2)),
-        child: Column(children: [
-          /// YOUTUBE TUTORIAL
-          Container(
-            padding: EdgeInsets.all(spacingUnit(1)),
-            decoration: BoxDecoration(
-              borderRadius: ThemeRadius.small,
-              gradient: LinearGradient(
-                colors: <Color>[Colors.red.shade50, Colors.red.shade200],
-                stops: const [0.5, 1],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              )
-            ),
-            child: Row(children: [
-              Transform.rotate(
-                angle: -15 * math.pi/180,
-                child: const FaIcon(FontAwesomeIcons.youtube, color: Colors.red, size: 56)
-              ),
-              SizedBox(width: spacingUnit(2)),
-              Expanded(
-                child: RichText(text: TextSpan(
-                  text: 'Want to learn more how to use the business features? ',
-                  style: ThemeText.paragraph.copyWith(color: Colors.black),
-                  children: const [
-                    TextSpan(
-                      text: 'Tap to watch the tutorial on YouTube',
-                      style: TextStyle(fontWeight: FontWeight.bold)
+        child: Form(
+          key: _paymentKey,
+          child: Column(children: [
+            Expanded(
+              child: ListView(children: [
+                /// ICON
+                Align(
+                  alignment: Alignment.center,
+                  child: Wrap(children: [
+                    widget.icon,
+                  ]),
+                ),
+                const VSpace(),
+              
+                /// PROMO NAME
+                AppTextField(
+                  label: 'Promo Name',
+                  validator: FormBuilderValidators.required(),
+                  errorText: _isNotValid ? 'Please fill with your promo name' : null,
+                  onChanged: (_) {}
+                ),
+                const VSpace(),
+              
+                /// ACTIVATED PROMO SWITCHES
+                AppInputBox(
+                  content: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                    const Expanded(
+                      child: Text('Activate Promo Now',)
+                    ),
+                    Switch(
+                      value: _active,
+                      activeColor: ThemePalette.primaryMain,
+                      onChanged: (bool value) {
+                        setState(() {
+                          _active = value;
+                        });
+                      },
                     )
-                  ]
-                )),
-              )
-            ]),
-          ),
-          const VSpaceShort(),
-
-          /// PACKAGE PRICING AND PLAN LIST
-          TabMenu(onSelect: _handleSwitch, current: _current, menus: const['Monthly', 'Yearly']),
-          Expanded(
-            child: _current == 0 ? _monthlyPrice(context) : _yearlyPrice(context),
-          )
-        ]),
+                  ]),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'You can activate the promo later',
+                    style: ThemeText.caption.copyWith(color: colorScheme.onSurfaceVariant),
+                    textAlign: TextAlign.start,
+                  ),
+                ),
+                const VSpaceBig(),
+              
+                /// ACTIVATION METODE
+                _active ? Column(children: [
+                  const TitleBasic(title: 'Choose Activation Method'),
+                  const VSpaceShort(),
+          
+                  /// TIMER
+                  AppInputBox(
+                    content: ListTile(
+                      contentPadding: const EdgeInsets.all(0),
+                      leading: CircleAvatar(
+                        radius: 16,
+                        backgroundColor: ThemePalette.primaryLight,
+                        child: Icon(Icons.access_time, size: 24, color: ThemePalette.primaryMain),
+                      ),
+                      title: Row(
+                        children: [
+                          Text('Buy Timer', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
+                          const Spacer(),
+                          Padding(
+                            padding: EdgeInsets.only(left: spacingUnit(2)),
+                            child: const Text('\$2 / day'),
+                          ),
+                        ],
+                      ),
+                      trailing: const Icon(Icons.arrow_forward_ios)
+                    )
+                  ),
+                  const VSpaceShort(),
+              
+                  // /// POINT
+                  AppInputBox(
+                    content: ListTile(
+                      contentPadding: const EdgeInsets.all(0),
+                      leading: CircleAvatar(
+                        radius: 16,
+                        backgroundColor: ThemePalette.secondaryLight,
+                        child: Icon(Icons.stars_rounded, size: 24, color: ThemePalette.secondaryMain),
+                      ),
+                      title: Row(
+                        children: [
+                          Text('Use Points', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
+                          const Spacer(),
+                          Padding(
+                            padding: EdgeInsets.only(left: spacingUnit(2)),
+                            child: const Text('10 points / day'),
+                          ),
+                        ],
+                      ),
+                      trailing: const Icon(Icons.arrow_forward_ios)
+                    )
+                  ),
+                  const VSpaceShort(),
+              
+                  /// GET MEMBERs
+                  AppInputBox(
+                    content: ListTile(
+                      contentPadding: const EdgeInsets.all(0),
+                      leading: CircleAvatar(
+                        radius: 16,
+                        backgroundColor: ThemePalette.tertiaryLight,
+                        child: Icon(Icons.person_add, size: 24, color: ThemePalette.tertiaryMain),
+                      ),
+                      title: Row(
+                        children: [
+                          Text('Get Members', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
+                          const Spacer(),
+                          Padding(
+                            padding: EdgeInsets.only(left: spacingUnit(2)),
+                            child: const Text('Scan Barcode'),
+                          ),
+                        ],
+                      ),
+                      trailing: const Icon(Icons.arrow_forward_ios)
+                    )
+                  ),
+                  const VSpaceShort(),
+              
+                  /// WATCH ADS
+                  AppInputBox(
+                    content: ListTile(
+                      contentPadding: const EdgeInsets.all(0),
+                      leading: CircleAvatar(
+                        radius: 16,
+                        backgroundColor: Theme.of(context).colorScheme.outline,
+                        child: Icon(Icons.play_arrow_outlined, size: 24, color: ThemePalette.tertiaryMain),
+                      ),
+                      title: Row(
+                        children: [
+                          Text('Watch Ads', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
+                          const Spacer(),
+                          Padding(
+                            padding: EdgeInsets.only(left: spacingUnit(2)),
+                            child: const Text('FREE'),
+                          ),
+                        ],
+                      ),
+                      trailing: const Icon(Icons.arrow_forward_ios)
+                    )
+                  ),
+                  const VSpace(),
+                ]) : Container(),
+            
+              ]),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: Padding (
+                padding: EdgeInsets.symmetric(vertical: spacingUnit(1)),
+                child: FilledButton(
+                  onPressed: () {
+                    if (_paymentKey.currentState!.validate()) {
+                      Get.toNamed('/business-new/form');
+                    } else {
+                      setState(() {
+                        _isNotValid = true;
+                      });
+                    }
+                  },
+                  style: ThemeButton.btnBig.merge(ThemeButton.primary),
+                  child: const Text('CONTINUE'),
+                ),
+              ),
+            )
+          ]),
+        ),
       )
     );
-  }
-
-  /// MONTHLY PRICE LISTS
-  Widget _monthlyPrice(BuildContext context) {
-    return ListView(
-      primary: false,
-      shrinkWrap: true,
-      padding: EdgeInsets.all(spacingUnit(1)),
-      children: [
-        AnimatedSlideHorizontal(
-        order: 0,
-        start: _startMonthly,
-        child: PricingCard(
-          mainIcon: const VipIcon(),
-          color: colorType('vip'),
-          title: 'Diamond',
-          price: 20,
-          desc: descVip,
-          features: features,
-          enableIcons: const [true, true, true, true, true, true, true],
-        ),
-      ),
-      const VSpaceShort(),
-
-      AnimatedSlideHorizontal(
-        order: 1,
-        start: _startMonthly,
-        child: PricingCard(
-          mainIcon: const ProIcon(),
-          color: colorType('gold'),
-          title: 'Gold',
-          price: 10,
-          desc: descPro,
-          features: features,
-          enableIcons: const [true, true, true, true, true, false, false],
-        ),
-      ),
-      const VSpaceShort(),
-
-      AnimatedSlideHorizontal(
-        order: 2,
-        start: _startMonthly,
-        child: PricingCard(
-          mainIcon: const BasicIcon(),
-          color: colorType('pro'),
-          title: 'Basic',
-          price: 5,
-          desc: descBasic,
-          features: features,
-          enableIcons: const [true, true, true, true, false, false, false],
-        ),
-      ),
-      const VSpaceShort(),
-
-      AnimatedSlideHorizontal(
-        order: 3,
-        start: _startMonthly,
-        child: PricingCard(
-          mainIcon: const FreeIcon(),
-          color: colorType('free'),
-          title: 'FREE',
-          price: 0,
-          desc: descFree,
-          features: features,
-          enableIcons: const [true, true, false, false, false, false, false],
-        ),
-      ),
-      const VSpaceShort(),
-    ]);
-  }
-
-  /// YEARLY PRICE LISTS
-  Widget _yearlyPrice(BuildContext context) {
-    return ListView(
-      primary: false,
-      shrinkWrap: true,
-      padding: EdgeInsets.all(spacingUnit(1)),
-      children: [
-        AnimatedSlideHorizontal(
-        order: 0,
-        start: _startYearly,
-        child: PricingCard(
-          mainIcon: const VipIcon(),
-          color: colorType('vip'),
-          title: 'Diamond',
-          price: 200,
-          desc: descVip,
-          features: features,
-          enableIcons: const [true, true, true, true, true, true, true],
-        ),
-      ),
-      const VSpaceShort(),
-
-      AnimatedSlideHorizontal(
-        order: 1,
-        start: _startYearly,
-        child: PricingCard(
-          mainIcon: const ProIcon(),
-          color: colorType('gold'),
-          title: 'Gold',
-          price: 100,
-          desc: descPro,
-          features: features,
-          enableIcons: const [true, true, true, true, true, false, false],
-        ),
-      ),
-      const VSpaceShort(),
-
-      AnimatedSlideHorizontal(
-        order: 2,
-        start: _startYearly,
-        child: PricingCard(
-          mainIcon: const BasicIcon(),
-          color: colorType('pro'),
-          title: 'Basic',
-          price: 50,
-          desc: descBasic,
-          features: features,
-          enableIcons: const [true, true, true, true, false, false, false],
-        ),
-      ),
-      const VSpaceShort(),
-
-      AnimatedSlideHorizontal(
-        order: 3,
-        start: _startYearly,
-        child: PricingCard(
-          mainIcon: const FreeIcon(),
-          color: colorType('free'),
-          title: 'FREE',
-          price: 0,
-          desc: descFree,
-          features: features,
-          enableIcons: const [true, true, false, false, false, false, false],
-        ),
-      ),
-      const VSpace(),
-    ]);
   }
 }

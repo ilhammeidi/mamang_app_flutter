@@ -6,10 +6,11 @@ import 'package:mamang_app_flutter/pages/auth/reset_password.dart';
 import 'package:mamang_app_flutter/pages/auth/welcome.dart';
 import 'package:mamang_app_flutter/pages/business/analytics.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
-import 'package:mamang_app_flutter/pages/business/create_new.dart';
+import 'package:mamang_app_flutter/pages/payment/payment_method.dart';
+import 'package:mamang_app_flutter/pages/pricing/pricing_business.dart';
 import 'package:mamang_app_flutter/pages/business/detail.dart';
 import 'package:mamang_app_flutter/pages/business/form.dart';
-import 'package:mamang_app_flutter/pages/business/payment.dart';
+import 'package:mamang_app_flutter/pages/business/create_new.dart';
 import 'package:mamang_app_flutter/pages/business/report.dart';
 import 'package:mamang_app_flutter/pages/event/detail.dart';
 import 'package:mamang_app_flutter/pages/event/event_main.dart';
@@ -209,11 +210,15 @@ final List<GetPage> appRoutes = [
   ),
   GetPage(
     name: '/business-new',
-    page: () => const GeneralLayout(content: BusinessCreateNew()),
+    page: () => const GeneralLayout(content: PricingBusiness()),
   ),
   GetPage(
     name: '/business-new/payment',
-    page: () => const GeneralLayout(content: BusinessPayment()),
+    page: () => const GeneralLayout(content: CreateNewBusiness()),
+  ),
+  GetPage(
+    name: '/payment',
+    page: () => const GeneralLayout(content: PaymentMethod()),
   ),
   GetPage(
     name: '/business-new/form',

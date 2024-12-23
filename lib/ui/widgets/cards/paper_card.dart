@@ -4,10 +4,17 @@ import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_shadow.dart';
 
 class PaperCard extends StatelessWidget {
-  const PaperCard({super.key, required this.content, this.coloured = false, this.flat = false});
+  const PaperCard({
+    super.key,
+    required this.content,
+    this.coloured = false,
+    this.colouredBorder = false,
+    this.flat = false,
+  });
 
   final Widget content;
   final bool coloured;
+  final bool colouredBorder;
   final bool flat;
 
   @override
@@ -19,7 +26,7 @@ class PaperCard extends StatelessWidget {
         boxShadow: !flat ? [ThemeShade.shadeSoft(context)] : null,
         border: flat ? Border.all(
           width: 1,
-          color: Theme.of(context).colorScheme.outline
+          color: colouredBorder ? ThemePalette.primaryMain : Theme.of(context).colorScheme.outline
         ) : null
       ),
       child: content
