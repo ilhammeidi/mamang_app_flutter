@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/utils/expanded_section.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
+import 'package:mamang_app_flutter/ui/widgets/payment/bank_list.dart';
+import 'package:mamang_app_flutter/ui/widgets/payment/wallet_list.dart';
 
 class PaymentOptions extends StatefulWidget {
   const PaymentOptions({super.key});
@@ -12,79 +15,82 @@ class PaymentOptions extends StatefulWidget {
 }
 
 class _PaymentOptionsState extends State<PaymentOptions> {
-  String _paymenMethod = '';
+  String _paymentMethod = '';
 
   @override
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return ListView(
-      padding: EdgeInsets.all(spacingUnit(1)),
+      padding: EdgeInsets.symmetric(horizontal: spacingUnit(1), vertical: spacingUnit(2)),
       shrinkWrap: true,
       physics: const ClampingScrollPhysics(),
       children: [
         /// CREDIT CARD
-        PaperCard(
-          flat: true,
-          content: ListTile(
-            leading: Icon(Icons.credit_card, size: 36, color: colorScheme.onPrimaryContainer),
-            title: const Text('Credit Card', style: ThemeText.subtitle),
-            subtitle: const Text('Payment with credit card', style: ThemeText.paragraph),
-            trailing: Icon(Icons.arrow_forward_ios_outlined, size: 24, color: colorScheme.onSurfaceVariant),
-          )
+        InkWell(
+          onTap: () {
+            setState(() {
+              _paymentMethod = 'credit';
+            });
+          },
+          child: PaperCard(
+            flat: true,
+            colouredBorder: _paymentMethod == 'credit',
+            content: ListTile(
+              leading: Icon(Icons.credit_card, size: 36, color: colorScheme.onPrimaryContainer),
+              title: const Text('Credit Card', style: ThemeText.subtitle),
+              subtitle: const Text('Payment with credit card', style: ThemeText.paragraph),
+              trailing: _paymentMethod == 'credit' ?
+                Icon(Icons.check_circle, color: ThemePalette.primaryMain)
+                : Icon(Icons.circle_outlined, color: colorScheme.outline),
+            )
+          ),
         ),
-        SizedBox(height: spacingUnit(1)),
+        SizedBox(height: spacingUnit(2)),
 
         /// E-WALLET
         PaymentExpanded(
           title: 'E-Wallet',
           subtitle: 'Choose your e-wallet platform',
-          icon: Icons.credit_card,
-          isExpanded: _paymenMethod == 'ewallet',
+          icon: Icons.wallet,
+          isExpanded: _paymentMethod == 'ewallet',
           onTap: () {
             setState(() {
-              _paymenMethod = 'ewallet';
+              _paymentMethod = 'ewallet';
             });
           },
-          child: Container(
-            child: Text('Detail'),
-          ),
+          child: const WalletList()
         ),
-        SizedBox(height: spacingUnit(1)),
+        SizedBox(height: spacingUnit(2)),
 
         /// VIRTUAL ACCOUNT
         PaymentExpanded(
           title: 'Virtual Account',
           subtitle: 'Choose virtual account bank',
           icon: Icons.contacts,
-          isExpanded: _paymenMethod == 'vac',
+          isExpanded: _paymentMethod == 'vac',
           onTap: () {
             setState(() {
-              _paymenMethod = 'vac';
+              _paymentMethod = 'vac';
             });
           },
-          child: Container(
-            child: Text('Detail'),
-          ),
+          child: const BankList()
         ),
-        SizedBox(height: spacingUnit(1)),
+        SizedBox(height: spacingUnit(2)),
 
         /// TRANSFER BANK
         PaymentExpanded(
           title: 'Bank Transfer',
           subtitle: 'Choose bank for transfer method',
           icon: Icons.account_balance,
-          isExpanded: _paymenMethod == 'transfer',
+          isExpanded: _paymentMethod == 'transfer',
           onTap: () {
             setState(() {
-              _paymenMethod = 'transfer';
+              _paymentMethod = 'transfer';
             });
           },
-          child: Container(
-            child: Text('Detail'),
-          ),
+          child: const BankList()
         ),
-        SizedBox(height: spacingUnit(1)),
       ]
     );
   }
@@ -106,29 +112,53 @@ class PaymentExpanded extends StatefulWidget {
   final IconData icon;
   final Widget child;
   final bool isExpanded;
-  final Function onTap;
+  final Function() onTap;
 
   @override
   State<PaymentExpanded> createState() => _PaymentExpandedState();
 }
 
 class _PaymentExpandedState extends State<PaymentExpanded> with SingleTickerProviderStateMixin {
-  bool _rotateIcon = false;
-  
-  late AnimationController _controller;
+  late AnimationController rotateController;
+  late Animation<double> animation; 
 
   @override
   void initState() {
-    _controller = AnimationController(
-      duration: const Duration(milliseconds: 100),
-      vsync: this,
-    );
     super.initState();
+    prepareAnimations();
+    _runRotateCheck();
+  }
+
+  ///Setting up the animation
+  void prepareAnimations() {
+    rotateController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 100)
+    );
+    animation = CurvedAnimation(
+      parent: rotateController,
+      curve: Curves.fastOutSlowIn,
+    );
+  }
+
+  void _runRotateCheck() {
+    if(widget.isExpanded) {
+      rotateController.forward();
+    }
+    else {
+      rotateController.reverse();
+    }
+  }
+
+  @override
+  void didUpdateWidget(PaymentExpanded oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _runRotateCheck();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    rotateController.dispose();
     super.dispose();
   }
   
@@ -136,18 +166,7 @@ class _PaymentExpandedState extends State<PaymentExpanded> with SingleTickerProv
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return InkWell(
-      onTap: () {
-        widget.onTap();
-
-        setState(() {
-          _rotateIcon = !_rotateIcon;
-        });
-        if(_rotateIcon) {
-          _controller.forward();
-        } else {
-          _controller.reverse();
-        }
-      },
+      onTap: widget.onTap,
       child: PaperCard(
         flat: true,
         colouredBorder: widget.isExpanded,
@@ -158,7 +177,7 @@ class _PaymentExpandedState extends State<PaymentExpanded> with SingleTickerProv
               title: Text(widget.title, style: ThemeText.subtitle),
               subtitle: Text(widget.subtitle, style: ThemeText.paragraph),
               trailing: RotationTransition(
-                turns: Tween(begin: 0.0, end: 0.25).animate(_controller),
+                turns: Tween(begin: 0.0, end: 0.25).animate(animation),
                 child: Icon(Icons.arrow_forward_ios_outlined, size: 24, color: colorScheme.onSurfaceVariant)
               ),
             ),

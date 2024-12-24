@@ -103,26 +103,31 @@ class _CreateNewBusinessState extends State<CreateNewBusiness> {
                   const VSpaceShort(),
           
                   /// TIMER
-                  AppInputBox(
-                    content: ListTile(
-                      contentPadding: const EdgeInsets.all(0),
-                      leading: CircleAvatar(
-                        radius: 16,
-                        backgroundColor: ThemePalette.primaryLight,
-                        child: Icon(Icons.access_time, size: 24, color: ThemePalette.primaryMain),
-                      ),
-                      title: Row(
-                        children: [
-                          Text('Buy Timer', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
-                          const Spacer(),
-                          Padding(
-                            padding: EdgeInsets.only(left: spacingUnit(2)),
-                            child: const Text('\$2 / day'),
-                          ),
-                        ],
-                      ),
-                      trailing: const Icon(Icons.arrow_forward_ios)
-                    )
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed('/payment');
+                    },
+                    child: AppInputBox(
+                      content: ListTile(
+                        contentPadding: const EdgeInsets.all(0),
+                        leading: CircleAvatar(
+                          radius: 16,
+                          backgroundColor: ThemePalette.primaryLight,
+                          child: Icon(Icons.access_time, size: 24, color: ThemePalette.primaryMain),
+                        ),
+                        title: Row(
+                          children: [
+                            Text('Buy Timer', style: ThemeText.subtitle.copyWith(fontWeight: FontWeight.bold)),
+                            const Spacer(),
+                            Padding(
+                              padding: EdgeInsets.only(left: spacingUnit(2)),
+                              child: const Text('\$2 / day'),
+                            ),
+                          ],
+                        ),
+                        trailing: const Icon(Icons.arrow_forward_ios)
+                      )
+                    ),
                   ),
                   const VSpaceShort(),
               

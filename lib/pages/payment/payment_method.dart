@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
+import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/widgets/payment/options.dart';
 import 'package:mamang_app_flutter/ui/widgets/stepper/step_progress.dart';
 import 'package:mamang_app_flutter/ui/widgets/payment/review.dart';
@@ -9,6 +11,8 @@ class PaymentMethod extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: AppBar(
         forceMaterialTransparency: true,
@@ -21,15 +25,30 @@ class PaymentMethod extends StatelessWidget {
         centerTitle: false,
         title: const Text('Payment'),
       ),
-      body: const SingleChildScrollView(
-        child: Column(children: [
-          StepProgress(activeIndex: 1, items: ['Choose', 'Detail', 'Done'],),
-          PaymentReview(),
-          SizedBox(height: 16),
-          PaymentOptions(),
-          SizedBox(height: 1000)
-        ]),
-      ),
+      body: Column(children: [
+        const StepProgress(activeIndex: 1, items: ['Choose', 'Detail', 'Done'],),
+        const PaymentReview(),
+        const Expanded(child: PaymentOptions(),),
+        Container(
+          color: colorScheme.surface,
+          padding: EdgeInsets.all(spacingUnit(2)),
+          child: Row(
+            children: <Widget>[
+              OutlinedButton(
+                onPressed: () {},
+                style: ThemeButton.btnBig.merge(ThemeButton.outlinedPrimary(context)),
+                child: const Text('Cancel')
+              ),
+              SizedBox(width: spacingUnit(1)),
+              FilledButton(
+                onPressed: () {},
+                style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
+                child: const Text('Continue')
+              ),
+            ],
+          ),
+        ),
+      ]),
     );
   }
 }
