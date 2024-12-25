@@ -8,15 +8,16 @@ import 'package:mamang_app_flutter/ui/widgets/payment/bank_list.dart';
 import 'package:mamang_app_flutter/ui/widgets/payment/wallet_list.dart';
 
 class PaymentOptions extends StatefulWidget {
-  const PaymentOptions({super.key});
+  const PaymentOptions({super.key, required this.paymentMethod, required this.setPaymentMethod});
+
+  final String paymentMethod;
+  final Function(String) setPaymentMethod;
 
   @override
   State<PaymentOptions> createState() => _PaymentOptionsState();
 }
 
 class _PaymentOptionsState extends State<PaymentOptions> {
-  String _paymentMethod = '';
-
   @override
   Widget build(BuildContext context) {
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
@@ -29,18 +30,16 @@ class _PaymentOptionsState extends State<PaymentOptions> {
         /// CREDIT CARD
         InkWell(
           onTap: () {
-            setState(() {
-              _paymentMethod = 'credit';
-            });
+            widget.setPaymentMethod('credit-card');
           },
           child: PaperCard(
             flat: true,
-            colouredBorder: _paymentMethod == 'credit',
+            colouredBorder: widget.paymentMethod == 'credit-card',
             content: ListTile(
               leading: Icon(Icons.credit_card, size: 36, color: colorScheme.onPrimaryContainer),
               title: const Text('Credit Card', style: ThemeText.subtitle),
               subtitle: const Text('Payment with credit card', style: ThemeText.paragraph),
-              trailing: _paymentMethod == 'credit' ?
+              trailing: widget.paymentMethod == 'credit-card' ?
                 Icon(Icons.check_circle, color: ThemePalette.primaryMain)
                 : Icon(Icons.circle_outlined, color: colorScheme.outline),
             )
@@ -53,11 +52,9 @@ class _PaymentOptionsState extends State<PaymentOptions> {
           title: 'E-Wallet',
           subtitle: 'Choose your e-wallet platform',
           icon: Icons.wallet,
-          isExpanded: _paymentMethod == 'ewallet',
+          isExpanded: widget.paymentMethod == 'ewallet',
           onTap: () {
-            setState(() {
-              _paymentMethod = 'ewallet';
-            });
+            widget.setPaymentMethod('ewallet');
           },
           child: const WalletList()
         ),
@@ -68,11 +65,9 @@ class _PaymentOptionsState extends State<PaymentOptions> {
           title: 'Virtual Account',
           subtitle: 'Choose virtual account bank',
           icon: Icons.contacts,
-          isExpanded: _paymentMethod == 'vac',
+          isExpanded: widget.paymentMethod == 'vac',
           onTap: () {
-            setState(() {
-              _paymentMethod = 'vac';
-            });
+            widget.setPaymentMethod('vac');
           },
           child: const BankList()
         ),
@@ -83,11 +78,9 @@ class _PaymentOptionsState extends State<PaymentOptions> {
           title: 'Bank Transfer',
           subtitle: 'Choose bank for transfer method',
           icon: Icons.account_balance,
-          isExpanded: _paymentMethod == 'transfer',
+          isExpanded: widget.paymentMethod == 'transfer',
           onTap: () {
-            setState(() {
-              _paymentMethod = 'transfer';
-            });
+            widget.setPaymentMethod('transfer');
           },
           child: const BankList()
         ),

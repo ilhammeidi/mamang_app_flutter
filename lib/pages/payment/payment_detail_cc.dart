@@ -8,8 +8,8 @@ import 'package:mamang_app_flutter/ui/widgets/payment/credit_card_info.dart';
 import 'package:mamang_app_flutter/ui/widgets/payment/identity_form.dart';
 import 'package:mamang_app_flutter/ui/widgets/stepper/step_progress.dart';
 
-class PaymentCcDetail extends StatelessWidget {
-  const PaymentCcDetail({super.key});
+class PaymentDetailCC extends StatelessWidget {
+  const PaymentDetailCC({super.key});
 
   @override
   Widget build(BuildContext context) {

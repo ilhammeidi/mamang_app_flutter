@@ -6,8 +6,21 @@ import 'package:mamang_app_flutter/ui/widgets/payment/options.dart';
 import 'package:mamang_app_flutter/ui/widgets/stepper/step_progress.dart';
 import 'package:mamang_app_flutter/ui/widgets/payment/review.dart';
 
-class PaymentMethod extends StatelessWidget {
+class PaymentMethod extends StatefulWidget {
   const PaymentMethod({super.key});
+
+  @override
+  State<PaymentMethod> createState() => _PaymentMethodState();
+}
+
+class _PaymentMethodState extends State<PaymentMethod> {
+  String _paymentMethod = '';
+
+  void setPaymentMethod(val) {
+    setState(() {
+      _paymentMethod = val;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +41,10 @@ class PaymentMethod extends StatelessWidget {
       body: Column(children: [
         const StepProgress(activeIndex: 0, items: ['Choose', 'Detail', 'Done'],),
         const PaymentReview(),
-        const Expanded(child: PaymentOptions(),),
+        Expanded(child: PaymentOptions(
+          paymentMethod: _paymentMethod,
+          setPaymentMethod: setPaymentMethod,
+        )),
         Container(
           color: colorScheme.surface,
           padding: EdgeInsets.all(spacingUnit(2)),
@@ -47,7 +63,7 @@ class PaymentMethod extends StatelessWidget {
               Expanded(
                 child: FilledButton(
                   onPressed: () {
-                    Get.toNamed('/payment/credit-card');
+                    Get.toNamed('/payment/${_paymentMethod}');
                   },
                   style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
                   child: const Text('Continue')
