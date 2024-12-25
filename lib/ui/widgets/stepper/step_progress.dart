@@ -20,7 +20,7 @@ class StepProgress extends StatefulWidget {
 
 class _StepProgressState extends State<StepProgress> {
   final _scrollController = ScrollController();
-  final double stepWidth = 200;
+  final double stepWidth = 180;
 
   @override
   void initState() {

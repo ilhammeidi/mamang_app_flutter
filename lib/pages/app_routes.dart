@@ -6,6 +6,7 @@ import 'package:mamang_app_flutter/pages/auth/reset_password.dart';
 import 'package:mamang_app_flutter/pages/auth/welcome.dart';
 import 'package:mamang_app_flutter/pages/business/analytics.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
+import 'package:mamang_app_flutter/pages/payment/payment_cc_detail.dart';
 import 'package:mamang_app_flutter/pages/payment/payment_method.dart';
 import 'package:mamang_app_flutter/pages/pricing/pricing_business.dart';
 import 'package:mamang_app_flutter/pages/business/detail.dart';
@@ -217,12 +218,16 @@ final List<GetPage> appRoutes = [
     page: () => const GeneralLayout(content: CreateNewBusiness()),
   ),
   GetPage(
+    name: '/business-new/form',
+    page: () => const GeneralLayout(content: BusinessForm()),
+  ),
+  GetPage(
     name: '/payment',
     page: () => const GeneralLayout(content: PaymentMethod()),
   ),
-  GetPage(
-    name: '/business-new/form',
-    page: () => const GeneralLayout(content: BusinessForm()),
+   GetPage(
+    name: '/payment/credit-card',
+    page: () => const GeneralLayout(content: PaymentCcDetail()),
   ),
 
   /// USER PROFILE

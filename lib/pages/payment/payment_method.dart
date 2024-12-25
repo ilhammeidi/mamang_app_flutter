@@ -26,7 +26,7 @@ class PaymentMethod extends StatelessWidget {
         title: const Text('Payment'),
       ),
       body: Column(children: [
-        const StepProgress(activeIndex: 1, items: ['Choose', 'Detail', 'Done'],),
+        const StepProgress(activeIndex: 0, items: ['Choose', 'Detail', 'Done'],),
         const PaymentReview(),
         const Expanded(child: PaymentOptions(),),
         Container(
@@ -34,16 +34,24 @@ class PaymentMethod extends StatelessWidget {
           padding: EdgeInsets.all(spacingUnit(2)),
           child: Row(
             children: <Widget>[
-              OutlinedButton(
-                onPressed: () {},
-                style: ThemeButton.btnBig.merge(ThemeButton.outlinedPrimary(context)),
-                child: const Text('Cancel')
+              Expanded(
+                child: OutlinedButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  style: ThemeButton.btnBig.merge(ThemeButton.outlinedPrimary(context)),
+                  child: const Text('Back')
+                ),
               ),
               SizedBox(width: spacingUnit(1)),
-              FilledButton(
-                onPressed: () {},
-                style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
-                child: const Text('Continue')
+              Expanded(
+                child: FilledButton(
+                  onPressed: () {
+                    Get.toNamed('/payment/credit-card');
+                  },
+                  style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
+                  child: const Text('Continue')
+                ),
               ),
             ],
           ),
