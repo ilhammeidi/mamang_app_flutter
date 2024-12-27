@@ -30,13 +30,12 @@ class PaymentDetailCC extends StatelessWidget {
       body: Column(children: [
         const StepProgress(activeIndex: 1, items: ['Choose', 'Detail', 'Done'],),
         Padding(
-          padding: EdgeInsets.all(spacingUnit(1)),
+          padding: EdgeInsets.all(spacingUnit(2)),
           child: const CreditCardInfo(),
         ),
-        const VSpaceShort(),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.all(spacingUnit(1)),
+            padding: EdgeInsets.all(spacingUnit(2)),
             child: const IdentityForm()
           ),
         ),
@@ -66,7 +65,11 @@ class PaymentDetailCC extends StatelessWidget {
                     child: FilledButton(
                       onPressed: () {},
                       style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
-                      child: const Text('Pay')
+                      child: const Row(children: [
+                        Icon(Icons.lock_outline),
+                        SizedBox(width: 4),
+                        Text('Secure Pay')
+                      ])
                     ),
                   ),
                 ],

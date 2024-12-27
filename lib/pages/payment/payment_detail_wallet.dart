@@ -5,8 +5,6 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
-import 'package:mamang_app_flutter/ui/widgets/payment/credit_card_info.dart';
-import 'package:mamang_app_flutter/ui/widgets/payment/identity_form.dart';
 import 'package:mamang_app_flutter/ui/widgets/stepper/step_progress.dart';
 
 class PaymentDetailWallet extends StatelessWidget {
@@ -34,6 +32,7 @@ class PaymentDetailWallet extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(spacingUnit(2)),
             child: PaperCard(
+              flat: true,
               content: Padding(
                 padding: EdgeInsets.all(spacingUnit(2)),
                 child: Column(children: [
@@ -64,8 +63,8 @@ class PaymentDetailWallet extends StatelessWidget {
             ),
             const LineList(),
             ListTile(
-              title: Text('Total:', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold),),
-              trailing: Text('\$26.88:', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold),),
+              title: Text('Total:', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold),),
+              trailing: Text('\$26.88', style: ThemeText.title2.copyWith(fontWeight: FontWeight.bold, color: ThemePalette.primaryMain),),
             ),
           ])
         ),

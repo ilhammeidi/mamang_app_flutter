@@ -41,10 +41,14 @@ class _PaymentMethodState extends State<PaymentMethod> {
       body: Column(children: [
         const StepProgress(activeIndex: 0, items: ['Choose', 'Detail', 'Done'],),
         const PaymentReview(),
+
+        /// PAYMENT OPTIONS
         Expanded(child: PaymentOptions(
           paymentMethod: _paymentMethod,
           setPaymentMethod: setPaymentMethod,
         )),
+
+        /// BUTTON ACTION
         Container(
           color: colorScheme.surface,
           padding: EdgeInsets.all(spacingUnit(2)),

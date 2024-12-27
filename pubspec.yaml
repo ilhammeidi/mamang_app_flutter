@@ -16,6 +16,7 @@ dependencies:
   flutter_markdown: ^0.7.4
   flutter_screenutil: ^5.9.3
   flutter_sticky_header: ^0.6.5
+  flutter_timer_countdown: ^1.0.7
   font_awesome_flutter: ^10.7.0
   form_builder_validators: ^11.0.0
   get: ^4.6.6
