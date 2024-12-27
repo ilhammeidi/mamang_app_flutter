@@ -5,6 +5,7 @@ import 'package:mamang_app_flutter/ui/themes/theme_button.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
+import 'package:mamang_app_flutter/ui/widgets/alert_info/alert_info.dart';
 import 'package:mamang_app_flutter/ui/widgets/app_input/app_input_box.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
 import 'package:mamang_app_flutter/ui/widgets/counter/counter_down.dart';
@@ -44,7 +45,10 @@ class PaymentDetailVac extends StatelessWidget {
             format: CountDownTimerFormat.daysHoursMinutes
           ),
           VSpaceShort(),
-          Text('Please finish your payment before 22 May 2025:17:45', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: AlertInfo(type: 'info', text: 'Please finish your payment before 22 May 2025:17:45'),
+          )
         ]),
         const VSpaceShort(),
 
@@ -174,6 +178,7 @@ class PaymentDetailVac extends StatelessWidget {
         style: ThemeButton.btnBig.merge(ThemeButton.outlinedPrimary(context)),
         child: const Text('Understood')
       ),
+      const VSpace()
     ]);
   }
 }
