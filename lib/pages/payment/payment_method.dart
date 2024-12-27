@@ -67,7 +67,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
               Expanded(
                 child: FilledButton(
                   onPressed: () {
-                    Get.toNamed('/payment/${_paymentMethod}');
+                    Get.toNamed('/payment/$_paymentMethod');
                   },
                   style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
                   child: const Text('Continue')

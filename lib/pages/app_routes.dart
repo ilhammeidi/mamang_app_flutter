@@ -8,6 +8,7 @@ import 'package:mamang_app_flutter/pages/business/analytics.dart';
 import 'package:mamang_app_flutter/pages/business/business_main.dart';
 import 'package:mamang_app_flutter/pages/payment/payment_detail_cc.dart';
 import 'package:mamang_app_flutter/pages/payment/payment_detail_transfer.dart';
+import 'package:mamang_app_flutter/pages/payment/payment_detail_vac.dart';
 import 'package:mamang_app_flutter/pages/payment/payment_detail_wallet.dart';
 import 'package:mamang_app_flutter/pages/payment/payment_method.dart';
 import 'package:mamang_app_flutter/pages/pricing/pricing_business.dart';
@@ -238,6 +239,10 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/payment/transfer',
     page: () => const GeneralLayout(content: PaymentDetailTransfer()),
+  ),
+  GetPage(
+    name: '/payment/vac',
+    page: () => const GeneralLayout(content: PaymentDetailVac()),
   ),
 
   /// USER PROFILE

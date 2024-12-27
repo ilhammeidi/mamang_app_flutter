@@ -2,22 +2,17 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 
 class CounterDown extends StatelessWidget {
-  const CounterDown({super.key, required this.format});
+  const CounterDown({super.key, required this.format, required this.duration});
   
   final CountDownTimerFormat format;
+  final Duration duration;
 
   @override
   Widget build(BuildContext context) {
 
     return TimerCountdown(
       format: format,
-      endTime: DateTime.now().add(
-        const Duration(
-          days: 1,
-          hours: 11,
-          minutes: 47,
-        ),
-      ),
+      endTime: DateTime.now().add(duration),
       // onEnd: () {
       //   print("Timer finished");
       // },

@@ -8,11 +8,10 @@ import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/app_input/app_input_box.dart';
 import 'package:mamang_app_flutter/ui/widgets/cards/paper_card.dart';
 import 'package:mamang_app_flutter/ui/widgets/counter/counter_down.dart';
-import 'package:mamang_app_flutter/ui/widgets/payment/bank_acc_form.dart';
 import 'package:mamang_app_flutter/ui/widgets/stepper/step_progress.dart';
 
-class PaymentDetailTransfer extends StatelessWidget {
-  const PaymentDetailTransfer({super.key});
+class PaymentDetailVac extends StatelessWidget {
+  const PaymentDetailVac({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,16 +37,16 @@ class PaymentDetailTransfer extends StatelessWidget {
           Text('Time left:'),
           CounterDown(
             duration: Duration(
-              days: 1,
-              hours: 11,
-              minutes: 47,
+              days: 0,
+              hours: 23,
+              minutes: 30,
             ),
             format: CountDownTimerFormat.daysHoursMinutes
           ),
           VSpaceShort(),
           Text('Please finish your payment before 22 May 2025:17:45', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
         ]),
-        const VSpace(),
+        const VSpaceShort(),
 
         /// DETAIL BANK ACCOUNT
         Expanded(
@@ -56,33 +55,27 @@ class PaymentDetailTransfer extends StatelessWidget {
             padding: EdgeInsets.all(spacingUnit(2)),
             children: [
               PaperCard(
+                flat: true,
                 content: Padding(
                   padding: EdgeInsets.all(spacingUnit(2)),
-                  child: Column(children: [
-                    Text('\$24.00', style: ThemeText.title.copyWith(color: ThemePalette.secondaryMain, fontWeight: FontWeight.bold)),
-                    const Text('Please transfer the amount above to'),
-                    Image.asset('assets/images/logos/logo1.png', height: 50,),
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Center(child: Image.asset('assets/images/logos/logo2.png', height: 50,)),
+                    const VSpace(),
+                    const Text('Virtual Account Number'),
+                    Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                      Text('098765432112345', style: ThemeText.title.copyWith(fontWeight: FontWeight.bold)),
+                      SizedBox(width: spacingUnit(1)),
+                      IconButton(icon: const Icon(Icons.copy), onPressed: () {})
+                    ]),
                     const VSpaceShort(),
-                    ListTile(
-                      title: const Text('Account Name', style: ThemeText.caption,),
-                      subtitle: Text('Bank Lorem Ipsum', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold),),
-                    ),
-                    const LineList(),
-                    ListTile(
-                      title: const Text('Account Number', style: ThemeText.caption,),
-                      subtitle: Text('1234567890', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold),),
-                      trailing: IconButton(icon: const Icon(Icons.copy), onPressed: () {},)
-                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.end, children: [
+                      Text('Total amount + tax 12%: ', style: ThemeText.paragraph.copyWith(color: colorScheme.onSurfaceVariant)),
+                      Text('\$24.00', style: ThemeText.title2.copyWith(color: ThemePalette.primaryMain, fontWeight: FontWeight.bold),),
+                    ]),
                   ]),
                 )
               ),
               const VSpace(),
-
-              /// BANK ACCOUNT DETAIL
-              Text('Please complete your bank account detail!', style: ThemeText.subtitle2.copyWith(fontWeight: FontWeight.bold)),
-              const VSpaceShort(),
-              const BankAccForm(),
-              SizedBox(height: spacingUnit(2)),
               AppInputBox(content: ListTile(
                 contentPadding: const EdgeInsets.all(0),
                 leading: Icon(Icons.help_outline, color: ThemePalette.primaryMain),
@@ -107,8 +100,7 @@ class PaymentDetailTransfer extends StatelessWidget {
         ),
 
         /// ACTION BUTTON
-        Container(
-          color: Get.isDarkMode ? colorScheme.surface : colorScheme.surfaceContainerHighest,
+        Padding(
           padding: EdgeInsets.all(spacingUnit(2)),
           child: Column(
             children: [
@@ -156,15 +148,15 @@ class PaymentDetailTransfer extends StatelessWidget {
       ),
       const ListTile(
         leading: Text('2', style: ThemeText.subtitle),
-        title: Text('Select the "Transfer" menu')
+        title: Text('Select the "Transfer to Virtual Account" menu.')
       ),
       const ListTile(
         leading: Text('3', style: ThemeText.subtitle),
-        title: Text('Enter the destination account number.')
+        title: Text('Enter the virtual account number.')
       ),
       const ListTile(
         leading: Text('4', style: ThemeText.subtitle),
-        title: Text('And enter the specified amount.')
+        title: Text('Please verify the amount. The amount must be same as in application.')
       ),
       const ListTile(
         leading: Text('5', style: ThemeText.subtitle),
