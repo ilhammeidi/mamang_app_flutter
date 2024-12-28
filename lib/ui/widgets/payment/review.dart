@@ -5,7 +5,9 @@ import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
 import 'package:mamang_app_flutter/ui/widgets/business/business_icon.dart';
 
 class PaymentReview extends StatelessWidget {
-  const PaymentReview({super.key});
+  const PaymentReview({super.key, this.withPrice = true});
+
+  final bool withPrice;
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +40,10 @@ class PaymentReview extends StatelessWidget {
           ],
         )),
         const SizedBox(width: 8),
-        Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+        withPrice ? Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
           Text('\$24.00', style: ThemeText.title2.copyWith(color: ThemePalette.primaryMain, fontWeight: FontWeight.bold),),
           Text('Including tax 12%', style: ThemeText.caption.copyWith(color: colorScheme.onSurfaceVariant))
-        ])
+        ]) : Container()
       ]),
     );
   }

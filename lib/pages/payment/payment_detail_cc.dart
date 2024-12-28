@@ -24,6 +24,14 @@ class PaymentDetailCC extends StatelessWidget {
           },
           icon: const Icon(Icons.arrow_back_ios_new)
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.help_outline),
+            onPressed: () {
+              Get.toNamed('/faq');
+            },
+          )
+        ],
         centerTitle: false,
         title: const Text('Payment'),
       ),
@@ -63,9 +71,11 @@ class PaymentDetailCC extends StatelessWidget {
                   SizedBox(width: spacingUnit(1)),
                   Expanded(
                     child: FilledButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed('/payment/status');
+                      },
                       style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
-                      child: const Row(children: [
+                      child: const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                         Icon(Icons.lock_outline),
                         SizedBox(width: 4),
                         Text('Secure Pay')
