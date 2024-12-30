@@ -51,6 +51,8 @@ class PaymentStatus extends StatelessWidget {
       ),
       body: Column(children: [
         const StepProgress(activeIndex: 3, items: ['Choose', 'Detail', 'Done'],),
+        
+        /// PAYMENT STATUS
         Container(
           margin: EdgeInsets.all(spacingUnit(1)),
           padding: EdgeInsets.all(spacingUnit(2)),
@@ -183,7 +185,9 @@ class PaymentStatus extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: FilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/');
+                  },
                   style: ThemeButton.btnBig.merge(ThemeButton.tonalPrimary(context)),
                   child: const Text('Go to Homepage')
                 ),
@@ -193,7 +197,7 @@ class PaymentStatus extends StatelessWidget {
                 width: double.infinity,
                 child: OutlinedButton(
                   onPressed: () {
-                    Get.back();
+                    Get.toNamed('/payment/history');
                   },
                   style: ThemeButton.btnBig.merge(ThemeButton.outlinedPrimary(context)),
                   child: const Text('Go to Transaction History')

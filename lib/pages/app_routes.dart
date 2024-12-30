@@ -10,6 +10,7 @@ import 'package:mamang_app_flutter/pages/payment/payment_detail_cc.dart';
 import 'package:mamang_app_flutter/pages/payment/payment_detail_transfer.dart';
 import 'package:mamang_app_flutter/pages/payment/payment_detail_vac.dart';
 import 'package:mamang_app_flutter/pages/payment/payment_detail_wallet.dart';
+import 'package:mamang_app_flutter/pages/payment/payment_history.dart';
 import 'package:mamang_app_flutter/pages/payment/payment_method.dart';
 import 'package:mamang_app_flutter/pages/payment/payment_status.dart';
 import 'package:mamang_app_flutter/pages/pricing/pricing_business.dart';
@@ -248,6 +249,10 @@ final List<GetPage> appRoutes = [
   GetPage(
     name: '/payment/status',
     page: () => const GeneralLayout(content: PaymentStatus()),
+  ),
+  GetPage(
+    name: '/payment/history',
+    page: () => const GeneralLayout(content: PaymentHistory()),
   ),
 
   /// USER PROFILE

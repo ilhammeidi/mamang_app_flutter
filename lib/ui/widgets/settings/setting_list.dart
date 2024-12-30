@@ -429,6 +429,69 @@ class SettingList extends StatelessWidget {
                   Get.toNamed('/business-new');
                 },
               ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.monetization_on_outlined),
+                title: const Text('Payment'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/payment');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.credit_card),
+                title: const Text('Payment Credit Card'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/payment/credit-card');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.wallet),
+                title: const Text('Payment E-Wallet'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/payment/ewallet');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.account_balance),
+                title: const Text('Payment Transfer'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/payment/transfer');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.contacts_rounded),
+                title: const Text('Payment Virtual Account'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/payment/vac');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.check_circle_outline),
+                title: const Text('Payment Status'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/payment/status');
+                },
+              ),
+              const LineList(),
+              ListTile(
+                leading: const Icon(Icons.history),
+                title: const Text('Payment History'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Get.toNamed('/payment/history');
+                },
+              ),
             ]),
           )
         ),
