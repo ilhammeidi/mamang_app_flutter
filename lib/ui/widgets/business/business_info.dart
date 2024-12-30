@@ -6,7 +6,6 @@ import 'package:mamang_app_flutter/ui/themes/theme_palette.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_radius.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_spacing.dart';
 import 'package:mamang_app_flutter/ui/themes/theme_text.dart';
-import 'package:mamang_app_flutter/ui/utils/box_color.dart';
 import 'package:mamang_app_flutter/ui/utils/gallery_viewer.dart';
 
 class BusinessInfo extends StatelessWidget {
@@ -19,7 +18,7 @@ class BusinessInfo extends StatelessWidget {
   });
 
   final Widget icon;
-  final String color;
+  final Color color;
   final String name;
   final String desc;
 
@@ -71,7 +70,7 @@ class BusinessInfo extends StatelessWidget {
         SizedBox(width: spacingUnit(2)),
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(name, style: ThemeText.title),
-          Text('Total: 1/99999', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: colorType(color))),
+          Text('Total: 1/99999', style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold, color: color)),
         ],)
       ]),
       const VSpace(),

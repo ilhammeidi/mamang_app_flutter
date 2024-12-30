@@ -30,7 +30,7 @@ class Rewards extends StatelessWidget {
           style: iconBtn,
           icon: const Icon(Icons.arrow_back_ios_new, size: 22),
         ),
-        title: const Text('Your Rewards', style: TextStyle(color: Colors.white)),
+        title: const Text('Your Rewards', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
       body: Container(
@@ -66,12 +66,13 @@ class Rewards extends StatelessWidget {
                 Get.toNamed('/detail-coin');
               },
               child: RewardCard(
-                color: Colors.amber,
+                color: Colors.amber.shade700,
                 title: 'Coins'.toUpperCase(),
                 icon: Icon(Icons.motion_photos_on, color: Colors.amber[100], size: 22),
-                progress: 52000,
+                progress: 52,
                 btnText: 'Withdraw',
-                max: 100000,
+                max: 100,
+                label: 'K',
                 onTap: () {
                   Get.toNamed('/detail-coin');
                 },

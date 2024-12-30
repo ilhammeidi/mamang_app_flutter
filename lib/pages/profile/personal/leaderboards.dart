@@ -15,9 +15,12 @@ class Leaderboards extends StatelessWidget {
       elevation: 3
     );
 
+    const Color leagueColor = Colors.purple;
+
     return Scaffold(
+      backgroundColor: leagueColor,
       appBar: AppBar(
-        backgroundColor: Colors.purple,
+        backgroundColor: leagueColor,
         titleSpacing: 0,
         leading: IconButton(
           onPressed: () {
@@ -38,11 +41,11 @@ class Leaderboards extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           decoration: const BoxDecoration(
-            color: Colors.purple,
+            color: leagueColor,
             image: DecorationImage(image: AssetImage('assets/images/bg_blink.png'), fit: BoxFit.contain, alignment: Alignment.topCenter)
           ),
           child: Column(children: [
-            const PanelRankStats(color: Colors.purple),
+            const PanelRankStats(color: leagueColor),
             Padding(
               padding: EdgeInsets.only(top: spacingUnit(2)),
               child: const TableRank(),

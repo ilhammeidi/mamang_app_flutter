@@ -100,15 +100,20 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
                   itemCount: 10,
                   shrinkWrap: true,
                   physics: const ClampingScrollPhysics(),
-                  padding: EdgeInsets.all(spacingUnit(2)),
+                  padding: EdgeInsets.all(spacingUnit(1)),
                   itemBuilder: ((BuildContext context, int index) {
                     User item = userList[index];
-                    return ProfileCardLandscape(
-                      avatar: item.avatar,
-                      name: item.name,
-                      distance: item.distance,
-                      textButton: 'Follow',
-                      isLast: true,
+                    return GestureDetector(
+                      onTap: () {
+                        Get.toNamed('/user-profile');
+                      },
+                      child: ProfileCardLandscape(
+                        avatar: item.avatar,
+                        name: item.name,
+                        distance: item.distance,
+                        textButton: 'Follow',
+                        isLast: true,
+                      ),
                     );
                   })
                 )
@@ -130,10 +135,15 @@ class _ProfileUserState extends State<ProfileUser> with TickerProviderStateMixin
                   ),
                   itemBuilder: (BuildContext context, int index) {
                     User item = userList[index];
-                    return ProfileCard(
-                      avatar: item.avatar,
-                      name: item.name,
-                      distance: item.distance
+                    return GestureDetector(
+                      onTap: () {
+                        Get.toNamed('/user-profile');
+                      },
+                      child: ProfileCard(
+                        avatar: item.avatar,
+                        name: item.name,
+                        distance: item.distance
+                      ),
                     );
                   }
                 )

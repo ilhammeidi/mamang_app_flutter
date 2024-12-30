@@ -27,40 +27,42 @@ class Activities extends StatelessWidget {
         /// TITLE AND SEARCH
         title: const Text('Your Activities'),
       ),
-      body: Column(children: [
-        const VSpaceShort(),
-        Stack(
-          alignment: Alignment.centerLeft,
-          children: [
-            Positioned(
-              left: 24,
-              child: Container(
-                width: 3,
-                height: itemHeight * activityList.length,
-                decoration: BoxDecoration(
-                  color: colorScheme.outline,
-                  borderRadius: BorderRadius.circular(5)
-                )
+      body: SingleChildScrollView(
+        child: Column(children: [
+          Stack(
+            alignment: Alignment.centerLeft,
+            children: [
+              Positioned(
+                left: 24,
+                child: Container(
+                  width: 3,
+                  height: itemHeight * activityList.length,
+                  decoration: BoxDecoration(
+                    color: colorScheme.outline,
+                    borderRadius: BorderRadius.circular(5)
+                  )
+                ),
               ),
-            ),
-            ListView.builder(
-              itemCount: activityList.length,
-              shrinkWrap: true,
-              physics: const ClampingScrollPhysics(),
-              padding: const EdgeInsets.all(0),
-              itemBuilder: ((context, index) {
-                Activity item = activityList[index];
-                return ActivityCard(
-                  title: item.title,
-                  time: item.date,
-                  icon: item.icon,
-                  color: item.color
-                );
-              })
-            )
-          ],
-        )
-      ]),
+              ListView.builder(
+                itemCount: activityList.length,
+                shrinkWrap: true,
+                physics: const ClampingScrollPhysics(),
+                padding: const EdgeInsets.all(0),
+                itemBuilder: ((context, index) {
+                  Activity item = activityList[index];
+                  return ActivityCard(
+                    title: item.title,
+                    time: item.date,
+                    icon: item.icon,
+                    color: item.color
+                  );
+                })
+              )
+            ],
+          ),
+          const VSpaceShort(),
+        ]),
+      ),
     );
   }
 }

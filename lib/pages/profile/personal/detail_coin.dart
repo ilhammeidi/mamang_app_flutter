@@ -11,7 +11,7 @@ class DetailCoin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double itemHeight = 55;
+    const double itemHeight = 60;
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     final ButtonStyle iconBtn = IconButton.styleFrom(
@@ -31,7 +31,7 @@ class DetailCoin extends StatelessWidget {
           style: iconBtn,
           icon: const Icon(Icons.arrow_back_ios_new, size: 22),
         ),
-        title: const Text('Your Coins', style: TextStyle(color: Colors.white)),
+        title: const Text('Your Coins', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
       body: Container(
@@ -40,7 +40,7 @@ class DetailCoin extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: <Color>[Colors.amber, Colors.amber.shade900]
+            colors: <Color>[Colors.amber.shade700, Colors.orange.shade900]
           ),
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [

@@ -169,7 +169,7 @@ final List<User> rankList = [
     title: 'premium',
     status: 'active',
     avatar: ImgApi.avatar[0],
-    coin: 100,
+    coin: 8,
     point: 90,
   ),
   User(

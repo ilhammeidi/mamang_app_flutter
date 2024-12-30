@@ -48,11 +48,12 @@ class BusinessStatsCard extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(spacingUnit(1)),
         decoration: BoxDecoration(
-          border: Border.all(
-            color: colorType(type),
-            width: 1,
+          border: Border(
+            left: BorderSide(
+              color: colorType(type),
+              width: 6,
+            )
           ),
-          borderRadius: ThemeRadius.medium
         ),
         child: Column(
           children: [
@@ -92,9 +93,9 @@ class BusinessStatsCard extends StatelessWidget {
                         borderRadius: ThemeRadius.medium
                       ),
                       child: Row(children: [
-                        Icon(Icons.star, color: Colors.yellow.shade700, size: 11,),
+                        Icon(Icons.star, color: Colors.yellow.shade700, size: 16,),
                         const SizedBox(width: 2),
-                        Text(stared.toString(), style: ThemeText.caption,)
+                        Text(stared.toString(), style: ThemeText.caption.copyWith(fontWeight: FontWeight.bold),)
                       ]),
                     )
                   ]),

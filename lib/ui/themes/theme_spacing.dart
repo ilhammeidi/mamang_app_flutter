@@ -50,14 +50,19 @@ class LineSpace extends StatelessWidget {
 }
 
 class LineList extends StatelessWidget {
-  const LineList({super.key});
+  const LineList({super.key, this.spacing = 0});
+
+  final double spacing;
 
   @override
   Widget build(BuildContext context) {
-    return Divider(
-      color: Theme.of(context).colorScheme.outline, 
-      height: 1,
-      thickness: 1
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: spacing),
+      child: Divider(
+        color: Theme.of(context).colorScheme.outline, 
+        height: 1,
+        thickness: 1
+      ),
     );
   }
 }

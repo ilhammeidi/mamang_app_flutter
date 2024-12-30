@@ -24,7 +24,7 @@ class ProfileCardLandscape extends StatelessWidget {
 
     return Column(children: [
       ListTile(
-        contentPadding: EdgeInsets.all(spacingUnit(1)),
+        contentPadding: EdgeInsets.symmetric(horizontal: spacingUnit(1)),
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(100),
           child: Image.network(
