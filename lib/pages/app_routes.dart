@@ -1,4 +1,5 @@
 import 'package:get/route_manager.dart';
+import 'package:mamang_app_flutter/pages/app_link.dart';
 import 'package:mamang_app_flutter/pages/profile/profile_main.dart';
 import 'package:mamang_app_flutter/pages/explore/explore_main.dart';
 import 'package:mamang_app_flutter/pages/home.dart';
@@ -21,33 +22,32 @@ import 'package:mamang_app_flutter/ui/layouts/home_layout.dart';
 const int pageTransitionDuration = 200;
 
 final List<GetPage> appRoutes = [
-
   /// HOME
   GetPage(
-    name: '/',
+    name: AppLink.home,
     page: () => const HomeLayout(content: HomeMain()),
     transition: Transition.fadeIn,
     transitionDuration: const Duration(milliseconds: pageTransitionDuration)
   ),
   GetPage(
-    name: '/notifications',
+    name: AppLink.notification,
     page: () => const GeneralLayout(content: Notifications()),
   ),
   GetPage(
-    name: '/inbox',
+    name: AppLink.inbox,
     page: () => const GeneralLayout(content: Inbox()),
   ),
 
   GetPage(
-    name: '/search-list',
+    name: AppLink.searchList,
     page: () => const GeneralLayout(content: SearchList()),
   ),
   GetPage(
-    name: '/search-map',
+    name: AppLink.searchMap,
     page: () => const GeneralLayout(content: SearchMap()),
   ),
   GetPage(
-    name: '/search-result',
+    name: AppLink.searchResult,
     page: () => const GeneralLayout(content: SearchResult()),
   ),
 

@@ -1,4 +1,5 @@
 import 'package:get/route_manager.dart';
+import 'package:mamang_app_flutter/pages/sample_ui/sample_colrow.dart';
 import 'package:mamang_app_flutter/ui/layouts/general_layout.dart';
 import 'package:mamang_app_flutter/pages/sample_ui/sample_button.dart';
 import 'package:mamang_app_flutter/pages/sample_ui/sample_dark_light.dart';
@@ -31,5 +32,9 @@ final List<GetPage> routesSampleUi = [
   GetPage(
     name: '/shimmer',
     page: () => const SampleShimmer()
+  ),
+  GetPage(
+    name: '/colrow',
+    page: () => const SampleColrow()
   ),
 ];
