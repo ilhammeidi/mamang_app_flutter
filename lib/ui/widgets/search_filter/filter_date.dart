@@ -122,8 +122,8 @@ class _SettingDatePickerState extends State<SettingDatePicker> {
     DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
-      firstDate: DateTime(2021),
-      lastDate: DateTime(2025),
+      firstDate: DateTime(2024),
+      lastDate: DateTime(2027),
     );
 
     if (picked != null) {
@@ -186,7 +186,7 @@ class _SettingDatePickerState extends State<SettingDatePicker> {
               onPressed: () {
                 Get.back();
               },
-              child: const Text('Discard'),
+              child: const Text('DISCARD'),
             ),
           ),
           SizedBox(width: spacingUnit(1)),
@@ -197,7 +197,7 @@ class _SettingDatePickerState extends State<SettingDatePicker> {
                 Navigator.pop(context);
               },
               style: ThemeButton.primary,
-              child: const Text('Update'),
+              child: const Text('UPDATE'),
             ),
           )
         ]),

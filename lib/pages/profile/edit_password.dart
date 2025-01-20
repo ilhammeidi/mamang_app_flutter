@@ -33,7 +33,7 @@ class _EditPasswordState extends State<EditPassword> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Get.toNamed('/profile');
+            Get.back();
           },
           icon: const Icon(Icons.arrow_back_ios_new)
         ),
