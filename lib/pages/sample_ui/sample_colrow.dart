@@ -8,8 +8,8 @@ class SampleColrow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ColRow(
-      switched: ThemeBreakpoints.mdDown(context),
-      reversed: ThemeBreakpoints.smDown(context),
+      switched: ThemeBreakpoints.mdUp(context),
+      reversed: ThemeBreakpoints.smUp(context),
       children: [
         Container(
           width: 100,

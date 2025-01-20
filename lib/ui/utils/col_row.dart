@@ -19,13 +19,13 @@ class ColRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (switched) {
-      return Column(
+      return Row(
         mainAxisAlignment: mainAxisAlignment,
         crossAxisAlignment: crossAxisAlignment,
         children: reversed ? children.reversed.toList() : children
       );
     }
-    return Row(
+    return Column(
       mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: crossAxisAlignment,
       children: reversed ? children.reversed.toList() : children
