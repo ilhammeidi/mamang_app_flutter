@@ -1,0 +1,1 @@
+/Users/retinam2/Documents/Experanza/mamang_app/mamang_app_flutter/build/app/intermediates/cxx/RelWithDebInfo/4a65196l/obj/armeabi-v7a

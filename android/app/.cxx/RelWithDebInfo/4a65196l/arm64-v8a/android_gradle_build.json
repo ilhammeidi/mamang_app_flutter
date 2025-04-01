@@ -1,0 +1,28 @@
+{
+  "buildFiles": [
+    "/Users/retinam2/development/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/retinam2/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/retinam2/Documents/Experanza/mamang_app/mamang_app_flutter/android/app/.cxx/RelWithDebInfo/4a65196l/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/retinam2/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/retinam2/Documents/Experanza/mamang_app/mamang_app_flutter/android/app/.cxx/RelWithDebInfo/4a65196l/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {},
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/retinam2/Library/Android/sdk/ndk/28.0.13004108/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/retinam2/Library/Android/sdk/ndk/28.0.13004108/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": []
+}

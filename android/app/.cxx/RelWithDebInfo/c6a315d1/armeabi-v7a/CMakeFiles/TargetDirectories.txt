@@ -1,0 +1,2 @@
+/Users/retinam2/Documents/Experanza/mamang_app/mamang_app_flutter/android/app/.cxx/RelWithDebInfo/c6a315d1/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/retinam2/Documents/Experanza/mamang_app/mamang_app_flutter/android/app/.cxx/RelWithDebInfo/c6a315d1/armeabi-v7a/CMakeFiles/rebuild_cache.dir
